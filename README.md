@@ -13,3 +13,16 @@ _All dates are 23:59 AoE (Anywhere on Earth)_
 - **30 April, 2025**: Camera ready and presenter registration deadline
 - **24 June, 2025**: NIME Workshops
 - **25 - 27 June, 2025**: NIME Conference
+
+
+## Structure
+
+0. Abstract
+1. Intro
+2. Related Work and motivation
+3. Hardware Design
+4. Software Design
+5. Implementation
+6. Conclusion
+7. Acknowledgments
+8. Reference

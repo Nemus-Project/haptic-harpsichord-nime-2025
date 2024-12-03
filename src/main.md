@@ -42,6 +42,10 @@
 - previous use
 - problem of what to sense
 - satisfied both criteria and design restrictions
+- usage
+  - Sweet spot is around 6mm distance
+- 
+
 
 #### sensor surface
 
@@ -105,6 +109,9 @@ problem of scale
 ### PCB design
 
 - EAGLE
+
+#### Sensor board
+
 - jack / sensor picth by board
 - 7 boards adjust for pitch/spacing error
 - modular, replaceable
@@ -122,11 +129,25 @@ problem of scale
   - striping all adc lines with FFC
   - solder pads to select channel
 
+#### controller board
+
+- mount for nano  to allow switching
+- initially push fit 2.54mm header
+  - not a secure fit
+- JST-PH used
+  - crimping required custom cables
+    - could be assembled from other cables
+    - length limited
+  - prohibitevly expensive to crimpers
+  - 3D print helper to allow for crimping with generic crimpers
+
 ### 3D printing
 
 - Supports
   - Push fit
+  - adjustable for best average placement
 - Blinkers
+  - reduce noise from other senors
 - mounts
   - MacMini
 
@@ -183,6 +204,12 @@ problem of scale
 - second jack row
 - reducing latency
 - alternative sensor surfaces
+
+### improvements
+
+- avoid soldering cabling
+- power indicators on pcbs
+  - debug if problem is power related
 
 ## Acknowledgments
 

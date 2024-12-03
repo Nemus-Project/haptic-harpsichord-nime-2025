@@ -4,10 +4,14 @@
 
 ## Introduction
 
+### the problem
+### the solution
+### criteria
+### restrictions
+
 ## Related Work and Motivation
 
 ## Hardware Design
-
 
 ### Keyboard Design
 - simple
@@ -112,7 +116,7 @@ problem of scale
 
 #### Sensor board
 
-- jack / sensor picth by board
+- jack / sensor pitch by board
 - 7 boards adjust for pitch/spacing error
 - modular, replaceable
 - orientation problems
@@ -181,8 +185,9 @@ problem of scale
 ### Context
 
 - in museum context
+- strings damped
+- headphones
 - interfacing with kontakt spitfire library
-- powering
 - display
   - secure storage and access
   - interface to the public
@@ -197,6 +202,14 @@ problem of scale
 - scale
 - time scale
 - working at distance
+- limitations
+  - latency
+  - deprecation
+    - software
+      - EAGLE
+    - hardware
+      - FRAM
+
 
 ## Going forward
 
@@ -204,6 +217,9 @@ problem of scale
 - second jack row
 - reducing latency
 - alternative sensor surfaces
+- ESP-IDF
+  - latency half
+  - workload high
 
 ### improvements
 

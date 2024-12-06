@@ -4,10 +4,22 @@
 
 ## Introduction
 
-### the problem
-### the solution
-### criteria
-### restrictions
+- existing sysetms
+  - Yamaha Disklaviare
+  - Bosendorfer
+    - 290SE
+    - CEUS
+  - Don Buchla / Moog Piano Bar
+  - PNOscan MIDI 9 QRS Music
+    - PNOmation
+  - Piano Disc
+
+
+### Motivations
+#### the problem
+#### the solution
+#### criteria
+#### restrictions
 
 ## Related Work and Motivation
 
@@ -182,6 +194,11 @@ problem of scale
 
 ## Implementation
 
+### Installation
+ - handsolder components
+   - partial pre-assembly
+ - connecting supports
+
 ### Context
 
 - in museum context
@@ -210,7 +227,6 @@ problem of scale
     - hardware
       - FRAM
 
-
 ## Going forward
 
 - Velocity, aftertouch
@@ -234,7 +250,7 @@ problem of scale
 - San Colombano
   - Catalina
 - uCreate
-  - Simeon, Stuart, Millie
+  - Simeon, Stuart, Millie, Ruth
 - ECA
   - Richard Collins, Billy, Connor, Cameron, Joe, Mike Boyd
 

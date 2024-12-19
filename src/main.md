@@ -100,18 +100,35 @@ A number of sensors were tried before the final system was decided upon. An iner
 
 A reed sensor and a hall sensor were mounted and magnets embedded within the jacks. Adjusting the hieight of the sensor provided a reliable means of detecting a threshold, inparticular the hall sensors which could be partially calibrarted physically and also in softwrae. The time taken to calibarte a single key was time consuming. Ideally each sensor would be placed on a thread for adjustment, but given the constraints on the internal space it was decided any adjustment of heights would likely mean an unnacceptable length of time to install and calibrate. Embedding magnets into the jacks was also did not satisfy the criteria of being scalable and non-invasive.
 
-Light dependant resistor mounted to the jack rail. as jacks were pressed less light would be let through. Usable data but very dependant on lighting conditions
+Light dependant resistor mounted to the jack rail. as jacks were pressed less light would be let through. Usable data but very dependant on lighting conditions. Modifying the jack also did not satisfy the non-intrusive criteria and the placement outside the internal chamber of the model meant hiding electronics would be more difficult.
 
+Finally, force sensitive resistors placed under the jack of each key was considered but was never implemented. The sensors were to be placed under each jack either above or below the padding on which the bottom of the jack rests. Further discussion of this apporach is in \section.
 
 ### Keyboard Design
+
 - simple
 - aesthetics
 - split workload
+
+The desicion was made to design the elctronic sna dthe model keyboard in tandem. Allow for quicker development time and iteration on the idea. Likely the first implementation would need re-designed and redesiginng the electronics to fit the form of the keyboard was more cost effective than building or carrying out major modifications to the model.
+
+The model was designed to have two internal chambers a front and rear. The front and back that was xxx by yyy by 370mm between the faceplate and the jacks. The TONGUE THAT GOES INTO SLOT divides the chamber though a small gap between the under side of the soundboard and the key guides. The key guide needs to be deep enough to allow for the full movement of the key and stop the key becoming unseated. The chamber then extends to a support wall which divides the front and rear.
+
+Discussion of spatial constraints and affects on  electyronics design and installation is covered in \section{setup}
+
+The rear chamber was desigbned to house comonents for audio processing, which is discussed further in \section
+
+https://github.com/Nemus-Project/haptic-harpsichord-nime-2025/issues/Nemus-Project/haptic-harpsichord-nime-2025/images/disegno.pdf
+
+For the initial prototyping stage, modifying an existing harpsichord was considered though ultimately discarded. An existing instrument would have provided a test for scaling the electronics, but internal measurments and layout would have been too different. A harpsichord that was economic enough to be deconstructed would also have been of a more modern mechanical design and not of the design that was being recreated with the model. Prototyping stage would likely be invasive and damage or heavy modification likely. As such it was not a good use of funds as a modern instrument fit for destruction did not offer benefits that the small model with easy internal access did not already provide.
+
+
 #### 3-Key Prototype
+
 - proof of concept
 - available on loan from museum
 - easy access to internal structure
-- 
+  
 #### Fig: Construction Design Diagram  
 
 #### 49-Key Prototype

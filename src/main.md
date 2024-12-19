@@ -122,7 +122,6 @@ https://github.com/Nemus-Project/haptic-harpsichord-nime-2025/issues/Nemus-Proje
 
 For the initial prototyping stage, modifying an existing harpsichord was considered though ultimately discarded. An existing instrument would have provided a test for scaling the electronics, but internal measurments and layout would have been too different. A harpsichord that was economic enough to be deconstructed would also have been of a more modern mechanical design and not of the design that was being recreated with the model. Prototyping stage would likely be invasive and damage or heavy modification likely. As such it was not a good use of funds as a modern instrument fit for destruction did not offer benefits that the small model with easy internal access did not already provide.
 
-
 #### 3-Key Prototype
 
 - proof of concept
@@ -139,6 +138,8 @@ For the initial prototyping stage, modifying an existing harpsichord was conside
 
 ## Electronics
 
+
+
 - Over arching themes
   - simplicity of design 
     - Limited resources
@@ -148,6 +149,32 @@ For the initial prototyping stage, modifying an existing harpsichord was conside
 
 
 #### QRE1113
+
+Following from the work in \cite{McPherson1} \cite{McPherson2} we tested a system using the Fairchild QRE1113 \datasheetfigue. 
+The QRE1113 is a combination infrared LED and phototransistor sensitive to IR light. The phototransistor of QRE1113 provides data on how much light is present
+and in particular how much light is being relfected from a surface. Since refelected light will be proportional to the distance of a surfcae it is a good, close proximity, distance sensor.
+Distance is the way in which the instruments in \citeMcpherson1&2 function as well the Moog Piano Bar from which it too inspiration.
+
+The limitation for taking a distance approach is that there is not one but 2 jacks per key. For each jack to be measured indepeedntly the data would need tp com fropm the jacks themselves.
+
+They _could_ be used and individual trigger points set in calibration, but this creates new problems. 
+
+- The triggering would need to be bespoke for every key as fluxuations in the dimensions of every piece mean that the threshold would be different.
+  - Moving a problem into additional time in the calibtraryoin setup phase.
+- Remebering the constraint that system isshould noyt fix problem, there would be no easy way to tell if a jack had nbot reseated. 
+  - In playing a harpihchord when the jack  does not go to its rest position, not note would play. This fault should be carried over intp the final instrument.
+
+
+Another common application of the QRE1113 is within line following robots, where an array of QRE1113s ar used in conjunction with black tape along which some motorised system can following
+
+Applied to the jacks was a greyscale gradient printed the length full travel range of the jack.
+
+For the first iteration this was performed on an inkjet printer and double-sided tape. 
+For the final iteration the stickers were printed on (Coala, 1D 100 Gloss P, gloss, white, permanent adhesive, 300g/m2, 100 µm, 1370mm x 50.00m, Solvent/Latex/UV) using a HP Latex 115 and then cutout with a Summa 150 roll cutter.
+The printer and roll cutter greatly reduced the manual labour for cutting stickers meaning the process would scale from the 3-key to the 49-key model.
+
+
+
 
 - previous use
 - problem of what to sense
@@ -289,6 +316,18 @@ problem of scale
 ## Implementation
 
 ### Installation
+
+The electronic components were partly pre-assembled at the university of Edinburgh. Though all measurments were known ahead, enough flexibiliyty was needed to allow for proboems to solved in situ.
+
+The final assembly took place at the NEMUS lab at the univerity of bologna over the final week in October 2024 for delivery at San Colombano  for exhibition in the first week of November in 2024.
+
+A misreading in the original clearance between the keys and the PCB meant that the keys wer block entirely from moving. A 10mm by 15mm section was milled out of each lke \FIGURE to create extra clearance. 
+The milling required the removal, shortening and refitting of the leather pads for the jacks, in 
+
+A redesign of the PCBs meant that this was
+
+
+
  - partial pre-assembly
  - handsolder components
    - analog lines
@@ -341,13 +380,23 @@ problem of scale
 
 ## Acknowledgments
 
-- Alma Labor
-  - Max
+A project of this breadth developed across 3 institutes and 2 countries cannot be carried without the support and technical knowledge of many skilled and passionate people.
+
+We acknoweldge the invaluable contrinbutions ofç
+
+- Unibo
+  - Alma Labor
+    - Massimiliano Fraulini and the staff of ALma Labor at the Yiversità of bologna for their 3D printing expertise and generosity with electronics equipment
+  - Fisica Tecnica
+    - Maurzio Chendi Fabrizio Casarini, Giulio Severo and Barbara Costantini
 - San Colombano
-  - Catalina
-- uCreate
-  - Simeon, Stuart, Millie, Ruth
-- ECA
-  - Richard Collins, Billy, Connor, Cameron, Joe, Mike Boyd
+  - Catalina Vincens
+  - Roberto Livi
+- Edinburgh
+  - uCreate
+    - Simeon, Stuart, Millie, and Ruth of uCreate at the Univeristy of Edinburgh for their support with soldering facilities.
+  - ECA
+    - Richard Collins and the Digital Making Staff at the Edinburgh College of Art for 3D printing instruction and CNC support.
+    - Joe Hathaway of Digital Development at the College of Art for providing electronics components
 
 ## Reference

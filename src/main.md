@@ -312,6 +312,13 @@ cutter. The printer and roll cutter greatly reduced the manual labour for
 cutting stickers meaning the process would scale from the 3-key to the 49-key
 model.
 
+An initial sticker design was used that contained only the gradient. It was
+found that the jacks wer sticking in their slots andthe edges on the stickers
+easily peeled around the printing The sticker was redesigned to be the full
+length of the jack which avoided the problem of peeling. The  larger are also
+mean the stickers adhered betterto the jack Some trimming was still required of
+each sticker to avoid them adding extraa resistence to the jack's movement.
+
 During testing it was found that their was a considerable amount cross-talk
 bwteen adjacent sensors. This meant the reading from key would be affected by
 the movement of the key next to it. The cross-talk was assumed to be as a result
@@ -523,10 +530,22 @@ to allow for brackets to move. The brackets were not easily adjusted once the
 key were replaced. Adjusted to a best average with subsequent adjustment carried
 out on the microcontroller.
 
-After fitting the PCBs preliminary calibration was carried out. This mainly done
-to test the work flow of calibration with those unfamiliar with the system.
-Adjustments were made to the firmware to accomodate a new workflow Usage of
-addressable LEDs became vital as it allowed for easy identification of the key
+As the PCBs were fitted the jacks had the gradient stickers applied to them. The
+jacks had been coated with a varnish on the short side to provide a better
+surface for the stikcers to adhere to. After the stickers were applied excess
+material was trimmed from each jack. The jack were then check that they moved
+freely in their slot.
+
+After fitting the PCBs preliminary calibration was carried out. Before the keys
+were reffitted the jacks wer put back in place. The data from each key was
+confirmed to be in a similar range. Any key showing anomalous dat had it's jack
+removed and re-inspected. The PCB fitting process and refitting required another
+day as faults were found in wiring or misalignement of the stickers. After the
+sensors were confirmed to be functioning the keys were put back.
+
+The calibration workflow was with Craig Webb who was unfamiliar with the system.
+Adjustments were made to the firmware to to make it more intuitive for the user.
+Addressable LEDs became vital as it allowed for easy identification of the key
 being calibrated. They were also used to identify any keys whose current reading
 was beyond what was expected.
 
@@ -580,6 +599,8 @@ Arduino IDE and MIDI was confirmed using the open source MIDI Monitor
 
 ## Going forward
 
+
+
 - Velocity, aftertouch
 - second jack row
 - reducing latency
@@ -592,7 +613,16 @@ Arduino IDE and MIDI was confirmed using the open source MIDI Monitor
 
 - avoid soldering cabling
 - power indicators on pcbs
-  - debug if problem is power related
+  - debug if problem is power related Add power small power LEDs to the each
+PCB. It was not incommon for a a board to not be functioning and thye result to
+be that the power weas not correctly connected. Especially when the ower is
+connected via somethgin such as an FFC cable where it is easy to plug-in the
+wrong way esepcially when fitting is to be carried out by someone unfmailiar
+wiyth the system. Power LEDs would quickly confirm whether the problem was power
+related. They would have to be small enough and low enough current draw to avoid
+glare or being mistaken with other indcator LEDs To continue using THT
+components, the choice would have to be moade carefully. 
+
 
 ## Acknowledgments
 

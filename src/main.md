@@ -216,6 +216,19 @@ The printer and roll cutter greatly reduced the manual labour for cutting sticke
 
 ### EEPROM / NVRAM / FRAM
 
+There would need to be the ability to store values on non-volatile memory so that the electroincs could be powered-down without losing data.
+
+Adjusting the values through firmware would not have been flexible or practical. Instead an Ferroelectric RAM unit was chosen and connected using an SPI interface. 
+NVRAM or EEPROM would have sufficed and the FRAM was primarily chosen for it's ready availability. 
+
+Most microcontrollers have some variety of non-volatile program memory that can be read and writ accessed but in most cases this memory is cleared during compilation and re-flashing.
+The small cost was far outweighed by the potential for data loss if using onboard RAM.
+
+_It is worth noting that the FRAM model chosen stopped being available during the project, meaning any future iteration would need to adjust for another board in firmware_
+
+The firmware was structure in a way that the interface could be changed so long as the code required for any other board would comply with function arguments and outputs.
+Worth noting the fragility and volatility when designing this kind of project and how easily it is for them to become broken.
+
 - On board available, but volatile
 - retained across firmware changes
 - small, 
@@ -322,10 +335,29 @@ The electronic components were partly pre-assembled at the university of Edinbur
 The final assembly took place at the NEMUS lab at the univerity of bologna over the final week in October 2024 for delivery at San Colombano  for exhibition in the first week of November in 2024.
 
 A misreading in the original clearance between the keys and the PCB meant that the keys wer block entirely from moving. A 10mm by 15mm section was milled out of each lke \FIGURE to create extra clearance. 
-The milling required the removal, shortening and refitting of the leather pads for the jacks, in 
+The milling required the removal, shortening and refitting of the leather pads for the jacks \FIGURE. The extra work added an extra day to the full install.
 
-A redesign of the PCBs meant that this was
+A redesign of the PCBs meant that removing the material would no longer be necessary.
 
+The PCBs shared power and data lines for components with the exception of the output from the multiplexer. Ribbon cable was cut to size to allow for some room to readjust the distance of the sensors from the jacks.
+The data signals from each PCB were connected using a separate cable loom. Soldering cables and inspecting each join required another day work. This did allow for readjustments to the positon of the controller board
+Measurements of the rear chamber did not match with the MacMini that was to be used a different layout was decided for fitting the controller board/ Cutting cables to size allowed for a great deal of felxibility but at the cost of time. 
+After the first install it was clearer what constraints were in place for fittig and an alternative wiring system using flat flex cable was implement (discussed in \section)
+
+Fitting PCBs required the removal of all keys. The support brackets were assembled and screwed into the the underside. With the harpsichord on it's back the sensors were tested to ensure an expected range.
+Self-tapping round head screws were used to to attach the brackets. The screws were not over tightened to allow for brackets to move. The brackets were not easily adjusted once the key were replaced. 
+Adjusted to a best average with subsequent adjustment carried out on the microcontroller.
+
+After fitting the PCBs preliminary calibration was carried out. This mainly done to test the work flow of calibration with those unfamiliar with the system. Adjustments were made to the firmware to accomodate a new workflow
+Usage of addressable LEDs became vital as it allowed for easy identification of the key being calibrated. They were also used to identify any keys whose current reading was beyond what was expected.
+
+The rotary encoder was used as the interface to select a key, adjust it's threshold and update the Ferroelectric RAM (FRAM) with new values.
+
+A process was implemented where the key was selected by playing, but this caused problems in situations where the data was unusual due to misalignement of the sensors
+
+This would likely be a better system for when the keyboard was fully operational 
+
+The thresholds were calibrated visually utilising the serial plotter of the Arduino IDE and MIDI was confirmed using the open source MIDI Monitor (https://github.com/krevis/MIDIApps).
 
 
  - partial pre-assembly

@@ -258,15 +258,12 @@ benefits that the small model with easy internal access did not already provide.
 
 ## Electronics
 
-
-
 - Over arching themes
   - simplicity of design 
     - Limited resources
     - easily reproducible
   - availability and lead times
   - iteration and design from distance
-
 
 #### QRE1113
 
@@ -390,7 +387,13 @@ in firmware_
 The firmware was structure in a way that the interface could be changed so long
 as the code required for any other board would comply with function arguments
 and outputs. Worth noting the fragility and volatility when designing this kind
-of project and how easily it is for them to become broken.
+of project and how easily it is for the project to become broken.
+
+
+SD card would provide an easier way to interact with calibration data. The
+posiiton of the controller board did not permit easy access. reliability and
+speed was preffered over storage capacity.
+
 
 - On board available, but volatile
 - retained across firmware changes
@@ -403,12 +406,54 @@ of project and how easily it is for them to become broken.
 
 for problems of scale:
 
+Addressing the problem of scale of identifying which key's threshold is
+currently being edited. 
+
+The LEDs also allowed for easy identification for keys that were outside of
+expected values and when a key was triggered. This allowed for visual
+identification of malfunctioning or uncalibrated keys.
+
+The LEDs are on the same PCB as the sensors and are hidden when the nameboard is
+in place.
+
+Would sugggest that this is a necessity of this kind to provide a means to
+identify and diagnose LEDs with state.
+
+TLC5940 or other PWM driver such as in \cite{mcpherson} added complexity to
+assembling, but were avoid in favour of Addressable LEDs with intergrated
+driver. The intergrated LEDs share the same data line which has the limitation
+where a fualty LED will stop all following LEDs from working. An individual PWM
+driver per PCB would allow avoid situations where failutre cascades, but would
+add complexity in assembly as the parts are typically SMD. Also, given the LEDs
+are fixed to the board and could not be repaired in situ, the solution would be
+to replace the PCB regardless of which approach was taken. Given the LEDs were
+only used in debugging and calibration and otehrwise would not be visible, a
+simpler design approach was taken.
+
 - locating keys
 - displaying key state
 
 ### Multiplexing
 
 problem of scale
+
+For the 3-key model, individual jacks could be connected to one of the 8
+available ADC pins.
+
+The BLE Nano has 8 ADC pins connected to one ADC channel via a multiplexer
+
+Multiplexer added to expand to the
+
+Transistor / Op-amp circuit could have been used similar to the one in
+\cite{mcpherson}.
+
+Benefits were keeping with THT based designed for easy assembly. 
+
+An 8-channel multiplexer was chosen as the model has 49-keys and a division of 7
+PCBs each containing 7 sensors
+
+The multiplexer reduced 7 signals to a single pin. Three pins are required pins
+for addressing the muliplexewrs and all PCBs are addressed simulatenously.
 
 - limited ADC channels
 - ADC channels already multiplexed
@@ -421,7 +466,16 @@ problem of scale
 
 ### PCB design
 
-- EAGLE
+- EAGLE PCBs designed using EAGLE. Worth noting that AutoCAD has deprecated
+EAGLE and the programme will no longer be supported from 2026 Project files will
+need to be transitioned to another standard, likely the KiCAD programme. 
+
+trade off between limiting number of boards required and allowing compensation
+for variation in pitch. 
+
+Smaller PCBs means that spacing could be adjusted to accomodate the changes in
+pitch between jacks. It also allowed for a modular approach where any PCB could
+swapped for minimal cost.
 
 #### Sensor board
 
@@ -599,23 +653,65 @@ Arduino IDE and MIDI was confirmed using the open source MIDI Monitor
 
 ## Going forward
 
-
-
 - Velocity, aftertouch
 - second jack row
 - reducing latency
 - alternative sensor surfaces
+
+A limitation in the design is the variablility in positioning of tage,
+especially when they need to be reapplied. A jig was designed for applying tags,
+but could not be printed in time for installation. Even with a jig, some tags
+had to be radjusted by hand regardless. Long term this hasd impliccation on how
+to maintain the interface.
+
+Taken a different approach to what surface is used. Preliminary test were taken
+using Laser Cutting and CNC to fabricate Jack bodies. Laser cutting results in a
+loss of material that has too much ariablity. The edge o f the jack body will be
+charrred. The material also needs to be reliable. on the advice of two luthiers,
+roberto livi and Jonathan Santa Maria Bouquet at Edinburgh,   Plywood and MDF
+have problems with variations in humidity, tear-out and delamination.
+
+Some tests were carried out using a notched jack body that was 3D printed. The
+notch means that as the jack raises, the forward material acts like a shutter.
+No reasons that this could not be CNC though a variety of materials would be
+needed. Traditional material used is xx though need to test of the material is
+naturally reflective enough or if a coating would beed to be applied.
+
+
+Future novel designs for an interface that would utilise velocity and aftertouch
+messages in software. This would be applicable for numericla simulations of
+strings. A bespoke piec e of sowftare would also allow for direct mapping of
+jack rows to registers. There is enough data to implemenet functionality for
+velocity and aftertouch MIDI messages and simply needs to be activated in the
+firmware.
+
+### improvements
+
 - ESP-IDF
   - latency half
   - workload high
 
-### improvements
+A current limitation is the latency in triggering MIDI output. Currently the
+latency is around 20 ms, but should ideally be closer to 5ms.
+
+An obvious approach would be merely changing the microcontroller. A test was
+carried out using an Arduino Nano ESP32 which is a  NORA-W106, a module with a
+ESP32-S3. The benefit of this microcontroller  is that it would allow simply the
+board to be swapped and the rest of the PCB designs would be unaffected.
+
+Using the Espressif development framework ESP-IDF and follwong the same logic as
+the original firmware source, the latency was reduced to around 10ms. ESP-IDF
+allows access to functionality of the ESP32 that is not exposed in the Arduino
+libraries. It is possible that the 10ms latency could be improved upon but there
+would be a cost in the form of develoment time. Consideration would need to be
+made on how to port existing code or whether to completely re-write the
+firmware.
 
 - avoid soldering cabling
 - power indicators on pcbs
   - debug if problem is power related Add power small power LEDs to the each
-PCB. It was not incommon for a a board to not be functioning and thye result to
-be that the power weas not correctly connected. Especially when the ower is
+PCB. It was not common for a board to not be functioning and thye result to be
+that the power weas not correctly connected. Especially when the ower is
 connected via somethgin such as an FFC cable where it is easy to plug-in the
 wrong way esepcially when fitting is to be carried out by someone unfmailiar
 wiyth the system. Power LEDs would quickly confirm whether the problem was power

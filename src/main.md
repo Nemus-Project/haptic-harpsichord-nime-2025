@@ -158,6 +158,11 @@ The message format covered in \section
 
 ## Related Work and Motivation
 
+- \cite{HapticKey}
+- \cite{mcPherson1} \cite{mcPherson2}
+- \cite{Mudd2013}
+- \cite{FritzClaudia2017Leon}
+
 ## Hardware Design
 
 The hardware was designed with the xx in mind.
@@ -251,6 +256,8 @@ benefits that the small model with easy internal access did not already provide.
 #### Fig: Construction Design Diagram  
 
 #### 49-Key Prototype
+
+- for exhibition
 - problems of scale
 - problems of timescale
 
@@ -331,8 +338,6 @@ cross-talk was entirely eliminated.
 - satisfied both criteria and design restrictions
 - usage
   - Sweet spot is around 6mm distance
-- 
-
 
 #### sensor surface
 
@@ -545,6 +550,32 @@ discovered that the 3v regulator of the nano was sufficient to power all LEDs at
 a lower brightness while reducing current draw. Since brightness was not
 importnat.
 
+The 2.54mm pitch headers had two major drawbacks. First, the orientation of the
+cables could be reversed, which in the best case scenario would simply mean the
+system did not work correctly and in the worst case it could potentially damaged
+some components.
+
+Secondly, the headers do not connect securely and wait of the cabling was enough
+for components to become disconnected as the harpsichord was handled.
+
+To address this, once the wiring for the controller board was finalised a new
+design was drafted this time using JST-PH connectors. No commercial cables were
+immediately available in the configuration and length required, as such a cable
+loom needed to be made which meant crimping cables by hand. A crimping tool from
+JST is prohibitively expensive compared to the cost of other components in the
+project*. The crimping tool also appeared to be uncommon and was not readily
+available in the workshops at the projects disposal. Eventually a tool was
+found, but an alternative approach was also researched in order to maintain the
+criteria of accessibility.
+
+A locator was adapted from a creative commons stl model
+https://www.thingiverse.com/thing:1646016 that allowed a generic crimping tool
+to be adapted for use with JST-PH crimps† \figure{}. The locator was printed
+using a Bambu X1 3D printer.
+
+_** A second alterntaive was assembling cables from other sets that were at
+hand._ _* from RS https://uk.rs-online.com/web/p/crimp-tools/6880877 £508 inc
+VAT_ _† model available in the git repository_
 
 - mount for nano  to allow switching
 - initially push fit 2.54mm header
@@ -557,6 +588,26 @@ importnat.
   - 3D print helper to allow for crimping with generic crimpers
 
 ### 3D printing
+
+Access to a 3D printer is was vital to the success of the project. Given the
+proliferation of 3D printing, particular in maker spaces in universities it was
+deemed an unreasonable requirement. 3D printed parts include the support
+brackets for PCBs, the baffles for the sensors, locator for crimping JST-PH
+crimps and a mount for the MacMini used for audio synthesis.
+
+The printer used throughout the project was a Bambu X1-Carbon.
+
+Support brackets and baffles  were made for the project while the macmini
+bracket and JST locator were sourced from creative commons models. 
+
+Any colour of filament can be used, though it is advised to use a dark filament
+for the baffles.
+
+See each corresponding section for more detail on 3D printed components.
+
+- https://www.thingiverse.com/thing:1646016
+- https://www.thingiverse.com/thing:2886460
+  
 
 - Supports
   - Push fit
@@ -619,12 +670,12 @@ The project is separated into three repositories encapsulating
 
 #### Firmware
 
-Firrmware repository contains all firmware for the full and smaller models and
+Firmware repository contains all firmware for the full and smaller models and
 components.
 
 #### Keyboard
 
-The Keyboard repository contaons all plans for fabricating the keyboard,
+The Keyboard repository contains all plans for fabricating the keyboard,
 measurements and 3D models of the jacks.
 
 #### PCB
@@ -718,6 +769,12 @@ Arduino IDE and MIDI was confirmed using the open source MIDI Monitor
  
 
 ### Context
+
+Designed as part of an exhibition for the museum San Colombano in Bologna.
+Instruments is to be played by general public as a means of interacting with items in the collection that are no longer in playing condition. Audience of one who listens via headphones.
+
+The strings of the interface are damped with felt strips. The damping did change the tension and thereforew the feel of the strings so adjustments needed to be made to the tuning to accomodate for this.
+
 
 - in museum context
 - strings damped

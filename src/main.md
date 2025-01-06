@@ -771,9 +771,14 @@ Arduino IDE and MIDI was confirmed using the open source MIDI Monitor
 ### Context
 
 Designed as part of an exhibition for the museum San Colombano in Bologna.
-Instruments is to be played by general public as a means of interacting with items in the collection that are no longer in playing condition. Audience of one who listens via headphones.
+Instruments is to be played by general public as a means of interacting with
+items in the collection that are no longer in playing condition. Audience of one
+who listens via headphones.
 
-The strings of the interface are damped with felt strips. The damping did change the tension and thereforew the feel of the strings so adjustments needed to be made to the tuning to accomodate for this.
+The strings of the interface are damped with felt strips. The damping did change
+the tension and thereforew the feel of the strings so adjustments needed to be
+made to the tuning to accomodate for this.
+
 
 
 - in museum context

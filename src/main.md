@@ -352,7 +352,40 @@ cross-talk was entirely eliminated.
 
 ### Arduino 
 
-#### NanoBLE
+#### Nano BLE
+
+Arduino Nano BLE was chosen for a few reasons. The Nano form factor was
+appealing as it would allow for easy changes between chipsets without requiring
+any rewiring and thus no new PCBs would need to be created if a better
+alternative was found later in the project. Another benefit to the Arduino Nano
+boards was that typically had native-USB meaning the could be programmed as a
+hardware USB MIDI device directly.
+
+The Nano BLE specifically was used in the initial stages for the integrated IMU.
+
+When it was finalised that the prokect would proceed using the QRE1113 a number
+of microcontroller units (MCU) were condsidered.
+
+The MCUs considered were the Arduino Nano 33 IoT, Arduino Nano 33 BLE, Arduino
+Nano ESP32 and STM32 NUCLEO-L031K6.
+
+A rough performance test was later carried out using an STM32 NUCLEO-L031K6, a
+Nano ESP32 and the BLE. The Nano BLE was found to be more performative. To
+execute a single sensor read cycle of the firmware the STM32 took 40ms, and both
+the Nano ESP32 and Nano BLE required 11ms on average. The Nano ESP32 had high
+variability so it was decided to continue with the Nano BLE. Further discussion
+of using ESP32 continues in \section{Going forward}
+
+BLE functionality also meant if the cable connection between the nano and
+computer running audio synthesis was impractical, BLE MIDI was available as a
+fallback. The Nano BLE also has a 12-bit DAC, which provided a contingency
+should the default 10-bit not be sensitive enough for the signal from the
+sensors.
+
+Initially a Nano IoT was used for both WiFi and Bluetooth Low Energy
+functionality, but it was found that 2 ADC channels were in fact not useable and
+would have required additional multiplexers.
+
 
 - Nano form factor small
 - allows for easy changes in chipset
@@ -498,6 +531,21 @@ swapped for minimal cost.
 
 #### controller board
 
+Controller board designed around Arduino nano form factor. The Nano is connected
+through headers to allow easy switching between chips. Should another chip in a
+Nano for factor be found it could supplant the current Nano without any need for
+a redesign.
+
+The first version of the board esclusively used 2.54mm pitch headers. The
+reasons for this were flexibility when creating cable looms and to leave open
+the possiility of rewuring the PCB.
+
+This was the case for the LEDs as they initially wer to be powered on 5V. It was
+discovered that the 3v regulator of the nano was sufficient to power all LEDs at
+a lower brightness while reducing current draw. Since brightness was not
+importnat.
+
+
 - mount for nano  to allow switching
 - initially push fit 2.54mm header
   - not a secure fit
@@ -520,10 +568,34 @@ swapped for minimal cost.
 
 ### Power
 
-- 5V 1A
-- 
+All electronics draws around 1.1amps of current at 5V with some fluctuation
+during boot.
 
-## Software Design
+Arduino BLE has some functionality disabled to limit current draw.
+
+Ideally the unit could be bus powered from USB.
+
+The sensors are in a state of constantly drawing power. It is possible that
+powering only when data is required could be reduce power enough. 
+
+Current designs have a separate MIDI device for each jack row. Combining the
+devices and also reducing current draw to below the common 0.5 amps for a USB
+port would certainly be a challenge.
+
+## Firmware Design
+
+Arduino platform chosen for wide adoption, relative ease of use and library
+support for components. 
+
+Firmare checks components are connected then reads the FRAM to see if threshold
+data is already present. The rotary encoder and it's momentary switch are polled
+for any change in state. A key is selected with the rotary encoder while the
+momentary switch is used for changing between states for key selection and
+threshold adjustment A double click of the rotary encoder writes the current
+threshold values to FRAM. The sensors for the current multiplexer channels are
+polled. If any sensor reads above the threshold when it was previously below a
+MIDI On message is sent. For the reverse case where the value was below the
+threshold when it was previously above, a MIDI Note Off message ois sent.
 
 - Arduino platform
   - library support and portability
@@ -539,9 +611,31 @@ swapped for minimal cost.
 
 ### Project structure
 
-- firmware
-- Keyboard
-- PCB CAD
+The project is separated into three repositories encapsulating
+
+- Firmware
+- Keyboard CAD Data
+- PCB CAD Data
+
+#### Firmware
+
+Firrmware repository contains all firmware for the full and smaller models and
+components.
+
+#### Keyboard
+
+The Keyboard repository contaons all plans for fabricating the keyboard,
+measurements and 3D models of the jacks.
+
+#### PCB
+
+PCB repository contains the EAGLE files for creating the sensor and controller
+boards.
+
+Given the regular spacing of components, scripts for automatic placement of
+components based on parameter of jack pitch spacing and number of sensors per
+jack.
+
 
 ## Implementation
 

@@ -510,6 +510,8 @@ simpler design approach was taken.
 
 ### Multiplexing
 
+CD4051BE Texas Instruments
+
 problem of scale
 
 For the 3-key model, individual jacks could be connected to one of the 8
@@ -553,6 +555,14 @@ pitch between jacks. It also allowed for a modular approach where any PCB could
 swapped for minimal cost.
 
 #### Sensor board
+
+The 49 QRE1113s are divided across 7 PCBs each containing 
+
+- x7 QRE1113
+- x7 100R
+- x7 10kR
+- x1 CD4051BE Multipexer
+
 
 - jack / sensor pitch by board
 - 7 boards adjust for pitch/spacing error

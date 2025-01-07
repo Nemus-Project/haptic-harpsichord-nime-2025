@@ -257,6 +257,21 @@ benefits that the small model with easy internal access did not already provide.
 
 #### 49-Key Prototype
 
+For the final interface a 49-key (4-octave) was constructed by luthier Roberto
+Livi. The keyboard is in the same style† as the 3-key model with to jacks per
+key.
+
+The keyboard is fully enclosed and internally has two chambers, front and rear,
+in which the electronics could be installed \figure(underside 49-key).
+
+Keyboard to be used for exhibition at san colombano where it would be available
+to play by general public.
+
+Timescale: from initial discussion to delivery of interface to the NEMUS lab was
+8-months. Active assembly of the instrument was 3 months
+
+Constructed From:
+
 - for exhibition
 - problems of scale
 - problems of timescale
@@ -264,6 +279,28 @@ benefits that the small model with easy internal access did not already provide.
 #### Fig: Construction Design Diagram
 
 ## Electronics
+
+Design of electronics carried out in tandem with construction of full model.
+Since the Electronics were designed at a distanced to the final full model some
+flexbility was required in the design. Design decisions that were not as optimal
+but would allow for change in wiring and fitting should there be any issues
+during installation.
+
+Electronics designed so that they would not require any equipment outside what
+can commonly be found in a maker space at a univeristy.
+
+The equipment required including soldering suitable for throughole technology
+(THT) components and 3D printing.
+
+Laser cutting and CNC routing fascilities were used during the research for the
+project but not required for the final implementation.
+
+The idea behind this was to allow for the project to be reasonably recreated
+without procurement of any additional specialist equipment.
+
+NEMUS lab under construction during the first section of the project. Facilities
+available at the maker spaces of Bologna (Alma Labor) and Edinburgh (uCreate)
+used for what was deemed reasonable assumption in terms of available equipment.
 
 - Over arching themes
   - simplicity of design 
@@ -600,8 +637,8 @@ The printer used throughout the project was a Bambu X1-Carbon.
 Support brackets and baffles  were made for the project while the macmini
 bracket and JST locator were sourced from creative commons models. 
 
-Any colour of filament can be used, though it is advised to use a dark filament
-for the baffles.
+Any colour of filament can be used, though it is advised to use a dark coloured
+filament for the baffles.
 
 See each corresponding section for more detail on 3D printed components.
 

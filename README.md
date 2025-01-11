@@ -1,6 +1,11 @@
 # haptic-harpsichord-nime-2025
 Abstract and paper submission for NIME 2023
 
+## Limits
+
+- Abstract 200 Words
+- Paper 6000 Words
+
 
 ## Important Dates:
 _All dates are 23:59 AoE (Anywhere on Earth)_

@@ -10,7 +10,10 @@ musical instrument provides.
 
 The project look at restoring tactile and haptic response of 17th century
 harpsichords for an exhibition at the musical instrument museum San Colombano in
-Bologna. 
+Bologna. San Colombano hosts the Tagliavini Collection (from Luigi Ferdinando
+Tagliavini), a collection of approximately 80 historical keyboard instruments in
+working order
+(https://genusbononiae.it/en/san-colombano-tagliavini-collection/). 
 
 Project was also designed to allow others to easily recreate and iterate on the
 designs.
@@ -77,10 +80,24 @@ the limitation is a single data stream per key.
   - Piano Disc
 
 
+
+## Background
+
+### Why...
+
+#### ...a replica?
+
+#### ...an interface?
+
+- maintain problems
+- probe for research
+  - on haptics how it affects performance
+
 ### Motivations
 
 The project was  carried out in collaboratoiun with San Colombano. The results
 of the project would be presented as an interactive exhibition for the public.
+
 
 #### the problem
 
@@ -106,6 +123,87 @@ constraints placed on the design of the interface.
 A keyboard interface that provides a comparable physical response to a
 harpsichord. Notes should be assigned per jack and not per key.
 
+### Keyboard 
+
+#### Anatomy of Harpsichord mechanics
+
+- simple
+- aesthetics
+- split workload
+
+
+
+#### Design
+
+The desicion was made to design the elctronic sna dthe model keyboard in tandem.
+Allow for quicker development time and iteration on the idea. Likely the first
+implementation would need re-designed and redesiginng the electronics to fit the
+form of the keyboard was more cost effective than building or carrying out major
+modifications to the model.
+
+The model was designed to have two internal chambers a front and rear. The front
+and back that was xxx by yyy by 370mm between the faceplate and the jacks. The
+TONGUE THAT GOES INTO SLOT divides the chamber though a small gap between the
+under side of the soundboard and the key guides. The key guide needs to be deep
+enough to allow for the full movement of the key and stop the key becoming
+unseated. The chamber then extends to a support wall which divides the front and
+rear.
+
+Discussion of spatial constraints and affects on  electyronics design and
+installation is covered in \section{setup}
+
+The rear chamber was desigbned to house comonents for audio processing, which is
+discussed further in \section
+
+https://github.com/Nemus-Project/haptic-harpsichord-nime-2025/issues/Nemus-Project/haptic-harpsichord-nime-2025/images/disegno.pdf
+
+For the initial prototyping stage, modifying an existing harpsichord was
+considered though ultimately discarded. An existing instrument would have
+provided a test for scaling the electronics, but internal measurments and layout
+would have been too different. A harpsichord that was economic enough to be
+deconstructed would also have been of a more modern mechanical design and not of
+the design that was being recreated with the model. Prototyping stage would
+likely be invasive and damage or heavy modification likely. As such it was not a
+good use of funds as a modern instrument fit for destruction did not offer
+benefits that the small model with easy internal access did not already provide.
+
+
+### Building Process
+
+PARAGRAPH FROM ROBERTO
+
+#### 3-Key Prototype
+
+- proof of concept
+- available on loan from museum
+- easy access to internal structure
+  
+#### Fig: Construction Design Diagram  
+
+#### 49-Key Prototype
+
+For the final interface a 49-key (4-octave) was constructed by luthier Roberto
+Livi. The keyboard is in the same style† as the 3-key model with to jacks per
+key.
+
+The keyboard is fully enclosed and internally has two chambers, front and rear,
+in which the electronics could be installed \figure(underside 49-key).
+
+Keyboard to be used for exhibition at san colombano where it would be available
+to play by general public.
+
+Timescale: from initial discussion to delivery of interface to the NEMUS lab was
+8-months. Active assembly of the instrument was 3 months
+
+Constructed From:
+
+- for exhibition
+- problems of scale
+- problems of timescale
+
+#### Fig: Construction Design Diagram
+
+
 #### Design Constraints
 
 - no electronics should be visible.
@@ -125,6 +223,7 @@ possible. This also meant that designs for the eletronics would have to include
 a deal of flexibility in how they might be installed. Surplus space was added
 into the design of the internal chamber of the model \FIGURE, but there was
 still a limit given the structural and aesthatic requirements.
+
 
 #### Sensor Criteria
 
@@ -208,75 +307,6 @@ Finally, force sensitive resistors placed under the jack of each key was
 considered but was never implemented. The sensors were to be placed under each
 jack either above or below the padding on which the bottom of the jack rests.
 Further discussion of this apporach is in \section.
-
-### Keyboard Design
-
-- simple
-- aesthetics
-- split workload
-
-The desicion was made to design the elctronic sna dthe model keyboard in tandem.
-Allow for quicker development time and iteration on the idea. Likely the first
-implementation would need re-designed and redesiginng the electronics to fit the
-form of the keyboard was more cost effective than building or carrying out major
-modifications to the model.
-
-The model was designed to have two internal chambers a front and rear. The front
-and back that was xxx by yyy by 370mm between the faceplate and the jacks. The
-TONGUE THAT GOES INTO SLOT divides the chamber though a small gap between the
-under side of the soundboard and the key guides. The key guide needs to be deep
-enough to allow for the full movement of the key and stop the key becoming
-unseated. The chamber then extends to a support wall which divides the front and
-rear.
-
-Discussion of spatial constraints and affects on  electyronics design and
-installation is covered in \section{setup}
-
-The rear chamber was desigbned to house comonents for audio processing, which is
-discussed further in \section
-
-https://github.com/Nemus-Project/haptic-harpsichord-nime-2025/issues/Nemus-Project/haptic-harpsichord-nime-2025/images/disegno.pdf
-
-For the initial prototyping stage, modifying an existing harpsichord was
-considered though ultimately discarded. An existing instrument would have
-provided a test for scaling the electronics, but internal measurments and layout
-would have been too different. A harpsichord that was economic enough to be
-deconstructed would also have been of a more modern mechanical design and not of
-the design that was being recreated with the model. Prototyping stage would
-likely be invasive and damage or heavy modification likely. As such it was not a
-good use of funds as a modern instrument fit for destruction did not offer
-benefits that the small model with easy internal access did not already provide.
-
-#### 3-Key Prototype
-
-- proof of concept
-- available on loan from museum
-- easy access to internal structure
-  
-#### Fig: Construction Design Diagram  
-
-#### 49-Key Prototype
-
-For the final interface a 49-key (4-octave) was constructed by luthier Roberto
-Livi. The keyboard is in the same style† as the 3-key model with to jacks per
-key.
-
-The keyboard is fully enclosed and internally has two chambers, front and rear,
-in which the electronics could be installed \figure(underside 49-key).
-
-Keyboard to be used for exhibition at san colombano where it would be available
-to play by general public.
-
-Timescale: from initial discussion to delivery of interface to the NEMUS lab was
-8-months. Active assembly of the instrument was 3 months
-
-Constructed From:
-
-- for exhibition
-- problems of scale
-- problems of timescale
-
-#### Fig: Construction Design Diagram
 
 ## Electronics
 
@@ -642,9 +672,10 @@ deemed an unreasonable requirement. 3D printed parts include the support
 brackets for PCBs, the baffles for the sensors, locator for crimping JST-PH
 crimps and a mount for the MacMini used for audio synthesis.
 
-The printer used throughout the project was a Bambu X1-Carbon.
+The printer used throughout the project was a Bambu X1-Carbon using recycled PLA
+filament.
 
-Support brackets and baffles  were made for the project while the macmini
+Support brackets and baffles  were made for the project while the MacMini
 bracket and JST locator were sourced from creative commons models. 
 
 Any colour of filament can be used, though it is advised to use a dark coloured
@@ -789,7 +820,7 @@ removed and re-inspected. The PCB fitting process and refitting required another
 day as faults were found in wiring or misalignement of the stickers. After the
 sensors were confirmed to be functioning the keys were put back.
 
-The calibration workflow was with Craig Webb who was unfamiliar with the system.
+The calibration workflow was with Dr. Craig Webb who was unfamiliar with the system.
 Adjustments were made to the firmware to to make it more intuitive for the user.
 Addressable LEDs became vital as it allowed for easy identification of the key
 being calibrated. They were also used to identify any keys whose current reading
@@ -838,6 +869,9 @@ made to the tuning to accomodate for this.
 
 ### Calibration
 
+Finer calibration carried out with the guidance of Catalina Vincens as an expert
+harpsichord performer
+
 - sensor surface
   - printed gradient
 
@@ -880,6 +914,20 @@ No reasons that this could not be CNC though a variety of materials would be
 needed. Traditional material used is xx though need to test of the material is
 naturally reflective enough or if a coating would beed to be applied.
 
+Outputs of the NEMUS project will also include numerically simulated non-linear
+plucked string models with which the device can interact. A bespoke sound
+synthesis engine to leverage data from both jack rows which will also be
+open-sourced. Design for instrument to be compatible with standard MIDI
+instruments as well software designed for the full data output. 
+
+A second interface designed more closely to the Trasuntino style instrument
+commisioned by the NEMUS project with Roberto Livi. Using lessons learned for
+the first iteration the second can make better acommodations for internal
+electronics. Interface to be used for a performer study and used for performance
+with a numerically simulated sound syntheiss engine.
+
+Testing current sensors in conjunction with force sensitive resistors to
+research if a impulse response for the pluck can be extrapolated.
 
 Future novel designs for an interface that would utilise velocity and aftertouch
 messages in software. This would be applicable for numericla simulations of
@@ -887,6 +935,8 @@ strings. A bespoke piec e of sowftare would also allow for direct mapping of
 jack rows to registers. There is enough data to implemenet functionality for
 velocity and aftertouch MIDI messages and simply needs to be activated in the
 firmware.
+
+Evaluation
 
 ### improvements
 
@@ -929,11 +979,11 @@ A project of this breadth developed across 3 institutes and 2 countries cannot
 be carried without the support and technical knowledge of many skilled and
 passionate people.
 
-We acknoweldge the invaluable contrinbutions ofç
+We acknowledge the invaluable contributions of
 
 - Unibo
   - Alma Labor
-    - Massimiliano Fraulini and the staff of ALma Labor at the Yiversità of
+    - Massimiliano Fraulini and the staff of Alma Labor at the Yiversità of
       bologna for their 3D printing expertise and generosity with electronics
       equipment
   - Fisica Tecnica
@@ -950,5 +1000,13 @@ We acknoweldge the invaluable contrinbutions ofç
       Art for 3D printing instruction and CNC support.
     - Joe Hathaway of Digital Development at the College of Art for providing
       electronics components
+    - St Cecilia's Jenny Nex
 
 ## Reference
+
+
+### Example Trasuntino
+
+- [1538]
+  https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=106088&viewType=detailView
+- [1531]https://museumcollections.rcm.ac.uk/collection/Details/collect/58

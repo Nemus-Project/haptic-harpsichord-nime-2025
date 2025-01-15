@@ -10,12 +10,12 @@ The project look at restoring tactile and haptic response of 17th century
 harpsichords for an exhibition at the musical instrument museum San Colombano in
 Bologna. San Colombano hosts the Tagliavini Collection (from Luigi Ferdinando
 Tagliavini), a collection of approximately 70 historical keyboard instruments in
-working order \cite{Tagliavini2009}
+working order \\cite{Tagliavini2009}
 (https://genusbononiae.it/en/san-colombano-tagliavini-collection/). Some items
 in the collection are not in playing condition or are too fragile to continue to
 be available for the public to play. One of those fragile instruments in the
 Tagliavini collection is a 1547 Harpsichord by Alessandro Trasuntino
-\cite{Treccani2019}, which was used as the basis for an interactive exhibition
+\\cite{Treccani2019}, which was used as the basis for an interactive exhibition
 commisioned by San Colombano.
 
 Project was also designed to allow others to easily recreate and iterate on the
@@ -86,7 +86,7 @@ Prvious projects looking at how to approach the problems of increasing
 engagement and retaining the interction with historical musical instruments in a
 museum scenario.
 
-The paper by McAlpine \cite{McAlpine2014} also has very similar motivations to
+The paper by McAlpine \\cite{McAlpine2014} also has very similar motivations to
 the project presented here. Both were started from a musical instrument museum,
 housing a collection of historic instruments gifted by a collector (Benton
 Fletcher / Taglivaini) who wished for collection to remain playable, which is
@@ -100,12 +100,12 @@ feedback. McAlpine posits a fully paremterised haptic keyboard, but before
 taking such a leap we look at what affect a more literal haptic keyboard may
 provide to the performer experience.
 
-The previous NIME project "Tromba Moderna" \cite{Baldwin2016}, which looked at
+The previous NIME project "Tromba Moderna" \\cite{Baldwin2016}, which looked at
 reconstructing a full tromba marina to be used as a digital interface. The one
 of the limitations flagged by McAlpine was the oneffectiveness of weighted keys
 in mimicing the harpischord. The Tromba Moderna "attempted to avoid this problem
 by constructing a fully functioning replica of the tromba marina"
-\cite{Baldwin}. This project applies the same approach to the harpsichord.m
+\\cite{Baldwin}. This project applies the same approach to the harpsichord.m
 where the projects deviate is a questions of scale.
 
 Where the tromba moderna considers a single data stream this project has had to
@@ -114,7 +114,7 @@ mitigated by creating a scaled version of the sound board, provinding only the
 length of string necessary under comparable tension and thus resistance to the
 jack quill.
 
-Extension to \cite{McAlpine2014} and \cite{Baldwin2016} are the open sourcing of
+Extension to \\cite{McAlpine2014} and \\cite{Baldwin2016} are the open sourcing of
 hardware and software for the project.
 
 ## Why...
@@ -193,10 +193,10 @@ unseated. The chamber then extends to a support wall which divides the front and
 rear.
 
 Discussion of spatial constraints and affects on  electyronics design and
-installation is covered in \section{setup}
+installation is covered in \\section{setup}
 
 The rear chamber was desigbned to house comonents for audio processing, which is
-discussed further in \section
+discussed further in \\section
 
 https://github.com/Nemus-Project/haptic-harpsichord-nime-2025/issues/Nemus-Project/haptic-harpsichord-nime-2025/images/disegno.pdf
 
@@ -230,7 +230,7 @@ Livi. The keyboard is in the same style† as the 3-key model with to jacks per
 key.
 
 The keyboard is fully enclosed and internally has two chambers, front and rear,
-in which the electronics could be installed \figure(underside 49-key).
+in which the electronics could be installed \\figure(underside 49-key).
 
 Keyboard to be used for exhibition at san colombano where it would be available
 to play by general public.
@@ -264,7 +264,7 @@ yet exist.
 Accomodations were made in the design to allow for as much flexibility as
 possible. This also meant that designs for the eletronics would have to include
 a deal of flexibility in how they might be installed. Surplus space was added
-into the design of the internal chamber of the model \FIGURE, but there was
+into the design of the internal chamber of the model \\FIGURE, but there was
 still a limit given the structural and aesthatic requirements.
 
 
@@ -296,14 +296,14 @@ For the first iteration the data from the sensor would simply be used to test
 when a threshold had been passed. On passing the threshold a message would be
 sent to trigger the playback of a corresponding note. 
 
-The message format covered in \section
+The message format covered in \\section
 
 # Related Work and Motivation
 
-- \cite{HapticKey}
-- \cite{mcPherson1} \cite{mcPherson2}
-- \cite{Mudd2013}
-- \cite{FritzClaudia2017Leon}
+- \\cite{HapticKey}
+- \\cite{mcPherson1} \\cite{mcPherson2}
+- \\cite{Mudd2013}
+- \\cite{FritzClaudia2017Leon}
 
 # Hardware Design
 
@@ -311,7 +311,7 @@ The hardware was designed with the xx in mind.
 
 Using a similalr apporach to @HapticKey the first step was to fabricate or
 procure a model of a single working key. San Colombano provided a model 3-key of
-a harposchord mechanism by Graziano Bandini \FIGURE. The 3-key model was used a
+a harposchord mechanism by Graziano Bandini \\FIGURE. The 3-key model was used a
 test-bed for potential sensors while designs were drawn for a full-scale model.
 The cross-sectional nature of the model meant it was easy to fit and remove
 sensors. Small size meant that it would also be easy to transfer between
@@ -349,7 +349,7 @@ electronics would be more difficult.
 Finally, force sensitive resistors placed under the jack of each key was
 considered but was never implemented. The sensors were to be placed under each
 jack either above or below the padding on which the bottom of the jack rests.
-Further discussion of this apporach is in \section.
+Further discussion of this apporach is in \\section.
 
 # Electronics
 
@@ -384,14 +384,14 @@ used for what was deemed reasonable assumption in terms of available equipment.
 
 ### QRE1113
 
-Following from the work in \cite{McPherson1} \cite{McPherson2} we tested a
-system using the Fairchild QRE1113 \datasheetfigue. The QRE1113 is a combination
+Following from the work in \\cite{McPherson1} \\cite{McPherson2} we tested a
+system using the Fairchild QRE1113 \\datasheetfigue. The QRE1113 is a combination
 infrared LED and phototransistor sensitive to IR light. The phototransistor of
 QRE1113 provides data on how much light is present and in particular how much
 light is being relfected from a surface. Since refelected light will be
 proportional to the distance of a surfcae it is a good, close proximity,
 distance sensor. Distance is the way in which the instruments in
-\citeMcpherson1&2 function as well the Moog Piano Bar from which it too
+\\citeMcpherson1&2 function as well the Moog Piano Bar from which it too
 inspiration.
 
 The limitation for taking a distance approach is that there is not one but 2
@@ -489,7 +489,7 @@ Nano ESP32 and the BLE. The Nano BLE was found to be more performative. To
 execute a single sensor read cycle of the firmware the STM32 took 40ms, and both
 the Nano ESP32 and Nano BLE required 11ms on average. The Nano ESP32 had high
 variability so it was decided to continue with the Nano BLE. Further discussion
-of using ESP32 continues in \section{Going forward}
+of using ESP32 continues in \\section{Going forward}
 
 BLE functionality also meant if the cable connection between the nano and
 computer running audio synthesis was impractical, BLE MIDI was available as a
@@ -567,7 +567,7 @@ in place.
 Would sugggest that this is a necessity of this kind to provide a means to
 identify and diagnose LEDs with state.
 
-TLC5940 or other PWM driver such as in \cite{mcpherson} added complexity to
+TLC5940 or other PWM driver such as in \\cite{mcpherson} added complexity to
 assembling, but were avoid in favour of Addressable LEDs with intergrated
 driver. The intergrated LEDs share the same data line which has the limitation
 where a fualty LED will stop all following LEDs from working. An individual PWM
@@ -595,7 +595,7 @@ The BLE Nano has 8 ADC pins connected to one ADC channel via a multiplexer
 Multiplexer added to expand to the
 
 Transistor / Op-amp circuit could have been used similar to the one in
-\cite{mcpherson}.
+\\cite{mcpherson}.
 
 Benefits were keeping with THT based designed for easy assembly. 
 
@@ -690,7 +690,7 @@ criteria of accessibility.
 
 A locator was adapted from a creative commons stl model
 https://www.thingiverse.com/thing:1646016 that allowed a generic crimping tool
-to be adapted for use with JST-PH crimps† \figure{}. The locator was printed
+to be adapted for use with JST-PH crimps† \\figure{}. The locator was printed
 using a Bambu X1 3D printer.
 
 _** A second alterntaive was assembling cables from other sets that were at
@@ -823,8 +823,8 @@ the first week of November in 2024.
 
 A misreading in the original clearance between the keys and the PCB meant that
 the keys wer block entirely from moving. A 10mm by 15mm section was milled out
-of each lke \FIGURE to create extra clearance. The milling required the removal,
-shortening and refitting of the leather pads for the jacks \FIGURE. The extra
+of each lke \\FIGURE to create extra clearance. The milling required the removal,
+shortening and refitting of the leather pads for the jacks \\FIGURE. The extra
 work added an extra day to the full install.
 
 A redesign of the PCBs meant that removing the material would no longer be
@@ -840,7 +840,7 @@ match with the MacMini that was to be used a different layout was decided for
 fitting the controller board/ Cutting cables to size allowed for a great deal of
 felxibility but at the cost of time. After the first install it was clearer what
 constraints were in place for fittig and an alternative wiring system using flat
-flex cable was implement (discussed in \section)
+flex cable was implement (discussed in \\section)
 
 Fitting PCBs required the removal of all keys. The support brackets were
 assembled and screwed into the the underside. With the harpsichord on it's back

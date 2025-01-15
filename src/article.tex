@@ -10,13 +10,15 @@ The project look at restoring tactile and haptic response of 17th
 century harpsichords for an exhibition at the musical instrument museum
 San Colombano in Bologna. San Colombano hosts the Tagliavini Collection
 (from Luigi Ferdinando Tagliavini), a collection of approximately 70
-historical keyboard instruments in working order \cite{Tagliavini2009}
+historical keyboard instruments in working order
+\textbackslash cite\{Tagliavini2009\}
 (https://genusbononiae.it/en/san-colombano-tagliavini-collection/). Some
 items in the collection are not in playing condition or are too fragile
 to continue to be available for the public to play. One of those fragile
 instruments in the Tagliavini collection is a 1547 Harpsichord by
-Alessandro Trasuntino \cite{Treccani2019}, which was used as the basis
-for an interactive exhibition commisioned by San Colombano.
+Alessandro Trasuntino \textbackslash cite\{Treccani2019\}, which was
+used as the basis for an interactive exhibition commisioned by San
+Colombano.
 
 Project was also designed to allow others to easily recreate and iterate
 on the designs.
@@ -113,29 +115,31 @@ Prvious projects looking at how to approach the problems of increasing
 engagement and retaining the interction with historical musical
 instruments in a museum scenario.
 
-The paper by McAlpine \cite{McAlpine2014} also has very similar
-motivations to the project presented here. Both were started from a
-musical instrument museum, housing a collection of historic instruments
-gifted by a collector (Benton Fletcher / Taglivaini) who wished for
-collection to remain playable, which is restricted growing fragility of
-some items in the respective collections. Bothe projects center around
-the creation of a custioom MIDI controller for interfacing with sound
-synthesis engine. The keyboard consisted of two modified commercial MIDI
-keyboard controllers in a two manual harpsichord arrangement. Weherease
-the McAlpine keyboard used weighted keys, this interface extends the
-idea by using the mechanism and strings under tension to provide the
-haptic feedback. McAlpine posits a fully paremterised haptic keyboard,
-but before taking such a leap we look at what affect a more literal
-haptic keyboard may provide to the performer experience.
+The paper by McAlpine \textbackslash cite\{McAlpine2014\} also has very
+similar motivations to the project presented here. Both were started
+from a musical instrument museum, housing a collection of historic
+instruments gifted by a collector (Benton Fletcher / Taglivaini) who
+wished for collection to remain playable, which is restricted growing
+fragility of some items in the respective collections. Bothe projects
+center around the creation of a custioom MIDI controller for interfacing
+with sound synthesis engine. The keyboard consisted of two modified
+commercial MIDI keyboard controllers in a two manual harpsichord
+arrangement. Weherease the McAlpine keyboard used weighted keys, this
+interface extends the idea by using the mechanism and strings under
+tension to provide the haptic feedback. McAlpine posits a fully
+paremterised haptic keyboard, but before taking such a leap we look at
+what affect a more literal haptic keyboard may provide to the performer
+experience.
 
-The previous NIME project ``Tromba Moderna'' \cite{Baldwin2016}, which
-looked at reconstructing a full tromba marina to be used as a digital
-interface. The one of the limitations flagged by McAlpine was the
-oneffectiveness of weighted keys in mimicing the harpischord. The Tromba
-Moderna ``attempted to avoid this problem by constructing a fully
-functioning replica of the tromba marina'' \cite{Baldwin}. This project
-applies the same approach to the harpsichord.m where the projects
-deviate is a questions of scale.
+The previous NIME project ``Tromba Moderna''
+\textbackslash cite\{Baldwin2016\}, which looked at reconstructing a
+full tromba marina to be used as a digital interface. The one of the
+limitations flagged by McAlpine was the oneffectiveness of weighted keys
+in mimicing the harpischord. The Tromba Moderna ``attempted to avoid
+this problem by constructing a fully functioning replica of the tromba
+marina'' \textbackslash cite\{Baldwin\}. This project applies the same
+approach to the harpsichord.m where the projects deviate is a questions
+of scale.
 
 Where the tromba moderna considers a single data stream this project has
 had to address 98 and the problems that come with increasing scale.
@@ -143,8 +147,9 @@ Material costs mitigated by creating a scaled version of the sound
 board, provinding only the length of string necessary under comparable
 tension and thus resistance to the jack quill.
 
-Extension to \cite{McAlpine2014} and \cite{Baldwin2016} are the open
-sourcing of hardware and software for the project.
+Extension to \textbackslash cite\{McAlpine2014\} and
+\textbackslash cite\{Baldwin2016\} are the open sourcing of hardware and
+software for the project.
 
 \subsection{Why\ldots{}}\label{why}
 
@@ -253,9 +258,7 @@ the key and stop the key becoming unseated. The chamber then extends to
 a support wall which divides the front and rear.
 
 Discussion of spatial constraints and affects on electyronics design and
-installation is covered in
-
-\section{setup}
+installation is covered in \textbackslash section\{setup\}
 
 The rear chamber was desigbned to house comonents for audio processing,
 which is discussed further in \textbackslash section
@@ -299,8 +302,8 @@ Roberto Livi. The keyboard is in the same style† as the 3-key model with
 to jacks per key.
 
 The keyboard is fully enclosed and internally has two chambers, front
-and rear, in which the electronics could be installed \figure(underside
-49-key).
+and rear, in which the electronics could be installed
+\textbackslash figure(underside 49-key).
 
 Keyboard to be used for exhibition at san colombano where it would be
 available to play by general public.
@@ -346,1213 +349,1214 @@ Accomodations were made in the design to allow for as much flexibility
 as possible. This also meant that designs for the eletronics would have
 to include a deal of flexibility in how they might be installed. Surplus
 space was added into the design of the internal chamber of the model
-\\FIGURE, but there was still a limit given the structural and aesthatic
-requirements.
-
-% \subsubsection{Sensor Criteria}\label{sensor-criteria}
-
-% A set of criteria was drawn to which the final sensor system would have
-% to satisfy. This criteria was used as a means of evaluating the
-% feasability throughout the prototyping phase.
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   Non-invasive: The sensor system should not require major modifications
-%   to the interface on which it is installed.
-% \item
-%   Low Latency: Reading sensors and then triggering an output should have
-%   a low latency. Using {[}paper on latency{]} a target was set as X ms
-%   with an upper limit set to 25ms beyond which the sensors would be
-%   deemed unusable
-% \item
-%   Reliable: Data obtained should be reliable and accurate enough not to
-%   result in false positives or false negatives without extensive
-%   filtering
-% \item
-%   Scalable: The system should be scalable both economically and
-%   temporally. Given the open soucre nature of the porject, it could not
-%   be prohibitvely expensive to carry out. Also any system that would
-%   work on a single key would have to scale financially to potentially 50
-%   or more. The time required to install and calibrate the sensors would
-%   also have to scale.
-% \item
-%   Expandable: Any sensor system should be functionally expandable to
-%   allow for the usage of the data for control over other parameters.
-% \end{itemize}
-
-% \subsubsection{Triggering a note}\label{triggering-a-note}
-
-% For the first iteration the data from the sensor would simply be used to
-% test when a threshold had been passed. On passing the threshold a
-% message would be sent to trigger the playback of a corresponding note.
-
-% The message format covered in \textbackslash section
-
-% \section{Related Work and Motivation}\label{related-work-and-motivation}
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   \cite{HapticKey}
-% \item
-%   \cite{mcPherson1} \cite{mcPherson2}
-% \item
-%   \cite{Mudd2013}
-% \item
-%   \cite{FritzClaudia2017Leon}
-% \end{itemize}
-
-% \section{Hardware Design}\label{hardware-design}
-
-% The hardware was designed with the xx in mind.
-
-% Using a similalr apporach to @HapticKey the first step was to fabricate
-% or procure a model of a single working key. San Colombano provided a
-% model 3-key of a harposchord mechanism by Graziano Bandini \FIGURE. The
-% 3-key model was used a test-bed for potential sensors while designs were
-% drawn for a full-scale model. The cross-sectional nature of the model
-% meant it was easy to fit and remove sensors. Small size meant that it
-% would also be easy to transfer between workshops.
-
-% 3-key model also had a sliding jack rail which allowed for easy
-% disengagement of the physical mechanical response, which allowed for
-% some preliminary tests on the presence and absence of mechanism.
-
-% \subsection{Failed sensors}\label{failed-sensors}
-
-% A number of sensors were tried before the final system was decided upon.
-% An inertial measurment unit (IMU) was mounted to a single key which
-% contained a 6 degrees of freedome acceleromoetr and gyroscope. There was
-% a consistent set of conditions to trigger sound, but this was not easily
-% differntiable when other keys were played. The fitting time and cost of
-% a single IMU could b reduced when purchased in bulk but was far greater
-% than other systems considered.
-
-% A reed sensor and a hall sensor were mounted and magnets embedded within
-% the jacks. Adjusting the hieight of the sensor provided a reliable means
-% of detecting a threshold, inparticular the hall sensors which could be
-% partially calibrarted physically and also in softwrae. The time taken to
-% calibarte a single key was time consuming. Ideally each sensor would be
-% placed on a thread for adjustment, but given the constraints on the
-% internal space it was decided any adjustment of heights would likely
-% mean an unnacceptable length of time to install and calibrate. Embedding
-% magnets into the jacks was also did not satisfy the criteria of being
-% scalable and non-invasive.
-
-% Light dependant resistor mounted to the jack rail. as jacks were pressed
-% less light would be let through. Usable data but very dependant on
-% lighting conditions. Modifying the jack also did not satisfy the
-% non-intrusive criteria and the placement outside the internal chamber of
-% the model meant hiding electronics would be more difficult.
-
-% Finally, force sensitive resistors placed under the jack of each key was
-% considered but was never implemented. The sensors were to be placed
-% under each jack either above or below the padding on which the bottom of
-% the jack rests. Further discussion of this apporach is in
-% \textbackslash section.
-
-% \section{Electronics}\label{electronics}
-
-% Design of electronics carried out in tandem with construction of full
-% model. Since the Electronics were designed at a distanced to the final
-% full model some flexbility was required in the design. Design decisions
-% that were not as optimal but would allow for change in wiring and
-% fitting should there be any issues during installation.
-
-% Electronics designed so that they would not require any equipment
-% outside what can commonly be found in a maker space at a univeristy.
-
-% The equipment required including soldering suitable for throughole
-% technology (THT) components and 3D printing.
-
-% Laser cutting and CNC routing fascilities were used during the research
-% for the project but not required for the final implementation.
-
-% The idea behind this was to allow for the project to be reasonably
-% recreated without procurement of any additional specialist equipment.
-
-% NEMUS lab under construction during the first section of the project.
-% Facilities available at the maker spaces of Bologna (Alma Labor) and
-% Edinburgh (uCreate) used for what was deemed reasonable assumption in
-% terms of available equipment.
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   Over arching themes
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     simplicity of design
-
-%     \begin{itemize}
-%     \tightlist
-%     \item
-%       Limited resources
-%     \item
-%       easily reproducible
-%     \end{itemize}
-%   \item
-%     availability and lead times
-%   \item
-%     iteration and design from distance
-%   \end{itemize}
-% \end{itemize}
-
-% \subsubsection{QRE1113}\label{qre1113}
-
-% Following from the work in \cite{McPherson1} \cite{McPherson2} we tested
-% a system using the Fairchild QRE1113 \datasheetfigue. The QRE1113 is a
-% combination infrared LED and phototransistor sensitive to IR light. The
-% phototransistor of QRE1113 provides data on how much light is present
-% and in particular how much light is being relfected from a surface.
-% Since refelected light will be proportional to the distance of a surfcae
-% it is a good, close proximity, distance sensor. Distance is the way in
-% which the instruments in \citeMcpherson1\&2 function as well the Moog
-% Piano Bar from which it too inspiration.
-
-% The limitation for taking a distance approach is that there is not one
-% but 2 jacks per key. For each jack to be measured indepeedntly the data
-% would need tp com fropm the jacks themselves.
-
-% They \emph{could} be used and individual trigger points set in
-% calibration, but this creates new problems.
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   The triggering would need to be bespoke for every key as fluxuations
-%   in the dimensions of every piece mean that the threshold would be
-%   different.
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     Moving a problem into additional time in the calibtraryoin setup
-%     phase.
-%   \end{itemize}
-% \item
-%   Remebering the constraint that system isshould noyt fix problem, there
-%   would be no easy way to tell if a jack had nbot reseated.
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     In playing a harpihchord when the jack does not go to its rest
-%     position, not note would play. This fault should be carried over
-%     intp the final instrument.
-%   \end{itemize}
-% \end{itemize}
-
-% Another common application of the QRE1113 is within line following
-% robots, where an array of QRE1113s ar used in conjunction with black
-% tape along which some motorised system can following
-
-% Applied to the jacks was a greyscale gradient printed the length full
-% travel range of the jack.
-
-% For the first iteration this was performed on an inkjet printer and
-% double-sided tape. For the final iteration the stickers were printed on
-% (Coala, 1D 100 Gloss P, gloss, white, permanent adhesive, 300g/m2, 100
-% µm, 1370mm x 50.00m, Solvent/Latex/UV) using a HP Latex 115 and then
-% cutout with a Summa 150 roll cutter. The printer and roll cutter greatly
-% reduced the manual labour for cutting stickers meaning the process would
-% scale from the 3-key to the 49-key model.
-
-% An initial sticker design was used that contained only the gradient. It
-% was found that the jacks wer sticking in their slots andthe edges on the
-% stickers easily peeled around the printing The sticker was redesigned to
-% be the full length of the jack which avoided the problem of peeling. The
-% larger are also mean the stickers adhered betterto the jack Some
-% trimming was still required of each sticker to avoid them adding extraa
-% resistence to the jack's movement.
-
-% During testing it was found that their was a considerable amount
-% cross-talk bwteen adjacent sensors. This meant the reading from key
-% would be affected by the movement of the key next to it. The cross-talk
-% was assumed to be as a result of light reflecting from other jacks.
-% Given that IR is used this was difficult to confirm by sight. A set of
-% baffles was designed for the pcb that would wrap round the jack and stop
-% light from other jacks or sensors. Baffles were printed on BAMBU X1 3D
-% printers using PLA plastic. A dark pigmented PLA was used to avoid IR
-% light simply being diffused. After the baffles were fitted the
-% cross-talk was entirely eliminated.
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   previous use
-% \item
-%   problem of what to sense
-% \item
-%   satisfied both criteria and design restrictions
-% \item
-%   usage
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     Sweet spot is around 6mm distance
-%   \end{itemize}
-% \end{itemize}
-
-% \subsubsection{sensor surface}\label{sensor-surface}
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   linear gradient
-% \item
-%   on Jack
-% \item
-%   printed and cut on vinyl {[}find name{]}
-% \item
-%   cut to travel size
-% \item
-%   then to jack size
-% \item
-%   jacks varnished on side
-% \item
-%   alternatives
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     CNC plywood and mdf
-
-%     \begin{itemize}
-%     \tightlist
-%     \item
-%       problems
-%     \end{itemize}
-%   \item
-%     laser cut plywood and mdf
-
-%     \begin{itemize}
-%     \tightlist
-%     \item
-%       problems
-%     \end{itemize}
-%   \item
-%     3D printed jack body
-
-%     \begin{itemize}
-%     \tightlist
-%     \item
-%       problems
-%     \end{itemize}
-%   \end{itemize}
-% \end{itemize}
-
-% \subsection{Arduino}\label{arduino}
-
-% \subsubsection{Nano BLE}\label{nano-ble}
-
-% Arduino Nano BLE was chosen for a few reasons. The Nano form factor was
-% appealing as it would allow for easy changes between chipsets without
-% requiring any rewiring and thus no new PCBs would need to be created if
-% a better alternative was found later in the project. Another benefit to
-% the Arduino Nano boards was that typically had native-USB meaning the
-% could be programmed as a hardware USB MIDI device directly.
-
-% The Nano BLE specifically was used in the initial stages for the
-% integrated IMU.
-
-% When it was finalised that the prokect would proceed using the QRE1113 a
-% number of microcontroller units (MCU) were condsidered.
-
-% The MCUs considered were the Arduino Nano 33 IoT, Arduino Nano 33 BLE,
-% Arduino Nano ESP32 and STM32 NUCLEO-L031K6.
-
-% A rough performance test was later carried out using an STM32
-% NUCLEO-L031K6, a Nano ESP32 and the BLE. The Nano BLE was found to be
-% more performative. To execute a single sensor read cycle of the firmware
-% the STM32 took 40ms, and both the Nano ESP32 and Nano BLE required 11ms
-% on average. The Nano ESP32 had high variability so it was decided to
-% continue with the Nano BLE. Further discussion of using ESP32 continues
-% in
-
-% \section{Going forward}
-
-% BLE functionality also meant if the cable connection between the nano
-% and computer running audio synthesis was impractical, BLE MIDI was
-% available as a fallback. The Nano BLE also has a 12-bit DAC, which
-% provided a contingency should the default 10-bit not be sensitive enough
-% for the signal from the sensors.
-
-% Initially a Nano IoT was used for both WiFi and Bluetooth Low Energy
-% functionality, but it was found that 2 ADC channels were in fact not
-% useable and would have required additional multiplexers.
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   Nano form factor small
-% \item
-%   allows for easy changes in chipset
-% \item
-%   ``Native USB''
-%   https://learn.adafruit.com/dude-where-s-my-com-port/native-usb-boards\#
-% \item
-%   BLE Model
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     Performative
-%   \item
-%     BLE capabilities for MIDI BLE transmission
-%   \item
-%     All analog pins available
-%   \item
-%     available at the time
-%   \item
-%     12-bit DAC
-%   \end{itemize}
-% \end{itemize}
-
-% \subsection{EEPROM / NVRAM / FRAM}\label{eeprom-nvram-fram}
-
-% There would need to be the ability to store values on non-volatile
-% memory so that the electroincs could be powered-down without losing
-% data.
-
-% Adjusting the values through firmware would not have been flexible or
-% practical. Instead an Ferroelectric RAM unit was chosen and connected
-% using an SPI interface. NVRAM or EEPROM would have sufficed and the FRAM
-% was primarily chosen for it's ready availability.
-
-% Most microcontrollers have some variety of non-volatile program memory
-% that can be read and writ accessed but in most cases this memory is
-% cleared during compilation and re-flashing. The small cost was far
-% outweighed by the potential for data loss if using onboard RAM.
-
-% \emph{It is worth noting that the FRAM model chosen stopped being
-% available during the project, meaning any future iteration would need to
-% adjust for another board in firmware}
-
-% The firmware was structure in a way that the interface could be changed
-% so long as the code required for any other board would comply with
-% function arguments and outputs. Worth noting the fragility and
-% volatility when designing this kind of project and how easily it is for
-% the project to become broken.
-
-% SD card would provide an easier way to interact with calibration data.
-% The posiiton of the controller board did not permit easy access.
-% reliability and speed was preffered over storage capacity.
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   On board available, but volatile
-% \item
-%   retained across firmware changes
-% \item
-%   small,
-% \item
-%   could have been sd card or anything else
-% \item
-%   available
-% \item
-%   interfaced via rotary encoder
-% \end{itemize}
-
-% \subsection{RGB LEDs}\label{rgb-leds}
-
-% for problems of scale:
-
-% Addressing the problem of scale of identifying which key's threshold is
-% currently being edited.
-
-% The LEDs also allowed for easy identification for keys that were outside
-% of expected values and when a key was triggered. This allowed for visual
-% identification of malfunctioning or uncalibrated keys.
-
-% The LEDs are on the same PCB as the sensors and are hidden when the
-% nameboard is in place.
-
-% Would sugggest that this is a necessity of this kind to provide a means
-% to identify and diagnose LEDs with state.
-
-% TLC5940 or other PWM driver such as in \cite{mcpherson} added complexity
-% to assembling, but were avoid in favour of Addressable LEDs with
-% intergrated driver. The intergrated LEDs share the same data line which
-% has the limitation where a fualty LED will stop all following LEDs from
-% working. An individual PWM driver per PCB would allow avoid situations
-% where failutre cascades, but would add complexity in assembly as the
-% parts are typically SMD. Also, given the LEDs are fixed to the board and
-% could not be repaired in situ, the solution would be to replace the PCB
-% regardless of which approach was taken. Given the LEDs were only used in
-% debugging and calibration and otehrwise would not be visible, a simpler
-% design approach was taken.
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   locating keys
-% \item
-%   displaying key state
-% \end{itemize}
-
-% \subsection{Multiplexing}\label{multiplexing}
-
-% CD4051BE Texas Instruments
-
-% problem of scale
-
-% For the 3-key model, individual jacks could be connected to one of the 8
-% available ADC pins.
-
-% The BLE Nano has 8 ADC pins connected to one ADC channel via a
-% multiplexer
-
-% Multiplexer added to expand to the
-
-% Transistor / Op-amp circuit could have been used similar to the one in
-% \cite{mcpherson}.
-
-% Benefits were keeping with THT based designed for easy assembly.
-
-% An 8-channel multiplexer was chosen as the model has 49-keys and a
-% division of 7 PCBs each containing 7 sensors
-
-% The multiplexer reduced 7 signals to a single pin. Three pins are
-% required pins for addressing the muliplexewrs and all PCBs are addressed
-% simulatenously.
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   limited ADC channels
-% \item
-%   ADC channels already multiplexed
-% \item
-%   simple
-% \item
-%   8 channel
-% \item
-%   THT
-% \item
-%   7 into 49
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     7 PCBS
-%   \item
-%     each with 7 sensors
-%   \end{itemize}
-% \end{itemize}
-
-% \subsection{PCB design}\label{pcb-design}
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   EAGLE PCBs designed using EAGLE. Worth noting that AutoCAD has
-%   deprecated EAGLE and the programme will no longer be supported from
-%   2026 Project files will need to be transitioned to another standard,
-%   likely the KiCAD programme.
-% \end{itemize}
-
-% trade off between limiting number of boards required and allowing
-% compensation for variation in pitch.
-
-% Smaller PCBs means that spacing could be adjusted to accomodate the
-% changes in pitch between jacks. It also allowed for a modular approach
-% where any PCB could swapped for minimal cost.
-
-% \subsubsection{Sensor board}\label{sensor-board}
-
-% The 49 QRE1113s are divided across 7 PCBs each containing
-
-% \begin{itemize}
-% \item
-%   x7 QRE1113
-% \item
-%   x7 100R
-% \item
-%   x7 10kR
-% \item
-%   x1 CD4051BE Multipexer
-% \item
-%   jack / sensor pitch by board
-% \item
-%   7 boards adjust for pitch/spacing error
-% \item
-%   modular, replaceable
-% \item
-%   orientation problems
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     legs break easily
-%   \item
-%     end mount like A.P.Mc. time consuming
-%   \item
-%     problem
-
-%     \begin{itemize}
-%     \tightlist
-%     \item
-%       milling out keys
-%     \end{itemize}
-%   \end{itemize}
-% \item
-%   designed from distance
-% \item
-%   striped lines across pcbs
-% \item
-%   problems
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     additional terminals uneeded resulted in lots of additional work
-%   \item
-%     long cabling increase risk of breaking
-%   \end{itemize}
-% \item
-%   solutions
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     striping all adc lines with FFC
-%   \item
-%     solder pads to select channel
-%   \end{itemize}
-% \end{itemize}
-
-% \subsubsection{controller board}\label{controller-board}
-
-% Controller board designed around Arduino nano form factor. The Nano is
-% connected through headers to allow easy switching between chips. Should
-% another chip in a Nano for factor be found it could supplant the current
-% Nano without any need for a redesign.
-
-% The first version of the board esclusively used 2.54mm pitch headers.
-% The reasons for this were flexibility when creating cable looms and to
-% leave open the possiility of rewuring the PCB.
-
-% This was the case for the LEDs as they initially wer to be powered on
-% 5V. It was discovered that the 3v regulator of the nano was sufficient
-% to power all LEDs at a lower brightness while reducing current draw.
-% Since brightness was not importnat.
-
-% The 2.54mm pitch headers had two major drawbacks. First, the orientation
-% of the cables could be reversed, which in the best case scenario would
-% simply mean the system did not work correctly and in the worst case it
-% could potentially damaged some components.
-
-% Secondly, the headers do not connect securely and wait of the cabling
-% was enough for components to become disconnected as the harpsichord was
-% handled.
-
-% To address this, once the wiring for the controller board was finalised
-% a new design was drafted this time using JST-PH connectors. No
-% commercial cables were immediately available in the configuration and
-% length required, as such a cable loom needed to be made which meant
-% crimping cables by hand. A crimping tool from JST is prohibitively
-% expensive compared to the cost of other components in the project*. The
-% crimping tool also appeared to be uncommon and was not readily available
-% in the workshops at the projects disposal. Eventually a tool was found,
-% but an alternative approach was also researched in order to maintain the
-% criteria of accessibility.
-
-% A locator was adapted from a creative commons stl model
-% https://www.thingiverse.com/thing:1646016 that allowed a generic
-% crimping tool to be adapted for use with JST-PH crimps† \figure{}. The
-% locator was printed using a Bambu X1 3D printer.
-
-% \emph{** A second alterntaive was assembling cables from other sets that
-% were at hand.} \emph{* from RS
-% https://uk.rs-online.com/web/p/crimp-tools/6880877 £508 inc VAT} \emph{†
-% model available in the git repository}
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   mount for nano to allow switching
-% \item
-%   initially push fit 2.54mm header
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     not a secure fit
-%   \end{itemize}
-% \item
-%   JST-PH used
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     crimping required custom cables
-
-%     \begin{itemize}
-%     \tightlist
-%     \item
-%       could be assembled from other cables
-%     \item
-%       length limited
-%     \end{itemize}
-%   \item
-%     prohibitevly expensive to crimpers
-%   \item
-%     3D print helper to allow for crimping with generic crimpers
-%   \end{itemize}
-% \end{itemize}
-
-% \subsection{3D printing}\label{d-printing}
-
-% Access to a 3D printer is was vital to the success of the project. Given
-% the proliferation of 3D printing, particular in maker spaces in
-% universities it was deemed an unreasonable requirement. 3D printed parts
-% include the support brackets for PCBs, the baffles for the sensors,
-% locator for crimping JST-PH crimps and a mount for the MacMini used for
-% audio synthesis.
-
-% The printer used throughout the project was a Bambu X1-Carbon using
-% recycled PLA filament.
-
-% Support brackets and baffles were made for the project while the MacMini
-% bracket and JST locator were sourced from creative commons models.
-
-% Any colour of filament can be used, though it is advised to use a dark
-% coloured filament for the baffles.
-
-% See each corresponding section for more detail on 3D printed components.
-
-% \begin{itemize}
-% \item
-%   https://www.thingiverse.com/thing:1646016
-% \item
-%   https://www.thingiverse.com/thing:2886460
-% \item
-%   Supports
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     Push fit
-%   \item
-%     adjustable for best average placement
-%   \end{itemize}
-% \item
-%   Blinkers
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     reduce noise from other senors
-%   \end{itemize}
-% \item
-%   mounts
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     MacMini
-%   \end{itemize}
-% \end{itemize}
-
-% \subsection{Power}\label{power}
-
-% All electronics draws around 1.1amps of current at 5V with some
-% fluctuation during boot.
-
-% Arduino BLE has some functionality disabled to limit current draw.
-
-% Ideally the unit could be bus powered from USB.
-
-% The sensors are in a state of constantly drawing power. It is possible
-% that powering only when data is required could be reduce power enough.
-
-% Current designs have a separate MIDI device for each jack row. Combining
-% the devices and also reducing current draw to below the common 0.5 amps
-% for a USB port would certainly be a challenge.
-
-% \section{Firmware Design}\label{firmware-design}
-
-% Arduino platform chosen for wide adoption, relative ease of use and
-% library support for components.
-
-% Firmare checks components are connected then reads the FRAM to see if
-% threshold data is already present. The rotary encoder and it's momentary
-% switch are polled for any change in state. A key is selected with the
-% rotary encoder while the momentary switch is used for changing between
-% states for key selection and threshold adjustment A double click of the
-% rotary encoder writes the current threshold values to FRAM. The sensors
-% for the current multiplexer channels are polled. If any sensor reads
-% above the threshold when it was previously below a MIDI On message is
-% sent. For the reverse case where the value was below the threshold when
-% it was previously above, a MIDI Note Off message ois sent.
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   Arduino platform
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     library support and portability
-%   \item
-%     dependancy management
-%   \item
-%     wide spread use
-%   \end{itemize}
-% \item
-%   core algorithm
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     check components connected
-%   \item
-%     READ data from FRAM
-%   \item
-%     select key with rotary
-
-%     \begin{itemize}
-%     \tightlist
-%     \item
-%       click to edit, double to save
-%     \end{itemize}
-%   \item
-%     current threshold and reading sent over serial and plotted
-%   \item
-%     when over threshold send MIDI note
-%   \end{itemize}
-% \end{itemize}
-
-% \subsection{Project structure}\label{project-structure}
-
-% The project is separated into three repositories encapsulating
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   Firmware
-% \item
-%   Keyboard CAD Data
-% \item
-%   PCB CAD Data
-% \end{itemize}
-
-% \subsubsection{Firmware}\label{firmware}
-
-% Firmware repository contains all firmware for the full and smaller
-% models and components.
-
-% \subsubsection{Keyboard}\label{keyboard-1}
-
-% The Keyboard repository contains all plans for fabricating the keyboard,
-% measurements and 3D models of the jacks.
-
-% \subsubsection{PCB}\label{pcb}
-
-% PCB repository contains the EAGLE files for creating the sensor and
-% controller boards.
-
-% Given the regular spacing of components, scripts for automatic placement
-% of components based on parameter of jack pitch spacing and number of
-% sensors per jack.
-
-% \section{Implementation}\label{implementation}
-
-% \subsection{Installation}\label{installation}
-
-% The electronic components were partly pre-assembled at the university of
-% Edinburgh. Though all measurments were known ahead, enough flexibiliyty
-% was needed to allow for proboems to solved in situ.
-
-% The final assembly took place at the NEMUS lab at the univerity of
-% bologna over the final week in October 2024 for delivery at San
-% Colombano for exhibition in the first week of November in 2024.
-
-% A misreading in the original clearance between the keys and the PCB
-% meant that the keys wer block entirely from moving. A 10mm by 15mm
-% section was milled out of each lke \FIGURE to create extra clearance.
-% The milling required the removal, shortening and refitting of the
-% leather pads for the jacks \FIGURE. The extra work added an extra day to
-% the full install.
-
-% A redesign of the PCBs meant that removing the material would no longer
-% be necessary.
-
-% The PCBs shared power and data lines for components with the exception
-% of the output from the multiplexer. Ribbon cable was cut to size to
-% allow for some room to readjust the distance of the sensors from the
-% jacks. The data signals from each PCB were connected using a separate
-% cable loom. Soldering cables and inspecting each join required another
-% day work. This did allow for readjustments to the positon of the
-% controller board Measurements of the rear chamber did not match with the
-% MacMini that was to be used a different layout was decided for fitting
-% the controller board/ Cutting cables to size allowed for a great deal of
-% felxibility but at the cost of time. After the first install it was
-% clearer what constraints were in place for fittig and an alternative
-% wiring system using flat flex cable was implement (discussed in
-% \textbackslash section)
-
-% Fitting PCBs required the removal of all keys. The support brackets were
-% assembled and screwed into the the underside. With the harpsichord on
-% it's back the sensors were tested to ensure an expected range.
-% Self-tapping round head screws were used to to attach the brackets. The
-% screws were not over tightened to allow for brackets to move. The
-% brackets were not easily adjusted once the key were replaced. Adjusted
-% to a best average with subsequent adjustment carried out on the
-% microcontroller.
-
-% As the PCBs were fitted the jacks had the gradient stickers applied to
-% them. The jacks had been coated with a varnish on the short side to
-% provide a better surface for the stikcers to adhere to. After the
-% stickers were applied excess material was trimmed from each jack. The
-% jack were then check that they moved freely in their slot.
-
-% After fitting the PCBs preliminary calibration was carried out. Before
-% the keys were reffitted the jacks wer put back in place. The data from
-% each key was confirmed to be in a similar range. Any key showing
-% anomalous dat had it's jack removed and re-inspected. The PCB fitting
-% process and refitting required another day as faults were found in
-% wiring or misalignement of the stickers. After the sensors were
-% confirmed to be functioning the keys were put back.
-
-% The calibration workflow was with Dr.~Craig Webb who was unfamiliar with
-% the system. Adjustments were made to the firmware to to make it more
-% intuitive for the user. Addressable LEDs became vital as it allowed for
-% easy identification of the key being calibrated. They were also used to
-% identify any keys whose current reading was beyond what was expected.
-
-% The rotary encoder was used as the interface to select a key, adjust
-% it's threshold and update the Ferroelectric RAM (FRAM) with new values.
-
-% A process was implemented where the key was selected by playing, but
-% this caused problems in situations where the data was unusual due to
-% misalignement of the sensors
-
-% This would likely be a better system for when the keyboard was fully
-% operational
-
-% The thresholds were calibrated visually utilising the serial plotter of
-% the Arduino IDE and MIDI was confirmed using the open source MIDI
-% Monitor (https://github.com/krevis/MIDIApps).
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   partial pre-assembly
-% \item
-%   handsolder components
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     analog lines
-%   \end{itemize}
-% \item
-%   connecting supports
-% \end{itemize}
-
-% \subsection{Context}\label{context}
-
-% Designed as part of an exhibition for the museum San Colombano in
-% Bologna. Instruments is to be played by general public as a means of
-% interacting with items in the collection that are no longer in playing
-% condition. Audience of one who listens via headphones.
-
-% The strings of the interface are damped with felt strips. The damping
-% did change the tension and thereforew the feel of the strings so
-% adjustments needed to be made to the tuning to accomodate for this.
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   in museum context
-% \item
-%   strings damped
-% \item
-%   headphones
-% \item
-%   interfacing with kontakt spitfire library
-% \item
-%   display
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     secure storage and access
-%   \item
-%     interface to the public
-%   \end{itemize}
-% \end{itemize}
-
-% \subsection{Calibration}\label{calibration}
-
-% Finer calibration carried out with the guidance of Catalina Vincens as
-% an expert harpsichord performer
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   sensor surface
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     printed gradient
-%   \end{itemize}
-% \end{itemize}
-
-% \section{Conclusion}\label{conclusion}
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   scale
-% \item
-%   time scale
-% \item
-%   working at distance
-% \item
-%   limitations
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     latency
-%   \item
-%     deprecation
-
-%     \begin{itemize}
-%     \tightlist
-%     \item
-%       software
-
-%       \begin{itemize}
-%       \tightlist
-%       \item
-%         EAGLE
-%       \end{itemize}
-%     \item
-%       hardware
-
-%       \begin{itemize}
-%       \tightlist
-%       \item
-%         FRAM
-%       \end{itemize}
-%     \end{itemize}
-%   \end{itemize}
-% \end{itemize}
-
-% \section{Going forward}\label{going-forward}
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   Velocity, aftertouch
-% \item
-%   second jack row
-% \item
-%   reducing latency
-% \item
-%   alternative sensor surfaces
-% \end{itemize}
-
-% A limitation in the design is the variablility in positioning of tage,
-% especially when they need to be reapplied. A jig was designed for
-% applying tags, but could not be printed in time for installation. Even
-% with a jig, some tags had to be radjusted by hand regardless. Long term
-% this hasd impliccation on how to maintain the interface.
-
-% Taken a different approach to what surface is used. Preliminary test
-% were taken using Laser Cutting and CNC to fabricate Jack bodies. Laser
-% cutting results in a loss of material that has too much ariablity. The
-% edge o f the jack body will be charrred. The material also needs to be
-% reliable. on the advice of two luthiers, roberto livi and Jonathan Santa
-% Maria Bouquet at Edinburgh, Plywood and MDF have problems with
-% variations in humidity, tear-out and delamination.
-
-% Some tests were carried out using a notched jack body that was 3D
-% printed. The notch means that as the jack raises, the forward material
-% acts like a shutter. No reasons that this could not be CNC though a
-% variety of materials would be needed. Traditional material used is xx
-% though need to test of the material is naturally reflective enough or if
-% a coating would beed to be applied.
-
-% Outputs of the NEMUS project will also include numerically simulated
-% non-linear plucked string models with which the device can interact. A
-% bespoke sound synthesis engine to leverage data from both jack rows
-% which will also be open-sourced. Design for instrument to be compatible
-% with standard MIDI instruments as well software designed for the full
-% data output.
-
-% A second interface designed more closely to the Trasuntino style
-% instrument commisioned by the NEMUS project with Roberto Livi. Using
-% lessons learned for the first iteration the second can make better
-% acommodations for internal electronics. Interface to be used for a
-% performer study and used for performance with a numerically simulated
-% sound syntheiss engine.
-
-% Testing current sensors in conjunction with force sensitive resistors to
-% research if a impulse response for the pluck can be extrapolated.
-
-% Future novel designs for an interface that would utilise velocity and
-% aftertouch messages in software. This would be applicable for numericla
-% simulations of strings. A bespoke piec e of sowftare would also allow
-% for direct mapping of jack rows to registers. There is enough data to
-% implemenet functionality for velocity and aftertouch MIDI messages and
-% simply needs to be activated in the firmware.
-
-% Evaluation
-
-% \subsection{improvements}\label{improvements}
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   ESP-IDF
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     latency half
-%   \item
-%     workload high
-%   \end{itemize}
-% \end{itemize}
-
-% A current limitation is the latency in triggering MIDI output. Currently
-% the latency is around 20 ms, but should ideally be closer to 5ms.
-
-% An obvious approach would be merely changing the microcontroller. A test
-% was carried out using an Arduino Nano ESP32 which is a NORA-W106, a
-% module with a ESP32-S3. The benefit of this microcontroller is that it
-% would allow simply the board to be swapped and the rest of the PCB
-% designs would be unaffected.
-
-% Using the Espressif development framework ESP-IDF and follwong the same
-% logic as the original firmware source, the latency was reduced to around
-% 10ms. ESP-IDF allows access to functionality of the ESP32 that is not
-% exposed in the Arduino libraries. It is possible that the 10ms latency
-% could be improved upon but there would be a cost in the form of
-% develoment time. Consideration would need to be made on how to port
-% existing code or whether to completely re-write the firmware.
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   avoid soldering cabling
-% \item
-%   power indicators on pcbs
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     debug if problem is power related Add power small power LEDs to the
-%     each PCB. It was not common for a board to not be functioning and
-%     thye result to be that the power weas not correctly connected.
-%     Especially when the ower is connected via somethgin such as an FFC
-%     cable where it is easy to plug-in the wrong way esepcially when
-%     fitting is to be carried out by someone unfmailiar wiyth the system.
-%     Power LEDs would quickly confirm whether the problem was power
-%     related. They would have to be small enough and low enough current
-%     draw to avoid glare or being mistaken with other indcator LEDs To
-%     continue using THT components, the choice would have to be moade
-%     carefully.
-%   \end{itemize}
-% \end{itemize}
-
-% \section{Acknowledgments}\label{acknowledgments}
-
-% A project of this breadth developed across 3 institutes and 2 countries
-% cannot be carried without the support and technical knowledge of many
-% skilled and passionate people.
-
-% We acknowledge the invaluable contributions of
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   Unibo
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     Alma Labor
-
-%     \begin{itemize}
-%     \tightlist
-%     \item
-%       Massimiliano Fraulini and the staff of Alma Labor at the Yiversità
-%       of bologna for their 3D printing expertise and generosity with
-%       electronics equipment
-%     \end{itemize}
-%   \item
-%     Fisica Tecnica
-
-%     \begin{itemize}
-%     \tightlist
-%     \item
-%       Maurzio Chendi Fabrizio Casarini, Giulio Severo and Barbara
-%       Costantini
-%     \end{itemize}
-%   \end{itemize}
-% \item
-%   San Colombano
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     Catalina Vincens
-%   \item
-%     Roberto Livi
-%   \end{itemize}
-% \item
-%   Edinburgh
-
-%   \begin{itemize}
-%   \tightlist
-%   \item
-%     uCreate
-
-%     \begin{itemize}
-%     \tightlist
-%     \item
-%       Simeon, Stuart, Millie, and Ruth of uCreate at the Univeristy of
-%       Edinburgh for their support with soldering facilities.
-%     \end{itemize}
-%   \item
-%     ECA
-
-%     \begin{itemize}
-%     \tightlist
-%     \item
-%       Richard Collins and the Digital Making Staff at the Edinburgh
-%       College of Art for 3D printing instruction and CNC support.
-%     \item
-%       Joe Hathaway of Digital Development at the College of Art for
-%       providing electronics components
-%     \item
-%       St Cecilia's Jenny Nex
-%     \end{itemize}
-%   \end{itemize}
-% \end{itemize}
-
-% \section{Reference}\label{reference}
-
-% \subsection{Example Trasuntino}\label{example-trasuntino}
-
-% \begin{itemize}
-% \tightlist
-% \item
-%   {[}1538{]}
-%   https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface\&module=collection\&objectId=106088\&viewType=detailView
-% \item
-%   {[}1531{]}https://museumcollections.rcm.ac.uk/collection/Details/collect/58
-% \end{itemize}
+\textbackslash FIGURE, but there was still a limit given the structural
+and aesthatic requirements.
+
+\subsubsection{Sensor Criteria}\label{sensor-criteria}
+
+A set of criteria was drawn to which the final sensor system would have
+to satisfy. This criteria was used as a means of evaluating the
+feasability throughout the prototyping phase.
+
+\begin{itemize}
+\tightlist
+\item
+  Non-invasive: The sensor system should not require major modifications
+  to the interface on which it is installed.
+\item
+  Low Latency: Reading sensors and then triggering an output should have
+  a low latency. Using {[}paper on latency{]} a target was set as X ms
+  with an upper limit set to 25ms beyond which the sensors would be
+  deemed unusable
+\item
+  Reliable: Data obtained should be reliable and accurate enough not to
+  result in false positives or false negatives without extensive
+  filtering
+\item
+  Scalable: The system should be scalable both economically and
+  temporally. Given the open soucre nature of the porject, it could not
+  be prohibitvely expensive to carry out. Also any system that would
+  work on a single key would have to scale financially to potentially 50
+  or more. The time required to install and calibrate the sensors would
+  also have to scale.
+\item
+  Expandable: Any sensor system should be functionally expandable to
+  allow for the usage of the data for control over other parameters.
+\end{itemize}
+
+\subsubsection{Triggering a note}\label{triggering-a-note}
+
+For the first iteration the data from the sensor would simply be used to
+test when a threshold had been passed. On passing the threshold a
+message would be sent to trigger the playback of a corresponding note.
+
+The message format covered in \textbackslash section
+
+\section{Related Work and Motivation}\label{related-work-and-motivation}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbackslash cite\{HapticKey\}
+\item
+  \textbackslash cite\{mcPherson1\} \textbackslash cite\{mcPherson2\}
+\item
+  \textbackslash cite\{Mudd2013\}
+\item
+  \textbackslash cite\{FritzClaudia2017Leon\}
+\end{itemize}
+
+\section{Hardware Design}\label{hardware-design}
+
+The hardware was designed with the xx in mind.
+
+Using a similalr apporach to @HapticKey the first step was to fabricate
+or procure a model of a single working key. San Colombano provided a
+model 3-key of a harposchord mechanism by Graziano Bandini
+\textbackslash FIGURE. The 3-key model was used a test-bed for potential
+sensors while designs were drawn for a full-scale model. The
+cross-sectional nature of the model meant it was easy to fit and remove
+sensors. Small size meant that it would also be easy to transfer between
+workshops.
+
+3-key model also had a sliding jack rail which allowed for easy
+disengagement of the physical mechanical response, which allowed for
+some preliminary tests on the presence and absence of mechanism.
+
+\subsection{Failed sensors}\label{failed-sensors}
+
+A number of sensors were tried before the final system was decided upon.
+An inertial measurment unit (IMU) was mounted to a single key which
+contained a 6 degrees of freedome acceleromoetr and gyroscope. There was
+a consistent set of conditions to trigger sound, but this was not easily
+differntiable when other keys were played. The fitting time and cost of
+a single IMU could b reduced when purchased in bulk but was far greater
+than other systems considered.
+
+A reed sensor and a hall sensor were mounted and magnets embedded within
+the jacks. Adjusting the hieight of the sensor provided a reliable means
+of detecting a threshold, inparticular the hall sensors which could be
+partially calibrarted physically and also in softwrae. The time taken to
+calibarte a single key was time consuming. Ideally each sensor would be
+placed on a thread for adjustment, but given the constraints on the
+internal space it was decided any adjustment of heights would likely
+mean an unnacceptable length of time to install and calibrate. Embedding
+magnets into the jacks was also did not satisfy the criteria of being
+scalable and non-invasive.
+
+Light dependant resistor mounted to the jack rail. as jacks were pressed
+less light would be let through. Usable data but very dependant on
+lighting conditions. Modifying the jack also did not satisfy the
+non-intrusive criteria and the placement outside the internal chamber of
+the model meant hiding electronics would be more difficult.
+
+Finally, force sensitive resistors placed under the jack of each key was
+considered but was never implemented. The sensors were to be placed
+under each jack either above or below the padding on which the bottom of
+the jack rests. Further discussion of this apporach is in
+\textbackslash section.
+
+\section{Electronics}\label{electronics}
+
+Design of electronics carried out in tandem with construction of full
+model. Since the Electronics were designed at a distanced to the final
+full model some flexbility was required in the design. Design decisions
+that were not as optimal but would allow for change in wiring and
+fitting should there be any issues during installation.
+
+Electronics designed so that they would not require any equipment
+outside what can commonly be found in a maker space at a univeristy.
+
+The equipment required including soldering suitable for throughole
+technology (THT) components and 3D printing.
+
+Laser cutting and CNC routing fascilities were used during the research
+for the project but not required for the final implementation.
+
+The idea behind this was to allow for the project to be reasonably
+recreated without procurement of any additional specialist equipment.
+
+NEMUS lab under construction during the first section of the project.
+Facilities available at the maker spaces of Bologna (Alma Labor) and
+Edinburgh (uCreate) used for what was deemed reasonable assumption in
+terms of available equipment.
+
+\begin{itemize}
+\tightlist
+\item
+  Over arching themes
+
+  \begin{itemize}
+  \tightlist
+  \item
+    simplicity of design
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Limited resources
+    \item
+      easily reproducible
+    \end{itemize}
+  \item
+    availability and lead times
+  \item
+    iteration and design from distance
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{QRE1113}\label{qre1113}
+
+Following from the work in \textbackslash cite\{McPherson1\}
+\textbackslash cite\{McPherson2\} we tested a system using the Fairchild
+QRE1113 \textbackslash datasheetfigue. The QRE1113 is a combination
+infrared LED and phototransistor sensitive to IR light. The
+phototransistor of QRE1113 provides data on how much light is present
+and in particular how much light is being relfected from a surface.
+Since refelected light will be proportional to the distance of a surfcae
+it is a good, close proximity, distance sensor. Distance is the way in
+which the instruments in \textbackslash citeMcpherson1\&2 function as
+well the Moog Piano Bar from which it too inspiration.
+
+The limitation for taking a distance approach is that there is not one
+but 2 jacks per key. For each jack to be measured indepeedntly the data
+would need tp com fropm the jacks themselves.
+
+They \emph{could} be used and individual trigger points set in
+calibration, but this creates new problems.
+
+\begin{itemize}
+\tightlist
+\item
+  The triggering would need to be bespoke for every key as fluxuations
+  in the dimensions of every piece mean that the threshold would be
+  different.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Moving a problem into additional time in the calibtraryoin setup
+    phase.
+  \end{itemize}
+\item
+  Remebering the constraint that system isshould noyt fix problem, there
+  would be no easy way to tell if a jack had nbot reseated.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    In playing a harpihchord when the jack does not go to its rest
+    position, not note would play. This fault should be carried over
+    intp the final instrument.
+  \end{itemize}
+\end{itemize}
+
+Another common application of the QRE1113 is within line following
+robots, where an array of QRE1113s ar used in conjunction with black
+tape along which some motorised system can following
+
+Applied to the jacks was a greyscale gradient printed the length full
+travel range of the jack.
+
+For the first iteration this was performed on an inkjet printer and
+double-sided tape. For the final iteration the stickers were printed on
+(Coala, 1D 100 Gloss P, gloss, white, permanent adhesive, 300g/m2, 100
+µm, 1370mm x 50.00m, Solvent/Latex/UV) using a HP Latex 115 and then
+cutout with a Summa 150 roll cutter. The printer and roll cutter greatly
+reduced the manual labour for cutting stickers meaning the process would
+scale from the 3-key to the 49-key model.
+
+An initial sticker design was used that contained only the gradient. It
+was found that the jacks wer sticking in their slots andthe edges on the
+stickers easily peeled around the printing The sticker was redesigned to
+be the full length of the jack which avoided the problem of peeling. The
+larger are also mean the stickers adhered betterto the jack Some
+trimming was still required of each sticker to avoid them adding extraa
+resistence to the jack's movement.
+
+During testing it was found that their was a considerable amount
+cross-talk bwteen adjacent sensors. This meant the reading from key
+would be affected by the movement of the key next to it. The cross-talk
+was assumed to be as a result of light reflecting from other jacks.
+Given that IR is used this was difficult to confirm by sight. A set of
+baffles was designed for the pcb that would wrap round the jack and stop
+light from other jacks or sensors. Baffles were printed on BAMBU X1 3D
+printers using PLA plastic. A dark pigmented PLA was used to avoid IR
+light simply being diffused. After the baffles were fitted the
+cross-talk was entirely eliminated.
+
+\begin{itemize}
+\tightlist
+\item
+  previous use
+\item
+  problem of what to sense
+\item
+  satisfied both criteria and design restrictions
+\item
+  usage
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sweet spot is around 6mm distance
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{sensor surface}\label{sensor-surface}
+
+\begin{itemize}
+\tightlist
+\item
+  linear gradient
+\item
+  on Jack
+\item
+  printed and cut on vinyl {[}find name{]}
+\item
+  cut to travel size
+\item
+  then to jack size
+\item
+  jacks varnished on side
+\item
+  alternatives
+
+  \begin{itemize}
+  \tightlist
+  \item
+    CNC plywood and mdf
+
+    \begin{itemize}
+    \tightlist
+    \item
+      problems
+    \end{itemize}
+  \item
+    laser cut plywood and mdf
+
+    \begin{itemize}
+    \tightlist
+    \item
+      problems
+    \end{itemize}
+  \item
+    3D printed jack body
+
+    \begin{itemize}
+    \tightlist
+    \item
+      problems
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection{Arduino}\label{arduino}
+
+\subsubsection{Nano BLE}\label{nano-ble}
+
+Arduino Nano BLE was chosen for a few reasons. The Nano form factor was
+appealing as it would allow for easy changes between chipsets without
+requiring any rewiring and thus no new PCBs would need to be created if
+a better alternative was found later in the project. Another benefit to
+the Arduino Nano boards was that typically had native-USB meaning the
+could be programmed as a hardware USB MIDI device directly.
+
+The Nano BLE specifically was used in the initial stages for the
+integrated IMU.
+
+When it was finalised that the prokect would proceed using the QRE1113 a
+number of microcontroller units (MCU) were condsidered.
+
+The MCUs considered were the Arduino Nano 33 IoT, Arduino Nano 33 BLE,
+Arduino Nano ESP32 and STM32 NUCLEO-L031K6.
+
+A rough performance test was later carried out using an STM32
+NUCLEO-L031K6, a Nano ESP32 and the BLE. The Nano BLE was found to be
+more performative. To execute a single sensor read cycle of the firmware
+the STM32 took 40ms, and both the Nano ESP32 and Nano BLE required 11ms
+on average. The Nano ESP32 had high variability so it was decided to
+continue with the Nano BLE. Further discussion of using ESP32 continues
+in \textbackslash section\{Going forward\}
+
+BLE functionality also meant if the cable connection between the nano
+and computer running audio synthesis was impractical, BLE MIDI was
+available as a fallback. The Nano BLE also has a 12-bit DAC, which
+provided a contingency should the default 10-bit not be sensitive enough
+for the signal from the sensors.
+
+Initially a Nano IoT was used for both WiFi and Bluetooth Low Energy
+functionality, but it was found that 2 ADC channels were in fact not
+useable and would have required additional multiplexers.
+
+\begin{itemize}
+\tightlist
+\item
+  Nano form factor small
+\item
+  allows for easy changes in chipset
+\item
+  ``Native USB''
+  https://learn.adafruit.com/dude-where-s-my-com-port/native-usb-boards\#
+\item
+  BLE Model
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Performative
+  \item
+    BLE capabilities for MIDI BLE transmission
+  \item
+    All analog pins available
+  \item
+    available at the time
+  \item
+    12-bit DAC
+  \end{itemize}
+\end{itemize}
+
+\subsection{EEPROM / NVRAM / FRAM}\label{eeprom-nvram-fram}
+
+There would need to be the ability to store values on non-volatile
+memory so that the electroincs could be powered-down without losing
+data.
+
+Adjusting the values through firmware would not have been flexible or
+practical. Instead an Ferroelectric RAM unit was chosen and connected
+using an SPI interface. NVRAM or EEPROM would have sufficed and the FRAM
+was primarily chosen for it's ready availability.
+
+Most microcontrollers have some variety of non-volatile program memory
+that can be read and writ accessed but in most cases this memory is
+cleared during compilation and re-flashing. The small cost was far
+outweighed by the potential for data loss if using onboard RAM.
+
+\emph{It is worth noting that the FRAM model chosen stopped being
+available during the project, meaning any future iteration would need to
+adjust for another board in firmware}
+
+The firmware was structure in a way that the interface could be changed
+so long as the code required for any other board would comply with
+function arguments and outputs. Worth noting the fragility and
+volatility when designing this kind of project and how easily it is for
+the project to become broken.
+
+SD card would provide an easier way to interact with calibration data.
+The posiiton of the controller board did not permit easy access.
+reliability and speed was preffered over storage capacity.
+
+\begin{itemize}
+\tightlist
+\item
+  On board available, but volatile
+\item
+  retained across firmware changes
+\item
+  small,
+\item
+  could have been sd card or anything else
+\item
+  available
+\item
+  interfaced via rotary encoder
+\end{itemize}
+
+\subsection{RGB LEDs}\label{rgb-leds}
+
+for problems of scale:
+
+Addressing the problem of scale of identifying which key's threshold is
+currently being edited.
+
+The LEDs also allowed for easy identification for keys that were outside
+of expected values and when a key was triggered. This allowed for visual
+identification of malfunctioning or uncalibrated keys.
+
+The LEDs are on the same PCB as the sensors and are hidden when the
+nameboard is in place.
+
+Would sugggest that this is a necessity of this kind to provide a means
+to identify and diagnose LEDs with state.
+
+TLC5940 or other PWM driver such as in \textbackslash cite\{mcpherson\}
+added complexity to assembling, but were avoid in favour of Addressable
+LEDs with intergrated driver. The intergrated LEDs share the same data
+line which has the limitation where a fualty LED will stop all following
+LEDs from working. An individual PWM driver per PCB would allow avoid
+situations where failutre cascades, but would add complexity in assembly
+as the parts are typically SMD. Also, given the LEDs are fixed to the
+board and could not be repaired in situ, the solution would be to
+replace the PCB regardless of which approach was taken. Given the LEDs
+were only used in debugging and calibration and otehrwise would not be
+visible, a simpler design approach was taken.
+
+\begin{itemize}
+\tightlist
+\item
+  locating keys
+\item
+  displaying key state
+\end{itemize}
+
+\subsection{Multiplexing}\label{multiplexing}
+
+CD4051BE Texas Instruments
+
+problem of scale
+
+For the 3-key model, individual jacks could be connected to one of the 8
+available ADC pins.
+
+The BLE Nano has 8 ADC pins connected to one ADC channel via a
+multiplexer
+
+Multiplexer added to expand to the
+
+Transistor / Op-amp circuit could have been used similar to the one in
+\textbackslash cite\{mcpherson\}.
+
+Benefits were keeping with THT based designed for easy assembly.
+
+An 8-channel multiplexer was chosen as the model has 49-keys and a
+division of 7 PCBs each containing 7 sensors
+
+The multiplexer reduced 7 signals to a single pin. Three pins are
+required pins for addressing the muliplexewrs and all PCBs are addressed
+simulatenously.
+
+\begin{itemize}
+\tightlist
+\item
+  limited ADC channels
+\item
+  ADC channels already multiplexed
+\item
+  simple
+\item
+  8 channel
+\item
+  THT
+\item
+  7 into 49
+
+  \begin{itemize}
+  \tightlist
+  \item
+    7 PCBS
+  \item
+    each with 7 sensors
+  \end{itemize}
+\end{itemize}
+
+\subsection{PCB design}\label{pcb-design}
+
+\begin{itemize}
+\tightlist
+\item
+  EAGLE PCBs designed using EAGLE. Worth noting that AutoCAD has
+  deprecated EAGLE and the programme will no longer be supported from
+  2026 Project files will need to be transitioned to another standard,
+  likely the KiCAD programme.
+\end{itemize}
+
+trade off between limiting number of boards required and allowing
+compensation for variation in pitch.
+
+Smaller PCBs means that spacing could be adjusted to accomodate the
+changes in pitch between jacks. It also allowed for a modular approach
+where any PCB could swapped for minimal cost.
+
+\subsubsection{Sensor board}\label{sensor-board}
+
+The 49 QRE1113s are divided across 7 PCBs each containing
+
+\begin{itemize}
+\item
+  x7 QRE1113
+\item
+  x7 100R
+\item
+  x7 10kR
+\item
+  x1 CD4051BE Multipexer
+\item
+  jack / sensor pitch by board
+\item
+  7 boards adjust for pitch/spacing error
+\item
+  modular, replaceable
+\item
+  orientation problems
+
+  \begin{itemize}
+  \tightlist
+  \item
+    legs break easily
+  \item
+    end mount like A.P.Mc. time consuming
+  \item
+    problem
+
+    \begin{itemize}
+    \tightlist
+    \item
+      milling out keys
+    \end{itemize}
+  \end{itemize}
+\item
+  designed from distance
+\item
+  striped lines across pcbs
+\item
+  problems
+
+  \begin{itemize}
+  \tightlist
+  \item
+    additional terminals uneeded resulted in lots of additional work
+  \item
+    long cabling increase risk of breaking
+  \end{itemize}
+\item
+  solutions
+
+  \begin{itemize}
+  \tightlist
+  \item
+    striping all adc lines with FFC
+  \item
+    solder pads to select channel
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{controller board}\label{controller-board}
+
+Controller board designed around Arduino nano form factor. The Nano is
+connected through headers to allow easy switching between chips. Should
+another chip in a Nano for factor be found it could supplant the current
+Nano without any need for a redesign.
+
+The first version of the board esclusively used 2.54mm pitch headers.
+The reasons for this were flexibility when creating cable looms and to
+leave open the possiility of rewuring the PCB.
+
+This was the case for the LEDs as they initially wer to be powered on
+5V. It was discovered that the 3v regulator of the nano was sufficient
+to power all LEDs at a lower brightness while reducing current draw.
+Since brightness was not importnat.
+
+The 2.54mm pitch headers had two major drawbacks. First, the orientation
+of the cables could be reversed, which in the best case scenario would
+simply mean the system did not work correctly and in the worst case it
+could potentially damaged some components.
+
+Secondly, the headers do not connect securely and wait of the cabling
+was enough for components to become disconnected as the harpsichord was
+handled.
+
+To address this, once the wiring for the controller board was finalised
+a new design was drafted this time using JST-PH connectors. No
+commercial cables were immediately available in the configuration and
+length required, as such a cable loom needed to be made which meant
+crimping cables by hand. A crimping tool from JST is prohibitively
+expensive compared to the cost of other components in the project*. The
+crimping tool also appeared to be uncommon and was not readily available
+in the workshops at the projects disposal. Eventually a tool was found,
+but an alternative approach was also researched in order to maintain the
+criteria of accessibility.
+
+A locator was adapted from a creative commons stl model
+https://www.thingiverse.com/thing:1646016 that allowed a generic
+crimping tool to be adapted for use with JST-PH crimps†
+\textbackslash figure\{\}. The locator was printed using a Bambu X1 3D
+printer.
+
+\emph{** A second alterntaive was assembling cables from other sets that
+were at hand.} \emph{* from RS
+https://uk.rs-online.com/web/p/crimp-tools/6880877 £508 inc VAT} \emph{†
+model available in the git repository}
+
+\begin{itemize}
+\tightlist
+\item
+  mount for nano to allow switching
+\item
+  initially push fit 2.54mm header
+
+  \begin{itemize}
+  \tightlist
+  \item
+    not a secure fit
+  \end{itemize}
+\item
+  JST-PH used
+
+  \begin{itemize}
+  \tightlist
+  \item
+    crimping required custom cables
+
+    \begin{itemize}
+    \tightlist
+    \item
+      could be assembled from other cables
+    \item
+      length limited
+    \end{itemize}
+  \item
+    prohibitevly expensive to crimpers
+  \item
+    3D print helper to allow for crimping with generic crimpers
+  \end{itemize}
+\end{itemize}
+
+\subsection{3D printing}\label{d-printing}
+
+Access to a 3D printer is was vital to the success of the project. Given
+the proliferation of 3D printing, particular in maker spaces in
+universities it was deemed an unreasonable requirement. 3D printed parts
+include the support brackets for PCBs, the baffles for the sensors,
+locator for crimping JST-PH crimps and a mount for the MacMini used for
+audio synthesis.
+
+The printer used throughout the project was a Bambu X1-Carbon using
+recycled PLA filament.
+
+Support brackets and baffles were made for the project while the MacMini
+bracket and JST locator were sourced from creative commons models.
+
+Any colour of filament can be used, though it is advised to use a dark
+coloured filament for the baffles.
+
+See each corresponding section for more detail on 3D printed components.
+
+\begin{itemize}
+\item
+  https://www.thingiverse.com/thing:1646016
+\item
+  https://www.thingiverse.com/thing:2886460
+\item
+  Supports
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Push fit
+  \item
+    adjustable for best average placement
+  \end{itemize}
+\item
+  Blinkers
+
+  \begin{itemize}
+  \tightlist
+  \item
+    reduce noise from other senors
+  \end{itemize}
+\item
+  mounts
+
+  \begin{itemize}
+  \tightlist
+  \item
+    MacMini
+  \end{itemize}
+\end{itemize}
+
+\subsection{Power}\label{power}
+
+All electronics draws around 1.1amps of current at 5V with some
+fluctuation during boot.
+
+Arduino BLE has some functionality disabled to limit current draw.
+
+Ideally the unit could be bus powered from USB.
+
+The sensors are in a state of constantly drawing power. It is possible
+that powering only when data is required could be reduce power enough.
+
+Current designs have a separate MIDI device for each jack row. Combining
+the devices and also reducing current draw to below the common 0.5 amps
+for a USB port would certainly be a challenge.
+
+\section{Firmware Design}\label{firmware-design}
+
+Arduino platform chosen for wide adoption, relative ease of use and
+library support for components.
+
+Firmare checks components are connected then reads the FRAM to see if
+threshold data is already present. The rotary encoder and it's momentary
+switch are polled for any change in state. A key is selected with the
+rotary encoder while the momentary switch is used for changing between
+states for key selection and threshold adjustment A double click of the
+rotary encoder writes the current threshold values to FRAM. The sensors
+for the current multiplexer channels are polled. If any sensor reads
+above the threshold when it was previously below a MIDI On message is
+sent. For the reverse case where the value was below the threshold when
+it was previously above, a MIDI Note Off message ois sent.
+
+\begin{itemize}
+\tightlist
+\item
+  Arduino platform
+
+  \begin{itemize}
+  \tightlist
+  \item
+    library support and portability
+  \item
+    dependancy management
+  \item
+    wide spread use
+  \end{itemize}
+\item
+  core algorithm
+
+  \begin{itemize}
+  \tightlist
+  \item
+    check components connected
+  \item
+    READ data from FRAM
+  \item
+    select key with rotary
+
+    \begin{itemize}
+    \tightlist
+    \item
+      click to edit, double to save
+    \end{itemize}
+  \item
+    current threshold and reading sent over serial and plotted
+  \item
+    when over threshold send MIDI note
+  \end{itemize}
+\end{itemize}
+
+\subsection{Project structure}\label{project-structure}
+
+The project is separated into three repositories encapsulating
+
+\begin{itemize}
+\tightlist
+\item
+  Firmware
+\item
+  Keyboard CAD Data
+\item
+  PCB CAD Data
+\end{itemize}
+
+\subsubsection{Firmware}\label{firmware}
+
+Firmware repository contains all firmware for the full and smaller
+models and components.
+
+\subsubsection{Keyboard}\label{keyboard-1}
+
+The Keyboard repository contains all plans for fabricating the keyboard,
+measurements and 3D models of the jacks.
+
+\subsubsection{PCB}\label{pcb}
+
+PCB repository contains the EAGLE files for creating the sensor and
+controller boards.
+
+Given the regular spacing of components, scripts for automatic placement
+of components based on parameter of jack pitch spacing and number of
+sensors per jack.
+
+\section{Implementation}\label{implementation}
+
+\subsection{Installation}\label{installation}
+
+The electronic components were partly pre-assembled at the university of
+Edinburgh. Though all measurments were known ahead, enough flexibiliyty
+was needed to allow for proboems to solved in situ.
+
+The final assembly took place at the NEMUS lab at the univerity of
+bologna over the final week in October 2024 for delivery at San
+Colombano for exhibition in the first week of November in 2024.
+
+A misreading in the original clearance between the keys and the PCB
+meant that the keys wer block entirely from moving. A 10mm by 15mm
+section was milled out of each lke \textbackslash FIGURE to create extra
+clearance. The milling required the removal, shortening and refitting of
+the leather pads for the jacks \textbackslash FIGURE. The extra work
+added an extra day to the full install.
+
+A redesign of the PCBs meant that removing the material would no longer
+be necessary.
+
+The PCBs shared power and data lines for components with the exception
+of the output from the multiplexer. Ribbon cable was cut to size to
+allow for some room to readjust the distance of the sensors from the
+jacks. The data signals from each PCB were connected using a separate
+cable loom. Soldering cables and inspecting each join required another
+day work. This did allow for readjustments to the positon of the
+controller board Measurements of the rear chamber did not match with the
+MacMini that was to be used a different layout was decided for fitting
+the controller board/ Cutting cables to size allowed for a great deal of
+felxibility but at the cost of time. After the first install it was
+clearer what constraints were in place for fittig and an alternative
+wiring system using flat flex cable was implement (discussed in
+\textbackslash section)
+
+Fitting PCBs required the removal of all keys. The support brackets were
+assembled and screwed into the the underside. With the harpsichord on
+it's back the sensors were tested to ensure an expected range.
+Self-tapping round head screws were used to to attach the brackets. The
+screws were not over tightened to allow for brackets to move. The
+brackets were not easily adjusted once the key were replaced. Adjusted
+to a best average with subsequent adjustment carried out on the
+microcontroller.
+
+As the PCBs were fitted the jacks had the gradient stickers applied to
+them. The jacks had been coated with a varnish on the short side to
+provide a better surface for the stikcers to adhere to. After the
+stickers were applied excess material was trimmed from each jack. The
+jack were then check that they moved freely in their slot.
+
+After fitting the PCBs preliminary calibration was carried out. Before
+the keys were reffitted the jacks wer put back in place. The data from
+each key was confirmed to be in a similar range. Any key showing
+anomalous dat had it's jack removed and re-inspected. The PCB fitting
+process and refitting required another day as faults were found in
+wiring or misalignement of the stickers. After the sensors were
+confirmed to be functioning the keys were put back.
+
+The calibration workflow was with Dr.~Craig Webb who was unfamiliar with
+the system. Adjustments were made to the firmware to to make it more
+intuitive for the user. Addressable LEDs became vital as it allowed for
+easy identification of the key being calibrated. They were also used to
+identify any keys whose current reading was beyond what was expected.
+
+The rotary encoder was used as the interface to select a key, adjust
+it's threshold and update the Ferroelectric RAM (FRAM) with new values.
+
+A process was implemented where the key was selected by playing, but
+this caused problems in situations where the data was unusual due to
+misalignement of the sensors
+
+This would likely be a better system for when the keyboard was fully
+operational
+
+The thresholds were calibrated visually utilising the serial plotter of
+the Arduino IDE and MIDI was confirmed using the open source MIDI
+Monitor (https://github.com/krevis/MIDIApps).
+
+\begin{itemize}
+\tightlist
+\item
+  partial pre-assembly
+\item
+  handsolder components
+
+  \begin{itemize}
+  \tightlist
+  \item
+    analog lines
+  \end{itemize}
+\item
+  connecting supports
+\end{itemize}
+
+\subsection{Context}\label{context}
+
+Designed as part of an exhibition for the museum San Colombano in
+Bologna. Instruments is to be played by general public as a means of
+interacting with items in the collection that are no longer in playing
+condition. Audience of one who listens via headphones.
+
+The strings of the interface are damped with felt strips. The damping
+did change the tension and thereforew the feel of the strings so
+adjustments needed to be made to the tuning to accomodate for this.
+
+\begin{itemize}
+\tightlist
+\item
+  in museum context
+\item
+  strings damped
+\item
+  headphones
+\item
+  interfacing with kontakt spitfire library
+\item
+  display
+
+  \begin{itemize}
+  \tightlist
+  \item
+    secure storage and access
+  \item
+    interface to the public
+  \end{itemize}
+\end{itemize}
+
+\subsection{Calibration}\label{calibration}
+
+Finer calibration carried out with the guidance of Catalina Vincens as
+an expert harpsichord performer
+
+\begin{itemize}
+\tightlist
+\item
+  sensor surface
+
+  \begin{itemize}
+  \tightlist
+  \item
+    printed gradient
+  \end{itemize}
+\end{itemize}
+
+\section{Conclusion}\label{conclusion}
+
+\begin{itemize}
+\tightlist
+\item
+  scale
+\item
+  time scale
+\item
+  working at distance
+\item
+  limitations
+
+  \begin{itemize}
+  \tightlist
+  \item
+    latency
+  \item
+    deprecation
+
+    \begin{itemize}
+    \tightlist
+    \item
+      software
+
+      \begin{itemize}
+      \tightlist
+      \item
+        EAGLE
+      \end{itemize}
+    \item
+      hardware
+
+      \begin{itemize}
+      \tightlist
+      \item
+        FRAM
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\section{Going forward}\label{going-forward}
+
+\begin{itemize}
+\tightlist
+\item
+  Velocity, aftertouch
+\item
+  second jack row
+\item
+  reducing latency
+\item
+  alternative sensor surfaces
+\end{itemize}
+
+A limitation in the design is the variablility in positioning of tage,
+especially when they need to be reapplied. A jig was designed for
+applying tags, but could not be printed in time for installation. Even
+with a jig, some tags had to be radjusted by hand regardless. Long term
+this hasd impliccation on how to maintain the interface.
+
+Taken a different approach to what surface is used. Preliminary test
+were taken using Laser Cutting and CNC to fabricate Jack bodies. Laser
+cutting results in a loss of material that has too much ariablity. The
+edge o f the jack body will be charrred. The material also needs to be
+reliable. on the advice of two luthiers, roberto livi and Jonathan Santa
+Maria Bouquet at Edinburgh, Plywood and MDF have problems with
+variations in humidity, tear-out and delamination.
+
+Some tests were carried out using a notched jack body that was 3D
+printed. The notch means that as the jack raises, the forward material
+acts like a shutter. No reasons that this could not be CNC though a
+variety of materials would be needed. Traditional material used is xx
+though need to test of the material is naturally reflective enough or if
+a coating would beed to be applied.
+
+Outputs of the NEMUS project will also include numerically simulated
+non-linear plucked string models with which the device can interact. A
+bespoke sound synthesis engine to leverage data from both jack rows
+which will also be open-sourced. Design for instrument to be compatible
+with standard MIDI instruments as well software designed for the full
+data output.
+
+A second interface designed more closely to the Trasuntino style
+instrument commisioned by the NEMUS project with Roberto Livi. Using
+lessons learned for the first iteration the second can make better
+acommodations for internal electronics. Interface to be used for a
+performer study and used for performance with a numerically simulated
+sound syntheiss engine.
+
+Testing current sensors in conjunction with force sensitive resistors to
+research if a impulse response for the pluck can be extrapolated.
+
+Future novel designs for an interface that would utilise velocity and
+aftertouch messages in software. This would be applicable for numericla
+simulations of strings. A bespoke piec e of sowftare would also allow
+for direct mapping of jack rows to registers. There is enough data to
+implemenet functionality for velocity and aftertouch MIDI messages and
+simply needs to be activated in the firmware.
+
+Evaluation
+
+\subsection{improvements}\label{improvements}
+
+\begin{itemize}
+\tightlist
+\item
+  ESP-IDF
+
+  \begin{itemize}
+  \tightlist
+  \item
+    latency half
+  \item
+    workload high
+  \end{itemize}
+\end{itemize}
+
+A current limitation is the latency in triggering MIDI output. Currently
+the latency is around 20 ms, but should ideally be closer to 5ms.
+
+An obvious approach would be merely changing the microcontroller. A test
+was carried out using an Arduino Nano ESP32 which is a NORA-W106, a
+module with a ESP32-S3. The benefit of this microcontroller is that it
+would allow simply the board to be swapped and the rest of the PCB
+designs would be unaffected.
+
+Using the Espressif development framework ESP-IDF and follwong the same
+logic as the original firmware source, the latency was reduced to around
+10ms. ESP-IDF allows access to functionality of the ESP32 that is not
+exposed in the Arduino libraries. It is possible that the 10ms latency
+could be improved upon but there would be a cost in the form of
+develoment time. Consideration would need to be made on how to port
+existing code or whether to completely re-write the firmware.
+
+\begin{itemize}
+\tightlist
+\item
+  avoid soldering cabling
+\item
+  power indicators on pcbs
+
+  \begin{itemize}
+  \tightlist
+  \item
+    debug if problem is power related Add power small power LEDs to the
+    each PCB. It was not common for a board to not be functioning and
+    thye result to be that the power weas not correctly connected.
+    Especially when the ower is connected via somethgin such as an FFC
+    cable where it is easy to plug-in the wrong way esepcially when
+    fitting is to be carried out by someone unfmailiar wiyth the system.
+    Power LEDs would quickly confirm whether the problem was power
+    related. They would have to be small enough and low enough current
+    draw to avoid glare or being mistaken with other indcator LEDs To
+    continue using THT components, the choice would have to be moade
+    carefully.
+  \end{itemize}
+\end{itemize}
+
+\section{Acknowledgments}\label{acknowledgments}
+
+A project of this breadth developed across 3 institutes and 2 countries
+cannot be carried without the support and technical knowledge of many
+skilled and passionate people.
+
+We acknowledge the invaluable contributions of
+
+\begin{itemize}
+\tightlist
+\item
+  Unibo
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Alma Labor
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Massimiliano Fraulini and the staff of Alma Labor at the Yiversità
+      of bologna for their 3D printing expertise and generosity with
+      electronics equipment
+    \end{itemize}
+  \item
+    Fisica Tecnica
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Maurzio Chendi Fabrizio Casarini, Giulio Severo and Barbara
+      Costantini
+    \end{itemize}
+  \end{itemize}
+\item
+  San Colombano
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Catalina Vincens
+  \item
+    Roberto Livi
+  \end{itemize}
+\item
+  Edinburgh
+
+  \begin{itemize}
+  \tightlist
+  \item
+    uCreate
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Simeon, Stuart, Millie, and Ruth of uCreate at the Univeristy of
+      Edinburgh for their support with soldering facilities.
+    \end{itemize}
+  \item
+    ECA
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Richard Collins and the Digital Making Staff at the Edinburgh
+      College of Art for 3D printing instruction and CNC support.
+    \item
+      Joe Hathaway of Digital Development at the College of Art for
+      providing electronics components
+    \item
+      St Cecilia's Jenny Nex
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\section{Reference}\label{reference}
+
+\subsection{Example Trasuntino}\label{example-trasuntino}
+
+\begin{itemize}
+\tightlist
+\item
+  {[}1538{]}
+  https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface\&module=collection\&objectId=106088\&viewType=detailView
+\item
+  {[}1531{]}https://museumcollections.rcm.ac.uk/collection/Details/collect/58
+\end{itemize}

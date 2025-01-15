@@ -11,9 +11,14 @@ musical instrument provides.
 The project look at restoring tactile and haptic response of 17th century
 harpsichords for an exhibition at the musical instrument museum San Colombano in
 Bologna. San Colombano hosts the Tagliavini Collection (from Luigi Ferdinando
-Tagliavini), a collection of approximately 80 historical keyboard instruments in
-working order
-(https://genusbononiae.it/en/san-colombano-tagliavini-collection/). 
+Tagliavini), a collection of approximately 70 historical keyboard instruments in
+working order \cite{Tagliavini2009}
+(https://genusbononiae.it/en/san-colombano-tagliavini-collection/). Some items
+in the collection are not in playing condition or are too fragile to continue to
+be available for the public to play. One of those fragile instruments in the
+Tagliavini collection is a 1547 Harpsichord by Alessandro Trasuntino
+\cite{Treccani2019}, which was used as the basis for an interactive exhibition
+commisioned by San Colombano.
 
 Project was also designed to allow others to easily recreate and iterate on the
 designs.
@@ -67,8 +72,6 @@ disklavier, the Don Buchla designed MOOG Piano Bar, Bosendorfer, PNOscan by QRS
 focus on reproduction. These same systems could be applied to a harpsichord, but
 the limitation is a single data stream per key.
 
-
-
 - existing sysetms
   - Yamaha Disklaviare
   - Bosendorfer
@@ -79,9 +82,42 @@ the limitation is a single data stream per key.
     - PNOmation
   - Piano Disc
 
-
-
 ## Background
+
+Prvious projects looking at how to approach the problems of increasing
+engagement and retaining the interction with historical musical instruments in a
+museum scenario.
+
+The paper by McAlpine \cite{McAlpine2014} also has very similar motivations to
+the project presented here. Both were started from a musical instrument museum,
+housing a collection of historic instruments gifted by a collector (Benton
+Fletcher / Taglivaini) who wished for collection to remain playable, which is
+restricted growing fragility of some items in the respective collections. Bothe
+projects center around the creation of a custioom MIDI controller for
+interfacing with sound synthesis engine. The keyboard consisted of two modified
+commercial MIDI keyboard controllers in a two manual harpsichord arrangement.
+Weherease the McAlpine keyboard used weighted keys, this interface extends the
+idea by using the mechanism and strings under tension to provide the haptic
+feedback. McAlpine posits a fully paremterised haptic keyboard, but before
+taking such a leap we look at what affect a more literal haptic keyboard may
+provide to the performer experience.
+
+The previous NIME project "Tromba Moderna" \cite{Baldwin2016}, which looked at
+reconstructing a full tromba marina to be used as a digital interface. The one
+of the limitations flagged by McAlpine was the oneffectiveness of weighted keys
+in mimicing the harpischord. The Tromba Moderna "attempted to avoid this problem
+by constructing a fully functioning replica of the tromba marina"
+\cite{Baldwin}. This project applies the same approach to the harpsichord.m
+where the projects deviate is a questions of scale.
+
+Where the tromba moderna considers a single data stream this project has had to
+address 98 and the problems that come with increasing scale. Material costs
+mitigated by creating a scaled version of the sound board, provinding only the
+length of string necessary under comparable tension and thus resistance to the
+jack quill.
+
+Extension to \cite{McAlpine2014} and \cite{Baldwin2016} are the open sourcing of
+hardware and software for the project.
 
 ### Why...
 
@@ -131,6 +167,15 @@ harpsichord. Notes should be assigned per jack and not per key.
 - aesthetics
 - split workload
 
+
+- parts
+  - jack
+    - quill
+    - jack body
+    - pivot
+    - tongue
+  - key
+  - body
 
 
 #### Design
@@ -820,11 +865,11 @@ removed and re-inspected. The PCB fitting process and refitting required another
 day as faults were found in wiring or misalignement of the stickers. After the
 sensors were confirmed to be functioning the keys were put back.
 
-The calibration workflow was with Dr. Craig Webb who was unfamiliar with the system.
-Adjustments were made to the firmware to to make it more intuitive for the user.
-Addressable LEDs became vital as it allowed for easy identification of the key
-being calibrated. They were also used to identify any keys whose current reading
-was beyond what was expected.
+The calibration workflow was with Dr. Craig Webb who was unfamiliar with the
+system. Adjustments were made to the firmware to to make it more intuitive for
+the user. Addressable LEDs became vital as it allowed for easy identification of
+the key being calibrated. They were also used to identify any keys whose current
+reading was beyond what was expected.
 
 The rotary encoder was used as the interface to select a key, adjust it's
 threshold and update the Ferroelectric RAM (FRAM) with new values.

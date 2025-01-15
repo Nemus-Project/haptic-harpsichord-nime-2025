@@ -70,6 +70,9 @@
   \providecommand\BibTeX{{%
     Bib\TeX}}}
 
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 %% Rights management information.  This information is sent to you
 %% when you complete the rights form.  These commands have SAMPLE
 %% values in them; it is your responsibility as an author to replace
@@ -236,7 +239,7 @@
 %% information and the body of the document, and typically spans the
 %% page.
 \begin{teaserfigure}
-  \includegraphics[width=\textwidth]{images/sampleteaser.pdf}
+  \includegraphics[width=\textwidth]{src/images/side_w-o_sensors.jpeg}
   \caption{Two synthesisers on a table, 2019.}
   \Description{Enjoying looking at two synthesisers.
   A Korg Monotron and a Korg Volca FM.}
@@ -247,6 +250,8 @@
 %% This command processes the author and affiliation and title
 %% information and builds the first part of the formatted document.
 \maketitle
+
+\include{article.tex}
 
 \section{Introduction}
 ACM's consolidated article template, introduced in 2017, provides a

@@ -1,4 +1,4 @@
-# Abstract
+# Introduction
 
 With the advent of digital musical instruments in the 20th Century there has
 been a decoupling between interface and sound generation when playing.
@@ -33,15 +33,6 @@ undertaking a project of this kind.
 Overview of fabrication methods, techniques that can be employed. Finally a
 discussion of the limitations and areas in which the core project can be
 improved and developed further.
-
-
-# Introduction
-
-With the advent of digital musical instruments in the 20th Century there has
-been a decoupling between interface and sound generation when playing.
-Consequently, aspects of the sensory experience of playing have been lost,
-namely the sensation of vibration and mechanical impedance that a traditional
-musical instrument provides.
 
 In this context, a ‘traditional’ instrument is one whose interface for
 generating sound and the sound generating mechanism are fundamentally coupled. A
@@ -114,8 +105,8 @@ mitigated by creating a scaled version of the sound board, provinding only the
 length of string necessary under comparable tension and thus resistance to the
 jack quill.
 
-Extension to \\cite{McAlpine2014} and \\cite{Baldwin2016} are the open sourcing of
-hardware and software for the project.
+Extension to \\cite{McAlpine2014} and \\cite{Baldwin2016} are the open sourcing
+of hardware and software for the project.
 
 ## Why...
 
@@ -385,12 +376,12 @@ used for what was deemed reasonable assumption in terms of available equipment.
 ### QRE1113
 
 Following from the work in \\cite{McPherson1} \\cite{McPherson2} we tested a
-system using the Fairchild QRE1113 \\datasheetfigue. The QRE1113 is a combination
-infrared LED and phototransistor sensitive to IR light. The phototransistor of
-QRE1113 provides data on how much light is present and in particular how much
-light is being relfected from a surface. Since refelected light will be
-proportional to the distance of a surfcae it is a good, close proximity,
-distance sensor. Distance is the way in which the instruments in
+system using the Fairchild QRE1113 \\datasheetfigue. The QRE1113 is a
+combination infrared LED and phototransistor sensitive to IR light. The
+phototransistor of QRE1113 provides data on how much light is present and in
+particular how much light is being relfected from a surface. Since refelected
+light will be proportional to the distance of a surfcae it is a good, close
+proximity, distance sensor. Distance is the way in which the instruments in
 \\citeMcpherson1&2 function as well the Moog Piano Bar from which it too
 inspiration.
 
@@ -823,9 +814,9 @@ the first week of November in 2024.
 
 A misreading in the original clearance between the keys and the PCB meant that
 the keys wer block entirely from moving. A 10mm by 15mm section was milled out
-of each lke \\FIGURE to create extra clearance. The milling required the removal,
-shortening and refitting of the leather pads for the jacks \\FIGURE. The extra
-work added an extra day to the full install.
+of each lke \\FIGURE to create extra clearance. The milling required the
+removal, shortening and refitting of the leather pads for the jacks \\FIGURE.
+The extra work added an extra day to the full install.
 
 A redesign of the PCBs meant that removing the material would no longer be
 necessary.
@@ -1017,9 +1008,15 @@ components, the choice would have to be moade carefully.
 
 # Ethical Standards
 
-To ensure objectivity and transparency in research and to ensure that accepted principles of ethical and professional conduct have been followed, authors must include a section “Ethical Standards” before the References.
-This section should include (if relevant): information regarding sources of funding, potential conflicts of interest (financial or non-financial), informed consent if the research involved human participants, statement on welfare of animals if the research involved animals or any other information or context that helps ethically situate your research.
-For help with the ethics section, feel free to ask on the NIME forum: \url{https://forum.nime.org}.
+To ensure objectivity and transparency in research and to ensure that accepted
+principles of ethical and professional conduct have been followed, authors must
+include a section “Ethical Standards” before the References. This section should
+include (if relevant): information regarding sources of funding, potential
+conflicts of interest (financial or non-financial), informed consent if the
+research involved human participants, statement on welfare of animals if the
+research involved animals or any other information or context that helps
+ethically situate your research. For help with the ethics section, feel free to
+ask on the NIME forum: \url{https://forum.nime.org}.
 
 ## Example Trasuntino
 

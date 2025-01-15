@@ -1,6 +1,4 @@
-# TITLE
-
-## Abstract
+# Abstract
 
 With the advent of digital musical instruments in the 20th Century there has
 been a decoupling between interface and sound generation when playing.
@@ -37,7 +35,7 @@ discussion of the limitations and areas in which the core project can be
 improved and developed further.
 
 
-## Introduction
+# Introduction
 
 With the advent of digital musical instruments in the 20th Century there has
 been a decoupling between interface and sound generation when playing.
@@ -82,7 +80,7 @@ the limitation is a single data stream per key.
     - PNOmation
   - Piano Disc
 
-## Background
+# Background
 
 Prvious projects looking at how to approach the problems of increasing
 engagement and retaining the interction with historical musical instruments in a
@@ -119,23 +117,23 @@ jack quill.
 Extension to \cite{McAlpine2014} and \cite{Baldwin2016} are the open sourcing of
 hardware and software for the project.
 
-### Why...
+## Why...
 
-#### ...a replica?
+### ...a replica?
 
-#### ...an interface?
+### ...an interface?
 
 - maintain problems
 - probe for research
   - on haptics how it affects performance
 
-### Motivations
+## Motivations
 
 The project was  carried out in collaboratoiun with San Colombano. The results
 of the project would be presented as an interactive exhibition for the public.
 
 
-#### the problem
+### the problem
 
 Central philosophy of the Tagliavini Collection is that the instrument should
 remain playable to the public. The condition of some instruments is such that
@@ -147,21 +145,21 @@ This is not an uncommon problem faced by musical instrument museums worldwide.
 The central question the project tries to answer is "how do we conserve musical
 instruments in order to continue interacting with them"
 
-#### the solution
+### the solution
 
 The approach taken was to recreate the interface of these instruments not for
 acoustics purposes be purely for the mechanical resoponse. As exhibition for the
 general public in a musical instruments there were aesthetic and functional
 constraints placed on the design of the interface.
 
-#### Criteria
+### Criteria
 
 A keyboard interface that provides a comparable physical response to a
 harpsichord. Notes should be assigned per jack and not per key.
 
-### Keyboard 
+## Keyboard 
 
-#### Anatomy of Harpsichord mechanics
+### Anatomy of Harpsichord mechanics
 
 - simple
 - aesthetics
@@ -178,7 +176,7 @@ harpsichord. Notes should be assigned per jack and not per key.
   - body
 
 
-#### Design
+### Design
 
 The desicion was made to design the elctronic sna dthe model keyboard in tandem.
 Allow for quicker development time and iteration on the idea. Likely the first
@@ -213,19 +211,19 @@ good use of funds as a modern instrument fit for destruction did not offer
 benefits that the small model with easy internal access did not already provide.
 
 
-### Building Process
+## Building Process
 
 PARAGRAPH FROM ROBERTO
 
-#### 3-Key Prototype
+### 3-Key Prototype
 
 - proof of concept
 - available on loan from museum
 - easy access to internal structure
   
-#### Fig: Construction Design Diagram  
+### Fig: Construction Design Diagram  
 
-#### 49-Key Prototype
+### 49-Key Prototype
 
 For the final interface a 49-key (4-octave) was constructed by luthier Roberto
 Livi. The keyboard is in the same style† as the 3-key model with to jacks per
@@ -246,10 +244,10 @@ Constructed From:
 - problems of scale
 - problems of timescale
 
-#### Fig: Construction Design Diagram
+### Fig: Construction Design Diagram
 
 
-#### Design Constraints
+### Design Constraints
 
 - no electronics should be visible.
 - it should be robust and reliable, easily maintained by museum staff without
@@ -270,7 +268,7 @@ into the design of the internal chamber of the model \FIGURE, but there was
 still a limit given the structural and aesthatic requirements.
 
 
-#### Sensor Criteria
+### Sensor Criteria
 
 A set of criteria was drawn to which the final sensor system would have to
 satisfy. This criteria was used as a means of evaluating the feasability
@@ -292,7 +290,7 @@ throughout the prototyping phase.
   the usage of the data for control over other parameters.
 
 
-#### Triggering a note
+### Triggering a note
 
 For the first iteration the data from the sensor would simply be used to test
 when a threshold had been passed. On passing the threshold a message would be
@@ -300,14 +298,14 @@ sent to trigger the playback of a corresponding note.
 
 The message format covered in \section
 
-## Related Work and Motivation
+# Related Work and Motivation
 
 - \cite{HapticKey}
 - \cite{mcPherson1} \cite{mcPherson2}
 - \cite{Mudd2013}
 - \cite{FritzClaudia2017Leon}
 
-## Hardware Design
+# Hardware Design
 
 The hardware was designed with the xx in mind.
 
@@ -323,7 +321,7 @@ workshops.
 the physical mechanical response, which allowed for some preliminary tests on
 the presence and absence of mechanism.
 
-### Failed sensors
+## Failed sensors
 
 A number of sensors were tried before the final system was decided upon. An
 inertial measurment unit (IMU) was mounted to a single key which contained a 6
@@ -353,7 +351,7 @@ considered but was never implemented. The sensors were to be placed under each
 jack either above or below the padding on which the bottom of the jack rests.
 Further discussion of this apporach is in \section.
 
-## Electronics
+# Electronics
 
 Design of electronics carried out in tandem with construction of full model.
 Since the Electronics were designed at a distanced to the final full model some
@@ -384,7 +382,7 @@ used for what was deemed reasonable assumption in terms of available equipment.
   - availability and lead times
   - iteration and design from distance
 
-#### QRE1113
+### QRE1113
 
 Following from the work in \cite{McPherson1} \cite{McPherson2} we tested a
 system using the Fairchild QRE1113 \datasheetfigue. The QRE1113 is a combination
@@ -451,7 +449,7 @@ cross-talk was entirely eliminated.
 - usage
   - Sweet spot is around 6mm distance
 
-#### sensor surface
+### sensor surface
 
 - linear gradient
 - on Jack
@@ -467,9 +465,9 @@ cross-talk was entirely eliminated.
   - 3D printed jack body
     - problems
 
-### Arduino 
+## Arduino 
 
-#### Nano BLE
+### Nano BLE
 
 Arduino Nano BLE was chosen for a few reasons. The Nano form factor was
 appealing as it would allow for easy changes between chipsets without requiring
@@ -515,7 +513,7 @@ would have required additional multiplexers.
   - available at the time
   - 12-bit DAC
 
-### EEPROM / NVRAM / FRAM
+## EEPROM / NVRAM / FRAM
 
 There would need to be the ability to store values on non-volatile memory so
 that the electroincs could be powered-down without losing data.
@@ -552,7 +550,7 @@ speed was preffered over storage capacity.
 - available
 - interfaced via rotary encoder
 
-### RGB LEDs
+## RGB LEDs
 
 for problems of scale:
 
@@ -583,7 +581,7 @@ simpler design approach was taken.
 - locating keys
 - displaying key state
 
-### Multiplexing
+## Multiplexing
 
 CD4051BE Texas Instruments
 
@@ -616,7 +614,7 @@ for addressing the muliplexewrs and all PCBs are addressed simulatenously.
   - 7 PCBS
   - each with 7 sensors
 
-### PCB design
+## PCB design
 
 - EAGLE PCBs designed using EAGLE. Worth noting that AutoCAD has deprecated
 EAGLE and the programme will no longer be supported from 2026 Project files will
@@ -629,7 +627,7 @@ Smaller PCBs means that spacing could be adjusted to accomodate the changes in
 pitch between jacks. It also allowed for a modular approach where any PCB could
 swapped for minimal cost.
 
-#### Sensor board
+### Sensor board
 
 The 49 QRE1113s are divided across 7 PCBs each containing 
 
@@ -656,7 +654,7 @@ The 49 QRE1113s are divided across 7 PCBs each containing
   - striping all adc lines with FFC
   - solder pads to select channel
 
-#### controller board
+### controller board
 
 Controller board designed around Arduino nano form factor. The Nano is connected
 through headers to allow easy switching between chips. Should another chip in a
@@ -709,7 +707,7 @@ VAT_ _† model available in the git repository_
   - prohibitevly expensive to crimpers
   - 3D print helper to allow for crimping with generic crimpers
 
-### 3D printing
+## 3D printing
 
 Access to a 3D printer is was vital to the success of the project. Given the
 proliferation of 3D printing, particular in maker spaces in universities it was
@@ -740,7 +738,7 @@ See each corresponding section for more detail on 3D printed components.
 - mounts
   - MacMini
 
-### Power
+## Power
 
 All electronics draws around 1.1amps of current at 5V with some fluctuation
 during boot.
@@ -756,7 +754,7 @@ Current designs have a separate MIDI device for each jack row. Combining the
 devices and also reducing current draw to below the common 0.5 amps for a USB
 port would certainly be a challenge.
 
-## Firmware Design
+# Firmware Design
 
 Arduino platform chosen for wide adoption, relative ease of use and library
 support for components. 
@@ -783,7 +781,7 @@ threshold when it was previously above, a MIDI Note Off message ois sent.
   - current threshold and reading sent over serial and plotted
   - when over threshold send MIDI note
 
-### Project structure
+## Project structure
 
 The project is separated into three repositories encapsulating
 
@@ -791,17 +789,17 @@ The project is separated into three repositories encapsulating
 - Keyboard CAD Data
 - PCB CAD Data
 
-#### Firmware
+### Firmware
 
 Firmware repository contains all firmware for the full and smaller models and
 components.
 
-#### Keyboard
+### Keyboard
 
 The Keyboard repository contains all plans for fabricating the keyboard,
 measurements and 3D models of the jacks.
 
-#### PCB
+### PCB
 
 PCB repository contains the EAGLE files for creating the sensor and controller
 boards.
@@ -811,9 +809,9 @@ components based on parameter of jack pitch spacing and number of sensors per
 jack.
 
 
-## Implementation
+# Implementation
 
-### Installation
+## Installation
 
 The electronic components were partly pre-assembled at the university of
 Edinburgh. Though all measurments were known ahead, enough flexibiliyty was
@@ -891,7 +889,7 @@ Arduino IDE and MIDI was confirmed using the open source MIDI Monitor
  - connecting supports
  
 
-### Context
+## Context
 
 Designed as part of an exhibition for the museum San Colombano in Bologna.
 Instruments is to be played by general public as a means of interacting with
@@ -912,7 +910,7 @@ made to the tuning to accomodate for this.
   - secure storage and access
   - interface to the public
 
-### Calibration
+## Calibration
 
 Finer calibration carried out with the guidance of Catalina Vincens as an expert
 harpsichord performer
@@ -920,7 +918,7 @@ harpsichord performer
 - sensor surface
   - printed gradient
 
-## Conclusion
+# Conclusion
 
 - scale
 - time scale
@@ -933,7 +931,7 @@ harpsichord performer
     - hardware
       - FRAM
 
-## Going forward
+# Going forward
 
 - Velocity, aftertouch
 - second jack row
@@ -983,7 +981,7 @@ firmware.
 
 Evaluation
 
-### improvements
+## improvements
 
 - ESP-IDF
   - latency half
@@ -1018,7 +1016,7 @@ glare or being mistaken with other indcator LEDs To continue using THT
 components, the choice would have to be moade carefully. 
 
 
-## Acknowledgments
+# Acknowledgments
 
 A project of this breadth developed across 3 institutes and 2 countries cannot
 be carried without the support and technical knowledge of many skilled and
@@ -1047,10 +1045,10 @@ We acknowledge the invaluable contributions of
       electronics components
     - St Cecilia's Jenny Nex
 
-## Reference
+# Reference
 
 
-### Example Trasuntino
+## Example Trasuntino
 
 - [1538]
   https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=106088&viewType=detailView

@@ -1015,6 +1015,17 @@ related. They would have to be small enough and low enough current draw to avoid
 glare or being mistaken with other indcator LEDs To continue using THT
 components, the choice would have to be moade carefully. 
 
+# Ethical Standards
+
+To ensure objectivity and transparency in research and to ensure that accepted principles of ethical and professional conduct have been followed, authors must include a section “Ethical Standards” before the References.
+This section should include (if relevant): information regarding sources of funding, potential conflicts of interest (financial or non-financial), informed consent if the research involved human participants, statement on welfare of animals if the research involved animals or any other information or context that helps ethically situate your research.
+For help with the ethics section, feel free to ask on the NIME forum: \url{https://forum.nime.org}.
+
+## Example Trasuntino
+
+- [1538]
+  https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=106088&viewType=detailView
+- [1531]https://museumcollections.rcm.ac.uk/collection/Details/collect/58
 
 # Acknowledgments
 
@@ -1045,11 +1056,3 @@ We acknowledge the invaluable contributions of
       electronics components
     - St Cecilia's Jenny Nex
 
-# Reference
-
-
-## Example Trasuntino
-
-- [1538]
-  https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=106088&viewType=detailView
-- [1531]https://museumcollections.rcm.ac.uk/collection/Details/collect/58

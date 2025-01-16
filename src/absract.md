@@ -1,6 +1,6 @@
 Presented is a design for an electronically augmented replica of a 16th century
 harpsichord interface, in the style of a Trasuntino from 1547. The interface was
-designed, fabricated and exhibited in a collaboration between the NEMUS project
+designed, fabricated, and exhibited in a collaboration between the NEMUS project
 at the Università di Bologna and the Museo San Colombano, which hosts the
 Tagliavini Collection of playable historical keyboard instruments. The interface
 was commissioned as part of an exhibition and as a means of interacting with

@@ -63,7 +63,7 @@
 %% for your publication.
 %%
 %%
-\documentclass[sigconf]{nimeart}
+\documentclass[sigconf,anonymous,review]{nimeart}
 %%
 %% \BibTeX command to typeset BibTeX logo in the docs
 \AtBeginDocument{%
@@ -418,6 +418,12 @@ You can also hide text in the paper like this:
 \end{anonsuppress}
 \end{verbatim}
 
+% Both examples from acmart manual.
+Begin anonymous thing
+\begin{anonsuppress}
+  This is the continuation of the previous work by the author
+\end{anonsuppress}
+End anonymous thing
 or
 \begin{verbatim}
 This work was performed at \anon{NSA}.

@@ -62,7 +62,7 @@ focus on reproduction. These same systems could be applied to a harpsichord, but
 the limitation is a single data stream per key.
 
 - existing sysetms
-  - Yamaha Disklaviare
+  - Yamaha Disklavier
   - Bosendorfer
     - 290SE
     - CEUS

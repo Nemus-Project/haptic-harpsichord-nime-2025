@@ -15,7 +15,7 @@ working order \\cite{Tagliavini2009}
 in the collection are not in playing condition or are too fragile to continue to
 be available for the public to play. One of those fragile instruments in the
 Tagliavini collection is a 1547 Harpsichord by Alessandro Trasuntino
-\\cite{Treccani2019}, which was used as the basis for an interactive exhibition
+\\cite{Wraight2024}, which was used as the basis for an interactive exhibition
 commisioned by San Colombano.
 
 Project was also designed to allow others to easily recreate and iterate on the
@@ -51,10 +51,8 @@ creating music. Historical musical instruments present an interesting problem
 for cultural heritage as they are both a physical object but also a tool for
 making music. This begs the question, can we use haptics to preserve experiences
 of the past? The proposed project intends to develop further the methodologies
-implemented in musical haptics projects [3] such as [2]. The final outcome will
-be to create a framework for digital conservation of historic musical
-instruments such as the 1638 Ioannes Ruckers and the 1646 Ioannes Couchet
-double-manual harpsichords as referenced in the NEMUS project [4].
+implemented in musical haptics projects \\cite{MusicalHaptics} such as
+\\cite{Timmermans2020}.
 
 Systems exist already for the conversion of piano keyboard. The Yamaha
 disklavier, the Don Buchla designed MOOG Piano Bar, Bosendorfer, PNOscan by QRS
@@ -62,12 +60,15 @@ focus on reproduction. These same systems could be applied to a harpsichord, but
 the limitation is a single data stream per key.
 
 - existing sysetms
-  - Yamaha Disklavier
-  - Bosendorfer
+  - Yamaha Disklavier used as a basis for exploration into haptics and the piano
+    keyabord \\cite{MusicalHaptics2018_04, MusicalHaptics2018_05,
+    MusicalHaptics2018_13}
+  - Bosendorfer: LED photo transistor pair \\cite{Moog1990} for obtaining
+    performance data \\cite{MusicalHaptics2018_05}
     - 290SE
     - CEUS
   - Don Buchla / Moog Piano Bar
-  - PNOscan MIDI 9 QRS Music
+  - PNOscan MIDI 9 QRS Music as MIDI Piano system \\cite{McPherson2013}
     - PNOmation
   - Piano Disc
 
@@ -155,9 +156,8 @@ harpsichord. Notes should be assigned per jack and not per key.
 - simple
 - aesthetics
 - split workload
-
-
-- parts
+  
+- parts of harpsichord
   - jack
     - quill
     - jack body
@@ -294,7 +294,7 @@ The message format covered in \\section
 - \\cite{HapticKey}
 - \\cite{mcPherson1} \\cite{mcPherson2}
 - \\cite{Mudd2013}
-- \\cite{FritzClaudia2017Leon}
+- \\cite{Fritz2017}
 
 # Hardware Design
 
@@ -553,7 +553,7 @@ expected values and when a key was triggered. This allowed for visual
 identification of malfunctioning or uncalibrated keys.
 
 The LEDs are on the same PCB as the sensors and are hidden when the nameboard is
-in place.
+in place.2024
 
 Would sugggest that this is a necessity of this kind to provide a means to
 identify and diagnose LEDs with state.

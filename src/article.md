@@ -11,12 +11,12 @@ harpsichords for an exhibition at the musical instrument museum San Colombano in
 Bologna. San Colombano hosts the Tagliavini Collection (from Luigi Ferdinando
 Tagliavini), a collection of approximately 70 historical keyboard instruments in
 working order \cite{Tagliavini2007}
-(https://genusbononiae.it/en/san-colombano-tagliavini-collection/). Some items
-in the collection are not in playing condition or are too fragile to continue to
-be available for the public to play. One of those fragile instruments in the
-Tagliavini collection is a 1547 Harpsichord by Alessandro Trasuntino
-\cite{Wraight2024}, which was used as the basis for an interactive exhibition
-commisioned by San Colombano.
+\footnote{https://genusbononiae.it/en/san-colombano-tagliavini-collection/}.
+Some items in the collection are not in playing condition or are too fragile to
+continue to be available for the public to play. One of those fragile
+instruments in the Tagliavini collection is a 1547 Harpsichord by Alessandro
+Trasuntino \cite{Wraight2024}, which was used as the basis for an interactive
+exhibition commisioned by San Colombano.
 
 Project was also designed to allow others to easily recreate and iterate on the
 designs.
@@ -189,7 +189,7 @@ installation is covered in \\section{setup}
 The rear chamber was desigbned to house comonents for audio processing, which is
 discussed further in \\section
 
-https://github.com/Nemus-Project/haptic-harpsichord-nime-2025/issues/Nemus-Project/haptic-harpsichord-nime-2025/images/disegno.pdf
+\footnote{https://github.com/Nemus-Project/haptic-harpsichord-nime-2025/issues/Nemus-Project/haptic-harpsichord-nime-2025/images/disegno.pdf}
 
 For the initial prototyping stage, modifying an existing harpsichord was
 considered though ultimately discarded. An existing instrument would have
@@ -496,7 +496,7 @@ would have required additional multiplexers.
 - Nano form factor small
 - allows for easy changes in chipset
 - "Native USB"
-  https://learn.adafruit.com/dude-where-s-my-com-port/native-usb-boards#
+  \footnote{https://learn.adafruit.com/dude-where-s-my-com-port/native-usb-boards}
 - BLE Model
   - Performative
   - BLE capabilities for MIDI BLE transmission
@@ -674,19 +674,17 @@ design was drafted this time using JST-PH connectors. No commercial cables were
 immediately available in the configuration and length required, as such a cable
 loom needed to be made which meant crimping cables by hand. A crimping tool from
 JST is prohibitively expensive compared to the cost of other components in the
-project*. The crimping tool also appeared to be uncommon and was not readily
-available in the workshops at the projects disposal. Eventually a tool was
-found, but an alternative approach was also researched in order to maintain the
-criteria of accessibility.
+project \footnote{from RS https://uk.rs-online.com/web/p/crimp-tools/6880877
+£508 (inc. VAT)}. The crimping tool also appeared to be uncommon and was not
+readily available in the workshops at the projects disposal. Eventually a tool
+was found, but an alternative approach was also researched in order to maintain
+the criteria of accessibility.
 
 A locator was adapted from a creative commons stl model
-https://www.thingiverse.com/thing:1646016 that allowed a generic crimping tool
-to be adapted for use with JST-PH crimps† \\figure{}. The locator was printed
-using a Bambu X1 3D printer.
-
-_** A second alterntaive was assembling cables from other sets that were at
-hand._ _* from RS https://uk.rs-online.com/web/p/crimp-tools/6880877 £508 inc
-VAT_ _† model available in the git repository_
+\footnote{https://www.thingiverse.com/thing:1646016} that allowed a generic
+crimping tool to be adapted for use with JST-PH crimps† \\figure{}. The locator
+was printed using a Bambu X1 3D printer. A second alterntaive was assembling
+cables from other sets that were at hand.  
 
 - mount for nano  to allow switching
 - initially push fit 2.54mm header
@@ -871,15 +869,13 @@ This would likely be a better system for when the keyboard was fully operational
 
 The thresholds were calibrated visually utilising the serial plotter of the
 Arduino IDE and MIDI was confirmed using the open source MIDI Monitor
-(https://github.com/krevis/MIDIApps).
-
+\footnote{https://github.com/krevis/MIDIApps}.
 
  - partial pre-assembly
  - handsolder components
    - analog lines
  - connecting supports
  
-
 ## Context
 
 Designed as part of an exhibition for the museum San Colombano in Bologna.

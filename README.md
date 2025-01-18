@@ -24,9 +24,14 @@ _All dates are 23:59 AoE (Anywhere on Earth)_
 
 0. Abstract
 1. Intro
-2. Related Work and motivation
-3. Hardware Design
-4. Software Design
+2. Related Work and Motivation
+   1. Conservation of Interaction
+   2. Musical Instrument Haptics
+3. Overview of Harpischord Mechanism
+4. Design
+   1. Interface (Roberto)
+   2. Electronics      
+   3. Software
 5. Implementation
 6. Conclusion
 7. Acknowledgments

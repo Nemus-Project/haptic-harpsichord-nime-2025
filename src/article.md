@@ -10,12 +10,12 @@ The project look at restoring tactile and haptic response of 17th century
 harpsichords for an exhibition at the musical instrument museum San Colombano in
 Bologna. San Colombano hosts the Tagliavini Collection (from Luigi Ferdinando
 Tagliavini), a collection of approximately 70 historical keyboard instruments in
-working order \\cite{Tagliavini2009}
+working order \cite{Tagliavini2007}
 (https://genusbononiae.it/en/san-colombano-tagliavini-collection/). Some items
 in the collection are not in playing condition or are too fragile to continue to
 be available for the public to play. One of those fragile instruments in the
 Tagliavini collection is a 1547 Harpsichord by Alessandro Trasuntino
-\\cite{Wraight2024}, which was used as the basis for an interactive exhibition
+\cite{Wraight2024}, which was used as the basis for an interactive exhibition
 commisioned by San Colombano.
 
 Project was also designed to allow others to easily recreate and iterate on the
@@ -51,8 +51,8 @@ creating music. Historical musical instruments present an interesting problem
 for cultural heritage as they are both a physical object but also a tool for
 making music. This begs the question, can we use haptics to preserve experiences
 of the past? The proposed project intends to develop further the methodologies
-implemented in musical haptics projects \\cite{MusicalHaptics} such as
-\\cite{Timmermans2020}.
+implemented in musical haptics projects \cite{MusicalHaptics} such as
+\cite{Timmermans2020}.
 
 Systems exist already for the conversion of piano keyboard. The Yamaha
 disklavier, the Don Buchla designed MOOG Piano Bar, Bosendorfer, PNOscan by QRS
@@ -61,14 +61,14 @@ the limitation is a single data stream per key.
 
 - existing sysetms
   - Yamaha Disklavier used as a basis for exploration into haptics and the piano
-    keyabord \\cite{MusicalHaptics2018_04, MusicalHaptics2018_05,
+    keyabord \cite{MusicalHaptics2018_04, MusicalHaptics2018_05,
     MusicalHaptics2018_13}
-  - Bosendorfer: LED photo transistor pair \\cite{Moog1990} for obtaining
-    performance data \\cite{MusicalHaptics2018_05}
+  - Bosendorfer: LED photo transistor pair \cite{Moog1990} for obtaining
+    performance data \cite{MusicalHaptics2018_05}
     - 290SE
     - CEUS
   - Don Buchla / Moog Piano Bar
-  - PNOscan MIDI 9 QRS Music as MIDI Piano system \\cite{McPherson2013}
+  - PNOscan MIDI 9 QRS Music as MIDI Piano system \cite{McPherson2013}
     - PNOmation
   - Piano Disc
 
@@ -78,7 +78,7 @@ Prvious projects looking at how to approach the problems of increasing
 engagement and retaining the interction with historical musical instruments in a
 museum scenario.
 
-The paper by McAlpine \\cite{McAlpine2014} also has very similar motivations to
+The paper by McAlpine \cite{McAlpine2014} also has very similar motivations to
 the project presented here. Both were started from a musical instrument museum,
 housing a collection of historic instruments gifted by a collector (Benton
 Fletcher / Taglivaini) who wished for collection to remain playable, which is
@@ -92,12 +92,12 @@ feedback. McAlpine posits a fully paremterised haptic keyboard, but before
 taking such a leap we look at what affect a more literal haptic keyboard may
 provide to the performer experience.
 
-The previous NIME project "Tromba Moderna" \\cite{Baldwin2016}, which looked at
+The previous NIME project "Tromba Moderna" \cite{Baldwin2016}, which looked at
 reconstructing a full tromba marina to be used as a digital interface. The one
 of the limitations flagged by McAlpine was the oneffectiveness of weighted keys
 in mimicing the harpischord. The Tromba Moderna "attempted to avoid this problem
 by constructing a fully functioning replica of the tromba marina"
-\\cite{Baldwin}. This project applies the same approach to the harpsichord.m
+\cite{Baldwin2016}. This project applies the same approach to the harpsichord.m
 where the projects deviate is a questions of scale.
 
 Where the tromba moderna considers a single data stream this project has had to
@@ -106,8 +106,8 @@ mitigated by creating a scaled version of the sound board, provinding only the
 length of string necessary under comparable tension and thus resistance to the
 jack quill.
 
-Extension to \\cite{McAlpine2014} and \\cite{Baldwin2016} are the open sourcing
-of hardware and software for the project.
+Extension to \cite{McAlpine2014} and \cite{Baldwin2016} are the open sourcing of
+hardware and software for the project.
 
 ## Why...
 
@@ -291,10 +291,10 @@ The message format covered in \\section
 
 # Related Work and Motivation
 
-- \\cite{HapticKey}
-- \\cite{mcPherson1} \\cite{mcPherson2}
-- \\cite{Mudd2013}
-- \\cite{Fritz2017}
+- \cite{Timmermans2020}
+- \cite{McPherson2013} \cite{McPherson2019}
+- \cite{Mudd2013}
+- \cite{Fritz2017}
 
 # Hardware Design
 
@@ -375,15 +375,15 @@ used for what was deemed reasonable assumption in terms of available equipment.
 
 ### QRE1113
 
-Following from the work in \\cite{McPherson1} \\cite{McPherson2} we tested a
+Following from the work in \cite{McPherson2013, McPherson2019} we tested a
 system using the Fairchild QRE1113 \\datasheetfigue. The QRE1113 is a
 combination infrared LED and phototransistor sensitive to IR light. The
 phototransistor of QRE1113 provides data on how much light is present and in
 particular how much light is being relfected from a surface. Since refelected
 light will be proportional to the distance of a surfcae it is a good, close
 proximity, distance sensor. Distance is the way in which the instruments in
-\\citeMcpherson1&2 function as well the Moog Piano Bar from which it too
-inspiration.
+\cite{McPherson2013, McPherson2019} function as well the Moog Piano Bar from
+which it too inspiration.
 
 The limitation for taking a distance approach is that there is not one but 2
 jacks per key. For each jack to be measured indepeedntly the data would need tp
@@ -558,7 +558,7 @@ in place.2024
 Would sugggest that this is a necessity of this kind to provide a means to
 identify and diagnose LEDs with state.
 
-TLC5940 or other PWM driver such as in \\cite{mcpherson} added complexity to
+TLC5940 or other PWM driver such as in \cite{McPherson2013} added complexity to
 assembling, but were avoid in favour of Addressable LEDs with intergrated
 driver. The intergrated LEDs share the same data line which has the limitation
 where a fualty LED will stop all following LEDs from working. An individual PWM
@@ -586,7 +586,7 @@ The BLE Nano has 8 ADC pins connected to one ADC channel via a multiplexer
 Multiplexer added to expand to the
 
 Transistor / Op-amp circuit could have been used similar to the one in
-\\cite{mcpherson}.
+\cite{McPherson2013}.
 
 Benefits were keeping with THT based designed for easy assembly. 
 

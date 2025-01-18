@@ -18,10 +18,10 @@ Some items among the Tagliavini collection are no longer in a playing condition
 or are too fragile to continue to be available by museum visitors. One of those
 fragile instruments is a 1547 Harpsichord in the italian style by Alessandro
 Trasuntino \cite{Wraight2024}\footnote{examples of similar instruments by
-Trasuntino available online in the [Royal College of Music Collection
-(1531)](https://museumcollections.rcm.ac.uk/collection/Details/collect/58) and
-the [Musée de la musique collection
-(1538)](https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=106088&viewType=detailView)
+Trasuntino available online in the Royal College of Music Collection
+(1531: \url{https://museumcollections.rcm.ac.uk/collection/Details/collect/58}) and
+the Musée de la musique collection
+(1538: \url{https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=106088&viewType=detailView})
 }, which was used as the basis for an interactive exhibition commisioned by San
 Colombano.
 

@@ -63,7 +63,7 @@
 %% for your publication.
 %%
 %%
-\documentclass[sigconf,anonymous]{nimeart}
+\documentclass[sigconf]{nimeart}
 %%
 %% \BibTeX command to typeset BibTeX logo in the docs
 \AtBeginDocument{%
@@ -180,7 +180,19 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-This work describes the design of an electronically augmented replica of a 16th-century harpsichord keyboard with a typical Renaissance Italian layout. The keyboard is a collaboration between the authors and the Museo di San Colombano, which houses the Tagliavini Collection of playable historical keyboard instruments. The keyboard was commissioned for exhibition purposes and to enhance the experiential authenticity of the collection. The keyboard emulates the mechanics of a two-register harpsichord featuring a single manual. Unpitched strings under tension replicate the mechanical resistance characteristic of the original compass. An array of infrared LED/phototransistor pairs, connected to a microcontroller, was installed within the interface to generate a continuous stream of data corresponding to the jacks' motion. This paper details the design principles, development process, open-source implementation, and realisation of the installation for the San Colombano exhibition.
+This work describes the design of an electronically augmented replica of a
+16th-century harpsichord keyboard with a typical Renaissance Italian layout. The
+keyboard is a collaboration between the authors and the Museo di San Colombano,
+which houses the Tagliavini Collection of playable historical keyboard
+instruments. The keyboard was commissioned for exhibition purposes and to
+enhance the experiential authenticity of the collection. The keyboard emulates
+the mechanics of a two-register harpsichord featuring a single manual. Unpitched
+strings under tension replicate the mechanical resistance characteristic of the
+original compass. An array of infrared LED/phototransistor pairs, connected to a
+microcontroller, was installed within the interface to generate a continuous
+stream of data corresponding to the jacks' motion. This paper details the design
+principles, the development, open source implementation, and execution of
+the installation for the San Colombano exhibition.
 \end{abstract}
 
 %%
@@ -192,11 +204,18 @@ This work describes the design of an electronically augmented replica of a 16th-
 %% information and the body of the document, and typically spans the
 %% page.
 \begin{teaserfigure}
-  \includegraphics[width=\textwidth]{images/side_w-o_sensors.png}
-  \caption{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023}
-  \Description{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023}
+  \includegraphics[width=\textwidth]{images/49-key-front.png}
+  \caption{49-key Model Harpsichord Mechanism by Roberto Livi, Bologna 2024}
+  \Description{49-key Model Harpsichord Mechanism by Roberto Livi, Bologna 2024}
   \label{fig:teaser}
 \end{teaserfigure}
+
+% \begin{teaserfigure}
+%   \includegraphics[width=\textwidth]{images/side_w-o_sensors.png}
+%   \caption{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023}
+%   \Description{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023}
+%   \label{fig:teaser}
+% \end{teaserfigure}
 
 %%
 %% This command processes the author and affiliation and title

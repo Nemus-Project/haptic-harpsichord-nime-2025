@@ -1,14 +1,13 @@
-Presented is a design for an electronically augmented replica of a 16th century
-harpsichord interface, in the style of a 1547 Trasuntino harpsichord. The
-interface was designed, fabricated, and exhibited in a collaboration between the
-NEMUS project at the Università di Bologna and the Museo San Colombano, which
-hosts the Tagliavini Collection of playable historical keyboard instruments. The
-interface was commissioned as part of an exhibition and as a means of
-interacting with items in the collection that are no longer in playing
-condition. The keyboard is a replica of the mechanism found in harpsichords in
-the Trasuntino style, with un-pitched strings under tension to provide a
-comparable mechanical resistance as found on an original. A system of infra-red
-LED / phototransistor pairs was connected to a microcontroller and installed
-inside the interface from which a stream of data can be generated for each jack.
-The paper covers the design criteria, process, open source development, and
-execution of the installation for exhibition at San Colombano.
+This work describes the design of an electronically augmented replica of a
+16th-century harpsichord keyboard with a typical Renaissance Italian layout. The
+keyboard is a collaboration between the authors and the Museo di San Colombano,
+which houses the Tagliavini Collection of playable historical keyboard
+instruments. The keyboard was commissioned for exhibition purposes and to
+enhance the experiential authenticity of the collection. The keyboard emulates
+the mechanics of a two-register harpsichord featuring a single manual. Unpitched
+strings under tension replicate the mechanical resistance characteristic of the
+original compass. An array of infrared LED/phototransistor pairs, connected to a
+microcontroller, was installed within the interface to generate a continuous
+stream of data corresponding to the jacks' motion. This paper details the design
+principles, the development, open source implementation, and execution of
+the installation for the San Colombano exhibition.

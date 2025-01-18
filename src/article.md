@@ -18,10 +18,10 @@ Some items among the Tagliavini collection are no longer in a playing condition
 or are too fragile to continue to be available by museum visitors. One of those
 fragile instruments is a 1547 Harpsichord in the italian style by Alessandro
 Trasuntino \cite{Wraight2024}\footnote{examples of similar instruments by
-Trasuntino available online in the Royal College of Music Collection
-(1531: \url{https://museumcollections.rcm.ac.uk/collection/Details/collect/58}) and
-the Musée de la musique collection
-(1538: \url{https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=106088&viewType=detailView})
+Trasuntino available online in the Royal College of Music Collection (1531:
+\url{https://museumcollections.rcm.ac.uk/collection/Details/collect/58}) and the
+Musée de la musique collection (1538:
+\url{https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=106088&viewType=detailView})
 }, which was used as the basis for an interactive exhibition commisioned by San
 Colombano.
 
@@ -50,7 +50,8 @@ MIDI controller, these are all instruments whose interface are decoupled from
 their sound generation. This decoupling presents a problem that then needs to be
 addressed. How do we re-introduce this dimension to the experience of playing a
 musical instrument? How do we, and is it possible to, parameterise and preserve
-this experience? This is central problem that is trying to be solved in \cite{Nichols2002, Timmermans2020, McAlpine2014, Baldwin2016}.
+this experience? This is central problem that is trying to be solved in
+\cite{Nichols2002, Timmermans2020, McAlpine2014, Baldwin2016}.
 
 This is particularly pertinent as it relates to conservation of musical
 instruments, as they represent both historic objects, but also tools for
@@ -297,6 +298,16 @@ PARAGRAPH FROM ROBERTO
 - available on loan from museum
 - easy access to internal structure
   
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{images/side_w-o_sensors.png} 
+  \caption{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023} \Description{A 3-Key Model of a Harpsichord Mechanism created Graziano Bandini in Bologna
+  2023. A sidevew of the model which is a cross-section of what is a common
+mechanism for an italian style harpischord of the XVI century.} 
+\end{figure}
+
+
 <!-- ### Fig: Construction Design Diagram   -->
 
 ### 49-Key Prototype

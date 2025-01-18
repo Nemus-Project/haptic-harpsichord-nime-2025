@@ -1,63 +1,61 @@
 \section{Introduction}\label{introduction}
 
-With the advent of digital musical instruments in the 20th Century there
-has been a decoupling between interface and sound generation when
-playing. Consequently, aspects of the sensory experience of playing have
-been lost, namely the sensation of vibration and mechanical impedance
-that a traditional musical instrument provides.
+With the advent of digital musical instruments in the 20th century there has
+been a decoupling between interface and sound generation when playing.
+Consequently, aspects of the sensory experience of playing have been lost,
+namely the sensation of vibration and mechanical impedance that a traditional
+musical instrument provides.
 
-The project looks at restoring tactile and haptic response of historical
-harpsichords for an exhibition at the musical instrument Museo di San
+The project aims to restore the tactile and haptic response of historical
+harpsichords for an exhibition at the Museo di San
 Colombano\footnote{https://genusbononiae.it/en/san-colombano-tagliavini-collection/}
-in Bologna. San Colombano is host to the Tagliavini Collection, a
-collection of approximately 70 historical keyboard instruments in
-working order \cite{Tagliavini2007} gifted to the museum by\\
-from Luigi Ferdinando Tagliavini in 2010
-\cite{SanColombano2010,Carlino2010}.
+in Bologna. San Colombano is home to the Tagliavini Collection, a collection of
+approximately 70 historical keyboard instruments in working order
+\cite{Tagliavini2007} gifted to the museum by the Museum.\\
+from Luigi Ferdinando Tagliavini in 2010 \cite{SanColombano2010,Carlino2010}.
 
-Some items among the Tagliavini collection are no longer in a playing
-condition or are too fragile to continue to be available by museum
-visitors. One of those fragile instruments is a 1547 Harpsichord in the
-italian style by Alessandro Trasuntino
-\cite{Wraight2024}\footnote{examples of similar instruments by
+Some items in the Tagliavini collection are no longer in playing condition or
+are too fragile to continue to be available to museum visitors. One of those
+fragile instruments is a 1547 Harpsichord in the Italian style by Alessandro
+Trasuntino \cite{Wraight2024}\footnote{examples of similar instruments by
 Trasuntino available online in the Royal College of Music Collection (1531:
 \url{https://museumcollections.rcm.ac.uk/collection/Details/collect/58}) and the
 Musée de la musique collection (1538:
 \url{https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=106088&viewType=detailView})
-}, which was used as the basis for an interactive exhibition commisioned
-by San Colombano.
+}, which was used as the basis for an interactive exhibition organised by San
+Colombano.
 
-The project was also open sourced to allow for others to easily recreate
-and iterate on the designs.
+The project was also open-sourced to allow for others to easily recreate and
+iterate on the designs.
 
-The haptic key project by Timmermans et al.~\cite{Timmermans2020} began
-with the model of a piano key. A 3-key cross-sectional model of a
-harpischord mechanism \ref{3key} was provided to the NEMUS project by
-San Colombano as a test bed for sensors and as a proof of concept for a
-larger scale interface. Each key of model has 2 sets of strings that are
-under tension but not at any specific musical pitch. The strings are
-there to provide same resistance to the jack plectra as would be found
-on an instrument. The mechanism is in the italian style of the XVI-XIX
-century with 2 jacks per key with corresponding strings tuned in unison
-\footnote{"8'-8' È la dispozione normale dei clavicembali
-italiani" \cite{Tagliavini1987}}. A suitable sensing system was found
-for reliably detecting when jack had plucked a string independently and
-sending out a corresponding MIDI message to a connected sound synthesis
-engine. A full scale 49-key scale model was commissioned with and then
-built by luthier Roberto Livi in the same style as the 1547 Trasuntino
-\ref{teaser}. The sensor system was installed into the full scale
-model and then setup for exhibition at San Colombano. Visitors are
-invited to play the interface which currently triggers samples on a
-connected sound engine. The paper looks at the design decisions,
-processes, and considerations to be made when undertaking a project of
-this kind.
+The "Haptic Key" project by Timmermans et al. \cite{Timmermans2020} began with
+the model of a piano key. A 3-key cross-sectional model of a harpischord
+mechanism \ref{fig:3key} was provided to the NEMUS project by San Colombano as a
+test bed for sensors and as proof of concept for a larger scale interface. Each
+key of the model has 2 sets of strings that are under tension but not at any
+specific musical pitch. The strings are there to provide the same resistance to
+the jack plectra as would be found on an instrument. The mechanism is in the
+Italian style of the XVI-XIX century with 2 jacks per key and their
+corresponding strings tuned in unison \footnote{"8'-8' È la dispozione normale
+dei clavicembali italiani" \cite{Tagliavini1987}}. 
+
+A suitable sensing system was found to reliably detect when a jack had plucked a
+string independently and then send a corresponding MIDI message to a connected
+audio engine. A full scale 49-key scale model was commissioned with
+and then built by luthier Roberto Livi in the same style as the 1547 Trasuntino
+\ref{fig:teaser}. The sensor system was installed into the full-scale model and
+then set up for exhibition at San Colombano. Visitors are invited to play on the
+interface, which currently triggers samples on a connected sound engine. The
+paper looks at the design decisions, processes, and considerations that need to
+be made when undertaking a project of this kind.
 
 \begin{figure}  
   \centering
   \includegraphics[width=\linewidth]{images/side_w-o_sensors.png} 
-  \caption{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023} \Description{A 3-Key Model of a Harpsichord Mechanism created Graziano Bandini in Bologna. A sidevew of the model which is a cross-section of what is a common
-mechanism for an italian style harpischord of the XVI century.} 
-\label{fig:3key}
+  \caption{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023} 
+  \Description{A 3-Key Model of a Harpsichord Mechanism created Graziano Bandini in Bologna. A side view of the model which is a cross-section of what is a common
+mechanism for an Italian style harpsichord of the XVI century.} 
+  \label{fig:3key}
 \end{figure}
 
 Overview of fabrication methods, techniques that can be employed.
@@ -77,10 +75,10 @@ instrument? How do we, and is it possible to, parameterise and preserve
 this experience? This is central problem that is trying to be solved in
 \cite{Nichols2002, Timmermans2020, McAlpine2014, Baldwin2016}.
 
-This is particularly pertinent as it relates to conservation of musical
+This is particularly pertinent as it relates to the conservation of musical
 instruments, as they represent both historic objects, but also tools for
 creating music. Historical musical instruments present an interesting
-problem for cultural heritage as they are both a physical object but
+problem for cultural heritage as they are both a physical object, but
 also a tool for making music. This begs the question, can we use haptics
 to preserve experiences of the past? The proposed project intends to
 develop further the methodologies implemented in musical haptics
@@ -93,7 +91,7 @@ harpsichord, but the limitation is a single data stream per key.
 
 \subsection{Motivations}\label{motivations}
 
-The project was carried out in collaboratoiun with San Colombano. The
+The project was carried out in collaboration with San Colombano. The
 results of the project would be presented as an interactive exhibition
 for the public.
 

@@ -58,7 +58,7 @@ creating music. Historical musical instruments present an interesting problem
 for cultural heritage as they are both a physical object but also a tool for
 making music. This begs the question, can we use haptics to preserve experiences
 of the past? The proposed project intends to develop further the methodologies
-implemented in musical haptics projects \cite{MusicalHaptics} such as
+implemented in musical haptics projects \cite{MusicalHaptics2018} such as
 \cite{Timmermans2020}.
 
 Systems exist already for the conversion of piano keyboard. The Yamaha
@@ -122,7 +122,7 @@ where the projects deviate is a questions of scale.
 Museum staff want visitors to be engaged but limits in staffing and funding
 limit how vistors can interact with collections \cite{Templeton2018,
 McAlpine2014}. For musical instrument museums there is an additional difficulty
-in the balance of keeping historical instruments playable \cite{McAlpine2013}.
+in the balance of keeping historical instruments playable \cite{McAlpine2014}.
 The fragility and decay of musical instruments means that there is an inveitable
 point where instruments will no longer be  in a playable condition
 \cite{McAlpine2014, Fritz2017}

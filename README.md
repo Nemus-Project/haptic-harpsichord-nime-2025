@@ -43,4 +43,5 @@ _All dates are 23:59 AoE (Anywhere on Earth)_
 ```sh
 pandoc src/article.md -o src/article.tex
 sed -i ''  '/\\tightlist/d' src/article.tex
+sed -i ''  '/\\centering/d' src/article.tex
 ```

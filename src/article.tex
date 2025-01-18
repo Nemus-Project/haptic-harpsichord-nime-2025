@@ -6,7 +6,7 @@ playing. Consequently, aspects of the sensory experience of playing have
 been lost, namely the sensation of vibration and mechanical impedance
 that a traditional musical instrument provides.
 
-The project look at restoring tactile and haptic response of historical
+The project looks at restoring tactile and haptic response of historical
 harpsichords for an exhibition at the musical instrument Museo di San
 Colombano\footnote{https://genusbononiae.it/en/san-colombano-tagliavini-collection/}
 in Bologna. San Colombano is host to the Tagliavini Collection, a
@@ -27,18 +27,39 @@ Musée de la musique collection (1538:
 }, which was used as the basis for an interactive exhibition commisioned
 by San Colombano.
 
-Project was also designed to allow others to easily recreate and iterate
-on the designs.
+The project was also open sourced to allow for others to easily recreate
+and iterate on the designs.
 
-First a small cross-sectional model was used as a proof of concept. Once
-a sensing system was decided upon, a larger 49-key scale model was
-commissioned with and then built by luthier Roberto Livi. The models are
-designed to provide only a tactile and haptic response for the player. A
-sensor system was installed into the model and messages were sent to
-computer that triggered sounds from a sample library which the player
-listens to through headphones. The paper looks at the design decisions,
+The haptic key project by Timmermans et al.~\cite{Timmermans2020} began
+with the model of a piano key. A 3-key cross-sectional model of a
+harpischord mechanism \figure{3key} was provided to the NEMUS project by
+San Colombano as a test bed for sensors and as a proof of concept for a
+larger scale interface. Each key of model has 2 sets of strings that are
+under tension but not at any specific musical pitch. The strings are
+there to provide same resistance to the jack plectra as would be found
+on an instrument. The mechanism is in the italian style of the XVI-XIX
+century with 2 jacks per key with corresponding strings tuned in unison
+\footnote{"8'-8' È la dispozione normale dei clavicembali
+italiani" \cite{Tagliavini1987}}. A suitable sensing system was found
+for reliably detecting when jack had plucked a string independently and
+sending out a corresponding MIDI message to a connected sound synthesis
+engine. A full scale 49-key scale model was commissioned with and then
+built by luthier Roberto Livi in the same style as the 1547 Trasuntino
+\figure{teaser}. The sensor system was installed into the full scale
+model and then setup for exhibition at San Colombano. Visitors are
+invited to play the interface which currently triggers samples on a
+connected sound engine. The paper looks at the design decisions,
 processes, and considerations to be made when undertaking a project of
 this kind.
+
+\begin{figure}
+  \label{}
+  \centering
+  \includegraphics[width=\linewidth]{images/side_w-o_sensors.png} 
+  \caption{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023} \Description{A 3-Key Model of a Harpsichord Mechanism created Graziano Bandini in Bologna. A sidevew of the model which is a cross-section of what is a common
+mechanism for an italian style harpischord of the XVI century.} 
+\label{fig:3key}
+\end{figure}
 
 Overview of fabrication methods, techniques that can be employed.
 Finally a discussion of the limitations and areas in which the core
@@ -306,14 +327,6 @@ PARAGRAPH FROM ROBERTO
 \item
   easy access to internal structure
 \end{itemize}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\linewidth]{images/side_w-o_sensors.png} 
-  \caption{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023} \Description{A 3-Key Model of a Harpsichord Mechanism created Graziano Bandini in Bologna
-  2023. A sidevew of the model which is a cross-section of what is a common
-mechanism for an italian style harpischord of the XVI century.} 
-\end{figure}
 
 \subsubsection{49-Key Prototype}\label{key-prototype-1}
 

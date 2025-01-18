@@ -50,7 +50,7 @@ MIDI controller, these are all instruments whose interface are decoupled from
 their sound generation. This decoupling presents a problem that then needs to be
 addressed. How do we re-introduce this dimension to the experience of playing a
 musical instrument? How do we, and is it possible to, parameterise and preserve
-this experience? This is central problem that is trying to be solved in [1, 2].
+this experience? This is central problem that is trying to be solved in \cite{Nichols2002, Timmermans2020, McAlpine2014, Baldwin2016}.
 
 This is particularly pertinent as it relates to conservation of musical
 instruments, as they represent both historic objects, but also tools for
@@ -1080,9 +1080,3 @@ research involved human participants, statement on welfare of animals if the
 research involved animals or any other information or context that helps
 ethically situate your research. For help with the ethics section, feel free to
 ask on the NIME forum: \url{https://forum.nime.org}.
-
-## Example Trasuntino
-
-- [1538]
-  https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=106088&viewType=detailView
-- [1531]https://museumcollections.rcm.ac.uk/collection/Details/collect/58

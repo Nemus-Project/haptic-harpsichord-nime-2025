@@ -6,17 +6,24 @@ Consequently, aspects of the sensory experience of playing have been lost,
 namely the sensation of vibration and mechanical impedance that a traditional
 musical instrument provides.
 
-The project look at restoring tactile and haptic response of 17th century
-harpsichords for an exhibition at the musical instrument museum San Colombano in
-Bologna. San Colombano hosts the Tagliavini Collection (from Luigi Ferdinando
-Tagliavini), a collection of approximately 70 historical keyboard instruments in
-working order \cite{Tagliavini2007}
-\footnote{https://genusbononiae.it/en/san-colombano-tagliavini-collection/}.
-Some items in the collection are not in playing condition or are too fragile to
-continue to be available for the public to play. One of those fragile
-instruments in the Tagliavini collection is a 1547 Harpsichord by Alessandro
-Trasuntino \cite{Wraight2024}, which was used as the basis for an interactive
-exhibition commisioned by San Colombano.
+The project look at restoring tactile and haptic response of historical
+harpsichords for an exhibition at the musical instrument Museo di San
+Colombano\footnote{https://genusbononiae.it/en/san-colombano-tagliavini-collection/}
+in Bologna. San Colombano is host to the Tagliavini Collection, a collection of
+approximately 70 historical keyboard instruments in working order
+\cite{Tagliavini2007} gifted to the museum by  
+from Luigi Ferdinando Tagliavini in 2010 \cite{SanColombano2010,Carlino2010}.
+
+Some items among the Tagliavini collection are no longer in a playing condition
+or are too fragile to continue to be available by museum visitors. One of those
+fragile instruments is a 1547 Harpsichord in the italian style by Alessandro
+Trasuntino \cite{Wraight2024}\footnote{examples of similar instruments by
+Trasuntino available online in the [Royal College of Music Collection
+(1531)](https://museumcollections.rcm.ac.uk/collection/Details/collect/58) and
+the [Musée de la musique collection
+(1538)](https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=106088&viewType=detailView)
+}, which was used as the basis for an interactive exhibition commisioned by San
+Colombano.
 
 Project was also designed to allow others to easily recreate and iterate on the
 designs.
@@ -59,6 +66,21 @@ disklavier, the Don Buchla designed MOOG Piano Bar, Bosendorfer, PNOscan by QRS
 focus on reproduction. These same systems could be applied to a harpsichord, but
 the limitation is a single data stream per key.
 
+## Motivations
+
+The project was  carried out in collaboratoiun with San Colombano. The results
+of the project would be presented as an interactive exhibition for the public.
+
+<!-- ## Why...
+
+### ...a replica?
+
+### ...an interface?
+
+- maintain problems
+- probe for research
+  - on haptics how it affects performance -->
+
 - existing sysetms
   - Yamaha Disklavier used as a basis for exploration into haptics and the piano
     keyabord \cite{MusicalHaptics2018_04, MusicalHaptics2018_05,
@@ -72,16 +94,12 @@ the limitation is a single data stream per key.
     - PNOmation
   - Piano Disc
 
-# Background
+# Related Work
 
-Prvious projects looking at how to approach the problems of increasing
-engagement and retaining the interction with historical musical instruments in a
-museum scenario.
+Methodologies for increasing visitor engagmemnet or 
 
-The paper by McAlpine \cite{McAlpine2014} also has very similar motivations to
-the project presented here. Both were started from a musical instrument museum,
-housing a collection of historic instruments gifted by a collector (Benton
-Fletcher / Taglivaini) who wished for collection to remain playable, which is
+<!-- Why  -->
+<!-- 
 restricted growing fragility of some items in the respective collections. Bothe
 projects center around the creation of a custioom MIDI controller for
 interfacing with sound synthesis engine. The keyboard consisted of two modified
@@ -99,33 +117,74 @@ in mimicing the harpischord. The Tromba Moderna "attempted to avoid this problem
 by constructing a fully functioning replica of the tromba marina"
 \cite{Baldwin2016}. This project applies the same approach to the harpsichord.m
 where the projects deviate is a questions of scale.
+ -->
 
-Where the tromba moderna considers a single data stream this project has had to
-address 98 and the problems that come with increasing scale. Material costs
-mitigated by creating a scaled version of the sound board, provinding only the
-length of string necessary under comparable tension and thus resistance to the
-jack quill.
+Museum staff want visitors to be engaged but limits in staffing and funding
+limit how vistors can interact with collections \cite{Templeton2018,
+McAlpine2014}. For musical instrument museums there is an additional difficulty
+in the balance of keeping historical instruments playable \cite{McAlpine2013}.
+The fragility and decay of musical instruments means that there is an inveitable
+point where instruments will no longer be  in a playable condition
+\cite{McAlpine2014, Fritz2017}
 
-Extension to \cite{McAlpine2014} and \cite{Baldwin2016} are the open sourcing of
-hardware and software for the project.
+McAlpine outlines a similar situation to the Tagliavini collection in his work
+with the Benton Fletcher Collection \cite{McAlpine2014}. There was a stipulation
+by Benton Fletcher that the instruments remain available to play when they were
+gifted to National Trust  Fenton House. A custom MIDI interface arranged in a
+two manual harpischord style which triggered samples of the instruments in the
+collection using an appropraite recording strategy for each. One problem
+highlighted in user tests by McAlpine is that the weighted keys did no provide
+"an experiential sense of interacting with a historical keyboard"
+\cite{McAlpine2014}. The MIDI interface created from commercially available
+weighted keys. McAlpine posits a haptic keyboard augemented with  "actuators to
+provide positionally-sensitive real-time force feedback at point-of-contact" in
+a similar approach as the piano mechanism by Gillespie \cite{Gillespie1996}.
 
-## Why...
+Previous NIME project "Tromba Moderna" \cite{Baldwin2016} looked to avoid the
+complex engineering problem by simply recreating the tromba marina and
+augmenting it. In the case of the Tromba Modern, a piezo transducer was
+connected to a sound synthesis engine connected to a driver inside the
+instrument to simulate the vibration that would be expected of an historical
+tromba marina.
 
-### ...a replica?
-
-### ...an interface?
-
-- maintain problems
-- probe for research
-  - on haptics how it affects performance
-
-## Motivations
-
-The project was  carried out in collaboratoiun with San Colombano. The results
-of the project would be presented as an interactive exhibition for the public.
+<!-- Quotes \cite{McAlpine2014}.
+- "ultimately impractical - pieces of furniture" 
+- "[visitors] willingly suspend their disbelief and ascribe authenticity to the
+  experience of playing the sampled instruments."
+- "an experiential sense of interacting with a historical keyboard it is poor"
+- "The feel of an acoustic instrument is of fundamental importance to musicians,
+  who train for many years to achieve the fine motor control necessary to coax
+  the full range of expression from their instruments." -->
 
 
-### the problem
+<!-- Why a Replica -->
+The original design was to take a similar approach to the project by Timmermans
+\cite{Timmermans2020}, which was an extension of the system by Gillespie
+\cite{Gillespie1996}. The process laid out in Timmermans project was to begin
+with a single key model of the mechanism. We began with a 3-key Model
+Harpsichord Mechanism by Graziano Bandini \\figure{}. Before we continued with
+augementing a model with actuators it was decided that it we should first
+validate whether a recreation of the harpsichord mechanism would suffice in
+allowing visitors to suspend disbelief. 
+
+<!-- Why an interface -->
+Benefits of putting effort into the maintenance of one interface with a
+transferable sensor system
+
+An additonal factor not faced in the Tromba Moderna project is the problem of
+scale in managing 98 rather than a single data stream of data.
+
+Material costs mitigated by creating a scaled version of the sound board,
+providing only the length of string necessary under comparable tension and thus
+resistance to the jack quill.
+
+Finally, a further extension to the projects above was a commmitement to open
+sourcing all aspects of the project, hardware, software, and data.
+
+
+# Design
+
+## Design Problem
 
 Central philosophy of the Tagliavini Collection is that the instrument should
 remain playable to the public. The condition of some instruments is such that
@@ -137,17 +196,41 @@ This is not an uncommon problem faced by musical instrument museums worldwide.
 The central question the project tries to answer is "how do we conserve musical
 instruments in order to continue interacting with them"
 
-### the solution
+<!-- ### the solution -->
 
 The approach taken was to recreate the interface of these instruments not for
 acoustics purposes be purely for the mechanical resoponse. As exhibition for the
 general public in a musical instruments there were aesthetic and functional
 constraints placed on the design of the interface.
 
-### Criteria
+<!-- ## Criteria -->
 
-A keyboard interface that provides a comparable physical response to a
-harpsichord. Notes should be assigned per jack and not per key.
+The design criteria was to create a keyboard interface that provides a
+comparable physical response to a harpsichord. 
+
+
+
+### Design Constraints
+
+- no electronics should be visible.
+- it should be robust and reliable, easily maintained by museum staff without
+  complex technical processes
+- it should not augment or fix the mechanics, but present them with their
+  original limitation
+
+Another constraint was that the design of the sensor system and the model
+keyboard would have to carried out at a distance in separate workshops. Time
+constraints meant the keyboard was being fabricated for a sensor that did not
+yet exist. 
+
+
+Accomodations were made in the design to allow for as much flexibility as
+possible. This also meant that designs for the eletronics would have to include
+a deal of flexibility in how they might be installed. Surplus space was added
+into the design of the internal chamber of the model \\FIGURE, but there was
+still a limit given the structural and aesthatic requirements.
+
+<!-- Notes should be assigned per jack and not per key. -->
 
 ## Keyboard 
 
@@ -167,7 +250,7 @@ harpsichord. Notes should be assigned per jack and not per key.
   - body
 
 
-### Design
+### Keyboard Construction
 
 The desicion was made to design the elctronic sna dthe model keyboard in tandem.
 Allow for quicker development time and iteration on the idea. Likely the first
@@ -206,13 +289,15 @@ benefits that the small model with easy internal access did not already provide.
 
 PARAGRAPH FROM ROBERTO
 
+## Prototyping
+
 ### 3-Key Prototype
 
 - proof of concept
 - available on loan from museum
 - easy access to internal structure
   
-### Fig: Construction Design Diagram  
+<!-- ### Fig: Construction Design Diagram   -->
 
 ### 49-Key Prototype
 
@@ -235,29 +320,7 @@ Constructed From:
 - problems of scale
 - problems of timescale
 
-### Fig: Construction Design Diagram
-
-
-### Design Constraints
-
-- no electronics should be visible.
-- it should be robust and reliable, easily maintained by museum staff without
-  complex technical processes
-- it should not augment or fix the mechanics, but present them with their
-  original limitation
-
-Another constraint was that the design of the sensor system and the model
-keyboard would have to carried out at a distance in separate workshops. Time
-constraints meant the keyboard was being fabricated for a sensor that did not
-yet exist. 
-
-
-Accomodations were made in the design to allow for as much flexibility as
-possible. This also meant that designs for the eletronics would have to include
-a deal of flexibility in how they might be installed. Surplus space was added
-into the design of the internal chamber of the model \\FIGURE, but there was
-still a limit given the structural and aesthatic requirements.
-
+<!-- ### Fig: Construction Design Diagram -->
 
 ### Sensor Criteria
 
@@ -964,9 +1027,13 @@ messages in software. This would be applicable for numericla simulations of
 strings. A bespoke piec e of sowftare would also allow for direct mapping of
 jack rows to registers. There is enough data to implemenet functionality for
 velocity and aftertouch MIDI messages and simply needs to be activated in the
-firmware.
+firmware. (Hyperinstruments \cite{nime2024_20})
 
-Evaluation
+seat vibrations \cite{MusicalHaptics2018_07} 
+
+- "there is a general connection between vibrations and the perceived quality of
+  music reproduction" 
+- "influence of vibrations on loudness perception at low frequencies" Evaluation
 
 ## improvements
 

@@ -31,3 +31,11 @@ _All dates are 23:59 AoE (Anywhere on Earth)_
 6. Conclusion
 7. Acknowledgments
 8. Reference
+
+
+## Markdown to Tex
+
+```sh
+pandoc src/article.md -o src/article.tex
+sed -i ''  '/\\tightlist/d' src/article.tex
+```

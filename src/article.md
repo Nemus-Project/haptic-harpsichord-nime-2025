@@ -48,8 +48,7 @@ samples on a connected sound engine. The paper looks at the design decisions,
 processes, and considerations to be made when undertaking a project of this
 kind.
 
-\begin{figure}
-  \label{}
+\begin{figure}  
   \centering
   \includegraphics[width=\linewidth]{images/side_w-o_sensors.png} 
   \caption{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023} \Description{A 3-Key Model of a Harpsichord Mechanism created Graziano Bandini in Bologna. A sidevew of the model which is a cross-section of what is a common

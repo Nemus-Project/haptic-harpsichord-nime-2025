@@ -10,15 +10,13 @@ The project look at restoring tactile and haptic response of 17th
 century harpsichords for an exhibition at the musical instrument museum
 San Colombano in Bologna. San Colombano hosts the Tagliavini Collection
 (from Luigi Ferdinando Tagliavini), a collection of approximately 70
-historical keyboard instruments in working order
-\textbackslash cite\{Tagliavini2009\}
+historical keyboard instruments in working order \cite{Tagliavini2007}
 (https://genusbononiae.it/en/san-colombano-tagliavini-collection/). Some
 items in the collection are not in playing condition or are too fragile
 to continue to be available for the public to play. One of those fragile
 instruments in the Tagliavini collection is a 1547 Harpsichord by
-Alessandro Trasuntino \textbackslash cite\{Treccani2019\}, which was
-used as the basis for an interactive exhibition commisioned by San
-Colombano.
+Alessandro Trasuntino \cite{Wraight2024}, which was used as the basis
+for an interactive exhibition commisioned by San Colombano.
 
 Project was also designed to allow others to easily recreate and iterate
 on the designs.
@@ -57,10 +55,7 @@ problem for cultural heritage as they are both a physical object but
 also a tool for making music. This begs the question, can we use haptics
 to preserve experiences of the past? The proposed project intends to
 develop further the methodologies implemented in musical haptics
-projects {[}3{]} such as {[}2{]}. The final outcome will be to create a
-framework for digital conservation of historic musical instruments such
-as the 1638 Ioannes Ruckers and the 1646 Ioannes Couchet double-manual
-harpsichords as referenced in the NEMUS project {[}4{]}.
+projects \cite{MusicalHaptics} such as \cite{Timmermans2020}.
 
 Systems exist already for the conversion of piano keyboard. The Yamaha
 disklavier, the Don Buchla designed MOOG Piano Bar, Bosendorfer, PNOscan
@@ -68,19 +63,20 @@ by QRS focus on reproduction. These same systems could be applied to a
 harpsichord, but the limitation is a single data stream per key.
 
 \begin{itemize}
-
 \item
   existing sysetms
 
   \begin{itemize}
-  
   \item
-    Yamaha Disklaviare
+    Yamaha Disklavier used as a basis for exploration into haptics and
+    the piano keyabord
+    \cite{MusicalHaptics2018_04, MusicalHaptics2018_05,
+    MusicalHaptics2018_13}
   \item
-    Bosendorfer
+    Bosendorfer: LED photo transistor pair \cite{Moog1990} for obtaining
+    performance data \cite{MusicalHaptics2018_05}
 
     \begin{itemize}
-    
     \item
       290SE
     \item
@@ -89,10 +85,9 @@ harpsichord, but the limitation is a single data stream per key.
   \item
     Don Buchla / Moog Piano Bar
   \item
-    PNOscan MIDI 9 QRS Music
+    PNOscan MIDI 9 QRS Music as MIDI Piano system \cite{McPherson2013}
 
     \begin{itemize}
-    
     \item
       PNOmation
     \end{itemize}
@@ -107,31 +102,29 @@ Prvious projects looking at how to approach the problems of increasing
 engagement and retaining the interction with historical musical
 instruments in a museum scenario.
 
-The paper by McAlpine \textbackslash cite\{McAlpine2014\} also has very
-similar motivations to the project presented here. Both were started
-from a musical instrument museum, housing a collection of historic
-instruments gifted by a collector (Benton Fletcher / Taglivaini) who
-wished for collection to remain playable, which is restricted growing
-fragility of some items in the respective collections. Bothe projects
-center around the creation of a custioom MIDI controller for interfacing
-with sound synthesis engine. The keyboard consisted of two modified
-commercial MIDI keyboard controllers in a two manual harpsichord
-arrangement. Weherease the McAlpine keyboard used weighted keys, this
-interface extends the idea by using the mechanism and strings under
-tension to provide the haptic feedback. McAlpine posits a fully
-paremterised haptic keyboard, but before taking such a leap we look at
-what affect a more literal haptic keyboard may provide to the performer
-experience.
+The paper by McAlpine \cite{McAlpine2014} also has very similar
+motivations to the project presented here. Both were started from a
+musical instrument museum, housing a collection of historic instruments
+gifted by a collector (Benton Fletcher / Taglivaini) who wished for
+collection to remain playable, which is restricted growing fragility of
+some items in the respective collections. Bothe projects center around
+the creation of a custioom MIDI controller for interfacing with sound
+synthesis engine. The keyboard consisted of two modified commercial MIDI
+keyboard controllers in a two manual harpsichord arrangement. Weherease
+the McAlpine keyboard used weighted keys, this interface extends the
+idea by using the mechanism and strings under tension to provide the
+haptic feedback. McAlpine posits a fully paremterised haptic keyboard,
+but before taking such a leap we look at what affect a more literal
+haptic keyboard may provide to the performer experience.
 
-The previous NIME project ``Tromba Moderna''
-\textbackslash cite\{Baldwin2016\}, which looked at reconstructing a
-full tromba marina to be used as a digital interface. The one of the
-limitations flagged by McAlpine was the oneffectiveness of weighted keys
-in mimicing the harpischord. The Tromba Moderna ``attempted to avoid
-this problem by constructing a fully functioning replica of the tromba
-marina'' \textbackslash cite\{Baldwin\}. This project applies the same
-approach to the harpsichord.m where the projects deviate is a questions
-of scale.
+The previous NIME project ``Tromba Moderna'' \cite{Baldwin2016}, which
+looked at reconstructing a full tromba marina to be used as a digital
+interface. The one of the limitations flagged by McAlpine was the
+oneffectiveness of weighted keys in mimicing the harpischord. The Tromba
+Moderna ``attempted to avoid this problem by constructing a fully
+functioning replica of the tromba marina'' \cite{Baldwin2016}. This
+project applies the same approach to the harpsichord.m where the
+projects deviate is a questions of scale.
 
 Where the tromba moderna considers a single data stream this project has
 had to address 98 and the problems that come with increasing scale.
@@ -139,9 +132,8 @@ Material costs mitigated by creating a scaled version of the sound
 board, provinding only the length of string necessary under comparable
 tension and thus resistance to the jack quill.
 
-Extension to \textbackslash cite\{McAlpine2014\} and
-\textbackslash cite\{Baldwin2016\} are the open sourcing of hardware and
-software for the project.
+Extension to \cite{McAlpine2014} and \cite{Baldwin2016} are the open
+sourcing of hardware and software for the project.
 
 \subsection{Why\ldots{}}\label{why}
 
@@ -150,14 +142,12 @@ software for the project.
 \subsubsection{\ldots an interface?}\label{an-interface}
 
 \begin{itemize}
-
 \item
   maintain problems
 \item
   probe for research
 
   \begin{itemize}
-  
   \item
     on haptics how it affects performance
   \end{itemize}
@@ -208,15 +198,13 @@ mechanics}\label{anatomy-of-harpsichord-mechanics}
 \item
   split workload
 \item
-  parts
+  parts of harpsichord
 
   \begin{itemize}
-  
   \item
     jack
 
     \begin{itemize}
-    
     \item
       quill
     \item
@@ -275,7 +263,6 @@ PARAGRAPH FROM ROBERTO
 \subsubsection{3-Key Prototype}\label{key-prototype}
 
 \begin{itemize}
-
 \item
   proof of concept
 \item
@@ -306,7 +293,6 @@ lab was 8-months. Active assembly of the instrument was 3 months
 Constructed From:
 
 \begin{itemize}
-
 \item
   for exhibition
 \item
@@ -321,7 +307,6 @@ Diagram}\label{fig-construction-design-diagram-1}
 \subsubsection{Design Constraints}\label{design-constraints}
 
 \begin{itemize}
-
 \item
   no electronics should be visible.
 \item
@@ -351,7 +336,6 @@ to satisfy. This criteria was used as a means of evaluating the
 feasability throughout the prototyping phase.
 
 \begin{itemize}
-
 \item
   Non-invasive: The sensor system should not require major modifications
   to the interface on which it is installed.
@@ -387,15 +371,14 @@ The message format covered in \textbackslash section
 \section{Related Work and Motivation}\label{related-work-and-motivation}
 
 \begin{itemize}
-
 \item
-  \textbackslash cite\{HapticKey\}
+  \cite{Timmermans2020}
 \item
-  \textbackslash cite\{mcPherson1\} \textbackslash cite\{mcPherson2\}
+  \cite{McPherson2013} \cite{McPherson2019}
 \item
-  \textbackslash cite\{Mudd2013\}
+  \cite{Mudd2013}
 \item
-  \textbackslash cite\{FritzClaudia2017Leon\}
+  \cite{Fritz2017}
 \end{itemize}
 
 \section{Hardware Design}\label{hardware-design}
@@ -474,17 +457,14 @@ Edinburgh (uCreate) used for what was deemed reasonable assumption in
 terms of available equipment.
 
 \begin{itemize}
-
 \item
   Over arching themes
 
   \begin{itemize}
-  
   \item
     simplicity of design
 
     \begin{itemize}
-    
     \item
       Limited resources
     \item
@@ -499,16 +479,15 @@ terms of available equipment.
 
 \subsubsection{QRE1113}\label{qre1113}
 
-Following from the work in \textbackslash cite\{McPherson1\}
-\textbackslash cite\{McPherson2\} we tested a system using the Fairchild
-QRE1113 \textbackslash datasheetfigue. The QRE1113 is a combination
-infrared LED and phototransistor sensitive to IR light. The
-phototransistor of QRE1113 provides data on how much light is present
-and in particular how much light is being relfected from a surface.
-Since refelected light will be proportional to the distance of a surfcae
-it is a good, close proximity, distance sensor. Distance is the way in
-which the instruments in \textbackslash citeMcpherson1\&2 function as
-well the Moog Piano Bar from which it too inspiration.
+Following from the work in \cite{McPherson2013, McPherson2019} we tested
+a system using the Fairchild QRE1113 \textbackslash datasheetfigue. The
+QRE1113 is a combination infrared LED and phototransistor sensitive to
+IR light. The phototransistor of QRE1113 provides data on how much light
+is present and in particular how much light is being relfected from a
+surface. Since refelected light will be proportional to the distance of
+a surfcae it is a good, close proximity, distance sensor. Distance is
+the way in which the instruments in \cite{McPherson2013, McPherson2019}
+function as well the Moog Piano Bar from which it too inspiration.
 
 The limitation for taking a distance approach is that there is not one
 but 2 jacks per key. For each jack to be measured indepeedntly the data
@@ -518,14 +497,12 @@ They \emph{could} be used and individual trigger points set in
 calibration, but this creates new problems.
 
 \begin{itemize}
-
 \item
   The triggering would need to be bespoke for every key as fluxuations
   in the dimensions of every piece mean that the threshold would be
   different.
 
   \begin{itemize}
-  
   \item
     Moving a problem into additional time in the calibtraryoin setup
     phase.
@@ -535,7 +512,6 @@ calibration, but this creates new problems.
   would be no easy way to tell if a jack had nbot reseated.
 
   \begin{itemize}
-  
   \item
     In playing a harpihchord when the jack does not go to its rest
     position, not note would play. This fault should be carried over
@@ -578,7 +554,6 @@ light simply being diffused. After the baffles were fitted the
 cross-talk was entirely eliminated.
 
 \begin{itemize}
-
 \item
   previous use
 \item
@@ -589,7 +564,6 @@ cross-talk was entirely eliminated.
   usage
 
   \begin{itemize}
-  
   \item
     Sweet spot is around 6mm distance
   \end{itemize}
@@ -598,7 +572,6 @@ cross-talk was entirely eliminated.
 \subsubsection{sensor surface}\label{sensor-surface}
 
 \begin{itemize}
-
 \item
   linear gradient
 \item
@@ -615,12 +588,10 @@ cross-talk was entirely eliminated.
   alternatives
 
   \begin{itemize}
-  
   \item
     CNC plywood and mdf
 
     \begin{itemize}
-    
     \item
       problems
     \end{itemize}
@@ -628,7 +599,6 @@ cross-talk was entirely eliminated.
     laser cut plywood and mdf
 
     \begin{itemize}
-    
     \item
       problems
     \end{itemize}
@@ -636,7 +606,6 @@ cross-talk was entirely eliminated.
     3D printed jack body
 
     \begin{itemize}
-    
     \item
       problems
     \end{itemize}
@@ -682,7 +651,6 @@ functionality, but it was found that 2 ADC channels were in fact not
 useable and would have required additional multiplexers.
 
 \begin{itemize}
-
 \item
   Nano form factor small
 \item
@@ -694,7 +662,6 @@ useable and would have required additional multiplexers.
   BLE Model
 
   \begin{itemize}
-  
   \item
     Performative
   \item
@@ -739,7 +706,6 @@ The posiiton of the controller board did not permit easy access.
 reliability and speed was preffered over storage capacity.
 
 \begin{itemize}
-
 \item
   On board available, but volatile
 \item
@@ -766,16 +732,16 @@ of expected values and when a key was triggered. This allowed for visual
 identification of malfunctioning or uncalibrated keys.
 
 The LEDs are on the same PCB as the sensors and are hidden when the
-nameboard is in place.
+nameboard is in place.2024
 
 Would sugggest that this is a necessity of this kind to provide a means
 to identify and diagnose LEDs with state.
 
-TLC5940 or other PWM driver such as in \textbackslash cite\{mcpherson\}
-added complexity to assembling, but were avoid in favour of Addressable
-LEDs with intergrated driver. The intergrated LEDs share the same data
-line which has the limitation where a fualty LED will stop all following
-LEDs from working. An individual PWM driver per PCB would allow avoid
+TLC5940 or other PWM driver such as in \cite{McPherson2013} added
+complexity to assembling, but were avoid in favour of Addressable LEDs
+with intergrated driver. The intergrated LEDs share the same data line
+which has the limitation where a fualty LED will stop all following LEDs
+from working. An individual PWM driver per PCB would allow avoid
 situations where failutre cascades, but would add complexity in assembly
 as the parts are typically SMD. Also, given the LEDs are fixed to the
 board and could not be repaired in situ, the solution would be to
@@ -784,7 +750,6 @@ were only used in debugging and calibration and otehrwise would not be
 visible, a simpler design approach was taken.
 
 \begin{itemize}
-
 \item
   locating keys
 \item
@@ -806,7 +771,7 @@ multiplexer
 Multiplexer added to expand to the
 
 Transistor / Op-amp circuit could have been used similar to the one in
-\textbackslash cite\{mcpherson\}.
+\cite{McPherson2013}.
 
 Benefits were keeping with THT based designed for easy assembly.
 
@@ -818,7 +783,6 @@ required pins for addressing the muliplexewrs and all PCBs are addressed
 simulatenously.
 
 \begin{itemize}
-
 \item
   limited ADC channels
 \item
@@ -833,7 +797,6 @@ simulatenously.
   7 into 49
 
   \begin{itemize}
-  
   \item
     7 PCBS
   \item
@@ -844,7 +807,6 @@ simulatenously.
 \subsection{PCB design}\label{pcb-design}
 
 \begin{itemize}
-
 \item
   EAGLE PCBs designed using EAGLE. Worth noting that AutoCAD has
   deprecated EAGLE and the programme will no longer be supported from
@@ -882,7 +844,6 @@ The 49 QRE1113s are divided across 7 PCBs each containing
   orientation problems
 
   \begin{itemize}
-  
   \item
     legs break easily
   \item
@@ -891,7 +852,6 @@ The 49 QRE1113s are divided across 7 PCBs each containing
     problem
 
     \begin{itemize}
-    
     \item
       milling out keys
     \end{itemize}
@@ -904,7 +864,6 @@ The 49 QRE1113s are divided across 7 PCBs each containing
   problems
 
   \begin{itemize}
-  
   \item
     additional terminals uneeded resulted in lots of additional work
   \item
@@ -914,7 +873,6 @@ The 49 QRE1113s are divided across 7 PCBs each containing
   solutions
 
   \begin{itemize}
-  
   \item
     striping all adc lines with FFC
   \item
@@ -970,14 +928,12 @@ https://uk.rs-online.com/web/p/crimp-tools/6880877 £508 inc VAT} \emph{†
 model available in the git repository}
 
 \begin{itemize}
-
 \item
   mount for nano to allow switching
 \item
   initially push fit 2.54mm header
 
   \begin{itemize}
-  
   \item
     not a secure fit
   \end{itemize}
@@ -985,12 +941,10 @@ model available in the git repository}
   JST-PH used
 
   \begin{itemize}
-  
   \item
     crimping required custom cables
 
     \begin{itemize}
-    
     \item
       could be assembled from other cables
     \item
@@ -1032,7 +986,6 @@ See each corresponding section for more detail on 3D printed components.
   Supports
 
   \begin{itemize}
-  
   \item
     Push fit
   \item
@@ -1042,7 +995,6 @@ See each corresponding section for more detail on 3D printed components.
   Blinkers
 
   \begin{itemize}
-  
   \item
     reduce noise from other senors
   \end{itemize}
@@ -1050,7 +1002,6 @@ See each corresponding section for more detail on 3D printed components.
   mounts
 
   \begin{itemize}
-  
   \item
     MacMini
   \end{itemize}
@@ -1089,12 +1040,10 @@ sent. For the reverse case where the value was below the threshold when
 it was previously above, a MIDI Note Off message ois sent.
 
 \begin{itemize}
-
 \item
   Arduino platform
 
   \begin{itemize}
-  
   \item
     library support and portability
   \item
@@ -1106,7 +1055,6 @@ it was previously above, a MIDI Note Off message ois sent.
   core algorithm
 
   \begin{itemize}
-  
   \item
     check components connected
   \item
@@ -1115,7 +1063,6 @@ it was previously above, a MIDI Note Off message ois sent.
     select key with rotary
 
     \begin{itemize}
-    
     \item
       click to edit, double to save
     \end{itemize}
@@ -1131,7 +1078,6 @@ it was previously above, a MIDI Note Off message ois sent.
 The project is separated into three repositories encapsulating
 
 \begin{itemize}
-
 \item
   Firmware
 \item
@@ -1239,14 +1185,12 @@ the Arduino IDE and MIDI was confirmed using the open source MIDI
 Monitor (https://github.com/krevis/MIDIApps).
 
 \begin{itemize}
-
 \item
   partial pre-assembly
 \item
   handsolder components
 
   \begin{itemize}
-  
   \item
     analog lines
   \end{itemize}
@@ -1266,7 +1210,6 @@ did change the tension and thereforew the feel of the strings so
 adjustments needed to be made to the tuning to accomodate for this.
 
 \begin{itemize}
-
 \item
   in museum context
 \item
@@ -1279,7 +1222,6 @@ adjustments needed to be made to the tuning to accomodate for this.
   display
 
   \begin{itemize}
-  
   \item
     secure storage and access
   \item
@@ -1293,12 +1235,10 @@ Finer calibration carried out with the guidance of Catalina Vincens as
 an expert harpsichord performer
 
 \begin{itemize}
-
 \item
   sensor surface
 
   \begin{itemize}
-  
   \item
     printed gradient
   \end{itemize}
@@ -1307,7 +1247,6 @@ an expert harpsichord performer
 \section{Conclusion}\label{conclusion}
 
 \begin{itemize}
-
 \item
   scale
 \item
@@ -1318,19 +1257,16 @@ an expert harpsichord performer
   limitations
 
   \begin{itemize}
-  
   \item
     latency
   \item
     deprecation
 
     \begin{itemize}
-    
     \item
       software
 
       \begin{itemize}
-      
       \item
         EAGLE
       \end{itemize}
@@ -1338,7 +1274,6 @@ an expert harpsichord performer
       hardware
 
       \begin{itemize}
-      
       \item
         FRAM
       \end{itemize}
@@ -1349,7 +1284,6 @@ an expert harpsichord performer
 \section{Going forward}\label{going-forward}
 
 \begin{itemize}
-
 \item
   Velocity, aftertouch
 \item
@@ -1410,12 +1344,10 @@ Evaluation
 \subsection{improvements}\label{improvements}
 
 \begin{itemize}
-
 \item
   ESP-IDF
 
   \begin{itemize}
-  
   \item
     latency half
   \item
@@ -1441,14 +1373,12 @@ develoment time. Consideration would need to be made on how to port
 existing code or whether to completely re-write the firmware.
 
 \begin{itemize}
-
 \item
   avoid soldering cabling
 \item
   power indicators on pcbs
 
   \begin{itemize}
-  
   \item
     debug if problem is power related Add power small power LEDs to the
     each PCB. It was not common for a board to not be functioning and
@@ -1480,86 +1410,9 @@ NIME forum: \url{https://forum.nime.org}.
 \subsection{Example Trasuntino}\label{example-trasuntino}
 
 \begin{itemize}
-
 \item
   {[}1538{]}
   https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface\&module=collection\&objectId=106088\&viewType=detailView
 \item
   {[}1531{]}https://museumcollections.rcm.ac.uk/collection/Details/collect/58
-\end{itemize}
-
-\section{Acknowledgments}\label{acknowledgments}
-
-    A project of this breadth developed across 3 institutes and 2 countries
-cannot be carried without the support and technical knowledge of many
-skilled and passionate people.
-
-We acknowledge the invaluable contributions of
-
-\begin{itemize}
-
-\item
-  Unibo
-
-  \begin{itemize}
-  
-  \item
-    Alma Labor
-
-    \begin{itemize}
-    
-    \item
-      Massimiliano Fraulini and the staff of Alma Labor at the Yiversità
-      of bologna for their 3D printing expertise and generosity with
-      electronics equipment
-    \end{itemize}
-  \item
-    Fisica Tecnica
-
-    \begin{itemize}
-    
-    \item
-      Maurzio Chendi Fabrizio Casarini, Giulio Severo and Barbara
-      Costantini
-    \end{itemize}
-  \end{itemize}
-\item
-  San Colombano
-
-  \begin{itemize}
-  
-  \item
-    Catalina Vincens
-  \item
-    Roberto Livi
-  \end{itemize}
-\item
-  Edinburgh
-
-  \begin{itemize}
-  
-  \item
-    uCreate
-
-    \begin{itemize}
-    
-    \item
-      Simeon, Stuart, Millie, and Ruth of uCreate at the Univeristy of
-      Edinburgh for their support with soldering facilities.
-    \end{itemize}
-  \item
-    ECA
-
-    \begin{itemize}
-    
-    \item
-      Richard Collins and the Digital Making Staff at the Edinburgh
-      College of Art for 3D printing instruction and CNC support.
-    \item
-      Joe Hathaway of Digital Development at the College of Art for
-      providing electronics components
-    \item
-      St Cecilia's Jenny Nex
-    \end{itemize}
-  \end{itemize}
 \end{itemize}

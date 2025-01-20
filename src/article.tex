@@ -6,7 +6,7 @@ Musical instruments represent a distinctive fusion of form, function, and histor
 
 The Tagliavini Collection in Bologna \cite{Tagliavini2007}, renowned for its historical keyboard instruments, exemplifies this dilemma. To address it, this project introduces an augmented replica of a historical harpsichord keyboard. 
 % The project builds on an existing design borrowed from \cite{McPherson2013} and aligns with principles outlined in \cite{Masu_NIME_2023}, emphasising the importance of extending the lifecycle of existing NIMEs. 
-The project fosters ``sustainability of the results'', as identified in a previous NIME contribution by Masu \emph{et al.}  \cite{Masu_NIME_2023}, by updating and complementing the augmented piano keyboard design presented by McPherson \cite{McPherson2013} and ensuring the relevance of previous NIME designs beyond their original context. 
+The project fosters and complements the augmented piano keyboard design presented by McPherson \cite{McPherson2013} and ensures the relevance of previous NIME designs beyond their original context \cite{Masu_NIME_2023}. 
 
 
 The article is organised as follows: TBC
@@ -215,13 +215,15 @@ The article is organised as follows: TBC
 % performance.
 
 
-Museums often face significant challenges in engaging visitors due to limitations in staffing and funding, which restrict the ways in which visitors can interact with collections \cite{Templeton2018, McAlpine2014}. For musical instrument museums, these challenges are compounded by the difficulty of preserving historical instruments in a playable condition \cite{McAlpine2014}. The inherent fragility and gradual decay of such instruments inevitably result in a point where they can no longer be played. A significant cultural change has taken place in recent decades, shifting the focus from the playability of the originals to their conservation. Karp \cite{Karp1979,Karp1985} advocates for a deeper understanding of musical instruments so that enough knowledge is generated to make them as ``copyable'' as possible.
+Museums often face significant challenges in engaging visitors due to limitations in staffing and funding, which restrict the ways in which visitors can interact with collections \cite{Templeton2018, McAlpine2014}. For musical instrument museums, these challenges are compounded by the difficulty of preserving historical instruments in a playable condition \cite{McAlpine2014}. The instruments' inherent fragility and gradual decay inevitably result in a point where they can no longer be played. A significant cultural change has taken place in recent decades, shifting the focus from the playability of the originals to their conservation. Karp \cite{Karp1979,Karp1985} advocates for a deeper understanding of musical instruments so that enough knowledge is generated to make them as ``copyable'' as possible.
 
-McAlpine discusses a case similar to the Tagliavini collection in his examination of the Benton Fletcher Collection at National Trust Fenton House \cite{McAlpine2014}. When these instruments were donated, Benton Fletcher stipulated that they remain playable and should continue to be maintained for tuition and public performance. A large sampling campaign was conducted, and a custom MIDI interface was designed to fulfil this requirement while preserving the original instruments' integrity. The MIDI keyboard, comprising two commercially available keyboards mimicking the two-manual harpsichord layout, were used by visitors to trigger the instrument samples recorded with tailored strategies for each. However, user tests identified a significant limitation: the commercially available weighted keys failed to provide an authentic sense of interacting with a historical keyboard \cite{McAlpine2014}. To address this, McAlpine proposed -- though did not follow up to -- a haptic keyboard enhanced with actuators capable of delivering positionally sensitive, real-time force feedback at the point of contact, inspired by Gillespie’s work on piano mechanisms \cite{Gillespie1996}.
+McAlpine discusses a case similar to the Tagliavini collection in his examination of the Benton Fletcher Collection at National Trust Fenton House \cite{McAlpine2014}. When these instruments were donated, Benton Fletcher stipulated that they remain playable and should continue to be maintained for tuition and public performance. A large sampling campaign was conducted, and a custom MIDI interface was designed to fulfil this requirement while preserving the original instruments' integrity. The MIDI keyboard, comprising two commercially available keyboards mimicking the two-manual harpsichord layout, were used by visitors to trigger the instrument samples recorded with tailored strategies for each. However, user tests identified a significant limitation: the commercially available weighted keys failed to provide an authentic sense of interacting with a historical keyboard \cite{McAlpine2014}. 
 
-The ``Tromba Moderna'' project \cite{Baldwin2016}, a previous NIME initiative, approached this issue differently by recreating and augmenting a replica of a historical tromba marina. A piezo transducer was connected to a sound synthesis engine and a driver within the instrument to simulate the expected vibrations of a historical tromba marina. This approach avoided the complex engineering challenges posed by fully replicating the original mechanisms.
+% To address this, McAlpine suggested designing a haptic keyboard enhanced with actuators capable of delivering positionally sensitive, real-time force feedback at the point of contact, inspired by previous projects such as Gillespie’s work on piano mechanisms \cite{Gillespie1996}.
 
-This work inherits the same philosophy as the Tromba Moderna project. By augmenting a replica of a historical harpsichord keyboard using minimally invasive electronics, the project intends to offer a tool enhancing the fruition of the Tagliavini collection whilst retaining a form of continuity with historical musical instrument-building traditions. Furthermore, the electronics design borrows ideas from a previous NIME by McPherson \cite{McPherson2013}. As such, the interface proposed here is not, strictly speaking, a \emph{new} musical interface, particularly in its haptic response designed to be as similar as possible to a real Italian harpsichord. However, this work complements and follows up on previous reflections regarding the \emph{sustainability of results} within the NIME community and identified as \emph{the O in NIME} \cite{Masu_NIME_2023}. The intended use of the keyboard through a meaningful bla bla is where the novelty of this work lies, rather than solely in its technological development. 
+On the other hand, the ``Tromba Moderna'' project \cite{Baldwin2016}, a previous NIME initiative, approached the issue of musical heritage playability by recreating and augmenting a replica of a historical tromba marina. A piezo transducer was connected to a sound synthesis engine and a driver within the instrument to simulate the expected vibrations of a historical tromba marina. 
+
+This work inherits the same philosophy as the Tromba Moderna project. By augmenting a replica of a historical harpsichord keyboard using minimally invasive electronics, the project intends to offer a tool enhancing the fruition of the Tagliavini collection whilst retaining a form of continuity with historical instrument-building traditions. Furthermore, the electronics design borrows ideas from a previous NIME by McPherson \cite{McPherson2013}. As such, the interface proposed here is not, strictly speaking, a \emph{new} musical interface, particularly in its haptic response designed to adhere to longstanding harpsichord building traditions. However, this work complements and follows up on previous reflections regarding the \emph{sustainability of results} within the NIME community and identified as \emph{the O in NIME} \cite{Masu_NIME_2023}. The intended use of the keyboard through meaningful interaction with a museum exhibit is where the novelty of this work lies, rather than solely in its technological development. 
 
 Beyond enhancing the visitor experience, future design iterations will serve as a research tool to explore the unique characteristics of the harpsichord and its impact on performance through upcoming projects such as the ERC-funded Synergy grant Rem@ke \cite{remake1}.
 
@@ -389,7 +391,7 @@ a support wall which divides the front and rear.
 
 \begin{figure}  
   \centering
-  \includegraphics[width=\linewidth]{images/49-key-bottom-} 
+  \includegraphics[width=\linewidth]{src/images/49-key-bottom-sensors-no-keys.jpg} 
   \caption{Underside of the full model keyboard showing two chambers. Front chamber at the top and rear chamber at the bottom.} 
   \Description{} 
   \label{fig:49-key-bottom}
@@ -693,8 +695,15 @@ reliability and speed was preferred over storage capacity.
 
 The 49 QRE1113s are divided across 7 PCBs each containing
 
-\subsubsection{QRE1113}\label{qre1113}
+\begin{figure}  
+  \centering
+  \includegraphics[angle=-90,width=\linewidth]{src/images/7-sensor-board-v0.1.0.png} 
+  \caption{} 
+  \Description{} 
+  \label{fig:7-sensor-board}
+\end{figure}
 
+\subsubsection{QRE1113}\label{qre1113}
 
 A number of sensors were tried before the final system was decided upon.
 Sensors included, an 6-degrees-of-freedom inertial measurement unit,
@@ -718,6 +727,13 @@ would need to come from the jacks themselves.
 They \emph{could} be used and individual trigger points set in
 calibration, but this creates new problems.
 
+\begin{figure}  
+  \centering
+  \includegraphics[,width=\linewidth]{src/images/CrossSectionSensorPlacement.jpg} 
+  \caption{} 
+  \Description{} 
+  \label{fig:cross-section}
+\end{figure}
 
 Another common application of the QRE1113 is within line following
 robots, where an array of QRE1113s are used in conjunction with black

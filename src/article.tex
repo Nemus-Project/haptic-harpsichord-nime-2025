@@ -223,9 +223,9 @@ McAlpine discusses a case similar to the Tagliavini collection in his examinatio
 
 On the other hand, the ``Tromba Moderna'' project \cite{Baldwin2016}, a previous NIME initiative, approached the issue of musical heritage playability by recreating and augmenting a replica of a historical tromba marina. A piezo transducer was connected to a sound synthesis engine and a driver within the instrument to simulate the expected vibrations of a historical tromba marina. 
 
-This work inherits the same philosophy as the Tromba Moderna project. By augmenting a replica of a historical harpsichord keyboard using minimally invasive electronics, the project intends to offer a tool enhancing the fruition of the Tagliavini collection whilst retaining a form of continuity with historical instrument-building traditions. Furthermore, the electronics design borrows ideas from a previous NIME by McPherson \cite{McPherson2013}. As such, the interface proposed here is not, strictly speaking, a \emph{new} musical interface, particularly in its haptic response designed to adhere to longstanding harpsichord building traditions. However, this work complements and follows up on previous reflections regarding the \emph{sustainability of results} within the NIME community and identified as \emph{the O in NIME} \cite{Masu_NIME_2023}. The intended use of the keyboard through meaningful interaction with a museum exhibit is where the novelty of this work lies, rather than solely in its technological development. 
+This work inherits the same philosophy as the Tromba Moderna project. By augmenting a replica of a historical harpsichord keyboard using minimally invasive electronics and controlling a MIDI-triggered sample library, the project intends to offer a tool enhancing the fruition of the Tagliavini collection whilst retaining a form of continuity with historical instrument-building traditions. Furthermore, the electronics design borrows ideas from a previous NIME by McPherson \cite{McPherson2013}. As such, the interface proposed here is not, strictly speaking, a \emph{new} musical interface, particularly in its haptic response designed to adhere to longstanding harpsichord building traditions. However, this work complements and follows up on previous reflections regarding the \emph{sustainability of results} within the NIME community and identified as \emph{the O in NIME} \cite{Masu_NIME_2023}. The intended use of the keyboard through meaningful interaction with a museum exhibit is where the novelty of this work lies, rather than solely in its technological development. 
 
-Beyond enhancing the visitor experience, future design iterations will serve as a research tool to explore the unique characteristics of the harpsichord and its impact on performance through upcoming projects such as the ERC-funded Synergy grant Rem@ke \cite{remake1}.
+Beyond enhancing the visitor experience, future design iterations will serve as a research tool to explore the unique characteristics of the harpsichord and its impact on performance through the \anona{ERC-funded NEMUS} project, aiming to virtually reproduce the sound of historical keyboard instruments, and upcoming projects such as Rem@ke \cite{remake1}.
 
 \section{Design}\label{design}
 
@@ -286,12 +286,12 @@ model keyboard would have to carried out at a distance in separate
 workshops. Time constraints meant the keyboard was being fabricated for
 a sensor that did not yet exist.
 
-Accomodations were made in the design to allow for as much flexibility
-as possible. This also meant that designs for the eletronics would have
+Accommodations were made in the design to allow for as much flexibility
+as possible. This also meant that designs for the electronics would have
 to include a deal of flexibility in how they might be installed. Surplus
 space was added into the design of the internal chamber of the model
 \textbackslash FIGURE, but there was still a limit given the structural
-and aesthatic requirements.
+and aesthetic requirements.
 
 \subsection{Keyboard}\label{keyboard}
 
@@ -320,13 +320,13 @@ The body of the case is based on a rectangular poplar frame that leaves space
 for the installation of the electronic sensors.
 
 Deviations from the design of the Trasuntino are the rectangular, rather than
-logartithmic shape, removal of a bottom panel and ommision of a short octave,
+'logarithmic' shape, removal of a bottom panel and omission of a short octave,
 instead spanning 4 octaves beginning on C.
 
 The strings are Malcolm Rose yellow brass wire, which are secured to wrought
 iron pins. The tension of each string was adjusted to provide resistance to
 plucking close to that of a harpsichord. Three felt strips were woven between
-the strings so as to cancel the vibration of the strings.
+the strings in order to dampen the vibration of the strings.
 
 The result is an interface instrument that is placed between the mechanical
 action of the keys and the generation of a synthetic sound. The touch of the
@@ -462,7 +462,7 @@ feasibility throughout the prototyping phase.
   to the interface on which it is installed.
 \item
   Low Latency: Reading sensors and then triggering an output should have
-  a low latency. Using {[}paper on latency{]} a target was set as X ms
+  a low latency. Following \cite{Jack2016} an latency was set as 10 ms
   with an upper limit set to 25ms beyond which the sensors would be
   deemed unusable
 \item
@@ -471,8 +471,8 @@ feasibility throughout the prototyping phase.
   filtering
 \item
   Scalable: The system should be scalable both economically and
-  temporally. Given the open soucre nature of the porject, it could not
-  be prohibitvely expensive to carry out. Also any system that would
+  temporally. Given the open source nature of the project, it could not
+  be prohibitively expensive to carry out. Also any system that would
   work on a single key would have to scale financially to potentially 50
   or more. The time required to install and calibrate the sensors would
   also have to scale.

@@ -233,8 +233,8 @@ The present project initially drew inspiration from Timmermans' extension of Gil
 
 \begin{figure}  
   \centering
-  \includegraphics[width=\linewidth]{images/side_w-o_sensors.png} 
-  \caption{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023} 
+  \includegraphics[width=\linewidth]{src/images/3-key-side-labelled.png} 
+  \caption{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023. 3-Key modelled used for initial prototyping. A: Wrestplank B: Key Lever C: Key cap D: soundboard E: Jack} 
   \Description{A 3-Key Model of a Harpsichord Mechanism created Graziano Bandini in Bologna. A side view of the model which is a cross-section of what is a common
 mechanism for an Italian style harpsichord of the XVI century.} 
   \label{fig:3key}
@@ -248,53 +248,50 @@ An additional objective was to design an interface that supports research into h
 
 \section{Design}
 
+The design criteria was to create a keyboard interface that provided a comparable tactile response to that of a harpsichord in the italian style.
+
+Accommodations were made in the design to allow for as much flexibility as possible. 
+This also meant that designs for the electronics would have to include a level of flexibility in how they might be installed. 
+Surplus space was added into the design of the internal chamber of the model Figure \ref{fig:49-key-bottom}, but there was still a limit given the structural
+and aesthetic requirements.
 
 \section{Constraints}\label{design-problem}
 
-Central philosophy of the Tagliavini Collection is that the instrument
-should remain playable to the public. The condition of some instruments
-is such that restoration would required a replacement of vast majority
-of the instrument, would be too costly, would risk the instrument given
-its fragility, or all of those in combination.
+% Central philosophy of the Tagliavini Collection is that the instrument
+% should remain playable to the public. The condition of some instruments
+% is such that restoration would required a replacement of vast majority
+% of the instrument, would be too costly, would risk the instrument given
+% its fragility, or all of those in combination.
 
-This is not an uncommon problem faced by musical instrument museums
-worldwide. The central question the project tries to answer is ``how do
-we conserve musical instruments in order to continue interacting with
-them''
+% This is not an uncommon problem faced by musical instrument museums
+% worldwide. The central question the project tries to answer is ``how do
+% we conserve musical instruments in order to continue interacting with
+% them''
 
-The approach taken was to recreate the interface of these instruments
-not for acoustics purposes be purely for the mechanical response. As
-exhibition for the general public in a musical instruments there were
-aesthetic and functional constraints placed on the design of the
-interface.
-
-The design criteria was to create a keyboard interface that provides a
-comparable physical response to a harpsichord.
+% The approach taken was to recreate the interface of these instruments
+% not for acoustics purposes be purely for the mechanical response. As
+% exhibition for the general public in a musical instruments there were
+% aesthetic and functional constraints placed on the design of the
+% interface.
 
 % \subsection{Design Constraints}\label{design-constraints}
 
+There were constraints that were put in place by the Museum on the design of the exhibit.
+
 \begin{itemize}
 \item
-  no electronics should be visible.
+  No electronics should be visible \footnote{with the exception of a pair of headphones for listening and a display to change parameters of the audio engine}
 \item
-  it should be robust and reliable, easily maintained by museum staff
-  without complex technical processes
+  It should be robust and reliable, easily maintained by museum staff without complex technical processes
 \item
-  it should not augment or fix the mechanics, but present them with
-  their original limitation
+  it should not augment or fix the mechanics, but present them with their original limitation
 \end{itemize}
 
-Another constraint was that the design of the sensor system and the
-model keyboard would have to carried out at a distance in separate
-workshops. Time constraints meant the keyboard was being fabricated for
-a sensor that did not yet exist.
+% Another constraint was that the design of the sensor system and the
+% model keyboard would have to carried out at a distance in separate
+% workshops. Time constraints meant the keyboard was being fabricated for
+% a sensor that did not yet exist.
 
-Accommodations were made in the design to allow for as much flexibility
-as possible. This also meant that designs for the electronics would have
-to include a deal of flexibility in how they might be installed. Surplus
-space was added into the design of the internal chamber of the model
-\textbackslash FIGURE, but there was still a limit given the structural
-and aesthetic requirements.
 
 \subsection{Building the Model Keyboard}\label{keyboard}
 
@@ -303,7 +300,7 @@ The construction of the keyboard required three months of work to be fully compl
 and followed the same construction phases of a real harpsichord.
 
 The model was constructed using the materials of the Italian harpsichord
-tradition:
+tradition. Parts are labelled in Figure \ref{fig:3key}.
 
 \begin{itemize}
 \item
@@ -401,18 +398,17 @@ front of a real harpsichord.
 
 % \footnote{https://github.com/Nemus-Project/haptic-harpsichord-nime-2025/issues/Nemus-Project/haptic-harpsichord-nime-2025/images/disegno.pdf}
 
-For the initial prototyping stage, modifying an existing harpsichord was
-considered though ultimately discarded. An existing instrument would
-have provided a test for scaling the electronics, but internal
-measurements and layout would have been too different. A harpsichord that
-was economic enough to be deconstructed would also have been of a more
-modern mechanical design and not of the design that was being recreated
-with the model. Prototyping stage would likely be invasive and damage or
-heavy modification likely. As such it was not a good use of funds as a
-modern instrument fit for destruction did not offer benefits that the
-small model with easy internal access did not already provide.
 
-% \subsection{Prototyping}\label{prototyping}
+
+% A harpsichord that
+% was economic enough to be deconstructed would also have been of a more
+% modern mechanical design and not of the design that was being recreated
+% with the model. Prototyping stage would likely be invasive and damage or
+% heavy modification likely. As such it was not a good use of funds as a
+% modern instrument fit for destruction did not offer benefits that the
+% small model with easy internal access did not already provide.
+
+
 
 % \subsubsection{3-Key Prototype}\label{key-prototype}
 
@@ -454,10 +450,12 @@ small model with easy internal access did not already provide.
 
 \section{Hardware Design}
 
-For the first iteration the data from the sensor would simply be used to
-test when a threshold had been passed. On passing the threshold a
-message would be sent to trigger the playback of a corresponding note.
+For the first iteration the data from the sensor would simply be used to test when a threshold had been passed. On passing the threshold a message would be sent to trigger the playback of a corresponding note.
 
+For the initial prototyping stage, modifying an existing harpsichord was considered though ultimately discarded. An existing instrument would
+have provided a test for scaling the electronics, but internal measurements and layout would have been too different. 
+
+Using a similar approach to Timmermans' Haptic Key project, \cite{Timmermans2020} our first step was to fabricate or procure a model of a single working key. San Colombano was able to provide a model 3-key of a harpischord mechanism by Graziano Bandini (Figure \ref{fig:3key}).
 
 \subsection{Sensor Criteria}\label{sensor-criteria}
 
@@ -490,8 +488,9 @@ feasibility throughout the prototyping phase.
   allow for the usage of the data for control over other parameters.
 \end{itemize}
 
-% \subsubsection{Triggering a note}\label{triggering-a-note}
+% \subsection{Prototyping}\label{prototyping}
 
+% \subsubsection{Triggering a note}\label{triggering-a-note}
 
 % The message format covered in \textbackslash section
 
@@ -561,145 +560,27 @@ feasibility throughout the prototyping phase.
 
 % \section{Electronics}\label{electronics}
 
-Design of electronics carried out in tandem with construction of full
-model. Since the Electronics were designed at a distanced to the final
-full model, some flexibility was required in the design. Design decisions
-that were not as optimal but would allow for change in wiring and
-fitting should there be any issues during installation.
+% Design of electronics carried out in tandem with construction of full
+% model. Since the Electronics were designed at a distanced to the final
+% full model, some flexibility was required in the design. Design decisions
+% that were not as optimal but would allow for change in wiring and
+% fitting should there be any issues during installation.
 
-Electronics designed so that they would not require any equipment
-outside what can commonly be found in a maker space at a university.
+The sensor system was designed so that they would not require any equipment outside what can commonly be found in a maker space at a university for assembly.
 
-The equipment required including soldering suitable for through-hole
-technology (THT) components and 3D printing.
+% The equipment required including soldering suitable for through-hole technology (THT) components and 3D printing.
 
-Laser cutting and CNC routing facilities were used during the research
-for the project but not required for the final implementation.
+% Laser cutting and CNC routing facilities were used during the research
+% for the project but not required for the final implementation.
 
-The idea behind this was to allow for the project to be reasonably
-recreated without procurement of any additional specialist equipment.
+This decisions was motivated by the project's goal to be open source and reasonably recreated without procurement of any additional specialist equipment.
 
-NEMUS lab under construction during the first section of the project.
-Facilities available at the maker spaces of \anon{Bologna (Alma Labor)} and
-\anon{Edinburgh (uCreate)} used for what was deemed reasonable assumption in
-terms of available equipment.
+% NEMUS lab under construction during the first section of the project.
+% Facilities available at the maker spaces of \anon{Bologna (Alma Labor)} and
+% \anon{Edinburgh (uCreate)} used for what was deemed reasonable assumption in
+% terms of available equipment.
 
-
-\subsection{Controller Board}\label{controller-board}
-
-Controller board designed around Arduino nano form factor. The Nano is
-connected through headers to allow easy switching between chips. Should
-another chip in a Nano for factor be found it could supplant the current
-Nano without any need for a redesign.
-
-The first version of the board exclusively used 2.54mm pitch headers.
-The reasons for this were flexibility when creating cable looms and to
-leave open the possibility of rewiring the PCB.
-
-This was the case for the LEDs as they initially were to be powered on
-5V. It was discovered that the 3v regulator of the nano was sufficient
-to power all LEDs at a lower brightness while reducing current draw.
-Since brightness was not important.
-
-The 2.54mm pitch headers had two major drawbacks. First, the orientation
-of the cables could be reversed, which in the best case scenario would
-simply mean the system did not work correctly and in the worst case it
-could potentially damage the components.
-
-Secondly, the headers do not connect securely and wait of the cabling
-was enough for components to become disconnected as the harpsichord was
-handled.
-
-To address this, once the wiring for the controller board was finalised
-a new design was drafted this time using JST-PH connectors. No
-commercial cables were immediately available in the configuration and
-length required, as such a cable loom needed to be made which meant
-crimping cables by hand. A crimping tool from JST is prohibitively
-expensive compared to the cost of other components in the project
-\footnote{from RS \url{https://uk.rs-online.com/web/p/crimp-tools/6880877}
-£508 (inc. VAT)}. The crimping tool also appeared to be uncommon and was
-not readily available in the workshops at the project's disposal.
-Eventually a tool was found, but an alternative approach was also
-researched in order to maintain the criteria of accessibility.
-
-A locator was adapted from a creative commons STL model
-\footnote{\url{https://www.thingiverse.com/thing:1646016}} that allowed a
-generic crimping tool to be adapted for use with JST-PH crimps. 
-The locator was printed using a Bambu X1 3D printer. 
-A second alternative was assembling cables from other sets that were at hand.
-
-\subsubsection{Arduino Nano BLE}\label{arduino-nano-ble}
-
-Arduino Nano BLE was chosen for a few reasons. The Nano form factor was
-appealing as it would allow for easy changes between chipsets without
-requiring any rewiring and thus no new PCBs would need to be created if
-a better alternative was found later in the project. Another benefit to
-the Arduino Nano boards was that typically had native-USB meaning the
-could be programmed as a hardware USB MIDI device directly.
-
-The Nano BLE was used in the initial stages for its integrated inertial measurment unit.
-
-When it was finalised that the project would proceed using the QRE1113 a
-number of microcontroller units (MCU) were considered.
-
-The MCUs considered were the Arduino Nano 33 IoT, Arduino Nano 33 BLE,
-Arduino Nano ESP32 and STM32 NUCLEO-L031K6.
-
-A rough performance test was later carried out using an STM32
-NUCLEO-L031K6, a Nano ESP32 and the BLE. The Nano BLE was found to be
-more performative. To execute a single sensor read cycle of the firmware
-the STM32 took 40ms, and both the Nano ESP32 and Nano BLE required 11ms
-on average. The Nano ESP32 had high variability so it was decided to
-continue with the Nano BLE. 
-
-% Further discussion of using ESP32 continues
-% in \textbackslash section\{Going forward\}
-
-BLE functionality also meant if the cable connection between the nano
-and computer running audio synthesis was impractical, BLE MIDI was
-available as a fallback. The Nano BLE also has a 12-bit DAC, which
-provided a contingency should the default 10-bit not be sensitive enough
-for the signal from the sensors.
-
-Initially a Nano IoT was used for both WiFi and Bluetooth Low Energy
-functionality, but it was found that 2 ADC channels were in fact not
-useable and would have required additional multiplexers.
-
-\subsubsection{EEPROM / NVRAM / FRAM}\label{eeprom-nvram-fram}
-
-There would need to be the ability to store values on non-volatile
-memory so that the electronics could be powered-down without losing
-data.
-
-Adjusting the values through firmware would not have been flexible or
-practical. Instead an Ferroelectric RAM unit was chosen and connected
-using an SPI interface. NVRAM or EEPROM would have sufficed and the FRAM
-was primarily chosen for it's ready availability.
-
-Most microcontrollers have some variety of non-volatile program memory
-that can be read and writ accessed but in most cases this memory is
-cleared during compilation and re-flashing. The small cost was far
-outweighed by the potential for data loss if using onboard RAM.
-
-% \emph{It is worth noting that the FRAM model chosen stopped being
-% available during the project, meaning any future iteration would need to
-% adjust for another board in firmware}
-
-% The firmware was structured in a way that the interface could be changed
-% so long as the code required for any other board would comply with
-% function arguments and outputs. 
-
-% Worth noting the fragility and
-% volatility when designing this kind of project and how easily it is for
-% the project to become broken.
-
-SD card would provide an easier way to interact with calibration data.
-The position of the controller board did not permit easy access.
-reliability and speed was preferred over storage capacity.
-
-\subsection{Sensor board}\label{sensor-board}
-
-The 49 QRE1113s are divided across 7 PCBs each containing
+The electronics system can be divided into two designs, the "sensor board" (Figure \ref{fig:7-sensor-board}) for components for detecting jack displacement and controller board for collecting and processing sensor signals.
 
 \begin{figure}  
   \centering
@@ -709,12 +590,24 @@ The 49 QRE1113s are divided across 7 PCBs each containing
   \label{fig:7-sensor-board}
 \end{figure}
 
-\subsubsection{QRE1113}\label{qre1113}
+\subsection{Sensor board}\label{sensor-board}
 
-A number of sensors were tried before the final system was decided upon.
-Sensors included, an 6-degrees-of-freedom inertial measurement unit,
-reed and hall sensors paired with magnets, and light-dependant resistors mounted to the jack rail.
-None of these sensors satisfied the sensor criteria described above.
+The 49 optical sensors are divided across 7 PCBs each containing
+
+\begin{itemize}
+\item
+  x7 QRE1113 optical sensors
+\item
+  x7 100 $\Omega$ resistors
+\item
+  x7 10 k$\Omega$ resistors \footnote{a update on the design showed these could be reduced to a single resistor.}
+\item
+  x1 CD4051BE Multipexer
+\end{itemize}
+
+A number of sensors were tried before the final system was decided upon. 
+Sensors tested for the design included, a 6-degrees-of-freedom inertial measurement unit, reed and hall sensors paired with magnets, and light-dependant resistors mounted to the jack rail.
+None of the above satisfied the sensor criteria described and were thus discounted.
 
 Following from the work in \cite{McPherson2013, McPherson2019}, we tested
 a system using the Fairchild QRE1113 \footnote{Fairchild, now ON Semiconductor, QRE1113 datasheet \url{https://www.onsemi.com/download/data-sheet/pdf/qre1113-d.pdf}}. The
@@ -730,8 +623,8 @@ The limitation for taking a distance approach is that there is not one
 but 2 jacks per key. For each jack to be measured independently the data
 would need to come from the jacks themselves.
 
-They \emph{could} be used and individual trigger points set in
-calibration, but this creates new problems.
+% They \emph{could} be used and individual trigger points set in
+% calibration, but this creates new problems.
 
 \begin{figure}  
   \centering
@@ -756,13 +649,13 @@ cutout with a Summa 150 roll cutter. The printer and roll cutter greatly
 reduced the manual labour for cutting stickers meaning the process would
 scale from the 3-key to the 49-key model.
 
-An initial sticker design was used that contained only the gradient. It
-was found that the jacks were sticking in their slots and the edges on the
-stickers easily peeled around the printing The sticker was redesigned to
-be the full length of the jack which avoided the problem of peeling. The
-larger are also mean the stickers adhered better to the jack Some
-trimming was still required of each sticker to avoid them adding extra
-resistance to the jack's movement.
+% An initial sticker design was used that contained only the gradient. It
+% was found that the jacks were sticking in their slots and the edges on the
+% stickers easily peeled around the printing The sticker was redesigned to
+% be the full length of the jack which avoided the problem of peeling. The
+% larger are also mean the stickers adhered better to the jack Some
+% trimming was still required of each sticker to avoid them adding extra
+% resistance to the jack's movement.
 
 During testing it was found that their was a considerable amount
 cross-talk between adjacent sensors. This meant the reading from key
@@ -886,6 +779,120 @@ Transistor / Op-amp circuit could have been used similar to the one in
 %     solder pads to select channel
 %   \end{itemize}
 % \end{itemize}
+
+
+
+\subsection{Controller Board}\label{controller-board}
+
+Controller board designed around Arduino nano form factor. The Nano is
+connected through headers to allow easy switching between chips. Should
+another chip in a Nano for factor be found it could supplant the current
+Nano without any need for a redesign.
+
+The first version of the board exclusively used 2.54mm pitch headers.
+The reasons for this were flexibility when creating cable looms and to
+leave open the possibility of rewiring the PCB.
+
+This was the case for the LEDs as they initially were to be powered on
+5V. It was discovered that the 3v regulator of the nano was sufficient
+to power all LEDs at a lower brightness while reducing current draw.
+Since brightness was not important.
+
+The 2.54mm pitch headers had two major drawbacks. First, the orientation
+of the cables could be reversed, which in the best case scenario would
+simply mean the system did not work correctly and in the worst case it
+could potentially damage the components.
+
+Secondly, the headers do not connect securely and wait of the cabling
+was enough for components to become disconnected as the harpsichord was
+handled.
+
+To address this, once the wiring for the controller board was finalised
+a new design was drafted this time using JST-PH connectors. No
+commercial cables were immediately available in the configuration and
+length required, as such a cable loom needed to be made which meant
+crimping cables by hand. A crimping tool from JST is prohibitively
+expensive compared to the cost of other components in the project
+\footnote{from RS \url{https://uk.rs-online.com/web/p/crimp-tools/6880877}
+£508 (inc. VAT)}. The crimping tool also appeared to be uncommon and was
+not readily available in the workshops at the project's disposal.
+Eventually a tool was found, but an alternative approach was also
+researched in order to maintain the criteria of accessibility.
+
+A locator was adapted from a creative commons STL model
+\footnote{\url{https://www.thingiverse.com/thing:1646016}} that allowed a
+generic crimping tool to be adapted for use with JST-PH crimps. 
+The locator was printed using a Bambu X1 3D printer. 
+A second alternative was assembling cables from other sets that were at hand.
+
+\subsubsection{Arduino Nano BLE}\label{arduino-nano-ble}
+
+Arduino Nano BLE was chosen for a few reasons. The Nano form factor was
+appealing as it would allow for easy changes between chipsets without
+requiring any rewiring and thus no new PCBs would need to be created if
+a better alternative was found later in the project. Another benefit to
+the Arduino Nano boards was that typically had native-USB meaning the
+could be programmed as a hardware USB MIDI device directly.
+
+The Nano BLE was used in the initial stages for its integrated inertial measurment unit.
+
+When it was finalised that the project would proceed using the QRE1113 a
+number of microcontroller units (MCU) were considered.
+
+The MCUs considered were the Arduino Nano 33 IoT, Arduino Nano 33 BLE,
+Arduino Nano ESP32 and STM32 NUCLEO-L031K6.
+
+A rough performance test was later carried out using an STM32
+NUCLEO-L031K6, a Nano ESP32 and the BLE. The Nano BLE was found to be
+more performative. To execute a single sensor read cycle of the firmware
+the STM32 took 40ms, and both the Nano ESP32 and Nano BLE required 11ms
+on average. The Nano ESP32 had high variability so it was decided to
+continue with the Nano BLE. 
+
+% Further discussion of using ESP32 continues
+% in \textbackslash section\{Going forward\}
+
+BLE functionality also meant if the cable connection between the nano
+and computer running audio synthesis was impractical, BLE MIDI was
+available as a fallback. The Nano BLE also has a 12-bit DAC, which
+provided a contingency should the default 10-bit not be sensitive enough
+for the signal from the sensors.
+
+Initially a Nano IoT was used for both WiFi and Bluetooth Low Energy
+functionality, but it was found that 2 ADC channels were in fact not
+useable and would have required additional multiplexers.
+
+\subsubsection{EEPROM / NVRAM / FRAM}\label{eeprom-nvram-fram}
+
+There would need to be the ability to store values on non-volatile
+memory so that the electronics could be powered-down without losing
+data.
+
+Adjusting the values through firmware would not have been flexible or
+practical. Instead an Ferroelectric RAM unit was chosen and connected
+using an SPI interface. NVRAM or EEPROM would have sufficed and the FRAM
+was primarily chosen for it's ready availability.
+
+Most microcontrollers have some variety of non-volatile program memory
+that can be read and writ accessed but in most cases this memory is
+cleared during compilation and re-flashing. The small cost was far
+outweighed by the potential for data loss if using onboard RAM.
+
+% \emph{It is worth noting that the FRAM model chosen stopped being
+% available during the project, meaning any future iteration would need to
+% adjust for another board in firmware}
+
+% The firmware was structured in a way that the interface could be changed
+% so long as the code required for any other board would comply with
+% function arguments and outputs. 
+
+% Worth noting the fragility and
+% volatility when designing this kind of project and how easily it is for
+% the project to become broken.
+
+SD card would provide an easier way to interact with calibration data.
+The position of the controller board did not permit easy access.
+reliability and speed was preferred over storage capacity.
 
 
 \subsection{3D printing}\label{d-printing}

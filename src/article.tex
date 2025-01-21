@@ -215,7 +215,7 @@ The article is organised as follows: TBC
 % performance.
 
 
-Museums often face significant challenges in engaging visitors due to limitations in staffing and funding, which restrict the ways in which visitors can interact with collections \cite{Templeton2018, McAlpine2014}. For musical instrument museums, these challenges are compounded by the difficulty of preserving historical instruments in a playable condition \cite{McAlpine2014}. The instruments' inherent fragility and gradual decay inevitably result in a point where they can no longer be played. A significant cultural change has taken place in recent decades, shifting the focus from the playability of the originals to their conservation. Karp \cite{Karp1979,Karp1985} advocates for a deeper understanding of musical instruments so that enough knowledge is generated to make them as ``copyable'' as possible.
+Museums often face significant challenges in engaging visitors due to limitations in staffing and funding, which restrict the ways in which visitors can interact with collections \cite{Templeton2018, McAlpine2014}. For musical instrument museums, these challenges are compounded by the difficulty of preserving historical instruments in a playable condition \cite{McAlpine2014}. The instruments' inherent fragility and gradual decay inevitably result in a point where they can no longer be played, even when collections adhere to the strictest conservation protocols. A significant cultural change has taken place in recent decades, shifting the focus from the playability of the originals to their conservation. Karp \cite{Karp1979,Karp1985} advocates for a deeper understanding of musical instruments so that enough knowledge is generated to make them as ``copyable'' as possible.
 
 McAlpine discusses a case similar to the Tagliavini collection in his examination of the Benton Fletcher Collection at National Trust Fenton House \cite{McAlpine2014}. When these instruments were donated, Benton Fletcher stipulated that they remain playable and should continue to be maintained for tuition and public performance. A large sampling campaign was conducted, and a custom MIDI interface was designed to fulfil this requirement while preserving the original instruments' integrity. The MIDI keyboard, comprising two commercially available keyboards mimicking the two-manual harpsichord layout, were used by visitors to trigger the instrument samples recorded with tailored strategies for each. However, user tests identified a significant limitation: the commercially available weighted keys failed to provide an authentic sense of interacting with a historical keyboard \cite{McAlpine2014}. 
 
@@ -225,7 +225,7 @@ On the other hand, the ``Tromba Moderna'' project \cite{Baldwin2016}, a previous
 
 This work inherits the same philosophy as the Tromba Moderna project. By augmenting a replica of a historical harpsichord keyboard using minimally invasive electronics and controlling a MIDI-triggered sample library, the project intends to offer a tool enhancing the fruition of the Tagliavini collection whilst retaining a form of continuity with historical instrument-building traditions. Furthermore, the electronics design borrows ideas from a previous NIME by McPherson \cite{McPherson2013}. As such, the interface proposed here is not, strictly speaking, a \emph{new} musical interface, particularly in its haptic response designed to adhere to longstanding harpsichord building traditions. However, this work complements and follows up on previous reflections regarding the \emph{sustainability of results} within the NIME community and identified as \emph{the O in NIME} \cite{Masu_NIME_2023}. The intended use of the keyboard through meaningful interaction with a museum exhibit is where the novelty of this work lies, rather than solely in its technological development. 
 
-Beyond enhancing the visitor experience, future design iterations will serve as a research tool to explore the unique characteristics of the harpsichord and its impact on performance through the \anona{ERC-funded NEMUS} project, aiming to virtually reproduce the sound of historical keyboard instruments, and upcoming projects such as Rem@ke \cite{remake1}.
+Beyond enhancing the visitor experience, future design iterations will serve as a research tool to explore the unique characteristics of the harpsichord and its impact on performance through the \anon{ERC-funded NEMUS} project, aiming to virtually reproduce the sound of historical keyboard instruments, and upcoming projects such as Rem@ke \cite{remake1}.
 
 \section{Design}\label{design}
 
@@ -246,7 +246,10 @@ Another distinguishing feature of this project is its commitment to open-sourcin
 
 An additional objective was to design an interface that supports research into how the harpsichord mechanism and its resistances influence a player’s performance. For example, the Yamaha Disklavier series incorporates embedded sensors enabling "silent mode" operation while outputting MIDI data when keys are struck. This has facilitated research into the effects of vibration on performance \cite{MusicalHaptics2018_04, MusicalHaptics2018_13} and the perception of instrument quality \cite{MusicalHaptics2018_05}.
 
-\subsection{Design Problem}\label{design-problem}
+\section{Design}
+
+
+\section{Constraints}\label{design-problem}
 
 Central philosophy of the Tagliavini Collection is that the instrument
 should remain playable to the public. The condition of some instruments
@@ -268,7 +271,7 @@ interface.
 The design criteria was to create a keyboard interface that provides a
 comparable physical response to a harpsichord.
 
-\subsubsection{Design Constraints}\label{design-constraints}
+% \subsection{Design Constraints}\label{design-constraints}
 
 \begin{itemize}
 \item
@@ -293,12 +296,11 @@ space was added into the design of the internal chamber of the model
 \textbackslash FIGURE, but there was still a limit given the structural
 and aesthetic requirements.
 
-\subsection{Keyboard}\label{keyboard}
+\subsection{Building the Model Keyboard}\label{keyboard}
 
-\subsubsection{Keyboard Construction}\label{keyboard-construction}
 % PARAGRAPH FROM ROBERTO
 The construction of the keyboard required three months of work to be fully completed
-and followed the same construction phases as a real harpsichord.
+and followed the same construction phases of a real harpsichord.
 
 The model was constructed using the materials of the Italian harpsichord
 tradition:
@@ -311,7 +313,7 @@ tradition:
 \item
   Boxwood and ebony for the key caps.
 \item
-  Cypress wood for the soundboard, a wood characterized by a
+  Cypress wood for the soundboard
 \item
   Beech wood, a brass spring and a seagull feather plectrum for the 98 jacks
 \end{itemize}
@@ -375,13 +377,13 @@ front of a real harpsichord.
 % the electronics to fit the form of the keyboard was more cost effective
 % than building or carrying out major modifications to the model.
 
-The model was designed to have two internal chambers a front and rear.
-The front and back that was xxx by yyy by 370mm between the faceplate
-and the jacks. The TONGUE THAT GOES INTO SLOT divides the chamber through
-a small gap between the underside of the soundboard and the key guides.
-The key guide needs to be deep enough to allow for the full movement of
-the key and stop the key becoming unseated. The chamber then extends to
-a support wall which divides the front and rear.
+% The model was designed to have two internal chambers a front and rear.
+% The front and back that was xxx by yyy by 370mm between the faceplate
+% and the jacks. The TONGUE THAT GOES INTO SLOT divides the chamber through
+% a small gap between the underside of the soundboard and the key guides.
+% The key guide needs to be deep enough to allow for the full movement of
+% the key and stop the key becoming unseated. The chamber then extends to
+% a support wall which divides the front and rear.
 
 % Discussion of spatial constraints and effects on electronics design and
 % installation is covered in \textbackslash section\{setup\}
@@ -410,47 +412,54 @@ heavy modification likely. As such it was not a good use of funds as a
 modern instrument fit for destruction did not offer benefits that the
 small model with easy internal access did not already provide.
 
-\subsection{Prototyping}\label{prototyping}
+% \subsection{Prototyping}\label{prototyping}
 
-\subsubsection{3-Key Prototype}\label{key-prototype}
+% \subsubsection{3-Key Prototype}\label{key-prototype}
 
-\begin{itemize}
-\item
-  proof of concept
-\item
-  available on loan from museum
-\item
-  easy access to internal structure
-\end{itemize}
+% \begin{itemize}
+% \item
+%   proof of concept
+% \item
+%   available on loan from museum
+% \item
+%   easy access to internal structure
+% \end{itemize}
 
-\subsubsection{49-Key Prototype}\label{key-prototype-1}
+% \subsubsection{49-Key Prototype}\label{key-prototype-1}
 
-For the final interface a 49-key (4-octave) was constructed by luthier
-\anon{Roberto Livi}. The keyboard is in the same style† as the 3-key model with
-to jacks per key.
+% For the final interface a 49-key (4-octave) was constructed by luthier
+% \anon{Roberto Livi}. The keyboard is in the same style† as the 3-key model with
+% to jacks per key.
 
-The keyboard is fully enclosed and internally has two chambers, front
-and rear, in which the electronics could be installed
-\textbackslash figure(underside 49-key).
+% The keyboard is fully enclosed and internally has two chambers, front
+% and rear, in which the electronics could be installed
+% \textbackslash figure(underside 49-key).
 
-Keyboard to be used for exhibition at san colombano where it would be
-available to play by general public.
+% Keyboard to be used for exhibition at san colombano where it would be
+% available to play by general public.
 
-Timescale: from initial discussion to delivery of interface to the \anon{NEMUS}
-lab was 8-months. Active assembly of the instrument was 3 months
+% Timescale: from initial discussion to delivery of interface to the \anon{NEMUS}
+% lab was 8-months. Active assembly of the instrument was 3 months
 
-Constructed From:
+% Constructed From:
 
-\begin{itemize}
-\item
-  for exhibition
-\item
-  problems of scale
-\item
-  problems of timescale
-\end{itemize}
+% \begin{itemize}
+% \item
+%   for exhibition
+% \item
+%   problems of scale
+% \item
+%   problems of timescale
+% \end{itemize}
 
-\subsubsection{Sensor Criteria}\label{sensor-criteria}
+\section{Hardware Design}
+
+For the first iteration the data from the sensor would simply be used to
+test when a threshold had been passed. On passing the threshold a
+message would be sent to trigger the playback of a corresponding note.
+
+
+\subsection{Sensor Criteria}\label{sensor-criteria}
 
 A set of criteria was drawn to which the final sensor system would have
 to satisfy. This criteria was used as a means of evaluating the
@@ -481,13 +490,10 @@ feasibility throughout the prototyping phase.
   allow for the usage of the data for control over other parameters.
 \end{itemize}
 
-\subsubsection{Triggering a note}\label{triggering-a-note}
+% \subsubsection{Triggering a note}\label{triggering-a-note}
 
-For the first iteration the data from the sensor would simply be used to
-test when a threshold had been passed. On passing the threshold a
-message would be sent to trigger the playback of a corresponding note.
 
-The message format covered in \textbackslash section
+% The message format covered in \textbackslash section
 
 % \section{Related Work and Motivation}\label{related-work-and-motivation}
 
@@ -553,7 +559,7 @@ The message format covered in \textbackslash section
 
 % Further discussion of this approach in \textbackslash section.
 
-\section{Electronics}\label{electronics}
+% \section{Electronics}\label{electronics}
 
 Design of electronics carried out in tandem with construction of full
 model. Since the Electronics were designed at a distanced to the final
@@ -967,6 +973,14 @@ it was previously above, a MIDI Note Off message is sent.
 % sensors per jack.
 
 \section{Implementation}\label{implementation}
+
+\begin{figure}  
+  \centering
+  \includegraphics[,width=\linewidth]{src/images/exhibition-user-1.jpeg} 
+  \caption{} 
+  \Description{} 
+  \label{fig:exhibition}
+\end{figure}
 
 \subsection{Installation}\label{installation}
 

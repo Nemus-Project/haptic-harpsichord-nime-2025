@@ -39,8 +39,20 @@ The design of the augmented replica keyboard for the Tagliavini Collection was g
 \item \emph{Robustness and reliability}. The system needed to accommodate frequent use by museum visitors and allow for straightforward maintenance by staff without requiring specialised technical expertise.
 \item \emph{Faithfulness}. The keyboard mechanism ensured fidelity to its authentic operation, keeping artefacts to a minimum. 
 \end{itemize}
-These constraints demanded a non-invasive, robust design that was respectful of the historical authenticity of the instruments. The requirement for faithfulness to the original mechanism immediately ruled out a mechanical design reliant on electromechanical actuators, as in previous works on piano haptics \cite{Timmermans2020,Gillespie1996}. While actuators can generate considerable force, they cannot replicate the wideband signals characteristic of the harpsichord's sharp and responsive haptics (A REFERENCE WOULD BE GOOD HERE, ANY IDEAS?), which differ significantly from those of a piano.
+These constraints demanded a non-invasive, robust design that was respectful of the historical authenticity of the instruments. The requirement for faithfulness to the original mechanism immediately ruled out a mechanical design reliant on electromechanical actuators, as in previous works on piano haptics \cite{Timmermans2020,Gillespie1996}. While actuators can generate considerable force, they cannot replicate the wideband signals characteristic of the harpsichord's sharp and responsive haptics (A REFERENCE WOULD BE GOOD HERE, ANY IDEAS?), which differ significantly from a piano.
 
+Here is a consolidated **Open-Source Design** subsection for your article:
+
+
+\subsection{Open-Source Design and Cost-Effectiveness}\label{susec:open-source}
+
+A central objective of this project was to ensure accessibility and reproducibility by committing to an open-source approach for all hardware, software, and data. The commitment to open-sourcing encompassed all aspects of the system, including hardware schematics, firmware, and calibration data. Cost-effectiveness was a central consideration. For example, the system was initially developed for a 3-key prototype and successfully scaled to 49 keys without significant increases in cost or complexity. Key components, such as QRE1113 sensors and CD4051BE multiplexers, were selected for their affordability and availability, while the modular PCB design ensured efficient replication and maintenance.
+
+The Arduino Nano BLE was chosen as the core microcontroller for its compatibility with open-source tools and its ability to support both USB and BLE MIDI. Ferroelectric RAM (FRAM) was employed for data storage, offering an economical yet robust solution for preserving calibration settings across power cycles. Calibration workflows were optimised using the Arduino IDE’s serial plotter and open-source MIDI Monitor software, reducing reliance on proprietary tools and simplifying the process for users.
+
+Scalability and ease of assembly were prioritised throughout the design process. The modular structure of the PCBs, combined with 3D-printed baffles and gradient stickers, ensured that the system could be scaled up without compromising performance or cost-efficiency. Installation and calibration times were reduced through iterative improvements, such as the integration of addressable LEDs for sensor identification during setup. These design choices align with the project’s open-source ethos, allowing assembly using standard tools commonly available in university maker spaces.
+
+By making the hardware and software openly available, the project invites contributions and adaptations from the broader community. This transparency supports critical evaluation and encourages iterative improvements, promoting sustainability and innovation in interactive musical interface design. Moreover, the emphasis on affordability and accessibility ensures that the system can be adopted by a wide range of users, from cultural heritage institutions to academic researchers, reinforcing the project’s commitment to democratising access to advanced technological solutions.
 
 
 \subsection{Summary of the Finalised Design}
@@ -86,10 +98,30 @@ The 3-key model facilitated iterative testing of individual components, includin
 
 \begin{figure}
     \centering
+    \includegraphics[width=\linewidth]{src/images/CrossSectionSensorPlacement.jpg}
+    \\
     \includegraphics[width=\linewidth]{src/images/3-key-side-labelled.png}
     \caption{3-Key Model Harpsichord Mechanism designed by Graziano Bandini at San Colombano, Bologna, 2023. Key components include A: Wrestplank, B: Key Lever, C: Key Cap, D: Soundboard, E: Jack.}
     \label{fig:3key}
 \end{figure}
+
+% \begin{figure}
+%     \centering
+%        \begin{subfigure}
+%          \centering
+%          \includegraphics[width=\linewidth]{src/images/CrossSectionSensorPlacement.jpg}
+%          \caption{Cross Section of 49-Key Model}
+%          % \label{fig:y equals x}
+%      \end{subfigure}\\
+%     \begin{subfigure}
+%          \centering
+%          \includegraphics[width=\linewidth]{src/images/3-key-side-labelled.png}
+%          \caption{3-Key Model: A: Wrestplank, B: Key Lever, C: Key Cap, D: Soundboard, E: Jack}
+%          % \label{fig:y equals x}
+%      \end{subfigure}        
+%     \caption{Cross Sections of Models}
+%     \label{fig:3key}
+% \end{figure}
 
 \subsection{Sensor Criteria}\label{sensor-criteria}
 
@@ -107,12 +139,12 @@ These criteria ensured that the design aligned with the open-source ethos of the
 
 \subsection{Sensor Board Design}\label{sensor-board}
 
-% \begin{figure*}
-%     \centering
-%     \includegraphics[width=\linewidth]{src/images/bl}
-%     \caption{3-Key Model Harpsichord Mechanism designed by Graziano Bandini at San Colombano, Bologna, 2023. Key components include A: Wrestplank, B: Key Lever, C: Key Cap, D: Soundboard, E: Jack.}
-%     \label{fig:3key}
-% \end{figure*}
+\begin{figure*}
+    \centering
+    \includegraphics[width=\linewidth]{src/images/system-block-diagram-long.png}
+    \caption{Block diagram of PCB connection. Sensor and LED are routed through each sensor PCB}
+    \label{fig:system-block-diagram}
+\end{figure*}
 
 The final sensor system utilised QRE1113 infrared sensors, known for their precision and suitability for short-distance detection \cite{McPherson2013, McPherson2019}. The sensors were distributed across seven printed circuit boards (PCBs), each responsible for seven keys. Each PCB contained the following components:
 
@@ -147,7 +179,7 @@ Non-volatile memory, implemented using Ferroelectric RAM (FRAM), provided a reli
 Each sensor's threshold was manually adjusted using RGB LEDs integrated into the system. These LEDs provided visual feedback during calibration, enabling the identification of malfunctioning sensors and simplifying the alignment process. The calibration workflow utilised the Arduino IDE serial plotter and open-source MIDI monitoring software (Figure \ref{fig:serial_monitor}). 
 
 
-Finer calibration carried out with the guidance of \anon{Catalina Vincens} as an expert harpsichord performer.
+As an expert harpsichord performer, finer calibration was carried out with the guidance of \anon{Catalina Vincens}.
 
 Power requirements for the system were estimated at 1.1 A at 5 V, with fluctuations during startup. While the sensors were powered continuously in this iteration, future designs may incorporate power-saving measures, such as dynamic activation of sensors based on usage.
 
@@ -159,17 +191,19 @@ The assembly process at the NEMUS lab in Bologna involved meticulous adjustments
 
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{src/images/CrossSectionSensorPlacement.jpg}
-    \caption{Cross-section illustrating sensor placement relative to the jack mechanism.}
-    \label{fig:cross-section}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=\linewidth]{src/images/CrossSectionSensorPlacement.jpg}
+%     \caption{Cross-section illustrating sensor placement relative to the jack mechanism.}
+%     \label{fig:cross-section}
+% \end{figure}
 
 \begin{figure}
     \centering
+    \includegraphics[width=\linewidth]{src/images/sensor-board-w-baffles.jpeg}
+    \\
     \includegraphics[width=\linewidth]{src/images/baffles.png}
-    \caption{STL Model of baffles designed to prevent cross-talk between adjacent sensors.}
+    \caption{Baffles designed to prevent cross-talk between adjacent sensors.}
     \label{fig:baffles}
 \end{figure}
 
@@ -608,123 +642,110 @@ adjustments needed to be made to the tuning to accomodate for this.
 \section{Conclusion}\label{conclusion}
 
 Paper has presented the design for an interactive exhibition at a musical instrument museum. Design attempts to address the problem.
-Optical sensors read by a microcontroller have been shown to be a solution to tracking vertical displacement of harpsichord jacks and therefore a viable system to augmenting harpsichords. The interface's capabilities of the jack rails to disengage and to convert string plucks to MIDI data means this can be used as a probe to explore the how the ``double-pluck'' can be used as vector for expression during performance. The placement of the instrument as a museum exhibit means it also has potential to be used in a long form study.
+Optical sensors read by a microcontroller have been shown to be a solution to tracking vertical displacement of harpsichord jacks and therefore a viable system to augmenting harpsichords. The interface's capabilities of the jack rails to disengage and to convert string plucks to MIDI data means this can be used as a probe to explore how the ``double-pluck'' can be used as vector for expression during performance. The placement of the instrument as a museum exhibit means it also has potential to be used in a long form study.
 
 \section{Going forward}\label{going-forward}
 
 The current interface is an advanced prototype, but there remain many avenues to explore and aspects of the design to improve.
 
-A limitation in the design is the variability in positioning of tag,
-especially when they need to be reapplied. A jig was designed for
-applying tags, but could not be printed in time for installation. Even
-with a jig, some tags had to be readjusted by hand regardless. Long term
-this has implications on how to maintain the interface.
+The stickers as a sensor surface have a few limitations that can be addressed. Firstly, the stickers need to be applied manually, which is laborious but also introduces variability. Secondly, the material for the stickers is rated at a 4 years lifespan before the adhesive will decay. The application is non-standard and it is likely there will be failure or drift in sensor readings over time, though to what extent is unknown. This presents a problem on how this approach can be maintained in the long term. Preliminary tests with 3D printed jack bodies incorporating the sensor surface were made. The jack body was notched and effectively acts a shutter against the optical sensor. More testing needs to be carried out before they are incorporated into the design. 3D printed jacks would solve two problems simultaneously in that they would be easily reproducible, but also remove labour demands on the luthier.
 
-Taken a different approach to what surface is used. Preliminary test
-were taken using Laser Cutting and CNC to fabricate Jack bodies. Laser
-cutting results in a loss of material that has too much variability. The
-edge of the jack body will be charred. The material also needs to be
-reliable. on the advice of two luthiers, \anon{Roberto Livi} and \anon{Jonathan Santa
-Maria Bouquet} at \anon{Edinburgh}, Plywood and MDF have problems with
-variations in humidity, tear-out and delamination.
+Their are also plans to develop the current setup by incorporating force sensitive resistors (FSR). 
+FSRs would be used in conjunction with the current optical sensors to research if an impulse response for the pluck can be extrapolated.
 
-Some tests were carried out using a notched jack body that was 3D
-printed. The notch means that as the jack raises, the forward material
-acts like a shutter. No reasons that this could not be CNC though a
-variety of materials would be needed. Traditional material used is xx
-though need to test of the material is naturally reflective enough or if
-a coating would need to be applied.
+% Taken a different approach to what surface is used. Preliminary test
+% were taken using Laser Cutting and CNC to fabricate Jack bodies. Laser
+% cutting results in a loss of material that has too much variability. The
+% edge of the jack body will be charred. The material also needs to be
+% reliable. on the advice of two luthiers, \anon{Roberto Livi} and \anon{Jonathan Santa
+% Maria Bouquet} at \anon{Edinburgh}, Plywood and MDF have problems with
+% variations in humidity, tear-out and delamination.
 
-Outputs of the NEMUS project will also include numerically simulated
-non-linear plucked string models with which the device can interact. A
-bespoke sound synthesis engine to leverage data from both jack rows
-which will also be open-sourced. Design for instrument to be compatible
-with standard MIDI instruments as well software designed for the full
-data output.
+% Some tests were carried out using a notched jack body that was 3D
+% printed. The notch means that as the jack raises, the forward material
+% acts like a shutter. No reasons that this could not be CNC though a
+% variety of materials would be needed. Traditional material used is xx
+% though need to test of the material is naturally reflective enough or if
+% a coating would need to be applied.
 
-A second interface designed more closely to the Trasuntino style
-instrument commissioned by the \anon{NEMUS} project with \anon{Roberto Livi}. Using
-lessons learned for the first iteration the second can make better
-accommodations for internal electronics. Interface to be used for a
-performer study and used for performance with a numerically simulated
-sound synthesis engine.
+Space constraints meant that only one row of jacks could be sensed. A subsequent redesign in the dimensions of the PCB addressed this problem.
+The redesign included flat flex cable (FFC) instead of header pins. This reduced the the size of the PCBs as well as the labour on hand soldering.
+There was an additional added benefit in that the FFC has only a single orientation in which it conducts, meaning it cannot be incorrectly connected.
 
-Testing current sensors in conjunction with force sensitive resistors to
-research if a impulse response for the pluck can be extrapolated.
+Currently the instrument communicates with a Spitfire sample library through the Kontakt software sampler. As such, the full data from both rows of jacks cannot be utilised. which is limited. A future output of the \anon{NEMUS} project will be a bespoke sound synthesis engine to leverage data from both jack rows
+which will also be open-sourced. The intention is also to create a numerically simulated non-linear plucked string models with which the device can interact. 
 
-Future novel designs for an interface that would utilise velocity and
-aftertouch messages in software. This would be applicable for numerical
-simulations of strings. A bespoke piece of software would also allow
-for direct mapping of jack rows to registers. There is enough data to
-implement functionality for velocity and aftertouch MIDI messages and
-simply needs to be activated in the firmware. (Hyperinstruments
-\cite{nime2024_20})
+% The design for instrument to be compatible with standard MIDI instruments as well software designed for the full data output.
 
-seat vibrations \cite{MusicalHaptics2018_07}
+A second interface designed more closely to the Trasuntino style instrument has been commissioned by the \anon{NEMUS} project with \anon{Roberto Livi}. 
+Using lessons learned for the first iteration the second can make better accommodations for internal electronics. Interface to be used for a performer study and used for performance with the aforementioned numerically simulated sound synthesis engine.
 
-\begin{itemize}
-\item
-  ``there is a general connection between vibrations and the perceived
-  quality of music reproduction''
-\item
-  ``influence of vibrations on loudness perception at low frequencies''
-  Evaluation
-\end{itemize}
+Future novel designs for an interface that would utilise available data, such as velocity and aftertouch, in software in the manner of a hyperinstrument.
+Currently the system looks for the cross over a threshold for triggering MIDI messages, but jack displacement is tracked continuously. Data for velocity, both of the pluck and the jack can be extracted from the available data, simply requiring the addition of state machine to make use of it.
+% This would be applicable for numerical simulations of strings.  
+% A bespoke piece of software would also allow for direct mapping of jack rows to registers. 
+% There is enough data to implement functionality for velocity and aftertouch MIDI messages and simply needs to be activated in the firmware. ()
 
-\subsection{improvements}\label{improvements}
+Seat vibrations \cite{MusicalHaptics2018_07} can also be explored to determine if they would create a more immersive experience in the exhibition context.
 
-\begin{itemize}
-\item
-  ESP-IDF
+% \begin{itemize}
+% \item
+%   ``there is a general connection between vibrations and the perceived
+%   quality of music reproduction''
+% \item
+%   ``influence of vibrations on loudness perception at low frequencies''
+%   Evaluation
+% \end{itemize}
 
-  \begin{itemize}
-  \item
-    latency half
-  \item
-    workload high
-  \end{itemize}
-\end{itemize}
+% \subsection{improvements}\label{improvements}
 
-A current limitation is the latency in triggering MIDI output. Currently
-the latency is around 20 ms, but should ideally be closer to 5 ms.
+% \begin{itemize}
+% \item
+%   ESP-IDF
 
-An obvious approach would be merely changing the microcontroller. A test
-was carried out using an Arduino Nano ESP32 which is a NORA-W106, a
-module with a ESP32-S3. The benefit of this microcontroller is that it
-would allow simply the board to be swapped and the rest of the PCB
+%   \begin{itemize}
+%   \item
+%     latency half
+%   \item
+%     workload high
+%   \end{itemize}
+% \end{itemize}
+
+A current limitation is the latency in triggering MIDI output. Currently the latency from pressing a key to triggering a note is around 20 ms. 
+The latency should ideally be closer to 10 ms and with no jitter so \cite{Jack2016}.
+
+One approach would be to change the microcontroller. A test
+was carried out using an Arduino Nano ESP32 which is a NORA-W106, a module containing an ESP32-S3. 
+The benefit of this microcontroller is that it would allow the microcontroller to be swapped and the rest of the PCB
 designs would be unaffected.
 
-Using the Espressif development framework ESP-IDF and following the same
-logic as the original firmware source, the latency was reduced to around
-10 ms. ESP-IDF allows access to functionality of the ESP32 that is not
-exposed in the Arduino libraries. It is possible that the 10 ms latency
-could be improved upon, but there would be a cost in the form of
-development time. Consideration would need to be made on how to port
-existing code or whether to completely re-write the firmware.
+Another approach would be to use a different microcontroller entirely. 
+Some research was carried during the course of the project using an ESP32 programmed with the Espressif development framework ESP-IDF. 
+The same logic as the original firmware was programmed and the latency was reduced to below 10 ms. ESP-IDF allows access to functionality of the ESP32 including regular processing of an internal audio buffer that is not exposed in the Arduino IDE. 
+It is possible that the 10 ms latency could be improved upon with appropriate optimisation, but there would be a cost in the form of development time. 
+Consideration would need to be made on the time to port existing source code for the I2C FRAM chip or fall back on a simpler storage option.
 
-\begin{itemize}
-\item
-  avoid soldering cabling
-\item
-  power indicators on pcbs
+% \begin{itemize}
+% \item
+%   avoid soldering cabling
+% \item
+%   power indicators on pcbs
 
-  \begin{itemize}
-  \item
-    debug if problem is power related Add power small power LEDs to the
-    each PCB. It was not common for a board to not be functioning and
-    thye result to be that the power was not correctly connected.
-    Especially when the power is connected via something such as an FFC
-    cable where it is easy to plug-in the wrong way especially when
-    fitting is to be carried out by someone unfamiliar with the system.
-    Power LEDs would quickly confirm whether the problem was power
-    related. They would have to be small enough and low enough current
-    draw to avoid glare or being mistaken with other indicator LEDs To
-    continue using THT components, the choice would have to be made
-    carefully.
-  \end{itemize}
-\end{itemize}
-
-
+%   \begin{itemize}
+%   \item
+%     debug if problem is power related Add power small power LEDs to the
+%     each PCB. It was not common for a board to not be functioning and
+%     thye result to be that the power was not correctly connected.
+%     Especially when the power is connected via something such as an FFC
+%     cable where it is easy to plug-in the wrong way especially when
+%     fitting is to be carried out by someone unfamiliar with the system.
+%     Power LEDs would quickly confirm whether the problem was power
+%     related. They would have to be small enough and low enough current
+%     draw to avoid glare or being mistaken with other indicator LEDs To
+%     continue using THT components, the choice would have to be made
+%     carefully.
+%   \end{itemize}
+% \end{itemize}
 
 \section{Ethical Standards}\label{ethical-standards}
 

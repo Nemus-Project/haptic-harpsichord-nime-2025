@@ -1,1103 +1,521 @@
 # Introduction
 
-With the advent of digital musical instruments in the 20th Century there has
-been a decoupling between interface and sound generation when playing.
-Consequently, aspects of the sensory experience of playing have been lost,
-namely the sensation of vibration and mechanical impedance that a traditional
-musical instrument provides.
-
-The project looks at restoring tactile and haptic response of historical
-harpsichords for an exhibition at the musical instrument Museo di San
-Colombano\footnote{https://genusbononiae.it/en/san-colombano-tagliavini-collection/}
-in Bologna. San Colombano is host to the Tagliavini Collection, a collection of
-approximately 70 historical keyboard instruments in working order
-\cite{Tagliavini2007} gifted to the museum by  
-from Luigi Ferdinando Tagliavini in 2010 \cite{SanColombano2010,Carlino2010}.
-
-Some items among the Tagliavini collection are no longer in a playing condition
-or are too fragile to continue to be available by museum visitors. One of those
-fragile instruments is a 1547 Harpsichord in the italian style by Alessandro
-Trasuntino \cite{Wraight2024}\footnote{examples of similar instruments by
-Trasuntino available online in the Royal College of Music Collection (1531:
-\url{https://museumcollections.rcm.ac.uk/collection/Details/collect/58}) and the
-Musée de la musique collection (1538:
-\url{https://carmentis.kmkg-mrah.be:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=106088&viewType=detailView})
-}, which was used as the basis for an interactive exhibition commisioned by San
-Colombano.
-
-The project was also open sourced to allow for others to easily recreate and
-iterate on the designs.
-
-The haptic key project by Timmermans et al. \cite{Timmermans2020} began with the
-model of a piano key. A 3-key cross-sectional model of a harpischord mechanism
-\figure{3key} was provided to the NEMUS project by San Colombano as a test bed
-for sensors and as a proof of concept for a larger scale interface. Each key of
-model has 2 sets of strings that are under tension but not at any specific
-musical pitch. The strings are there to provide same resistance to the jack
-plectra as would be found on an instrument. The mechanism is in the italian
-style of the XVI-XIX century with 2 jacks per key with corresponding strings
-tuned in unison \footnote{"8'-8' È la dispozione normale dei clavicembali
-italiani" \cite{Tagliavini1987}}. A suitable sensing system was found for
-reliably detecting when jack had plucked a string independently and sending out
-a corresponding MIDI message to a connected sound synthesis engine. A full scale
-49-key scale model was commissioned with and then built by luthier Roberto Livi
-in the same style as the 1547 Trasuntino \figure{teaser}. The sensor system was
-installed into the full scale model and then setup for exhibition at San
-Colombano. Visitors are invited to play the interface which currently triggers
-samples on a connected sound engine. The paper looks at the design decisions,
-processes, and considerations to be made when undertaking a project of this
-kind.
-
-\begin{figure}  
-  \centering
-  \includegraphics[width=\linewidth]{images/side_w-o_sensors.png} 
-  \caption{3-key Model Harpsichord Mechanism by Graziano Bandini, Bologna 2023} \Description{A 3-Key Model of a Harpsichord Mechanism created Graziano Bandini in Bologna. A sidevew of the model which is a cross-section of what is a common
-mechanism for an italian style harpischord of the XVI century.} 
-\label{fig:3key}
-\end{figure}
-
-Overview of fabrication methods, techniques that can be employed. Finally a
-discussion of the limitations and areas in which the core project can be
-improved and developed further.
-
-In this context, a ‘traditional’ instrument is one whose interface for
-generating sound and the sound generating mechanism are fundamentally coupled. A
-piano requires a key press which triggers a hammer, which strikes a string which
-vibrates a body and air cavity. This system is tied together and cannot be
-separated. A synthesizer, be it a theremin, a control voltage synthesizer, a
-MIDI controller, these are all instruments whose interface are decoupled from
-their sound generation. This decoupling presents a problem that then needs to be
-addressed. How do we re-introduce this dimension to the experience of playing a
-musical instrument? How do we, and is it possible to, parameterise and preserve
-this experience? This is central problem that is trying to be solved in
-\cite{Nichols2002, Timmermans2020, McAlpine2014, Baldwin2016}.
-
-This is particularly pertinent as it relates to conservation of musical
-instruments, as they represent both historic objects, but also tools for
-creating music. Historical musical instruments present an interesting problem
-for cultural heritage as they are both a physical object but also a tool for
-making music. This begs the question, can we use haptics to preserve experiences
-of the past? The proposed project intends to develop further the methodologies
-implemented in musical haptics projects \cite{MusicalHaptics2018} such as
-\cite{Timmermans2020}.
-
-Systems exist already for the conversion of piano keyboard. The Yamaha
-disklavier, the Don Buchla designed MOOG Piano Bar, Bosendorfer, PNOscan by QRS
-focus on reproduction. These same systems could be applied to a harpsichord, but
-the limitation is a single data stream per key.
-
-## Motivations
-
-The project was  carried out in collaboratoiun with San Colombano. The results
-of the project would be presented as an interactive exhibition for the public.
-
-<!-- ## Why...
-
-### ...a replica?
-
-### ...an interface?
-
-- maintain problems
-- probe for research
-  - on haptics how it affects performance -->
-
-- existing sysetms
-  - Yamaha Disklavier used as a basis for exploration into haptics and the piano
-    keyabord \cite{MusicalHaptics2018_04, MusicalHaptics2018_05,
-    MusicalHaptics2018_13}
-  - Bosendorfer: LED photo transistor pair \cite{Moog1990} for obtaining
-    performance data \cite{MusicalHaptics2018_05}
-    - 290SE
-    - CEUS
-  - Don Buchla / Moog Piano Bar
-  - PNOscan MIDI 9 QRS Music as MIDI Piano system \cite{McPherson2013}
-    - PNOmation
-  - Piano Disc
-
-# Related Work
-
-Methodologies for increasing visitor engagmemnet or 
-
-<!-- Why  -->
-<!-- 
-restricted growing fragility of some items in the respective collections. Bothe
-projects center around the creation of a custioom MIDI controller for
-interfacing with sound synthesis engine. The keyboard consisted of two modified
-commercial MIDI keyboard controllers in a two manual harpsichord arrangement.
-Weherease the McAlpine keyboard used weighted keys, this interface extends the
-idea by using the mechanism and strings under tension to provide the haptic
-feedback. McAlpine posits a fully paremterised haptic keyboard, but before
-taking such a leap we look at what affect a more literal haptic keyboard may
-provide to the performer experience.
-
-The previous NIME project "Tromba Moderna" \cite{Baldwin2016}, which looked at
-reconstructing a full tromba marina to be used as a digital interface. The one
-of the limitations flagged by McAlpine was the oneffectiveness of weighted keys
-in mimicing the harpischord. The Tromba Moderna "attempted to avoid this problem
-by constructing a fully functioning replica of the tromba marina"
-\cite{Baldwin2016}. This project applies the same approach to the harpsichord.m
-where the projects deviate is a questions of scale.
- -->
-
-Museum staff want visitors to be engaged but limits in staffing and funding
-limit how vistors can interact with collections \cite{Templeton2018,
-McAlpine2014}. For musical instrument museums there is an additional difficulty
-in the balance of keeping historical instruments playable \cite{McAlpine2014}.
-The fragility and decay of musical instruments means that there is an inveitable
-point where instruments will no longer be  in a playable condition
-\cite{McAlpine2014, Fritz2017}
-
-McAlpine outlines a similar situation to the Tagliavini collection in his work
-with the Benton Fletcher Collection \cite{McAlpine2014}. There was a stipulation
-by Benton Fletcher that the instruments remain available to play when they were
-gifted to National Trust  Fenton House. A custom MIDI interface arranged in a
-two manual harpischord style which triggered samples of the instruments in the
-collection using an appropraite recording strategy for each. One problem
-highlighted in user tests by McAlpine is that the weighted keys did no provide
-"an experiential sense of interacting with a historical keyboard"
-\cite{McAlpine2014}. The MIDI interface created from commercially available
-weighted keys. McAlpine posits a haptic keyboard augemented with  "actuators to
-provide positionally-sensitive real-time force feedback at point-of-contact" in
-a similar approach as the piano mechanism by Gillespie \cite{Gillespie1996}.
-
-Previous NIME project "Tromba Moderna" \cite{Baldwin2016} looked to avoid the
-complex engineering problem by simply recreating the tromba marina and
-augmenting it. In the case of the Tromba Modern, a piezo transducer was
-connected to a sound synthesis engine connected to a driver inside the
-instrument to simulate the vibration that would be expected of an historical
-tromba marina.
-
-<!-- Quotes \cite{McAlpine2014}.
-- "ultimately impractical - pieces of furniture" 
-- "[visitors] willingly suspend their disbelief and ascribe authenticity to the
-  experience of playing the sampled instruments."
-- "an experiential sense of interacting with a historical keyboard it is poor"
-- "The feel of an acoustic instrument is of fundamental importance to musicians,
-  who train for many years to achieve the fine motor control necessary to coax
-  the full range of expression from their instruments." -->
-
-
-<!-- Why a Replica -->
-The original design was to take a similar approach to the project by Timmermans
-\cite{Timmermans2020}, which was an extension of the system by Gillespie
-\cite{Gillespie1996}. The process laid out in Timmermans project was to begin
-with a single key model of the mechanism. We began with a 3-key Model
-Harpsichord Mechanism by Graziano Bandini \\figure{}. Before we continued with
-augementing a model with actuators it was decided that it we should first
-validate whether a recreation of the harpsichord mechanism would suffice in
-allowing visitors to suspend disbelief. 
-
-<!-- Why an interface -->
-Benefits of putting effort into the maintenance of one interface with a
-transferable sensor system
-
-An additonal factor not faced in the Tromba Moderna project is the problem of
-scale in managing 98 rather than a single data stream of data.
-
-Material costs mitigated by creating a scaled version of the sound board,
-providing only the length of string necessary under comparable tension and thus
-resistance to the jack quill.
-
-Finally, a further extension to the projects above was a commmitement to open
-sourcing all aspects of the project, hardware, software, and data.
-
-
-# Design
-
-## Design Problem
-
-Central philosophy of the Tagliavini Collection is that the instrument should
-remain playable to the public. The condition of some instruments is such that
-restoration would required a replacement of vast majority of the instrument,
-would be too costly, would risk the instrument given its fragility, or all of
-those in combination.
-
-This is not an uncommon problem faced by musical instrument museums worldwide.
-The central question the project tries to answer is "how do we conserve musical
-instruments in order to continue interacting with them"
-
-<!-- ### the solution -->
-
-The approach taken was to recreate the interface of these instruments not for
-acoustics purposes be purely for the mechanical resoponse. As exhibition for the
-general public in a musical instruments there were aesthetic and functional
-constraints placed on the design of the interface.
-
-<!-- ## Criteria -->
-
-The design criteria was to create a keyboard interface that provides a
-comparable physical response to a harpsichord. 
-
-
-
-### Design Constraints
-
-- no electronics should be visible.
-- it should be robust and reliable, easily maintained by museum staff without
-  complex technical processes
-- it should not augment or fix the mechanics, but present them with their
-  original limitation
-
-Another constraint was that the design of the sensor system and the model
-keyboard would have to carried out at a distance in separate workshops. Time
-constraints meant the keyboard was being fabricated for a sensor that did not
-yet exist. 
-
-
-Accomodations were made in the design to allow for as much flexibility as
-possible. This also meant that designs for the eletronics would have to include
-a deal of flexibility in how they might be installed. Surplus space was added
-into the design of the internal chamber of the model \\FIGURE, but there was
-still a limit given the structural and aesthatic requirements.
-
-<!-- Notes should be assigned per jack and not per key. -->
-
-## Keyboard 
-
-### Anatomy of Harpsichord mechanics
-
-- simple
-- aesthetics
-- split workload
-  
-- parts of harpsichord
-  - jack
-    - quill
-    - jack body
-    - pivot
-    - tongue
-  - key
-  - body
-
-
-### Keyboard Construction
-
-The desicion was made to design the elctronic sna dthe model keyboard in tandem.
-Allow for quicker development time and iteration on the idea. Likely the first
-implementation would need re-designed and redesiginng the electronics to fit the
-form of the keyboard was more cost effective than building or carrying out major
-modifications to the model.
-
-The model was designed to have two internal chambers a front and rear. The front
-and back that was xxx by yyy by 370mm between the faceplate and the jacks. The
-TONGUE THAT GOES INTO SLOT divides the chamber though a small gap between the
-under side of the soundboard and the key guides. The key guide needs to be deep
-enough to allow for the full movement of the key and stop the key becoming
-unseated. The chamber then extends to a support wall which divides the front and
-rear.
-
-Discussion of spatial constraints and affects on  electyronics design and
-installation is covered in \\section{setup}
-
-The rear chamber was desigbned to house comonents for audio processing, which is
-discussed further in \\section
-
-\footnote{https://github.com/Nemus-Project/haptic-harpsichord-nime-2025/issues/Nemus-Project/haptic-harpsichord-nime-2025/images/disegno.pdf}
-
-For the initial prototyping stage, modifying an existing harpsichord was
-considered though ultimately discarded. An existing instrument would have
-provided a test for scaling the electronics, but internal measurments and layout
-would have been too different. A harpsichord that was economic enough to be
-deconstructed would also have been of a more modern mechanical design and not of
-the design that was being recreated with the model. Prototyping stage would
-likely be invasive and damage or heavy modification likely. As such it was not a
-good use of funds as a modern instrument fit for destruction did not offer
-benefits that the small model with easy internal access did not already provide.
-
-
-## Building Process
-
-PARAGRAPH FROM ROBERTO
-
-## Prototyping
-
-### 3-Key Prototype
-
-- proof of concept
-- available on loan from museum
-- easy access to internal structure
-  
-
-<!-- ### Fig: Construction Design Diagram   -->
-
-### 49-Key Prototype
-
-For the final interface a 49-key (4-octave) was constructed by luthier Roberto
-Livi. The keyboard is in the same style† as the 3-key model with to jacks per
-key.
-
-The keyboard is fully enclosed and internally has two chambers, front and rear,
-in which the electronics could be installed \\figure(underside 49-key).
-
-Keyboard to be used for exhibition at san colombano where it would be available
-to play by general public.
-
-Timescale: from initial discussion to delivery of interface to the NEMUS lab was
-8-months. Active assembly of the instrument was 3 months
-
-Constructed From:
-
-- for exhibition
-- problems of scale
-- problems of timescale
-
-<!-- ### Fig: Construction Design Diagram -->
-
-### Sensor Criteria
-
-A set of criteria was drawn to which the final sensor system would have to
-satisfy. This criteria was used as a means of evaluating the feasability
-throughout the prototyping phase.
-
-- Non-invasive: The sensor system should not require major modifications to the
-  interface on which it is installed.
-- Low Latency: Reading sensors and then triggering an output should have a low
-  latency. Using [paper on latency] a target was set as X ms with an upper limit
-  set to 25ms beyond which the sensors would be deemed unusable
-- Reliable: Data obtained should be reliable and accurate enough not to result
-  in false positives or false negatives without extensive filtering
-- Scalable: The system should be scalable both economically and temporally.
-  Given the open soucre nature of the porject, it could not be prohibitvely
-  expensive to carry out. Also any system that would work on a single key would
-  have to scale financially to  potentially 50 or more. The time required to
-  install and calibrate the sensors would also have to scale. 
-- Expandable: Any sensor system should be functionally expandable to allow for
-  the usage of the data for control over other parameters.
-
-
-### Triggering a note
-
-For the first iteration the data from the sensor would simply be used to test
-when a threshold had been passed. On passing the threshold a message would be
-sent to trigger the playback of a corresponding note. 
-
-The message format covered in \\section
-
-# Related Work and Motivation
-
-- \cite{Timmermans2020}
-- \cite{McPherson2013} \cite{McPherson2019}
-- \cite{Mudd2013}
-- \cite{Fritz2017}
+Technological advances have transformed how museums document, present
+and interpret their collections. Immersive experiences are afforded
+through tools such as laser scanning, 3D printing, and virtual reality
+[@allard2005use; @Wachowiak01082009; @RCM_2024_3D; @Kuzminsky_LaserScan_2012; @Schaich_3D_2007].
+These technologies form a kind of experiential authenticity, enabling
+encounters that evoke the past's sensory, emotional, and intellectual
+essence [@trant_Auth_1999]. However, as Pine and Gilmore note
+[@pinegilmore_2007], achieving authenticity requires museums to navigate
+the delicate balance between preservation and meaningful engagement---a
+challenge that is particularly evident in the case of historical musical
+instrument collections [@McAlpine2014].
+
+Musical instruments represent a peculiar fusion of form, function, and
+history. Their cultural value extends beyond their visual appeal to
+include the tactile and auditory dimensions of use [@Fritz2017]. Yet,
+preservation concerns often limit direct interaction, reducing these
+artefacts to static displays. This "red velvet cord" approach, as
+theorised by McAlpine [@McAlpine2014], protects fragile mechanisms but
+diminishes the instruments' functional identity, disconnecting visitors
+from the full richness of their historical and cultural context.
+
+The Tagliavini Collection in Bologna [@Tagliavini2007], renowned for its
+historical keyboard instruments, exemplifies this dilemma. To address
+it, this project introduces an augmented replica of a historical
+harpsichord keyboard.
+
+The article is organised as follows: TBC
+
+# Related Work and Motivations {#related-work}
+
+Museums often face significant challenges in engaging visitors due to
+limitations in staffing and funding, which restrict how visitors can
+interact with collections [@Templeton2018; @McAlpine2014]. For musical
+instrument museums, these challenges are compounded by the difficulty of
+preserving historical instruments in a playable condition
+[@McAlpine2014]. The instruments' inherent fragility and gradual decay
+inevitably result in a point where they can no longer be played, even
+when collections adhere to the strictest conservation protocols
+[@NYT_strad]. A significant cultural change has taken place in recent
+decades, shifting the focus from the playability of the originals to
+their conservation. Karp [@Karp1979; @Karp1985] advocates for a deeper
+understanding of musical instruments so that enough knowledge is
+generated to make them as "copyable" as possible.
+
+McAlpine discusses a case similar to the Tagliavini collection in his
+examination of the Benton Fletcher Collection at National Trust Fenton
+House [@McAlpine2014]. When these instruments were donated, Benton
+Fletcher stipulated that they remain playable and should continue to be
+maintained for tuition and public performance. A large sampling campaign
+was conducted, and a custom MIDI interface was designed to fulfil this
+requirement while preserving the original instruments' integrity. The
+MIDI controller, comprising two commercially available keyboards
+mimicking the two-manual harpsichord layout, was used by visitors to
+trigger the instrument samples recorded with tailored strategies for
+each. However, user tests identified a limitation: the commercially
+available weighted keys failed to provide an authentic sense of
+interacting with a historical keyboard [@McAlpine2014].
+
+On the other hand, the "Tromba Moderna" project [@Baldwin2016], a
+previous NIME initiative, approached the issue of musical heritage
+playability by recreating and augmenting a replica of a historical
+tromba marina. A piezo transducer was connected to a sound synthesis
+engine and a driver within the instrument to simulate the expected
+vibrations of a historical tromba marina.
+
+This work inherits the same philosophy as the Tromba Moderna project. By
+augmenting a replica of a historical harpsichord keyboard using
+minimally invasive electronics and controlling a MIDI-triggered sample
+library, the project intends to offer a tool enhancing the fruition of
+the Tagliavini collection whilst retaining a form of continuity with
+historical instrument-building traditions. Furthermore, the electronics
+design borrows ideas from a previous NIME by McPherson [@McPherson2013].
+As such, the interface proposed here is not, strictly speaking, a *new*
+musical interface, particularly in its haptic response designed to
+adhere to longstanding harpsichord building traditions. However, this
+work complements and follows up on previous reflections within the NIME
+community, emphasising the *O* in NIME [@Masu_NIME_2023]. The intended
+use of the keyboard through meaningful interaction with a museum exhibit
+is where the novelty of this work lies, rather than solely in its
+technological development. Furthermore, relying on previous NIMEs, this
+project extends the longevity of the results beyond the scope envisaged
+in the original papers and enables a form of sustainability.
+
+Besides enhancing the visitor experience, future design iterations will
+serve as a research tool to explore the unique characteristics of the
+harpsichord and its impact on performance through the project, aiming to
+virtually reproduce the sound of historical keyboard instruments, and
+upcoming projects such as Rem@ke [@remake1].
+
+# Design Principles {#design}
+
+::: figure*
+![image](src/images/details.jpg){width="\\linewidth"}
+:::
+
+The design of the augmented replica keyboard for the Tagliavini
+Collection was guided by three principal constraints stipulated by the
+museum:
+
+-   *No visible electronics*. To preserve the visual integrity of the
+    exhibit, all electronic components had to remain concealed except
+    for a pair of headphones and a small display for audio parameter
+    adjustments.
+
+-   *Robustness and reliability*. The system needed to accommodate
+    frequent use by museum visitors and allow for straightforward
+    maintenance by staff without requiring specialised technical
+    expertise.
+
+-   *Faithfulness*. The keyboard mechanism ensured fidelity to its
+    authentic operation, keeping artefacts to a minimum.
+
+These constraints demanded a non-invasive, robust design that was
+respectful of the historical authenticity of the instruments. The
+requirement for faithfulness to the original mechanism immediately ruled
+out a mechanical design reliant on electromechanical actuators, as in
+previous works on piano haptics [@Timmermans2020; @Gillespie1996]. While
+actuators can generate considerable force, they cannot replicate the
+wideband signals characteristic of the harpsichord's sharp and
+responsive haptics (A REFERENCE WOULD BE GOOD HERE, ANY IDEAS?), which
+differ significantly from a piano.
+
+## Summary of the Finalised Design
+
+The final design, visible in Figures
+[\[fig:teaser\]](#fig:teaser){reference-type="ref"
+reference="fig:teaser"} and
+[\[fig:details\]](#fig:details){reference-type="ref"
+reference="fig:details"}, is a 49-key harpsichord replica equipped with
+an optical sensor system reading the amount of light reflected by
+gradient stickers applied to the jacks' sides. Several key features were
+implemented to address the project's requirements:
+
+-   *QRE1113 infrared sensors*. These sensors were selected for their
+    non-invasive properties and precision, enabling the detection of
+    jack displacement without requiring structural modifications to the
+    keyboard mechanism.
+
+-   *Gradient stickers*. Greyscale gradient stickers were applied to
+    each jack to allow the infrared sensors to make precise readings.
+    This approach made calibration easier and enabled scalability from a
+    3-key prototype to the final 49-key design.
+
+-   *Jack baffles*. Custom-designed baffles, 3D printed from dark
+    pigmented PLA to minimise infrared reflection, were installed around
+    the jacks to prevent cross-talk between adjacent sensors and ensure
+    reliable data capture.
+
+![Underside of the full model keyboard, showing two chambers: the front
+chamber (top) and the rear chamber
+(bottom).](src/images/49-key-bottom-sensors-no-keys.jpg){#fig:49-key-bottom
+width="\\linewidth"}
+
+A modular system of printed circuit boards (PCBs) was designed to manage
+the sensors and process their output. The 49 QRE1113 sensors were
+distributed across seven boards, containing 7 sensors each. The PCBs
+were secured to the underside of the keyboard mechanism, allowing them
+to be adjusted during installation. Ribbon cables connected the PCBs,
+providing flexibility during assembly while maintaining a compact form
+factor. Additional modifications, including baffles and adhesive
+improvements, were made to optimise the reliability of the sensor system
+during calibration and use.
+
+The project built upon earlier NIME research on generating MIDI messages
+from piano keystrokes [@McPherson2013], adapting it to address the
+unique characteristics of harpsichords and the specified constraints.
+Whereas the previous design emphasised continuous gesture tracking, this
+implementation required discrete key-triggered data to align with the
+needs of MIDI-triggered audio playback.
+
+## Project Deployment
+
+A further objective, set forth by the authors, was to ensure
+accessibility and reproducibility by committing to an *open-source*
+approach for all hardware, software, and data. The commitment to
+open-sourcing encompassed all aspects of the system, including hardware
+schematics, firmware, and calibration data. Cost-effectiveness was also
+a central consideration. The system was initially developed for a 3-key
+prototype, shown in Figure [2](#fig:3key){reference-type="ref"
+reference="fig:3key"}, and successfully scaled to 49 keys without
+significant increases in cost or complexity. Specifically, the system
+was designed to be easily assembled using resources typically available
+in a university-managed makers space.
+
+Components, such as QRE1113 sensors and CD4051BE multiplexers, are
+widely available from commercial resellers, while the modular PCB design
+ensures easy replication and maintenance.
+
+The Arduino Nano BLE was chosen as the core microcontroller for its
+compatibility with open-source tools and ability to support both USB and
+BLE MIDI. Ferroelectric RAM (FRAM) was employed for data storage since
+it offers an economical yet robust solution for preserving calibration
+settings across power cycles. Calibration workflows were optimised using
+the Arduino IDE's serial plotter and open-source MIDI Monitor software,
+reducing reliance on proprietary tools and simplifying the process for
+users.
+
+Reference repositories for this project can be found here. PLEASE FILL
+OUT AS APPROPRIATE (and anonymise).
+
+## Materials and Construction
+
+The keyboard was designed to replicate the tactile and aesthetic
+sensations of playing an antique Italian harpsichord. Traditional
+materials were used, including walnut for the wrestplank, chestnut for
+the key levers, boxwood and ebony for key covers, and cypress for the
+case and soundboard. The 98 jacks were made from beech, fitted with
+brass springs and natural seagull feather plectra. The design was
+inspired by Venetian harpsichords, particularly the Alessandro
+Trasuntino instrument at the San Colombano Museum.
+
+The rectangular poplar frame deviates from the traditional logarithmic
+form to allow for the installation of the electronic sensors, as visible
+in Figure [1](#fig:49-key-bottom){reference-type="ref"
+reference="fig:49-key-bottom"}, without compromising the visual or
+tactile authenticity. Two string orders, crafted from yellow brass wire
+and anchored with wrought iron pins, were tensioned to replicate
+authentic plucking resistance. Felt strips were added to dampen
+vibrations. The result is an interface that combines the mechanical
+action of keys with synthetic sound generation, preserving a real
+harpsichord's tactile and auditory qualities.
 
 # Hardware Design
 
-The hardware was designed with the xx in mind.
-
-Using a similalr apporach to @HapticKey the first step was to fabricate or
-procure a model of a single working key. San Colombano provided a model 3-key of
-a harposchord mechanism by Graziano Bandini \\FIGURE. The 3-key model was used a
-test-bed for potential sensors while designs were drawn for a full-scale model.
-The cross-sectional nature of the model meant it was easy to fit and remove
-sensors. Small size meant that it would also be easy to transfer between
-workshops. 
-
-3-key model also had a sliding jack rail which allowed for easy disengagement of
-the physical mechanical response, which allowed for some preliminary tests on
-the presence and absence of mechanism.
-
-## Failed sensors
-
-A number of sensors were tried before the final system was decided upon. An
-inertial measurment unit (IMU) was mounted to a single key which contained a 6
-degrees of freedome acceleromoetr and gyroscope. There was a consistent set of
-conditions to trigger sound, but this was not easily differntiable when other
-keys were played. The fitting time and cost of a single IMU could b reduced when
-purchased in bulk but was far greater than other systems considered.
-
-A reed sensor and a hall sensor were mounted and magnets embedded within the
-jacks. Adjusting the hieight of the sensor provided a reliable means of
-detecting a threshold, inparticular the hall sensors which could be partially
-calibrarted physically and also in softwrae. The time taken to calibarte a
-single key was time consuming. Ideally each sensor would be placed on a thread
-for adjustment, but given the constraints on the internal space it was decided
-any adjustment of heights would likely mean an unnacceptable length of time to
-install and calibrate. Embedding magnets into the jacks was also did not satisfy
-the criteria of being scalable and non-invasive.
-
-Light dependant resistor mounted to the jack rail. as jacks were pressed less
-light would be let through. Usable data but very dependant on lighting
-conditions. Modifying the jack also did not satisfy the non-intrusive criteria
-and the placement outside the internal chamber of the model meant hiding
-electronics would be more difficult.
-
-Finally, force sensitive resistors placed under the jack of each key was
-considered but was never implemented. The sensors were to be placed under each
-jack either above or below the padding on which the bottom of the jack rests.
-Further discussion of this apporach is in \\section.
-
-# Electronics
-
-Design of electronics carried out in tandem with construction of full model.
-Since the Electronics were designed at a distanced to the final full model some
-flexbility was required in the design. Design decisions that were not as optimal
-but would allow for change in wiring and fitting should there be any issues
-during installation.
-
-Electronics designed so that they would not require any equipment outside what
-can commonly be found in a maker space at a univeristy.
-
-The equipment required including soldering suitable for throughole technology
-(THT) components and 3D printing.
-
-Laser cutting and CNC routing fascilities were used during the research for the
-project but not required for the final implementation.
-
-The idea behind this was to allow for the project to be reasonably recreated
-without procurement of any additional specialist equipment.
-
-NEMUS lab under construction during the first section of the project. Facilities
-available at the maker spaces of Bologna (Alma Labor) and Edinburgh (uCreate)
-used for what was deemed reasonable assumption in terms of available equipment.
-
-- Over arching themes
-  - simplicity of design 
-    - Limited resources
-    - easily reproducible
-  - availability and lead times
-  - iteration and design from distance
-
-### QRE1113
-
-Following from the work in \cite{McPherson2013, McPherson2019} we tested a
-system using the Fairchild QRE1113 \\datasheetfigue. The QRE1113 is a
-combination infrared LED and phototransistor sensitive to IR light. The
-phototransistor of QRE1113 provides data on how much light is present and in
-particular how much light is being relfected from a surface. Since refelected
-light will be proportional to the distance of a surfcae it is a good, close
-proximity, distance sensor. Distance is the way in which the instruments in
-\cite{McPherson2013, McPherson2019} function as well the Moog Piano Bar from
-which it too inspiration.
-
-The limitation for taking a distance approach is that there is not one but 2
-jacks per key. For each jack to be measured indepeedntly the data would need tp
-com fropm the jacks themselves.
-
-They _could_ be used and individual trigger points set in calibration, but this
-creates new problems. 
-
-- The triggering would need to be bespoke for every key as fluxuations in the
-  dimensions of every piece mean that the threshold would be different.
-  - Moving a problem into additional time in the calibtraryoin setup phase.
-- Remebering the constraint that system isshould noyt fix problem, there would
-  be no easy way to tell if a jack had nbot reseated. 
-  - In playing a harpihchord when the jack  does not go to its rest position,
-    not note would play. This fault should be carried over intp the final
-    instrument.
-
-
-Another common application of the QRE1113 is within line following robots, where
-an array of QRE1113s ar used in conjunction with black tape along which some
-motorised system can following
-
-Applied to the jacks was a greyscale gradient printed the length full travel
-range of the jack.
-
-For the first iteration this was performed on an inkjet printer and double-sided
-tape. For the final iteration the stickers were printed on (Coala, 1D 100 Gloss
-P, gloss, white, permanent adhesive, 300g/m2, 100 µm, 1370mm x 50.00m,
-Solvent/Latex/UV) using a HP Latex 115 and then cutout with a Summa 150 roll
-cutter. The printer and roll cutter greatly reduced the manual labour for
-cutting stickers meaning the process would scale from the 3-key to the 49-key
-model.
-
-An initial sticker design was used that contained only the gradient. It was
-found that the jacks wer sticking in their slots andthe edges on the stickers
-easily peeled around the printing The sticker was redesigned to be the full
-length of the jack which avoided the problem of peeling. The  larger are also
-mean the stickers adhered betterto the jack Some trimming was still required of
-each sticker to avoid them adding extraa resistence to the jack's movement.
-
-During testing it was found that their was a considerable amount cross-talk
-bwteen adjacent sensors. This meant the reading from key would be affected by
-the movement of the key next to it. The cross-talk was assumed to be as a result
-of light reflecting from other jacks. Given that IR is used this was difficult
-to confirm by sight. A set of baffles was designed for the pcb that would wrap
-round the jack and stop light from other jacks or sensors. Baffles were printed
-on BAMBU X1 3D printers using PLA plastic. A dark pigmented PLA was used to
-avoid IR light simply being diffused. After the baffles were fitted the
-cross-talk was entirely eliminated. 
-
-- previous use
-- problem of what to sense
-- satisfied both criteria and design restrictions
-- usage
-  - Sweet spot is around 6mm distance
-
-### sensor surface
-
-- linear gradient
-- on Jack
-- printed and cut on vinyl [find name]
-- cut to travel size
-- then to jack size
-- jacks varnished on side
-- alternatives
-  - CNC plywood and mdf
-    - problems
-  - laser cut plywood and mdf
-    - problems
-  - 3D printed jack body
-    - problems
-
-## Arduino 
-
-### Nano BLE
-
-Arduino Nano BLE was chosen for a few reasons. The Nano form factor was
-appealing as it would allow for easy changes between chipsets without requiring
-any rewiring and thus no new PCBs would need to be created if a better
-alternative was found later in the project. Another benefit to the Arduino Nano
-boards was that typically had native-USB meaning the could be programmed as a
-hardware USB MIDI device directly.
-
-The Nano BLE specifically was used in the initial stages for the integrated IMU.
-
-When it was finalised that the prokect would proceed using the QRE1113 a number
-of microcontroller units (MCU) were condsidered.
-
-The MCUs considered were the Arduino Nano 33 IoT, Arduino Nano 33 BLE, Arduino
-Nano ESP32 and STM32 NUCLEO-L031K6.
-
-A rough performance test was later carried out using an STM32 NUCLEO-L031K6, a
-Nano ESP32 and the BLE. The Nano BLE was found to be more performative. To
-execute a single sensor read cycle of the firmware the STM32 took 40ms, and both
-the Nano ESP32 and Nano BLE required 11ms on average. The Nano ESP32 had high
-variability so it was decided to continue with the Nano BLE. Further discussion
-of using ESP32 continues in \\section{Going forward}
-
-BLE functionality also meant if the cable connection between the nano and
-computer running audio synthesis was impractical, BLE MIDI was available as a
-fallback. The Nano BLE also has a 12-bit DAC, which provided a contingency
-should the default 10-bit not be sensitive enough for the signal from the
-sensors.
-
-Initially a Nano IoT was used for both WiFi and Bluetooth Low Energy
-functionality, but it was found that 2 ADC channels were in fact not useable and
-would have required additional multiplexers.
-
-
-- Nano form factor small
-- allows for easy changes in chipset
-- "Native USB"
-  \footnote{https://learn.adafruit.com/dude-where-s-my-com-port/native-usb-boards}
-- BLE Model
-  - Performative
-  - BLE capabilities for MIDI BLE transmission
-  - All analog pins available 
-  - available at the time
-  - 12-bit DAC
-
-## EEPROM / NVRAM / FRAM
-
-There would need to be the ability to store values on non-volatile memory so
-that the electroincs could be powered-down without losing data.
-
-Adjusting the values through firmware would not have been flexible or practical.
-Instead an Ferroelectric RAM unit was chosen and connected using an SPI
-interface. NVRAM or EEPROM would have sufficed and the FRAM was primarily chosen
-for it's ready availability. 
-
-Most microcontrollers have some variety of non-volatile program memory that can
-be read and writ accessed but in most cases this memory is cleared during
-compilation and re-flashing. The small cost was far outweighed by the potential
-for data loss if using onboard RAM.
-
-_It is worth noting that the FRAM model chosen stopped being available during
-the project, meaning any future iteration would need to adjust for another board
-in firmware_
-
-The firmware was structure in a way that the interface could be changed so long
-as the code required for any other board would comply with function arguments
-and outputs. Worth noting the fragility and volatility when designing this kind
-of project and how easily it is for the project to become broken.
-
-
-SD card would provide an easier way to interact with calibration data. The
-posiiton of the controller board did not permit easy access. reliability and
-speed was preffered over storage capacity.
-
-
-- On board available, but volatile
-- retained across firmware changes
-- small, 
-- could have been sd card or anything else
-- available
-- interfaced via rotary encoder
-
-## RGB LEDs
-
-for problems of scale:
-
-Addressing the problem of scale of identifying which key's threshold is
-currently being edited. 
-
-The LEDs also allowed for easy identification for keys that were outside of
-expected values and when a key was triggered. This allowed for visual
-identification of malfunctioning or uncalibrated keys.
-
-The LEDs are on the same PCB as the sensors and are hidden when the nameboard is
-in place.2024
-
-Would sugggest that this is a necessity of this kind to provide a means to
-identify and diagnose LEDs with state.
-
-TLC5940 or other PWM driver such as in \cite{McPherson2013} added complexity to
-assembling, but were avoid in favour of Addressable LEDs with intergrated
-driver. The intergrated LEDs share the same data line which has the limitation
-where a fualty LED will stop all following LEDs from working. An individual PWM
-driver per PCB would allow avoid situations where failutre cascades, but would
-add complexity in assembly as the parts are typically SMD. Also, given the LEDs
-are fixed to the board and could not be repaired in situ, the solution would be
-to replace the PCB regardless of which approach was taken. Given the LEDs were
-only used in debugging and calibration and otehrwise would not be visible, a
-simpler design approach was taken.
-
-- locating keys
-- displaying key state
-
-## Multiplexing
-
-CD4051BE Texas Instruments
-
-problem of scale
-
-For the 3-key model, individual jacks could be connected to one of the 8
-available ADC pins.
-
-The BLE Nano has 8 ADC pins connected to one ADC channel via a multiplexer
-
-Multiplexer added to expand to the
-
-Transistor / Op-amp circuit could have been used similar to the one in
-\cite{McPherson2013}.
-
-Benefits were keeping with THT based designed for easy assembly. 
-
-An 8-channel multiplexer was chosen as the model has 49-keys and a division of 7
-PCBs each containing 7 sensors
-
-The multiplexer reduced 7 signals to a single pin. Three pins are required pins
-for addressing the muliplexewrs and all PCBs are addressed simulatenously.
-
-- limited ADC channels
-- ADC channels already multiplexed
-- simple
-- 8 channel
-- THT
-- 7 into 49 
-  - 7 PCBS
-  - each with 7 sensors
-
-## PCB design
-
-- EAGLE PCBs designed using EAGLE. Worth noting that AutoCAD has deprecated
-EAGLE and the programme will no longer be supported from 2026 Project files will
-need to be transitioned to another standard, likely the KiCAD programme. 
-
-trade off between limiting number of boards required and allowing compensation
-for variation in pitch. 
-
-Smaller PCBs means that spacing could be adjusted to accomodate the changes in
-pitch between jacks. It also allowed for a modular approach where any PCB could
-swapped for minimal cost.
-
-### Sensor board
-
-The 49 QRE1113s are divided across 7 PCBs each containing 
-
-- x7 QRE1113
-- x7 100R
-- x7 10kR
-- x1 CD4051BE Multipexer
-
-
-- jack / sensor pitch by board
-- 7 boards adjust for pitch/spacing error
-- modular, replaceable
-- orientation problems
-  - legs break easily
-  - end mount like A.P.Mc. time consuming
-  - problem
-    - milling out keys
-- designed from distance
-- striped lines across pcbs
-- problems
-  - additional terminals uneeded resulted in lots of additional work
-  - long cabling increase risk of breaking
-- solutions
-  - striping all adc lines with FFC
-  - solder pads to select channel
-
-### controller board
-
-Controller board designed around Arduino nano form factor. The Nano is connected
-through headers to allow easy switching between chips. Should another chip in a
-Nano for factor be found it could supplant the current Nano without any need for
-a redesign.
-
-The first version of the board esclusively used 2.54mm pitch headers. The
-reasons for this were flexibility when creating cable looms and to leave open
-the possiility of rewuring the PCB.
-
-This was the case for the LEDs as they initially wer to be powered on 5V. It was
-discovered that the 3v regulator of the nano was sufficient to power all LEDs at
-a lower brightness while reducing current draw. Since brightness was not
-importnat.
-
-The 2.54mm pitch headers had two major drawbacks. First, the orientation of the
-cables could be reversed, which in the best case scenario would simply mean the
-system did not work correctly and in the worst case it could potentially damaged
-some components.
-
-Secondly, the headers do not connect securely and wait of the cabling was enough
-for components to become disconnected as the harpsichord was handled.
-
-To address this, once the wiring for the controller board was finalised a new
-design was drafted this time using JST-PH connectors. No commercial cables were
-immediately available in the configuration and length required, as such a cable
-loom needed to be made which meant crimping cables by hand. A crimping tool from
-JST is prohibitively expensive compared to the cost of other components in the
-project \footnote{from RS https://uk.rs-online.com/web/p/crimp-tools/6880877
-£508 (inc. VAT)}. The crimping tool also appeared to be uncommon and was not
-readily available in the workshops at the projects disposal. Eventually a tool
-was found, but an alternative approach was also researched in order to maintain
-the criteria of accessibility.
-
-A locator was adapted from a creative commons stl model
-\footnote{https://www.thingiverse.com/thing:1646016} that allowed a generic
-crimping tool to be adapted for use with JST-PH crimps† \\figure{}. The locator
-was printed using a Bambu X1 3D printer. A second alterntaive was assembling
-cables from other sets that were at hand.  
-
-- mount for nano  to allow switching
-- initially push fit 2.54mm header
-  - not a secure fit
-- JST-PH used
-  - crimping required custom cables
-    - could be assembled from other cables
-    - length limited
-  - prohibitevly expensive to crimpers
-  - 3D print helper to allow for crimping with generic crimpers
-
-## 3D printing
-
-Access to a 3D printer is was vital to the success of the project. Given the
-proliferation of 3D printing, particular in maker spaces in universities it was
-deemed an unreasonable requirement. 3D printed parts include the support
-brackets for PCBs, the baffles for the sensors, locator for crimping JST-PH
-crimps and a mount for the MacMini used for audio synthesis.
-
-The printer used throughout the project was a Bambu X1-Carbon using recycled PLA
-filament.
-
-Support brackets and baffles  were made for the project while the MacMini
-bracket and JST locator were sourced from creative commons models. 
-
-Any colour of filament can be used, though it is advised to use a dark coloured
-filament for the baffles.
-
-See each corresponding section for more detail on 3D printed components.
-
-- https://www.thingiverse.com/thing:1646016
-- https://www.thingiverse.com/thing:2886460
-  
-
-- Supports
-  - Push fit
-  - adjustable for best average placement
-- Blinkers
-  - reduce noise from other senors
-- mounts
-  - MacMini
-
-## Power
-
-All electronics draws around 1.1amps of current at 5V with some fluctuation
-during boot.
-
-Arduino BLE has some functionality disabled to limit current draw.
-
-Ideally the unit could be bus powered from USB.
-
-The sensors are in a state of constantly drawing power. It is possible that
-powering only when data is required could be reduce power enough. 
-
-Current designs have a separate MIDI device for each jack row. Combining the
-devices and also reducing current draw to below the common 0.5 amps for a USB
-port would certainly be a challenge.
-
-# Firmware Design
-
-Arduino platform chosen for wide adoption, relative ease of use and library
-support for components. 
-
-Firmare checks components are connected then reads the FRAM to see if threshold
-data is already present. The rotary encoder and it's momentary switch are polled
-for any change in state. A key is selected with the rotary encoder while the
-momentary switch is used for changing between states for key selection and
-threshold adjustment A double click of the rotary encoder writes the current
-threshold values to FRAM. The sensors for the current multiplexer channels are
-polled. If any sensor reads above the threshold when it was previously below a
-MIDI On message is sent. For the reverse case where the value was below the
-threshold when it was previously above, a MIDI Note Off message ois sent.
-
-- Arduino platform
-  - library support and portability
-  - dependancy management
-  - wide spread use
-- core algorithm
-  - check components connected
-  - READ data from FRAM
-  - select key with rotary
-    - click to edit, double to save
-  - current threshold and reading sent over serial and plotted
-  - when over threshold send MIDI note
-
-## Project structure
-
-The project is separated into three repositories encapsulating
-
-- Firmware
-- Keyboard CAD Data
-- PCB CAD Data
-
-### Firmware
-
-Firmware repository contains all firmware for the full and smaller models and
-components.
-
-### Keyboard
-
-The Keyboard repository contains all plans for fabricating the keyboard,
-measurements and 3D models of the jacks.
-
-### PCB
-
-PCB repository contains the EAGLE files for creating the sensor and controller
-boards.
-
-Given the regular spacing of components, scripts for automatic placement of
-components based on parameter of jack pitch spacing and number of sensors per
-jack.
-
-
-# Implementation
-
-## Installation
-
-The electronic components were partly pre-assembled at the university of
-Edinburgh. Though all measurments were known ahead, enough flexibiliyty was
-needed to allow for proboems to solved in situ.
-
-The final assembly took place at the NEMUS lab at the univerity of bologna over
-the final week in October 2024 for delivery at San Colombano  for exhibition in
-the first week of November in 2024.
-
-A misreading in the original clearance between the keys and the PCB meant that
-the keys wer block entirely from moving. A 10mm by 15mm section was milled out
-of each lke \\FIGURE to create extra clearance. The milling required the
-removal, shortening and refitting of the leather pads for the jacks \\FIGURE.
-The extra work added an extra day to the full install.
-
-A redesign of the PCBs meant that removing the material would no longer be
-necessary.
-
-The PCBs shared power and data lines for components with the exception of the
-output from the multiplexer. Ribbon cable was cut to size to allow for some room
-to readjust the distance of the sensors from the jacks. The data signals from
-each PCB were connected using a separate cable loom. Soldering cables and
-inspecting each join required another day work. This did allow for readjustments
-to the positon of the controller board Measurements of the rear chamber did not
-match with the MacMini that was to be used a different layout was decided for
-fitting the controller board/ Cutting cables to size allowed for a great deal of
-felxibility but at the cost of time. After the first install it was clearer what
-constraints were in place for fittig and an alternative wiring system using flat
-flex cable was implement (discussed in \\section)
-
-Fitting PCBs required the removal of all keys. The support brackets were
-assembled and screwed into the the underside. With the harpsichord on it's back
-the sensors were tested to ensure an expected range. Self-tapping round head
-screws were used to to attach the brackets. The screws were not over tightened
-to allow for brackets to move. The brackets were not easily adjusted once the
-key were replaced. Adjusted to a best average with subsequent adjustment carried
-out on the microcontroller.
-
-As the PCBs were fitted the jacks had the gradient stickers applied to them. The
-jacks had been coated with a varnish on the short side to provide a better
-surface for the stikcers to adhere to. After the stickers were applied excess
-material was trimmed from each jack. The jack were then check that they moved
-freely in their slot.
-
-After fitting the PCBs preliminary calibration was carried out. Before the keys
-were reffitted the jacks wer put back in place. The data from each key was
-confirmed to be in a similar range. Any key showing anomalous dat had it's jack
-removed and re-inspected. The PCB fitting process and refitting required another
-day as faults were found in wiring or misalignement of the stickers. After the
-sensors were confirmed to be functioning the keys were put back.
-
-The calibration workflow was with Dr. Craig Webb who was unfamiliar with the
-system. Adjustments were made to the firmware to to make it more intuitive for
-the user. Addressable LEDs became vital as it allowed for easy identification of
-the key being calibrated. They were also used to identify any keys whose current
-reading was beyond what was expected.
-
-The rotary encoder was used as the interface to select a key, adjust it's
-threshold and update the Ferroelectric RAM (FRAM) with new values.
-
-A process was implemented where the key was selected by playing, but this caused
-problems in situations where the data was unusual due to misalignement of the
-sensors
-
-This would likely be a better system for when the keyboard was fully operational 
-
-The thresholds were calibrated visually utilising the serial plotter of the
-Arduino IDE and MIDI was confirmed using the open source MIDI Monitor
-\footnote{https://github.com/krevis/MIDIApps}.
-
- - partial pre-assembly
- - handsolder components
-   - analog lines
- - connecting supports
- 
-## Context
-
-Designed as part of an exhibition for the museum San Colombano in Bologna.
-Instruments is to be played by general public as a means of interacting with
-items in the collection that are no longer in playing condition. Audience of one
-who listens via headphones.
-
-The strings of the interface are damped with felt strips. The damping did change
-the tension and thereforew the feel of the strings so adjustments needed to be
-made to the tuning to accomodate for this.
-
-
-
-- in museum context
-- strings damped
-- headphones
-- interfacing with kontakt spitfire library
-- display
-  - secure storage and access
-  - interface to the public
-
-## Calibration
-
-Finer calibration carried out with the guidance of Catalina Vincens as an expert
-harpsichord performer
-
-- sensor surface
-  - printed gradient
+Figure
+[\[fig:system-block-diagram\]](#fig:system-block-diagram){reference-type="ref"
+reference="fig:system-block-diagram"} shows a block diagram of the
+finalised hardware setup. The system evolved through iterative
+prototyping, beginning with simple threshold-based testing and ending in
+a fully functional multi-sensor interface capable of triggering MIDI
+events.
+
+## Prototyping and Key Model
+
+The initial stage of development focused on testing whether sensor data
+could reliably trigger MIDI playback. Modifying an existing harpsichord
+for testing was considered but ultimately discarded due to significant
+internal measurement and layout discrepancies. Instead, a custom 3-key
+harpsichord mechanism (Figure [2](#fig:3key){reference-type="ref"
+reference="fig:3key"}) was acquired from the museum and used as a
+foundation for prototyping. This approach followed a methodology similar
+to that used in Timmermans *et al.*'s Haptic Key project
+[@Timmermans2020], since the 3-key model enabled iterative testing of
+individual components, including sensor placement, signal processing,
+and mechanical tolerances, before upscaling.
+
+<figure id="fig:3key">
+<p><img src="src/images/CrossSectionSensorPlacement.jpg"
+alt="image" /><br />
+<img src="src/images/3-key-side-labelled.png" alt="image" /></p>
+<figcaption>3-Key Model Harpsichord Mechanism designed by Graziano
+Bandini at San Colombano, Bologna, 2023. Key components include A:
+Wrestplank, B: Key Lever, C: Key Cap, D: Soundboard, E:
+Jack.</figcaption>
+</figure>
+
+## Sensor Criteria
+
+The following criteria were established to guide sensor selection and
+integration to make the system suitable for a museum context:
+
+-   *Non-invasiveness.* Sensors must not require significant
+    modifications to the harpsichord's mechanical structure or
+    aesthetics.
+
+-   *Low Latency.* Sensor response times were required to remain under
+    10 ms, with an upper limit of 25 ms deemed acceptable, following
+    empirical criteria found in previous studies [@Jack2016].
+
+-   *Reliability:* Sensor data had to be accurate, minimising false
+    positives and negatives without excessive filtering.
+
+-   *Scalability.* The design needed to be cost-effective and adaptable
+    for up to 49 keys while maintaining consistent performance.
+
+-   *Expandability.* The system should accommodate future functionality,
+    such as additional MIDI parameters or data visualisation.
+
+The open-source ethos of the project ensured assembly was made possible
+in standard maker spaces without specialised equipment and provided
+further guidance in design choices.
+
+## Sensor Board Design {#sensor-board}
+
+::: figure*
+![image](src/images/block-diagram.pdf){width="\\linewidth"}
+:::
+
+The final sensor system utilised QRE1113 infrared sensors, known for
+their precision and suitability for short-distance detection
+[@McPherson2013; @McPherson2019]. The sensors were distributed across
+seven printed circuit boards (PCBs), each responsible for seven keys.
+Each PCB contained the following components:
+
+-   7 QRE1113 infrared sensors.
+
+-   7 100 $\Omega$ resistors and 7 10 k$\Omega$ resistors (later reduced
+    to one resistor per board).
+
+-   1 Texas Instruments CD4051BE multiplexer for signal aggregation.
+
+The QRE1113 sensors detect infrared light reflected from nearby
+surfaces, as per the scheme in Figure
+[3](#fig:simple-schematic){reference-type="ref"
+reference="fig:simple-schematic"}. The gradient stickers affixed to each
+jack provided a consistent reflective surface for the sensors, which
+were used to track jack displacement precisely. This easily scalable
+system allowed straightforward progress from the 3-key prototype to a
+49-key model without significant modifications.
+
+![Optical sensor in a simple voltage divider circuit. `V_OUT` is routed
+to one of 8 channels on the CD4051BE
+multiplexer](src/images/simple-schematic-bw-.jpg){#fig:simple-schematic
+width="\\linewidth"}
+
+3D-printed baffles were installed on the PCBs to eliminate cross-talk
+between adjacent sensors, as per Figure
+[4](#fig:baffles){reference-type="ref" reference="fig:baffles"}. These
+baffles, fabricated from dark-pigmented PLA, ensured that infrared
+reflections from neighbouring jacks did not interfere with sensor
+readings. Testing confirmed that this measure significantly improved
+data reliability.
+
+<figure id="fig:baffles">
+<p><img src="src/images/sensor-board-w-baffles.jpeg"
+alt="image" /><br />
+<img src="src/images/baffles.png" alt="image" /></p>
+<figcaption>Baffles designed to prevent cross-talk between adjacent
+sensors.</figcaption>
+</figure>
+
+## Controller Board
+
+The controller board, designed around the Arduino Nano BLE platform, was
+the central hub for processing sensor data and triggering MIDI messages.
+The Nano BLE was selected for its compact form factor, integrated BLE
+MIDI functionality, and native USB support.
+
+Initial iterations used 2.54 mm pitch headers for cable connections, but
+issues with cable disconnections led to the adoption of JST-PH
+connectors in later designs. Custom cable looms were constructed using
+adapted crimping tools, ensuring robust connections without compromising
+accessibility.
+
+Non-volatile memory, implemented using Ferroelectric RAM (FRAM),
+provided a reliable means of storing calibration data. This ensured that
+sensor thresholds and other settings could be preserved across power
+cycles, enhancing the system's usability in museums.
+
+## Calibration and Power Management {#calibration}
+
+Each sensor's threshold was manually adjusted using RGB LEDs integrated
+into the system. These LEDs provided visual feedback during calibration,
+enabling the identification of malfunctioning sensors and simplifying
+the alignment process. The calibration workflow utilised the Arduino IDE
+serial plotter and open-source MIDI monitoring software, as per Figure
+[5](#fig:serial_monitor){reference-type="ref"
+reference="fig:serial_monitor"}.
+
+As an expert harpsichord performer, finer calibration was carried out
+with the guidance of .
+
+Power requirements for the system were estimated at 1.1 A at 5 V, with
+fluctuations during startup. While the sensors were powered continuously
+in this iteration, future designs may incorporate power-saving measures,
+such as dynamic activation of sensors based on usage.
+
+![Arduino IDE serial plotter used for calibration of sensor thresholds.
+`M` and `m` represent the maximum an minimum value of digitised data.
+`K` and `T` are the values of the sensor and threshold being calibrated,
+followed by a two-digit number denoting the sensor index (in this case,
+sensor 32).](src/images/serial_monitor.png){#fig:serial_monitor
+width="\\linewidth"}
+
+## Final Assembly and Integration
+
+The final 49-key harpsichord replica incorporated the sensor and
+controller boards into a rectangular frame, deviating slightly from
+traditional designs to accommodate electronic components. Ribbon cables
+connected the PCBs, while felt strips were interwoven between the
+strings to suppress vibrations and maintain the tactile response of the
+keys.
+
+The assembly process at the NEMUS lab in Bologna involved meticulous
+adjustments to key clearances and wiring layouts. Modifications included
+milling sections of the keys to ensure adequate clearance for the PCBs
+and varnishing the jacks to improve sticker adhesion.
+
+# Context
+
+Designed as part of an exhibition for the museum San Colombano in
+Bologna. Instruments are to be played by the general public to interact
+with items in the collection that are no longer in playing condition.
+The audience of one who listens via headphones. The interface strings
+are damped with felt strips. The damping did change the tension and
+therefore the feel of the strings so adjustments needed to be made to
+the tuning to accomodate for this.
+
+-   in museum context
+
+-   strings damped
+
+-   headphones
+
+-   interfacing with kontakt spitfire library
+
+-   display
+
+    -   secure storage and access
+
+    -   interface to the public
 
 # Conclusion
 
-- scale
-- time scale
-- working at distance
-- limitations
-  - latency
-  - deprecation
-    - software
-      - EAGLE
-    - hardware
-      - FRAM
+Paper has presented the design for an interactive exhibition at a
+musical instrument museum. Design attempts to address the problem.
+Optical sensors read by a microcontroller have been shown to be a
+solution to tracking vertical displacement of harpsichord jacks and
+therefore a viable system to augmenting harpsichords. The interface's
+capabilities of the jack rails to disengage and to convert string plucks
+to MIDI data means this can be used as a probe to explore how the
+"double-pluck" can be used as vector for expression during performance.
+The placement of the instrument as a museum exhibit means it also has
+potential to be used in a long form study.
 
 # Going forward
 
-- Velocity, aftertouch
-- second jack row
-- reducing latency
-- alternative sensor surfaces
+The current interface is an advanced prototype, but there remain many
+avenues to explore and aspects of the design to improve.
 
-A limitation in the design is the variablility in positioning of tage,
-especially when they need to be reapplied. A jig was designed for applying tags,
-but could not be printed in time for installation. Even with a jig, some tags
-had to be radjusted by hand regardless. Long term this hasd impliccation on how
-to maintain the interface.
+The stickers as a sensor surface have a few limitations that can be
+addressed. Firstly, the stickers need to be applied manually, which is
+laborious but also introduces variability. Secondly, the material for
+the stickers is rated at a 4 years lifespan before the adhesive will
+decay. The application is non-standard and it is likely there will be
+failure or drift in sensor readings over time, though to what extent is
+unknown. This presents a problem on how this approach can be maintained
+in the long term. Preliminary tests with 3D printed jack bodies
+incorporating the sensor surface were made. The jack body was notched
+and effectively acts a shutter against the optical sensor. More testing
+needs to be carried out before they are incorporated into the design. 3D
+printed jacks would solve two problems simultaneously in that they would
+be easily reproducible, but also remove labour demands on the luthier.
 
-Taken a different approach to what surface is used. Preliminary test were taken
-using Laser Cutting and CNC to fabricate Jack bodies. Laser cutting results in a
-loss of material that has too much ariablity. The edge o f the jack body will be
-charrred. The material also needs to be reliable. on the advice of two luthiers,
-roberto livi and Jonathan Santa Maria Bouquet at Edinburgh,   Plywood and MDF
-have problems with variations in humidity, tear-out and delamination.
+Their are also plans to develop the current setup by incorporating
+force-sensitive resistors (FSR). FSRs would be used in conjunction with
+the current optical sensors to research if an impulse response for the
+pluck can be extrapolated.
 
-Some tests were carried out using a notched jack body that was 3D printed. The
-notch means that as the jack raises, the forward material acts like a shutter.
-No reasons that this could not be CNC though a variety of materials would be
-needed. Traditional material used is xx though need to test of the material is
-naturally reflective enough or if a coating would beed to be applied.
+Space constraints meant that only one row of jacks could be sensed. A
+subsequent redesign in the dimensions of the PCB addressed this problem.
+The redesign included flat flex cable (FFC) instead of header pins. This
+reduced the the size of the PCBs as well as the labour on hand
+soldering. There was an additional added benefit in that the FFC has
+only a single orientation in which it conducts, meaning it cannot be
+incorrectly connected.
 
-Outputs of the NEMUS project will also include numerically simulated non-linear
-plucked string models with which the device can interact. A bespoke sound
-synthesis engine to leverage data from both jack rows which will also be
-open-sourced. Design for instrument to be compatible with standard MIDI
-instruments as well software designed for the full data output. 
+Currently the instrument communicates with a Spitfire sample library
+through the Kontakt software sampler. As such, the full data from both
+rows of jacks cannot be utilised. which is limited. A future output of
+the project will be a bespoke sound synthesis engine to leverage data
+from both jack rows which will also be open-sourced. The intention is
+also to create a numerically simulated non-linear plucked string models
+with which the device can interact.
 
-A second interface designed more closely to the Trasuntino style instrument
-commisioned by the NEMUS project with Roberto Livi. Using lessons learned for
-the first iteration the second can make better acommodations for internal
-electronics. Interface to be used for a performer study and used for performance
-with a numerically simulated sound syntheiss engine.
+A second interface designed more closely to the Trasuntino style
+instrument has been commissioned by the project with . Using lessons
+learned for the first iteration the second can make better
+accommodations for internal electronics. Interface to be used for a
+performer study and used for performance with the aforementioned
+numerically simulated sound synthesis engine.
 
-Testing current sensors in conjunction with force sensitive resistors to
-research if a impulse response for the pluck can be extrapolated.
+Future novel designs for an interface that would utilise available data,
+such as velocity and aftertouch, in software in the manner of a
+hyperinstrument. Currently the system looks for the cross over a
+threshold for triggering MIDI messages, but jack displacement is tracked
+continuously. Data for velocity, both of the pluck and the jack can be
+extracted from the available data, simply requiring the addition of
+state machine to make use of it.
 
-Future novel designs for an interface that would utilise velocity and aftertouch
-messages in software. This would be applicable for numericla simulations of
-strings. A bespoke piec e of sowftare would also allow for direct mapping of
-jack rows to registers. There is enough data to implemenet functionality for
-velocity and aftertouch MIDI messages and simply needs to be activated in the
-firmware. (Hyperinstruments \cite{nime2024_20})
+Seat vibrations [@MusicalHaptics2018_07] can also be explored to
+determine if they would create a more immersive experience in the
+exhibition context.
 
-seat vibrations \cite{MusicalHaptics2018_07} 
+A current limitation is the latency in triggering MIDI output. Currently
+the latency from pressing a key to triggering a note is around 20 ms.
+The latency should ideally be closer to 10 ms and with no jitter so
+[@Jack2016].
 
-- "there is a general connection between vibrations and the perceived quality of
-  music reproduction" 
-- "influence of vibrations on loudness perception at low frequencies" Evaluation
+One approach would be to change the microcontroller. A test was carried
+out using an Arduino Nano ESP32 which is a NORA-W106, a module
+containing an ESP32-S3. The benefit of this microcontroller is that it
+would allow the microcontroller to be swapped and the rest of the PCB
+designs would be unaffected.
 
-## improvements
-
-- ESP-IDF
-  - latency half
-  - workload high
-
-A current limitation is the latency in triggering MIDI output. Currently the
-latency is around 20 ms, but should ideally be closer to 5ms.
-
-An obvious approach would be merely changing the microcontroller. A test was
-carried out using an Arduino Nano ESP32 which is a  NORA-W106, a module with a
-ESP32-S3. The benefit of this microcontroller  is that it would allow simply the
-board to be swapped and the rest of the PCB designs would be unaffected.
-
-Using the Espressif development framework ESP-IDF and follwong the same logic as
-the original firmware source, the latency was reduced to around 10ms. ESP-IDF
-allows access to functionality of the ESP32 that is not exposed in the Arduino
-libraries. It is possible that the 10ms latency could be improved upon but there
-would be a cost in the form of develoment time. Consideration would need to be
-made on how to port existing code or whether to completely re-write the
-firmware.
-
-- avoid soldering cabling
-- power indicators on pcbs
-  - debug if problem is power related Add power small power LEDs to the each
-PCB. It was not common for a board to not be functioning and thye result to be
-that the power weas not correctly connected. Especially when the ower is
-connected via somethgin such as an FFC cable where it is easy to plug-in the
-wrong way esepcially when fitting is to be carried out by someone unfmailiar
-wiyth the system. Power LEDs would quickly confirm whether the problem was power
-related. They would have to be small enough and low enough current draw to avoid
-glare or being mistaken with other indcator LEDs To continue using THT
-components, the choice would have to be moade carefully. 
+Another approach would be to use a different microcontroller entirely.
+Some research was carried during the course of the project using an
+ESP32 programmed with the Espressif development framework ESP-IDF. The
+same logic as the original firmware was programmed and the latency was
+reduced to below 10 ms. ESP-IDF allows access to functionality of the
+ESP32 including regular processing of an internal audio buffer that is
+not exposed in the Arduino IDE. It is possible that the 10 ms latency
+could be improved upon with appropriate optimisation, but there would be
+a cost in the form of development time. Consideration would need to be
+made on the time to port existing source code for the I2C FRAM chip or
+fall back on a simpler storage option.
 
 # Ethical Standards
 
-To ensure objectivity and transparency in research and to ensure that accepted
-principles of ethical and professional conduct have been followed, authors must
-include a section “Ethical Standards” before the References. This section should
-include (if relevant): information regarding sources of funding, potential
-conflicts of interest (financial or non-financial), informed consent if the
-research involved human participants, statement on welfare of animals if the
-research involved animals or any other information or context that helps
-ethically situate your research. For help with the ethics section, feel free to
-ask on the NIME forum: \url{https://forum.nime.org}.
+To ensure objectivity and transparency in research and to ensure that
+accepted principles of ethical and professional conduct have been
+followed, authors must include a section "Ethical Standards" before the
+References. This section should include (if relevant): information
+regarding sources of funding, potential conflicts of interest (financial
+or non-financial), informed consent if the research involved human
+participants, statement on welfare of animals if the research involved
+animals or any other information or context that helps ethically situate
+your research. For help with the ethics section, feel free to ask on the
+NIME forum: <https://forum.nime.org>.

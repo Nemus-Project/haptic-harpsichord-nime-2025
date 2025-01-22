@@ -41,18 +41,6 @@ The design of the augmented replica keyboard for the Tagliavini Collection was g
 \end{itemize}
 These constraints demanded a non-invasive, robust design that was respectful of the historical authenticity of the instruments. The requirement for faithfulness to the original mechanism immediately ruled out a mechanical design reliant on electromechanical actuators, as in previous works on piano haptics \cite{Timmermans2020,Gillespie1996}. While actuators can generate considerable force, they cannot replicate the wideband signals characteristic of the harpsichord's sharp and responsive haptics (A REFERENCE WOULD BE GOOD HERE, ANY IDEAS?), which differ significantly from a piano.
 
-Here is a consolidated **Open-Source Design** subsection for your article:
-
-
-\subsection{Open-Source Design and Cost-Effectiveness}\label{susec:open-source}
-
-A central objective of this project was to ensure accessibility and reproducibility by committing to an open-source approach for all hardware, software, and data. The commitment to open-sourcing encompassed all aspects of the system, including hardware schematics, firmware, and calibration data. Cost-effectiveness was a central consideration. For example, the system was initially developed for a 3-key prototype and successfully scaled to 49 keys without significant increases in cost or complexity. Key components, such as QRE1113 sensors and CD4051BE multiplexers, were selected for their affordability and availability, while the modular PCB design ensured efficient replication and maintenance.
-
-The Arduino Nano BLE was chosen as the core microcontroller for its compatibility with open-source tools and its ability to support both USB and BLE MIDI. Ferroelectric RAM (FRAM) was employed for data storage, offering an economical yet robust solution for preserving calibration settings across power cycles. Calibration workflows were optimised using the Arduino IDE’s serial plotter and open-source MIDI Monitor software, reducing reliance on proprietary tools and simplifying the process for users.
-
-Scalability and ease of assembly were prioritised throughout the design process. The modular structure of the PCBs, combined with 3D-printed baffles and gradient stickers, ensured that the system could be scaled up without compromising performance or cost-efficiency. Installation and calibration times were reduced through iterative improvements, such as the integration of addressable LEDs for sensor identification during setup. These design choices align with the project’s open-source ethos, allowing assembly using standard tools commonly available in university maker spaces.
-
-By making the hardware and software openly available, the project invites contributions and adaptations from the broader community. This transparency supports critical evaluation and encourages iterative improvements, promoting sustainability and innovation in interactive musical interface design. Moreover, the emphasis on affordability and accessibility ensures that the system can be adopted by a wide range of users, from cultural heritage institutions to academic researchers, reinforcing the project’s commitment to democratising access to advanced technological solutions.
 
 
 \subsection{Summary of the Finalised Design}
@@ -78,6 +66,13 @@ A modular system of printed circuit boards (PCBs) was designed to manage the sen
 
 The project built upon earlier NIME research on generating MIDI messages from piano keystrokes \cite{McPherson2013}, adapting it to address the unique characteristics of harpsichords and the specified constraints. Whereas the previous design emphasised continuous gesture tracking, this implementation required discrete key-triggered data to align with the needs of MIDI-triggered audio playback. 
 
+\subsection{Open-source considerations}
+A further objective, set forth by the authors, was to ensure accessibility and reproducibility by committing to an \emph{open-source} approach for all hardware, software, and data. The commitment to open-sourcing encompassed all aspects of the system, including hardware schematics, firmware, and calibration data. Cost-effectiveness was also a central consideration. The system was initially developed for a 3-key prototype and successfully scaled to 49 keys without significant increases in cost or complexity, and was designed to be easily built using resources typically available in a university-managed makers space.
+
+
+Key components, such as QRE1113 sensors and CD4051BE multiplexers, were selected for their affordability and availability, while the modular PCB design ensured easy replication and maintenance.
+
+The Arduino Nano BLE was chosen as the core microcontroller for its compatibility with open-source tools and ability to support both USB and BLE MIDI. Ferroelectric RAM (FRAM) was employed for data storage, offering an economical yet robust solution for preserving calibration settings across power cycles. Calibration workflows were optimised using the Arduino IDE’s serial plotter and open-source MIDI Monitor software, reducing reliance on proprietary tools and simplifying the process for users.
 
 \subsection{Materials and Construction}
 

@@ -4,7 +4,10 @@ Abstract and paper submission for NIME 2023
 ## Limits
 
 - Abstract 200 Words
-- Paper 6000 Words
+- Paper word limits
+   - 6000 long    
+   - 4000 medium
+   - 2000 short
 
 
 ## Important Dates:

@@ -1,29 +1,28 @@
 \section{Introduction}\label{introduction}
 
-Technological advances have transformed how museums document, present and interpret their collections. Immersive experiences are realised through tools such as laser scanning, 3D printing, and virtual reality \cite{allard2005use,Wachowiak01082009,RCM_2024_3D,Kuzminsky_LaserScan_2012,Schaich_3D_2007}. These technologies form a kind of experiential authenticity, enabling encounters that evoke the past's sensory, emotional, and intellectual essence \cite{trant_Auth_1999}. However, as Pine and Gilmore note \cite{pinegilmore_2007}, achieving authenticity requires museums to navigate the delicate balance between preservation and meaningful engagement—a challenge that is particularly evident in the case of historical musical instrument collections \cite{McAlpine2014}.
+Technological advances have transformed how museums document, present and interpret their collections. Immersive experiences are realised through tools such as 3D printing and and virtual reality \cite{allard2005use,Wachowiak01082009,RCM_2024_3D,Kuzminsky_LaserScan_2012,Schaich_3D_2007}. These technologies form a kind of experiential authenticity, enabling encounters that evoke the past's sensory, emotional, and intellectual essence \cite{trant_Auth_1999}. However, as Pine and Gilmore note \cite{pinegilmore_2007}, achieving authenticity requires museums to navigate the delicate balance between preservation and meaningful engagement—a challenge that is particularly evident in the case of historical musical instrument collections \cite{McAlpine2014}.
 
 Musical instruments represent a peculiar fusion of form, function, and history. Their cultural value extends beyond their visual appeal to include the tactile and auditory dimensions of use \cite{Fritz2017}. Yet, preservation concerns often limit direct interaction, reducing these artefacts to static displays. This ``red velvet cord'' approach, as theorised by McAlpine \cite{McAlpine2014}, protects fragile mechanisms but diminishes the instruments’ functional identity, disconnecting visitors from the full richness of their historical and cultural context.
 
-The Tagliavini Collection in Bologna \cite{Tagliavini2007}, renowned for its historical keyboard instruments, exemplifies this dilemma. To address it, this project introduces an augmented replica of a historical harpsichord keyboard. 
-% The project builds on an existing design borrowed from \cite{McPherson2013} and aligns with principles outlined in \cite{Masu_NIME_2023}, emphasising the importance of extending the lifecycle of existing NIMEs. 
-% The project fosters and complements the augmented piano keyboard design presented by McPherson \cite{McPherson2013} and ensures the relevance of previous NIME designs beyond their original context \cite{Masu_NIME_2023}. 
+The Tagliavini Collection in Bologna \cite{Tagliavini2007}, renowned for its historical keyboard instruments, exemplifies this dilemma. With more than seventy early keyboard instruments, including many unique Renaissance Italian harpsichords, spinets and virginals, the collection stands out as a valuable resource for musicologists, organologists and musicians alike. Ferdinando Tagliavini’s vision was to preserve the authenticity of the instruments. This guiding principle led him to collect only playable instruments, or instruments which could be restored to playing condition after minimal intervention. 
+
+However, their delicate mechanisms and historical significance mean they are only played under strict conditions—typically during concerts or by experienced performers with special permission from the curator. To enhance accessibility and engagement, the museum commissioned an electronically augmented keyboard built in the tradition of the Italian Renaissance. The keyboard is meant to be used by museum visitors without special permission. This work outlines the technological advancements involved in its construction and offers reflections on its role within the Tagliavini Collection’s context.
 
 
-The article is organised as follows: TBC
 
 
 
 \section{Related Work and Motivations}\label{related-work}
 
 
-Museums often face significant challenges in engaging visitors due to limitations in staffing and funding, which restrict how visitors can interact with collections \cite{Templeton2018, McAlpine2014}. For musical instrument museums, these challenges are compounded by the difficulty of preserving historical instruments in a playable condition \cite{McAlpine2014}. The instruments' inherent fragility and gradual decay inevitably result in a point where they can no longer be played, even when collections adhere to the strictest conservation protocols \cite{NYT_strad}. A significant cultural change has taken place in recent decades, shifting the focus from the playability of the originals to their conservation. Karp \cite{Karp1979,Karp1985} advocates for a deeper understanding of musical instruments so that enough knowledge is generated to make them as ``copyable'' as possible.
+Museums face a constant tension between accessibility and preservation, restricting how visitors can interact with collections \cite{Templeton2018, McAlpine2014}. For musical instrument museums, these challenges are compounded by the difficulty of preserving historical instruments in a playable condition \cite{McAlpine2014}. The instruments' inherent fragility and gradual decay inevitably result in a point where they can no longer be played, even when collections adhere to the strictest conservation protocols \cite{NYT_strad}. A marked cultural change has taken place in recent decades, shifting the focus from the playability of the originals to their conservation. Karp \cite{Karp1979,Karp1985} advocates for a deeper understanding of musical instruments so that enough knowledge is generated to make them as ``copyable'' as possible.
 
 McAlpine discusses a case similar to the Tagliavini collection in his examination of the Benton Fletcher Collection at National Trust Fenton House \cite{McAlpine2014}. When these instruments were donated, Benton Fletcher stipulated that they remain playable and should continue to be maintained for tuition and public performance. A large sampling campaign was conducted, and a custom MIDI interface was designed to fulfil this requirement while preserving the original instruments' integrity. The MIDI controller, comprising two commercially available keyboards mimicking the two-manual harpsichord layout, was used by visitors to trigger the instrument samples recorded with tailored strategies for each. However, user tests identified a limitation: the commercially available weighted keys failed to provide an authentic sense of interacting with a historical keyboard \cite{McAlpine2014}. 
 
 On the other hand, the ``Tromba Moderna'' project \cite{Baldwin2016}, a previous NIME initiative, approached the issue of musical heritage playability by recreating and augmenting a replica of a historical tromba marina. A piezo transducer was connected to a sound synthesis engine and a driver within the instrument to simulate the expected vibrations of a historical tromba marina. 
 
-This work inherits the same philosophy as the Tromba Moderna project. By augmenting a replica of a historical harpsichord keyboard using minimally invasive electronics and controlling a MIDI-triggered sample library, the project intends to offer a tool enhancing the fruition of the Tagliavini collection whilst retaining a form of continuity with historical instrument-building traditions. Furthermore, the electronics design borrows ideas from a previous NIME by McPherson \cite{McPherson2013}. As such, the interface proposed here is not, strictly speaking, a \emph{new} musical interface, particularly in its haptic response designed to adhere to longstanding harpsichord building traditions. However, this work complements and follows up on previous reflections within the NIME community, emphasising the \emph{O} in NIME \cite{Masu_NIME_2023}. 
-The intended use of the keyboard through meaningful interaction with a museum exhibit is where the novelty of this work lies, rather than solely in its technological development. Furthermore, relying on previous NIMEs, this project extends the longevity of the results beyond the scope envisaged in the original papers and enables a form of sustainability. 
+This work inherits the same philosophy as the Tromba Moderna project. By augmenting a replica of a historical harpsichord keyboard using minimally invasive electronics and controlling a MIDI-triggered sample library, the project intends to offer a tool enhancing the fruition of the Tagliavini collection whilst retaining a form of continuity with historical instrument-building traditions. Furthermore, the electronics design borrows ideas from a previous NIME by McPherson \cite{McPherson2013}. As such, the interface proposed here is not, strictly speaking, a \emph{new} musical interface, particularly in its tactile response designed to adhere to longstanding harpsichord building traditions. However, this work complements and follows up on previous reflections within the NIME community emphasising the \emph{O} in NIME \cite{Masu_NIME_2023}. 
+The intended use of the keyboard through meaningful interaction with a museum exhibit is where the novelty of this work lies, rather than solely in its technological development. Furthermore, relying on previous NIMEs, this project extends the longevity of the results beyond the scope envisaged in the original works, enhancing their sustainability, as discussed in \cite{Masu_NIME_2023}.
 
 Besides enhancing the visitor experience, future design iterations will serve as a research tool to explore the unique characteristics of the harpsichord and its impact on performance through the \anon{ERC-funded NEMUS} project, aiming to virtually reproduce the sound of historical keyboard instruments, and upcoming projects such as Rem@ke \cite{remake1}.
 
@@ -44,15 +43,18 @@ These constraints demanded a non-invasive, robust design that was respectful of 
 
 
 
-\subsection{Summary of the Finalised Design}
+%\subsection{Summary of the Finalised Design}
 
-The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is a 49-key harpsichord replica equipped with an optical sensor system reading the amount of light reflected by gradient stickers applied to the jacks' sides. Several key features were implemented to address the project’s requirements:
+The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is a 49-key harpsichord replica equipped with an optical sensor system reading the amount of light reflected by gradient stickers applied to the jacks' sides. 
 
-\begin{itemize}
-\item \emph{QRE1113 infrared sensors}. These sensors were selected for their non-invasive properties and precision, enabling the detection of jack displacement without requiring structural modifications to the keyboard mechanism.
-\item \emph{Gradient stickers}. Greyscale gradient stickers were applied to each jack to allow the infrared sensors to make precise readings. This approach made calibration easier and enabled scalability from a 3-key prototype to the final 49-key design.
-\item \emph{Jack baffles}. Custom-designed baffles, 3D printed from dark pigmented PLA to minimise infrared reflection, were installed around the jacks to prevent cross-talk between adjacent sensors and ensure reliable data capture.
-\end{itemize}
+
+% Several key features were implemented to address the project’s requirements:
+
+% \begin{itemize}
+% \item \emph{QRE1113 infrared sensors}. These sensors were selected for their non-invasive properties and precision, enabling the detection of jack displacement without requiring structural modifications to the keyboard mechanism.
+% \item \emph{Gradient stickers}. Greyscale gradient stickers were applied to each jack to allow the infrared sensors to make precise readings. This approach made calibration easier and enabled scalability from a 3-key prototype to the final 49-key design.
+% \item \emph{Jack baffles}. Custom-designed baffles, 3D printed from dark pigmented PLA to minimise infrared reflection, were installed around the jacks to prevent cross-talk between adjacent sensors and ensure reliable data capture.
+% \end{itemize}
 
 \begin{figure}  
   \centering
@@ -65,17 +67,17 @@ The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is 
 A modular system of printed circuit boards (PCBs) was designed to manage the sensors and process their output. The 49 QRE1113 sensors were distributed across seven boards, containing 7 sensors each. The PCBs were secured to the underside of the keyboard mechanism, allowing them to be adjusted during installation. Ribbon cables connected the PCBs, providing flexibility during assembly while maintaining a compact form factor. Additional modifications, including baffles and adhesive improvements, were made to optimise the reliability of the sensor system during calibration and use.
 
 
-The project built upon earlier NIME research on generating MIDI messages from piano keystrokes \cite{McPherson2013}, adapting it to address the unique characteristics of harpsichords and the specified constraints. Whereas the previous design emphasised continuous gesture tracking, this implementation required discrete key-triggered data to align with the needs of MIDI-triggered audio playback. 
+The project built upon earlier NIME research on generating MIDI messages from piano keystrokes \cite{McPherson2013}, adapting it to address the specific characteristics of harpsichords. Whereas the previous design emphasised continuous gesture tracking, this implementation required discrete key-triggered data to align with the needs of MIDI-triggered audio playback. 
 
 \subsection{Project Deployment}
-A further objective, set forth by the authors, was to ensure accessibility and reproducibility by committing to an \emph{open-source} approach for all hardware, software, and data. The commitment to open-sourcing encompassed all aspects of the system, including hardware schematics, firmware, and calibration data. Cost-effectiveness was also a central consideration. The system was initially developed for a 3-key prototype, shown in Figure \ref{fig:3key}, and successfully scaled to 49 keys without significant increases in cost or complexity. Specifically, the system was designed to be easily assembled using resources typically available in a university-managed makers space.
+A further objective, set forth by the authors, was to ensure accessibility and reproducibility by committing to an \emph{open-source} approach for all hardware, software, and data. The commitment to open-sourcing encompassed all aspects of the system, including hardware schematics, firmware, and calibration data. Cost-effectiveness was also a central consideration. The system was initially developed for a 3-key prototype, shown in Figure \ref{fig:3key}, and successfully scaled to 49 keys without significant increases in cost or complexity. Specifically, the system was designed to be easily assembled using resources typically available in a university-managed maker space.
 
 
 Components, such as QRE1113 sensors and CD4051BE multiplexers, are widely available from commercial resellers, while the modular PCB design ensures easy replication and maintenance.
 
 The Arduino Nano BLE was chosen as the core microcontroller for its compatibility with open-source tools and ability to support both USB and BLE MIDI. Ferroelectric RAM (FRAM) was employed for data storage since it offers an economical yet robust solution for preserving calibration settings across power cycles. Calibration workflows were optimised using the Arduino IDE’s serial plotter and open-source MIDI Monitor software, reducing reliance on proprietary tools and simplifying the process for users. 
 
-Reference repositories for this project can be found here. PLEASE FILL OUT AS APPROPRIATE (and anonymise).
+Reference repositories for this project can be found here. FILL OUT AS APPROPRIATE (and anonymise).
 
 \subsection{Materials and Construction}
 
@@ -88,7 +90,7 @@ The rectangular poplar frame deviates from the traditional logarithmic form to a
 
 Figure \ref{fig:system-block-diagram} shows a block diagram of the finalised hardware setup. The system evolved through iterative prototyping, beginning with simple threshold-based testing and ending in a fully functional multi-sensor interface capable of triggering MIDI events. 
 
-\subsection{Prototyping and Key Model}
+\subsection{Prototype Stage}
 
 The initial stage of development focused on testing whether sensor data could reliably trigger MIDI playback. Modifying an existing harpsichord for testing was considered but ultimately discarded due to significant internal measurement and layout discrepancies. Instead, a custom 3-key harpsichord mechanism (Figure \ref{fig:3key}) was acquired from the museum and used as a foundation for prototyping. This approach followed a methodology similar to that used in Timmermans \emph{et al.}'s Haptic Key project \cite{Timmermans2020}, since the 3-key model enabled iterative testing of individual components, including sensor placement, signal processing, and mechanical tolerances, before upscaling. 
 
@@ -102,19 +104,19 @@ The initial stage of development focused on testing whether sensor data could re
 \end{figure}
 
 
-\subsection{Sensor Criteria}\label{sensor-criteria}
+%\subsection{Sensor Criteria}\label{sensor-criteria}
 
 The following criteria were established to guide sensor selection and integration to make the system suitable for a museum context:
 
 \begin{itemize}
-    \item \emph{Non-invasiveness.} Sensors must not require significant modifications to the harpsichord's mechanical structure or aesthetics.
+    \item \emph{Non-invasiveness.} No remarkable modifications were allowed on the harpsichord mechanics, particularly on all the visible parts.
     \item \emph{Low Latency.} Sensor response times were required to remain under 10 ms, with an upper limit of 25 ms deemed acceptable, following empirical criteria found in previous studies \cite{Jack2016}.
     \item \emph{Reliability:} Sensor data had to be accurate, minimising false positives and negatives without excessive filtering.
     \item \emph{Scalability.} The design needed to be cost-effective and adaptable for up to 49 keys while maintaining consistent performance.
     \item \emph{Expandability.} The system should accommodate future functionality, such as additional MIDI parameters or data visualisation.
 \end{itemize}
 
-The open-source ethos of the project ensured assembly was made possible in standard maker spaces without specialised equipment and provided further guidance in design choices.  
+The hardware was designed to make assembly possible in standard maker spaces.  
 
 \subsection{Sensor Board Design}\label{sensor-board}
 
@@ -125,7 +127,7 @@ The open-source ethos of the project ensured assembly was made possible in stand
     \label{fig:system-block-diagram}
 \end{figure*}
 
-The final sensor system utilised QRE1113 infrared sensors, known for their precision and suitability for short-distance detection \cite{McPherson2013, McPherson2019}. The sensors were distributed across seven printed circuit boards (PCBs), each responsible for seven keys. Each PCB contained the following components:
+The final sensor system utilised QRE1113 infrared sensors, known for their precision and suitability for short-distance detection \cite{McPherson2013, McPherson2019}. The sensors were distributed across seven printed circuit boards, each responsible for seven keys. Each PCB contained the following components:
 
 \begin{itemize}
     \item 7 QRE1113 infrared sensors.
@@ -133,7 +135,7 @@ The final sensor system utilised QRE1113 infrared sensors, known for their preci
     \item 1 Texas Instruments CD4051BE multiplexer for signal aggregation.
 \end{itemize}
 
-The QRE1113 sensors detect infrared light reflected from nearby surfaces, as per the scheme in Figure \ref{fig:simple-schematic}. The gradient stickers affixed to each jack provided a consistent reflective surface for the sensors, which were used to track jack displacement precisely. This easily scalable system allowed straightforward progress from the 3-key prototype to a 49-key model without significant modifications.
+The QRE1113 sensors detect infrared light reflected from nearby surfaces, as per Figure \ref{fig:simple-schematic}. The gradient stickers affixed to each jack provided a consistent reflective surface for the sensors, which were used to track jack displacement precisely. 
 
 \begin{figure}[b]  
   \centering
@@ -164,13 +166,10 @@ Initial iterations used 2.54 mm pitch headers for cable connections, but issues 
 
 Non-volatile memory, implemented using Ferroelectric RAM (FRAM), provided a reliable means of storing calibration data. This ensured that sensor thresholds and other settings could be preserved across power cycles, enhancing the system's usability in museums.
 
-\subsection{Calibration and Power Management}\label{calibration}
+%\subsection{Calibration and Power Management}\label{calibration}
 
-Each sensor's threshold was manually adjusted using RGB LEDs integrated into the system. These LEDs provided visual feedback during calibration, enabling the identification of malfunctioning sensors and simplifying the alignment process. The calibration workflow utilised the Arduino IDE serial plotter and open-source MIDI monitoring software, as per Figure \ref{fig:serial_monitor}. 
+Each sensor's threshold was manually adjusted using RGB LEDs integrated into the system. These LEDs provided visual feedback during calibration, enabling the identification of malfunctioning sensors and simplifying the alignment process. The calibration workflow utilised the Arduino IDE serial plotter and open-source MIDI monitoring software, as per Figure \ref{fig:serial_monitor}. As an expert harpsichord performer, finer calibration was carried out with the guidance of \anon{Catalina Vicens}.
 
-
-
-As an expert harpsichord performer, finer calibration was carried out with the guidance of \anon{Catalina Vincens}.
 
 Power requirements for the system were estimated at 1.1 A at 5 V, with fluctuations during startup. While the sensors were powered continuously in this iteration, future designs may incorporate power-saving measures, such as dynamic activation of sensors based on usage.
 
@@ -184,7 +183,7 @@ Power requirements for the system were estimated at 1.1 A at 5 V, with fluctuati
 
 \subsection{Final Assembly and Integration}
 
-The final 49-key harpsichord replica incorporated the sensor and controller boards into a rectangular frame, deviating slightly from traditional designs to accommodate electronic components. Ribbon cables connected the PCBs, while felt strips were interwoven between the strings to suppress vibrations and maintain the tactile response of the keys.
+The final 49-key harpsichord replica incorporated the sensor and controller boards into the rectangular frame. Ribbon cables connected the PCBs, while felt strips were interwoven between the strings to suppress vibrations and maintain the tactile response of the keys.
 
 The assembly process at the NEMUS lab in Bologna involved meticulous adjustments to key clearances and wiring layouts. Modifications included milling sections of the keys to ensure adequate clearance for the PCBs and varnishing the jacks to improve sticker adhesion.
 
@@ -276,23 +275,3 @@ animals or any other information or context that helps ethically situate
 your research. For help with the ethics section, feel free to ask on the
 NIME forum: \url{https://forum.nime.org}.
 
-
-% \begin{tikzpicture}[auto, node distance=2cm,>=latex']
-
-%     \node [input, name=input] {};
-%     \node [sum, right of=input] (sum) {};
-%     \node [block, right of=sum] (controller) {Controller};
-%     \node [block, right of=controller, pin={[pinstyle]above:D},
-%             node distance=3cm] (system) {System};
-
-%     \draw [->] (controller) -- node[name=u] {$u$} (system);
-%     \node [output, right of=system] (output) {};
-%     \node [block, below of=u] (measurements) {Measurements};
-
-%     \draw [draw,->] (input) -- node {$r$} (sum);
-%     \draw [->] (sum) -- node {$e$} (controller);
-%     \draw [->] (system) -- node [name=y] {$y$}(output);
-%     \draw [->] (y) |- (measurements);
-%     \draw [->] (measurements) -| node[pos=0.99] {$-$} 
-%         node [near end] {$y_m$} (sum);
-% \end{tikzpicture}

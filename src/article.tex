@@ -6,10 +6,7 @@ Musical instruments represent a peculiar fusion of form, function, and history. 
 
 The Tagliavini Collection in Bologna \cite{Tagliavini2007}, renowned for its historical keyboard instruments, exemplifies this dilemma. With more than seventy early keyboard instruments, including many unique Renaissance Italian harpsichords, spinets and virginals, the collection stands out as a valuable resource for musicologists, organologists and musicians alike. Preserving the instruments' authenticity was the cornerstone of Ferdinando Tagliavini’s vision. This guiding principle led him to collect only playable instruments, or instruments which could be restored to playing condition after minimal intervention. 
 
-However, the delicate mechanisms of these instruments and their historical significance mean they are only played under strict conditions—typically during concerts or by experienced performers with special permission from the curator. To enhance accessibility and engagement, the museum commissioned the replica of a historical keyboard built in the tradition of the Italian Renaissance. The keyboard, which museum visitors can use without special permission, presents two choirs of muted strings and can generate MIDI messages. The interface is currently connected to a software sampler loaded with the Spitfire sample library, though the ultimate goal is to use samples of instruments from the collection. Visitors to the muesum are invited to play the interface and listen through a pair of headphones. This work outlines the technological aspects of interface's construction and offers reflections on its role within the Tagliavini Collection and potential application within the wider musical instrument museum context.
-
-
-
+However, the delicate mechanisms of these instruments and their historical significance mean they are only played under strict conditions—typically during concerts or by experienced performers with special permission from the curator. To enhance accessibility and engagement, the museum commissioned the replica (Figure \ref{fig:teaser}) of a historical keyboard built in the tradition of the Italian Renaissance. The keyboard, which museum visitors can use without special permission, presents two choirs of muted strings and can generate MIDI messages. The interface is currently connected to a software sampler loaded with the Spitfire sample library, though the ultimate goal is to use samples of instruments from the collection. Visitors to the muesum are invited to play the interface and listen through a pair of headphones. This work outlines the technological aspects of interface's construction and offers reflections on its role within the Tagliavini Collection and potential application within the wider musical instrument museum context.
 
 
 \section{Related Work and Motivations}\label{related-work}
@@ -25,12 +22,13 @@ The keyboard presented here inherits some aspects from the Tromba Moderna projec
 
 Besides enhancing the visitor experience, future design iterations will serve as a research tool to explore the unique characteristics of the harpsichord and its impact on performance through the \anon{ERC-funded NEMUS} project \cite{NEMUS}, aiming to virtually reproduce the sound of historical keyboard instruments, and upcoming projects such as Rem@ke \cite{remake1} investigating embodied relationships between instrument and performer.
 
-\section{Design Principles}\label{design}
-
 \begin{figure*}
 \includegraphics[width=\linewidth]{src/images/details.jpg}
 \caption{Details of the replica, including the key slots and sides, keys, and jacks with seagull plectra.}\label{fig:details}
 \end{figure*}
+
+\section{Design Principles}\label{design}
+
 
 The design of the augmented replica keyboard for the Tagliavini Collection was guided by three principal constraints stipulated by the museum:
 \begin{itemize}
@@ -55,7 +53,15 @@ The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is 
 % \item \emph{Jack baffles}. Custom-designed baffles, 3D printed from dark pigmented PLA to minimise infrared reflection, were installed around the jacks to prevent cross-talk between adjacent sensors and ensure reliable data capture.
 % \end{itemize}
 
-\begin{figure}  
+
+A modular system of printed circuit boards (PCBs) was designed to manage the sensors and process their output. The system uses 49 QRE1113 sensors which are distributed across seven boards, containing 7 sensors each. The PCBs were secured to the underside of the keyboard mechanism, allowing them to be adjusted during installation. Ribbon cables connected the PCBs, providing flexibility during assembly while maintaining a compact form factor. Additional modifications, including baffles and adhesive improvements, were made to optimise the reliability of the sensor system during calibration and use.
+
+The project built upon earlier NIME research on generating MIDI messages from piano keystrokes \cite{McPherson2013}, adapting it to address the specific characteristics of harpsichords. Whereas the previous design emphasised continuous gesture tracking, this implementation required discrete key-triggered data to align with the needs of MIDI-triggered audio playback. 
+
+\subsection{Project Deployment}
+A further objective, set forth by the authors, was to ensure accessibility and reproducibility by committing to an \emph{open source} approach for all outputs of the project. The commitment to open sourcing encompassed all aspects of the system, including hardware schematics, firmware, and calibration data. Cost-effectiveness was also a central consideration. The system was initially developed for a 3-key prototype, shown in Figure \ref{fig:3key}, and successfully scaled to 49 keys without significant increases in cost or complexity. Specifically, the system was designed to be easily assembled using resources typically available in a university-managed maker space.
+
+\begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{src/images/49-key-bottom-sensors-no-keys.jpg} 
   \caption{Underside of the full model keyboard, showing two chambers: the front chamber (top) and the rear chamber (bottom).} 
@@ -63,20 +69,24 @@ The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is 
   \label{fig:49-key-bottom}
 \end{figure}
 
-A modular system of printed circuit boards (PCBs) was designed to manage the sensors and process their output. The 49 QRE1113 sensors were distributed across seven boards, containing 7 sensors each. The PCBs were secured to the underside of the keyboard mechanism, allowing them to be adjusted during installation. Ribbon cables connected the PCBs, providing flexibility during assembly while maintaining a compact form factor. Additional modifications, including baffles and adhesive improvements, were made to optimise the reliability of the sensor system during calibration and use.
-
-
-The project built upon earlier NIME research on generating MIDI messages from piano keystrokes \cite{McPherson2013}, adapting it to address the specific characteristics of harpsichords. Whereas the previous design emphasised continuous gesture tracking, this implementation required discrete key-triggered data to align with the needs of MIDI-triggered audio playback. 
-
-\subsection{Project Deployment}
-A further objective, set forth by the authors, was to ensure accessibility and reproducibility by committing to an \emph{open-source} approach for all hardware, software, and data. The commitment to open-sourcing encompassed all aspects of the system, including hardware schematics, firmware, and calibration data. Cost-effectiveness was also a central consideration. The system was initially developed for a 3-key prototype, shown in Figure \ref{fig:3key}, and successfully scaled to 49 keys without significant increases in cost or complexity. Specifically, the system was designed to be easily assembled using resources typically available in a university-managed maker space.
-
-
 Components, such as QRE1113 sensors and CD4051BE multiplexers, are widely available from commercial resellers, while the modular PCB design ensures easy replication and maintenance.
 
-The Arduino Nano BLE was chosen as the core microcontroller for its compatibility with open-source tools and ability to support both USB and BLE MIDI. Ferroelectric RAM (FRAM) was employed for data storage since it offers an economical yet robust solution for preserving calibration settings across power cycles. Calibration workflows were optimised using the Arduino IDE’s serial plotter and open-source MIDI Monitor software, reducing reliance on proprietary tools and simplifying the process for users. 
+The Arduino Nano BLE was chosen as the core microcontroller for its compatibility with open source tools and ability to support both USB and BLE MIDI. Ferroelectric RAM (FRAM) was employed for data storage since it offers an economical yet robust solution for preserving calibration settings across power cycles. Calibration workflows were optimised using the Arduino IDE’s serial plotter and open source MIDI Monitor software, reducing reliance on proprietary tools and simplifying the process for users. 
 
-Reference repositories for this project can be found here. FILL OUT AS APPROPRIATE (and anonymise).
+Reference repositories for this project can be found here:
+\begin{anonsuppress}
+    \begin{itemize}
+        \item 
+        \emph{Firmware}: \url{https://github.com/Nemus-Project/haprsichord-interface-firmware}
+        \item 
+        \emph{PCB CAD}: \url{https://github.com/Nemus-Project/haprsichord-interface-cad}
+        \item 
+        \emph{Interface Models}: \url{https://github.com/Nemus-Project/haprsichord-interface-models}
+    \end{itemize}
+\end{anonsuppress}
+% FILL OUT AS APPROPRIATE (and anonymise).
+
+
 
 \subsection{Materials and Construction}
 
@@ -93,7 +103,7 @@ Figure \ref{fig:system-block-diagram} shows a block diagram of the finalised har
 
 The initial stage of development focused on testing whether sensor data could reliably trigger MIDI playback. Modifying an existing harpsichord for testing was considered but ultimately discarded due to significant internal measurement and layout discrepancies. Instead, a custom 3-key harpsichord mechanism (Figure \ref{fig:3key}) was acquired from the museum and used as a foundation for prototyping. This approach followed a methodology similar to that used in Timmermans \emph{et al.}'s Haptic Key project \cite{Timmermans2020}, since the 3-key model enabled iterative testing of individual components, including sensor placement, signal processing, and mechanical tolerances, before upscaling. 
 
-\begin{figure}
+\begin{figure}[b]
     \centering
     \includegraphics[width=\linewidth]{src/images/CrossSectionSensorPlacement.jpg}
     \\
@@ -174,7 +184,7 @@ Non-volatile memory, implemented using Ferroelectric RAM (FRAM), provided a reli
 
 %\subsection{Calibration and Power Management}\label{calibration}
 
-Each sensor's threshold was manually adjusted using RGB LEDs integrated into the system. These LEDs provided visual feedback during calibration, enabling the identification of malfunctioning sensors and simplifying the alignment process. The calibration workflow utilised the Arduino IDE serial plotter and open-source MIDI monitoring software, as per Figure \ref{fig:serial_monitor}. As an expert harpsichord performer, finer calibration was carried out with the guidance of \anon{Catalina Vicens}.
+Each sensor's threshold was manually adjusted using RGB LEDs integrated into the system. These LEDs provided visual feedback during calibration, enabling the identification of malfunctioning sensors and simplifying the alignment process. The calibration workflow utilised the Arduino IDE serial plotter and open source MIDI monitoring software, as per Figure \ref{fig:serial_monitor}. As an expert harpsichord performer, finer calibration was carried out with the guidance of \anon{Catalina Vicens}.
 
 
 Power requirements for the system were estimated at 1.1 A at 5 V, with fluctuations during startup. While the sensors were powered continuously in this iteration, future designs may incorporate power-saving measures, such as dynamic activation of sensors based on usage.

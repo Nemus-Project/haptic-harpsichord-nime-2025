@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage{graphicx,subcaption}
+\begin{document}
+
+    % \begin{figure}
+    %     \centering     %%% not \center
+    %         \subfigure[Figure A]{\label{fig:a}\includegraphics[width=60mm]{example-image-a}}
+    %         \subfigure[Figure B]{\label{fig:b}\includegraphics[width=60mm]{example-image-b}}
+    %     \caption{my caption}
+    % \end{figure}
+
+    \begin{figure} \centering
+        \begin{subfigure}[b]{\linewidth}
+            \includegraphics[width=60mm]{example-image-a}            
+            \label{fig:a}
+        \end{subfigure} %
+    
+        \begin{subfigure}[b]{\linewidth}    
+            \includegraphics[width=60mm]{example-image-b}
+            \label{fig:b}    
+        \end{subfigure} 
+        \caption{my caption}
+    \end{figure}
+
+
+    \begin{figure}
+        \begin{subfigure}{0.65\textwidth}
+          \includegraphics[width=\textwidth]{example-image-a}
+        \end{subfigure}
+        \hfill  % NOTE1: hfill moves horizontally stacked objects as far apart as it can
+        \begin{subfigure}{0.32\textwidth}
+          \begin{subfigure}[t]{\textwidth}
+            \includegraphics[width=\textwidth]{example-image-a}   
+          \end{subfigure}\\
+
+          
+          \begin{subfigure}[b]{\textwidth}
+            \includegraphics[width=\textwidth]{example-image-b}
+          \end{subfigure}\\
+
+          
+          \begin{subfigure}[b]{\textwidth}
+            \includegraphics[width=\textwidth]{example-image-a}
+          \end{subfigure}
+        \end{subfigure}
+    
+        \caption{figure caption}
+  \end{figure}
+    
+\end{document}

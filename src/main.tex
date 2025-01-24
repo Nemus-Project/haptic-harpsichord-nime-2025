@@ -64,9 +64,9 @@
 %%
 %%
 \documentclass[sigconf]{nimeart}
-\usepackage{graphicx}
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
+\usepackage{graphicx,subcaption}
+% \usepackage{tikz}
+% \usetikzlibrary{shapes,arrows}
 
 %%
 %% \BibTeX command to typeset BibTeX logo in the docs
@@ -152,7 +152,6 @@
 % \orcid{1234-5678-9012}
 \author{Michele Ducceschi}
 % \authornotemark[1]
-\email{michele.ducceschi@unibo.it}
 \affiliation{%
   \institution{Università di Bologna}
   \city{Bologna}  
@@ -160,6 +159,12 @@
 }
 
 \author{Roberto Livi}
+\affiliation{%
+  \institution{Harpsichord builder}
+  \city{Pesaro}
+  \country{Italy}
+  }
+  
 \author{Catalina Vincens}
 \affiliation{%
   \institution{Museo di San Colombano}
@@ -185,17 +190,19 @@
 %% article.
 \begin{abstract}
 This work describes the design of an electronically augmented replica of a
-16th-century harpsichord keyboard with a typical Renaissance Italian layout. The
-keyboard is a collaboration between the \anon{NEMUS project} and the Museo di San Colombano,
-which houses the Tagliavini Collection of playable historical keyboard
-instruments. The keyboard was commissioned for exhibition purposes and to
-enhance the experiential authenticity of the collection. The keyboard emulates
-the mechanics of a two-register harpsichord featuring a single manual. Unpitched
-strings under tension replicate the mechanical resistance characteristic of the
-original compass. An array of infrared LED / phototransistor pairs, connected to a
-microcontroller, was installed within the interface to generate a continuous
-stream of data corresponding to the jacks' motion. This paper details the design
-principles, development, open source implementation, and execution of the installation for the San Colombano exhibition.
+16th-century harpsichord keyboard with a typical Renaissance Italian layout to create a DMI. The
+project is a collaboration between the \anon{NEMUS project} and the Museo di San Colombano,
+which houses the Tagliavini Collection of playable historical keyboard instruments. 
+The keyboard was commissioned for exhibition where it will act as an interface to  digitised instruments in the collection.  
+
+The project aims to enhance the experiential authenticity of the collection and address how we can conserve the interaction with historical instruments when the interface is a limiting factor in the verisimilitude of the experience.
+
+The tactile feedback of the keyboard is created by incorporating the same mechanics of a two-register harpsichord with a single manual. 
+Unpitched strings under tension replicate the mechanical resistance characteristic of the original compass. 
+An array of optical sensors connected to a microcontroller was installed within the interface to generate continuous
+streams of data corresponding to the vertical motion of each jack. 
+This paper details the keyboard's design principles, technical development, and the motivations behind them. 
+% It also discusses the implications of its execution for installation for public exhibition. 
 \end{abstract}
 
 %%
@@ -217,8 +224,8 @@ principles, development, open source implementation, and execution of the instal
 
 % Option 2:
 \begin{teaserfigure}
- \hspace*{0.6in}
-  \includegraphics[width=0.8\textwidth]{src/images/49-key-front-top.png}
+ \centering
+  \includegraphics[width=0.58\textwidth]{src/images/49-key-front-top.png}
   \caption{49-key Model Harpsichord Mechanism by \anon{Roberto Livi, Bologna 2024}}
   \Description{49-key Model Harpsichord Mechanism by \anon{Roberto Livi, Bologna 2024}}
   \label{fig:teaser}
@@ -253,12 +260,7 @@ principles, development, open source implementation, and execution of the instal
 %% identification of the section in the article metadata, and the
 %% consistent spelling of the heading.
 \begin{acks}
-A project of this breadth developed across 3 institutes and 2 countries
-cannot be carried out without the support and technical knowledge of many
-skilled and passionate people.
-
-We acknowledge the invaluable contributions of
-
+This work received funding from the European Commission's Horizon2020 programme, through grant ERC-StG 950084 NEMUS. We acknowledge the invaluable contributions of
 \begin{itemize}
 \item
   Università di Bologna
@@ -278,14 +280,6 @@ We acknowledge the invaluable contributions of
       Maurzio Chendi Fabrizio Casarini, Giulio Severo and Barbara
       Costantini
     \end{itemize}
-  \end{itemize}
-\item
-  San Colombano
-  \begin{itemize}
-  \item
-    Catalina Vincens
-  \item
-    Roberto Livi
   \end{itemize}
 \item
   Edinburgh

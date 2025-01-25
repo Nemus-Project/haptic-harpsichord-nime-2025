@@ -18,6 +18,14 @@ McAlpine discusses a case similar to the Tagliavini collection in his examinatio
 
 On the other hand, the ``Tromba Moderna'' project \cite{Baldwin2016}, a previous NIME initiative, approached the issue of musical heritage playability by recreating and augmenting a replica of a historical tromba marina. A piezo transducer was connected to a sound synthesis engine and a driver within the instrument to simulate the expected vibrations of a historical tromba marina. 
 
+\begin{figure}[b]
+  \centering
+  \includegraphics[width=\linewidth]{src/images/49-key-bottom-sensors-no-keys.jpg} 
+  \caption{Underside of the full model keyboard, showing two chambers: the front chamber (top) and the rear chamber (bottom).} 
+  \Description{} 
+  \label{fig:49-key-bottom}
+\end{figure}
+
 The keyboard presented here inherits some aspects from the Tromba Moderna project. A goal of the project is to offer a tool enhancing the fruition of the Tagliavini collection while retaining a form of continuity with historical instrument-building traditions. However, the electronics hidden inside the interface are not intended to augment or disrupt the tactile or auditory feedback; rather, they serve as the silent and invisible link between the mechanical and the digital realms. The design of the electronic systems borrows ideas from a previous NIME by McPherson \cite{McPherson2013}. Thus, whether the interface proposed here is a \emph{new} musical interface is subject to discussion, particularly regarding the keyboard's tactile response designed to adhere to longstanding harpsichord building traditions. This work complements and follows up on previous reflections within the NIME community, emphasising the \emph{O} in NIME \cite{Masu_NIME_2023}. The intended use of the keyboard through meaningful interaction with a museum exhibit is where the novelty of this work lies, rather than solely in its technological development. Relying on previous NIMEs, this project extends the longevity of the results beyond the scope envisaged in the original works, enhancing their sustainability, as discussed by Masu \emph{et al.} \cite{Masu_NIME_2023}.
 
 Besides enhancing the visitor experience, future design iterations will serve as a research tool to explore the unique characteristics of the harpsichord and its impact on performance through the \anon{ERC-funded NEMUS} project \cite{NEMUS}, aiming to virtually reproduce the sound of historical keyboard instruments, and upcoming projects such as Rem@ke \cite{remake1} investigating embodied relationships between instrument and performer.
@@ -29,7 +37,6 @@ Besides enhancing the visitor experience, future design iterations will serve as
 \end{figure*}
 
 \section{Design Principles}\label{design}
-
 
 The design of the augmented replica keyboard for the Tagliavini Collection was guided by three principal constraints stipulated by the museum:
 \begin{itemize}
@@ -61,14 +68,6 @@ The project expanded upon earlier NIME research on generating MIDI messages from
 
 \subsection{Project Deployment}
 A further objective, set forth by the authors, was to ensure accessibility and reproducibility by committing to an \emph{open source} approach for all outputs of the project. The commitment to open sourcing encompassed all aspects of the system, including hardware schematics, firmware, and calibration data. Cost-effectiveness was also a central consideration. The system was initially developed for a 3-key prototype, shown in Figure \ref{fig:3key}, and successfully scaled to 49 keys without significant increases in cost or complexity. Specifically, the system was designed to be easily assembled using resources typically available in a university-managed maker space.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{src/images/49-key-bottom-sensors-no-keys.jpg} 
-  \caption{Underside of the full model keyboard, showing two chambers: the front chamber (top) and the rear chamber (bottom).} 
-  \Description{} 
-  \label{fig:49-key-bottom}
-\end{figure}
 
 Components, such as QRE1113 optical sensors and CD4051BE multiplexers, are widely available from commercial resellers, while the modular PCB design ensures easy replication and maintenance.
 

@@ -23,7 +23,8 @@ The keyboard presented here inherits some aspects from the Tromba Moderna projec
 Besides enhancing the visitor experience, future design iterations will serve as a research tool to explore the unique characteristics of the harpsichord and its impact on performance through the \anon{ERC-funded NEMUS} project \cite{NEMUS}, aiming to virtually reproduce the sound of historical keyboard instruments, and upcoming projects such as Rem@ke \cite{remake1} investigating embodied relationships between instrument and performer.
 
 \begin{figure*}
-\includegraphics[width=\linewidth]{src/images/details.jpg}
+\centering
+\includegraphics[width=0.8\linewidth]{src/images/details.jpg}
 \caption{Details of the replica, including the key slots and sides, keys, and jacks with seagull plectra.}\label{fig:details}
 \end{figure*}
 
@@ -42,7 +43,7 @@ These constraints demanded a non-invasive, robust design that was respectful of 
 
 %\subsection{Summary of the Finalised Design}
 
-The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is a 49-key harpsichord keyboard replica equipped with an optical sensor system reading the amount of light reflected by gradient stickers applied to the jacks' sides. 
+The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is a 49-key harpsichord keyboard replica equipped with an optical sensor in a voltage divider configuration (Figure \ref{fig:simple-schematic}) whose voltage output depends on the amount of light reflected by sensor surface. In this case, a sensor surface is a grey-scale gradient printed on a vinyl sticker and applied to the side of each jack (Figure \ref{fig:jack-tags}). 
 
 
 % Several key features were implemented to address the project’s requirements:
@@ -54,9 +55,9 @@ The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is 
 % \end{itemize}
 
 
-A modular system of printed circuit boards (PCBs) was designed to manage the sensors and process their output. The system uses 49 QRE1113 sensors which are distributed across seven boards, containing 7 sensors each. The PCBs were secured to the underside of the keyboard mechanism, allowing them to be adjusted during installation. Ribbon cables connected the PCBs, providing flexibility during assembly while maintaining a compact form factor. Additional modifications, including baffles and adhesive improvements, were made to optimise the reliability of the sensor system during calibration and use.
+A modular system of printed circuit boards (PCBs) was designed to manage the sensors and process their output. The system uses 49 optical sensors which are distributed across seven boards that contain 7 sensors each. The PCBs were secured to the underside of the keyboard mechanism, allowing them to be adjusted during installation. Ribbon cables connected the PCBs, providing flexibility during assembly while maintaining a compact form factor. Additional modifications, including baffles and adhesive improvements, were made to optimise the reliability of the sensor system during calibration and use.
 
-The project built upon earlier NIME research on generating MIDI messages from piano keystrokes \cite{McPherson2013}, adapting it to address the specific characteristics of harpsichords. Whereas the previous design emphasised continuous gesture tracking, this implementation required discrete key-triggered data to align with the needs of MIDI-triggered audio playback. 
+The project expanded upon earlier NIME research on generating MIDI messages from piano keystrokes \cite{McPherson2013}, adapting it to address the specific characteristics of harpsichords. Whereas the previous design emphasised continuous gesture tracking, this implementation required discrete key-triggered data to align with the needs of MIDI-triggered audio playback. 
 
 \subsection{Project Deployment}
 A further objective, set forth by the authors, was to ensure accessibility and reproducibility by committing to an \emph{open source} approach for all outputs of the project. The commitment to open sourcing encompassed all aspects of the system, including hardware schematics, firmware, and calibration data. Cost-effectiveness was also a central consideration. The system was initially developed for a 3-key prototype, shown in Figure \ref{fig:3key}, and successfully scaled to 49 keys without significant increases in cost or complexity. Specifically, the system was designed to be easily assembled using resources typically available in a university-managed maker space.
@@ -69,19 +70,19 @@ A further objective, set forth by the authors, was to ensure accessibility and r
   \label{fig:49-key-bottom}
 \end{figure}
 
-Components, such as QRE1113 sensors and CD4051BE multiplexers, are widely available from commercial resellers, while the modular PCB design ensures easy replication and maintenance.
+Components, such as QRE1113 optical sensors and CD4051BE multiplexers, are widely available from commercial resellers, while the modular PCB design ensures easy replication and maintenance.
 
-The Arduino Nano BLE was chosen as the core microcontroller for its compatibility with open source tools and ability to support both USB and BLE MIDI. Ferroelectric RAM (FRAM) was employed for data storage since it offers an economical yet robust solution for preserving calibration settings across power cycles. Calibration workflows were optimised using the Arduino IDE’s serial plotter and open source MIDI Monitor software, reducing reliance on proprietary tools and simplifying the process for users. 
+The Arduino Nano 33 BLE was chosen as the core microcontroller for its compatibility with open source tools and ability to support both USB and BLE MIDI. Ferroelectric RAM (FRAM) was employed for data storage since it offers an economical yet robust solution for preserving calibration settings across power cycles. Calibration workflows were optimised using the Arduino IDE’s serial plotter and open source MIDI Monitor software, reducing reliance on proprietary tools and simplifying the process for users. 
 
 Reference repositories for this project can be found here:
 \begin{anonsuppress}
     \begin{itemize}
         \item 
-        \emph{Firmware}: \url{https://github.com/Nemus-Project/haprsichord-interface-firmware}
+        \emph{Firmware}: \anon{\url{https://github.com/Nemus-Project/haprsichord-interface-firmware}}
         \item 
-        \emph{PCB CAD}: \url{https://github.com/Nemus-Project/haprsichord-interface-cad}
+        \emph{PCB CAD}: \anon{\url{https://github.com/Nemus-Project/haprsichord-interface-cad}}
         \item 
-        \emph{Interface Models}: \url{https://github.com/Nemus-Project/haprsichord-interface-models}
+        \emph{Interface Models}: \anon{\url{https://github.com/Nemus-Project/haprsichord-interface-models}}
     \end{itemize}
 \end{anonsuppress}
 % FILL OUT AS APPROPRIATE (and anonymise).
@@ -105,10 +106,12 @@ The initial stage of development focused on testing whether sensor data could re
 
 \begin{figure}[b]
     \centering
-    \includegraphics[width=\linewidth]{src/images/CrossSectionSensorPlacement.jpg}
-    \\
-    \includegraphics[width=\linewidth]{src/images/3-key-side-labelled.png}
-    \caption{3-Key Model Harpsichord Mechanism acquired from San Colombano, Bologna, 2023. Key components include A: Wrestplank, B: Key Lever, C: Key Cap, D: Soundboard, E: Jack.}
+    % \includegraphics[width=\linewidth]{src/images/CrossSectionSensorPlacement.jpg}
+    % \\
+    % \includegraphics[width=\linewidth]{src/images/3-key-side-labelled.png}
+    % \caption{3-Key Model Harpsichord Mechanism acquired from San Colombano, Bologna, 2023. Key components include A: Wrestplank, B: Key Lever, C: Key Cap, D: Soundboard, E: Jack.}
+    \includegraphics[width=\linewidth]{src/images/3-key-side.png}
+    \caption{3-Key Model Harpsichord Mechanism acquired from San Colombano, Bologna, 2023}
     \label{fig:3key}
 \end{figure}
 
@@ -136,15 +139,15 @@ The hardware was designed to make assembly possible in standard maker spaces.
     \label{fig:system-block-diagram}
 \end{figure*}
 
-The final sensor system utilised QRE1113 infrared sensors, known for their precision and suitability for short-distance detection \cite{McPherson2013, McPherson2019}. The sensors were distributed across seven printed circuit boards, each responsible for seven keys. Each PCB contained the following components:
+The final sensor system utilised QRE1113 optical sensors, known for their precision, low cost, and suitability for short-range distance detection \cite{McPherson2013, McPherson2019}. The sensors were distributed across seven printed circuit boards, each responsible for seven keys. Each PCB contained the following components:
 
 \begin{itemize}
-    \item 7 QRE1113 infrared sensors.
+    \item 7 QRE1113 optical sensors.
     \item 7 100 $\Omega$ resistors and 7 10 k$\Omega$ resistors (later reduced to one resistor per board).
     \item 1 Texas Instruments CD4051BE multiplexer for signal aggregation.
 \end{itemize}
 
-The QRE1113 sensors detect infrared light reflected from nearby surfaces, as per Figure \ref{fig:simple-schematic}. The gradient stickers affixed to each jack provided a consistent reflective surface for the sensors (Figure \ref{fig:jack-tags}), which were used to track jack displacement precisely. 
+The optical sensors detect infrared light reflected from nearby surfaces, as per Figure \ref{fig:simple-schematic}. The gradient stickers affixed to each jack provided a consistent reflective surface for the sensors (Figure \ref{fig:jack-tags}), which were used to track jack displacement precisely. 
 
 \begin{figure}[b]  
   \centering
@@ -178,7 +181,7 @@ The QRE1113 sensors detect infrared light reflected from nearby surfaces, as per
 \end{figure}
 \subsection{Controller Board}\label{controller-board}
 
-The controller board, designed around the Arduino Nano BLE platform, was the central hub for processing sensor data and triggering MIDI messages. The Nano BLE was selected for its compact form factor, integrated BLE MIDI functionality, and native USB support.  Initial iterations used 2.54 mm pitch headers for cable connections, but issues with cable disconnections led to the adoption of JST-PH connectors in later designs. Custom cable looms were constructed using adapted crimping tools, ensuring robust connections without compromising accessibility.
+The controller board, designed around the Arduino Nano format, was the central hub for processing sensor data and triggering MIDI messages. The Arduino Nano was selected for its compact form factor and native USB support. The 33 BLE variationof the Nano had the additional benefit in its ability to be programmed as BLE MIDI device.  Initial iterations of the controller board used 2.54 mm pitch headers for cable connections, but issues with cable disconnections led to the adoption of JST-PH connectors in later designs. Custom cable looms were constructed using adapted crimping tools, ensuring robust connections without compromising accessibility.
 
 Non-volatile memory, implemented using Ferroelectric RAM (FRAM), provided a reliable means of storing calibration data. This ensured that sensor thresholds and other settings could be preserved across power cycles, enhancing the system's usability in museums.
 
@@ -190,38 +193,36 @@ Each sensor's threshold was manually adjusted using RGB LEDs integrated into the
 Power requirements for the system were estimated at 1.1 A at 5 V, with fluctuations during startup. While the sensors were powered continuously in this iteration, future designs may incorporate power-saving measures, such as dynamic activation of sensors based on usage.
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{src/images/serial_monitor.png}
-    \caption{Arduino IDE serial plotter used for calibration of sensor thresholds. \texttt{M} and \texttt{m} represent the maximum an minimum value of digitised data. \texttt{K} and \texttt{T} are the values of the sensor and threshold being calibrated, followed by a two-digit number denoting the sensor index (in this case, sensor 32).}
-    \label{fig:serial_monitor}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=\linewidth]{src/images/serial_monitor.png}
+%     \caption{Arduino IDE serial plotter used for calibration of sensor thresholds. \texttt{M} and \texttt{m} represent the maximum an minimum value of digitised data. \texttt{K} and \texttt{T} are the values of the sensor and threshold being calibrated, followed by a two-digit number denoting the sensor index (in this case, sensor 32).}
+%     \label{fig:serial_monitor}
+% \end{figure}
 
 \subsection{Final Assembly and Integration}
 
-The final 49-key harpsichord replica incorporated the sensor and controller boards into the rectangular frame. Ribbon cables connected the PCBs, while felt strips were interwoven between the strings to suppress vibrations and maintain the tactile response of the keys. The assembly process at the NEMUS lab in Bologna involved meticulous adjustments to key clearances and wiring layouts. Modifications included milling sections of the keys to ensure adequate clearance for the PCBs and varnishing the jacks to improve sticker adhesion. The sample library, purchased from Spitfire Audio and controlled via Native Instrument's Kontakt, was installed on a Mac Mini hosted inside the instrument's case. Special holes drilled at the back of the instrument's frame, away from sight, allow the passage of cables, such as from power supplies, USB connectors and headphone jack. An iPad is used as the secondary monitor, displaying the library alone. Users interact with the library through it, while the main 12-inch display sits inside a custom-made drawer locked during usage.
+The final 49-key harpsichord replica incorporated the sensor and controller boards into the rectangular frame. Ribbon cables connected the PCBs, while felt strips were interwoven between the strings to suppress vibrations and maintain the tactile response of the keys. The assembly process at the \anon{NEMUS} lab in \anon{Bologna} involved meticulous adjustments to key clearances and wiring layouts. Modifications included milling sections of the keys to ensure adequate clearance for the PCBs and varnishing the jacks to improve sticker adhesion. The sample library, purchased from Spitfire Audio and controlled via Native Instrument's Kontakt, was installed on a Mac Mini hosted inside the instrument's case. Special holes drilled at the back of the instrument's frame, away from sight, allow the passage of cables, such as from power supplies, USB connectors and headphone jack. An iPad is used as the secondary monitor, displaying the library alone. Users interact with the library through it, while the main 12-inch display sits inside a custom-made drawer locked during usage.
 
 
 
 \section{Discussion}\label{context}
 
 
-In an effort to make the exhibition more accessible and authentic, the San Colombano Museum commissioned the construction of a mechanical keyboard to trigger a MIDI-controlled sample library, designed for use by museum visitors. The exhibition is set to open approximately a month after this work's submission, and only preliminary feedback has been collected from a pool of testers. The keyboard shows significant promise in enhancing the museum experience. Testers unfamiliar with harpsichords were particularly impressed by its responsiveness. The keyboard is hosted in the \emph{Oratory} above the museum's main hall, an exceptional testimony to the Bolognese art, decorated by the finest students of the Carracci and presenting a series of frescoes covering most of the walls and ceiling. The room hosts unique examples of the Italian Renaissance building tradition, including the 1547 harpsichord and the 1540 spinet by Alessandro Trasuntino. Visitors often visit the room with the same caution and respect that is typical of worship spaces. Testers did not find that the exposed headphones and touchscreen affected such an experience negatively, though a more definitive answer will come as more feedback is collected after launch. Pictures of the keyboard hosted in the \emph{Oratory} are shown in Figure \ref{fig:oratory}.
+In an effort to make the exhibition more accessible and authentic, the \anon{San Colombano Museum} commissioned the construction of a mechanical keyboard to trigger a MIDI-controlled sample library, designed for use by museum visitors. The exhibition is set to open approximately a month after this work's submission, and only preliminary feedback has been collected from a pool of testers. The keyboard shows significant promise in enhancing the museum experience. Testers unfamiliar with harpsichords were particularly impressed by its responsiveness. The keyboard is hosted in the \emph{Oratory} above the museum's main hall, an exceptional testimony to the Bolognese art, decorated by the finest students of the Carracci and presenting a series of frescoes covering most of the walls and ceiling. The room hosts unique examples of the Italian Renaissance building tradition, including the 1547 harpsichord and the 1540 spinet by Alessandro Trasuntino. Visitors often visit the room with the same caution and respect that is typical of worship spaces. Testers did not find that the exposed headphones and touchscreen affected such an experience negatively, though a more definitive answer will come as more feedback is collected after launch. Pictures of the keyboard hosted in the \emph{Oratory} are shown in Figure \ref{fig:oratory}.
 
-\begin{figure}
+Expert feedback has highlighted certain limitations, including imprecise key calibration, which creates a temporal disconnect between the tactile plucking sensation and sound onset. Additionally, the commercial sample library, while allowing the selection of registers such as 8', 4', and their combinations, restricts functionality to a single MIDI message per key, regardless of the number of string choirs controlled. Inspired by early Italian instruments, the keyboard's layout is designed to manage two 8' registers. However, one register was disengaged, and sensors were placed before a single set of jacks to accommodate these limitations. Technical improvements, such as refined calibration with hysteresis and developing a custom sample library, could address these constraints in future iterations.
+
+A longer discussion, but one going beyond the scope of this work, is whether the current setup or its future iterations may be effectively used to build legitimate replicas of historical musical instruments or even become a kind of \emph{new} musical instrument altogether. As such, the question is whether these designs may result in music being practised, performed and recorded with the instruments. This work supports an overarching narrative extending beyond its application in museum collections. The \anon{NEMUS project \cite{NEMUS}}, focusing on developing advanced physical models simulating the non-linear interaction between subcomponents, has commissioned a second keyboard to further explore the role of control interfaces in performance, exploiting the inherently bi-directional signal paths linking the mechanical world with the virtual, replicating the embodied relationships between performer and instrument and offering opportunities to modify or even disrupt these interactions. The upcoming Rem@ke project \cite{remake1} has also expressed an interest in engaging with the keyboard to explore meaningful embodied interactions between players and instruments. 
+
+\begin{figure}[b]
 \centering
 \includegraphics[width = \linewidth]{src/images/keyboardMuseum.JPEG}
 \caption{The keyboard installed in the \emph{Oratory} at San Colombano, and a user wearing headphones playing it.}\label{fig:oratory}
 \end{figure}
 
-Expert feedback has highlighted certain limitations, including imprecise key calibration, which creates a temporal disconnect between the tactile plucking sensation and sound onset. Additionally, the commercial sample library, while allowing the selection of registers such as 8', 4', and their combinations, restricts functionality to a single MIDI message per key, regardless of the number of string choirs controlled. Inspired by early Italian instruments, the keyboard's layout is designed to manage two 8' registers. However, one register was disengaged, and sensors were placed before a single set of jacks to accommodate these limitations. Technical improvements, such as refined calibration with hysteresis and developing a custom sample library, could address these constraints in future iterations.
-
-A longer discussion, but one going beyond the scope of this work, is whether the current setup or its future iterations may be effectively used to build legitimate replicas of historical musical instruments or even become a kind of \emph{new} musical instrument altogether. As such, the question is whether these designs may result in music being practised, performed and recorded with the instruments. This work supports an overarching narrative extending beyond its application in museum collections. The NEMUS project \cite{NEMUS}, focusing on developing advanced physical models simulating the nonlinear interaction between subcomponents, has commissioned a second keyboard to further explore the role of control interfaces in performance, exploiting the inherently bi-directional signal paths linking the mechanical world with the virtual, replicating the embodied relationships between performer and instrument and offering opportunities to modify or even disrupt these interactions. The upcoming Rem@ke project \cite{remake1} has also expressed an interest in engaging with the keyboard to explore meaningful embodied interactions between players and instruments. 
-
 
 \section{Conclusion}\label{conclusion}
 
 This study has presented the design and implementation of an electronically augmented keyboard for the Tagliavini Collection at the San Colombano Museum. By leveraging optical sensors and MIDI-controlled sample libraries, the keyboard allows users to explore a harpsichord's sonic and mechanical essence without compromising the integrity of the museum's historical artefacts. Preliminary feedback shows that the keyboard has the potential to enhance the museum experience, particularly for those unfamiliar with early keyboard instruments. However, technical limitations, such as calibration inconsistencies and restrictions imposed by the commercial sample library, highlight opportunities for refinement. These issues will be addressed in future iterations, including a second keyboard designed to control advanced physical models. This work opens new possibilities for engaging with heritage collections while respecting their authenticity. It also serves as a foundation for further research projects exploring embodied cognition in historical instruments, and it may provide a useful framework to investigate the links between physical modelling and digital musical interface design.
-
-
 

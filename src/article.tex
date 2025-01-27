@@ -18,7 +18,7 @@ McAlpine discusses a case similar to the Tagliavini collection in his examinatio
 
 On the other hand, the ``Tromba Moderna'' project \cite{Baldwin2016}, a previous NIME initiative, approached the issue of musical heritage playability by recreating and augmenting a replica of a historical tromba marina. A piezo transducer was connected to a sound synthesis engine and a driver within the instrument to simulate the expected vibrations of a historical tromba marina. 
 
-\begin{figure}[b]
+\begin{figure}
   \centering
   \includegraphics[width=\linewidth]{src/images/49-key-bottom-sensors-no-keys.jpg} 
   \caption{Underside of the full model keyboard, showing two chambers: the front chamber (top) and the rear chamber (bottom).} 
@@ -52,13 +52,16 @@ The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is 
 
 
 \subsubsection{Alternative}
-\textcolor{red}{The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is a 49-key two-register harpsichord keyboard replica.
+\textcolor{red}{
+The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is a 49-key two-register harpsichord keyboard replica.
 The keyboard was consciously chosen to mimic that of the original XVI century Italian harpsichords. This design decision was made in order to use the propensity humans have to being influenced by visual components when musical making judgements \cite{Tsay2013} to our advantage. It is especially true with respect to musical instruments as the studies by Fritz \emph{et al}\cite{Fritz2012, Fritz2014, Fritz2017} have clearly shown. Rather than avoiding this effect we have chosen to instead utilise it. This `musical instrument McGurk effect' is in part the reason behind hiding the electronics out of sight. 
 The aesthetics of the interface make it more likely that the interface be accepted on the same terms as an `authentic' musical instrument. With all the work into modelling and recreating piano action \cite{Cadoz1990, Gillespie1996, Timmermans2020} it is possible the visual component my provide the necessary push of acceptance similar to that which influences our judgment on performance \cite{Tsay2013}. 
 Such an effect is invaluable if visitors are expected to engage with the interface on an equal footing as the historic instruments that neighbour it in the museum.
 The keyboard in not merely a facsimile of a harpsichord, but rather by being equipped with optical sensors, it can provide modes of expression with a digital instrument which would otherwise be inaccessible to its analogue sibling. 
-The optical sensors are wired in a voltage divider configuration (Figure \ref{fig:simple-schematic}) whose voltage output depends on the amount of light reflected by sensor surface. In this case, a sensor surface is a grey-scale gradient printed on a vinyl sticker and applied to the side of each jack (Figure \ref{fig:jack-tags}). Though the current configuration simply sends MIDI note on and off at passing a threshold, the displacement of all jacks is available continuously. Touch with the key
-The double register means that there are two very distinct tactile `anchors' in the course of the keys travel that is championed by professional harpsichordists as invaluable vector for expression during performance.  (GOING TO NEED A REFERENCE ON THIS BUT FAIRLY CONFIDENT I SAW IT IN THE TAGLIAVINI BOOK. MICHELE IF YOU HAVE A REFERENCE LEAVE IT HERE).}
+The optical sensors are wired in a voltage divider configuration (Figure \ref{fig:simple-schematic}) whose voltage output depends on the amount of light reflected by sensor surface. In this case, a sensor surface is a grey-scale gradient printed on a vinyl sticker and applied to the side of each jack (Figure \ref{fig:jack-tags}). Though the current configuration simply sends MIDI note on and off at passing a threshold, the displacement of all jacks is available continuously.
+The staggering of pluck point of the jack means that there are two very distinct tactile `anchors' along the key dip. A combination of string tension, quill voicing and jack staggering contribute to the overall `weight' of the action, with each key differing from the low to the high octaves \cite{Veroli2012}.
+}
+%
 % "When working with an established interface like the keyboard, it is particularly important that new mappings do not interfere with familiar technique (McPherson, Gierakowski, and Stark 2013)."
 
 A modular system of printed circuit boards (PCBs) was designed to manage the sensors and process their output. The system uses 49 optical sensors which are distributed across seven boards that contain 7 sensors each. The PCBs were secured to the underside of the keyboard mechanism, allowing them to be adjusted during installation. Ribbon cables connected the PCBs, providing flexibility during assembly while maintaining a compact form factor. Additional modifications, including baffles and adhesive improvements, were made to optimise the reliability of the sensor system during calibration and use.
@@ -103,7 +106,7 @@ Figure \ref{fig:system-block-diagram} shows a block diagram of the finalised har
 
 The initial stage of development focused on testing whether sensor data could reliably trigger MIDI playback. Modifying an existing harpsichord for testing was considered but ultimately discarded due to significant internal measurement and layout discrepancies. Instead, a custom 3-key harpsichord mechanism (Figure \ref{fig:3key}) was acquired from the museum and used as a foundation for prototyping. This approach followed a methodology similar to that used in Timmermans \emph{et al.}'s Haptic Key project \cite{Timmermans2020}, since the 3-key model enabled iterative testing of individual components, including sensor placement, signal processing, and mechanical tolerances, before upscaling. 
 
-\begin{figure}[b]
+\begin{figure}
     \centering
     % \includegraphics[width=\linewidth]{src/images/CrossSectionSensorPlacement.jpg}
     % \\
@@ -148,7 +151,7 @@ The final sensor system utilised QRE1113 optical sensors, known for their precis
 
 The optical sensors detect infrared light reflected from nearby surfaces, as per Figure \ref{fig:simple-schematic}. The gradient stickers affixed to each jack provided a consistent reflective surface for the sensors (Figure \ref{fig:jack-tags}), which were used to track jack displacement precisely. 
 
-\begin{figure}[b]  
+\begin{figure}  
   \centering
   \includegraphics[width=\linewidth]{src/images/tagging-jacks-3.jpg} 
   \caption{Gradient stickers applied to the side of the jack body. The coarse gradient scale was selected to maximise signal excursion while preserving signal readout stability.}
@@ -156,7 +159,7 @@ The optical sensors detect infrared light reflected from nearby surfaces, as per
   \label{fig:jack-tags}
 \end{figure}
 
-\begin{figure}[b]  
+\begin{figure}  
   \centering
   \includegraphics[width=\linewidth]{src/images/simple-schematic-bw-.jpg} 
   \caption{Optical sensor in a simple voltage divider circuit. \texttt{V\_OUT} is routed to one of 8 channels on the CD4051BE multiplexer}
@@ -214,7 +217,7 @@ Expert feedback has highlighted certain limitations, including imprecise key cal
 
 A longer discussion, but one going beyond the scope of this work, is whether the current setup or its future iterations may be effectively used to build legitimate replicas of historical musical instruments or even become a kind of \emph{new} musical instrument altogether. As such, the question is whether these designs may result in music being practised, performed and recorded with the instruments. This work supports an overarching narrative extending beyond its application in museum collections. The \anon{NEMUS project \cite{NEMUS}}, focusing on developing advanced physical models simulating the non-linear interaction between subcomponents, has commissioned a second keyboard to further explore the role of control interfaces in performance, exploiting the inherently bi-directional signal paths linking the mechanical world with the virtual, replicating the embodied relationships between performer and instrument and offering opportunities to modify or even disrupt these interactions. The upcoming Rem@ke project \cite{remake1} has also expressed an interest in engaging with the keyboard to explore meaningful embodied interactions between players and instruments. 
 
-\begin{figure}[b]
+\begin{figure}
 \centering
 \includegraphics[width = \linewidth]{src/images/keyboardMuseum.JPEG}
 \caption{The keyboard installed in the \emph{Oratory} at San Colombano, and a user wearing headphones playing it.}\label{fig:oratory}

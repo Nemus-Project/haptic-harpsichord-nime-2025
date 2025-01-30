@@ -146,6 +146,56 @@ The keyboard was designed to replicate the tactile and aesthetic sensations of p
 The rectangular poplar frame also deviates from the traditional logarithmic form to allow for the installation of the electronic sensors, as visible in Figure \ref{fig:49-key-bottom}, without compromising the visual or tactile authenticity. Two string choirs, crafted from yellow brass wire and anchored with wrought iron pins, were tensioned to replicate authentic plucking resistance. Felt strips were added to dampen vibrations. The result is an interface that combines the mechanical action of keys with synthetic sound generation, preserving a real harpsichord's tactile qualities.
 
 
+% % Option 1
+\begin{figure}
+    \centering
+    \includesvg[inkscapelatex=false, height = 0.4\textheight]{images/log_harp_outline}
+    \caption{Logarithmic shape of an original Trasuntino harpsichord}
+    \Description{}
+    \label{fig:baffles}
+\end{figure}
+
+% % Option 2
+\begin{figure}
+    \centering
+     \begin{subfigure}[h]{0.5\linewidth}
+        \centering
+        \includesvg[inkscapelatex=false, width = \linewidth]{images/log_harp_outline}            
+        \caption{logarithmic shape}    
+        \label{fig:log-harp}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[h]{0.5\linewidth}
+        \centering
+        \includesvg[inkscapelatex=false, width = \linewidth]{images/49-key_outline}        
+        \caption{replica shape}
+        \label{fig:rect-harp}
+    \end{subfigure}
+    \caption{Logarithmic shape of an original Trasuntino harpsichord contrast with rectangular shape of the replica}    
+    \Description{}
+    \label{fig:baffles}
+\end{figure}
+
+% % Option 4
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Logarithmic shape of an original Trasuntino harpsichord}
+    \Description{}
+    \label{fig:baffles}
+\end{figure}
+
+% % Option 3
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{src/images/trasuntino-log-harp.jpg}    
+    \caption{Logarithmic shape of an original Trasuntino harpsichord. Source: Image 3 Royal College of Music Collections Item RCM0002  \protect\footnote{\url{https://museumcollections.rcm.ac.uk/collection/Details/collect/58}}  } 
+    \Description{}
+    \label{fig:baffles}
+\end{figure}
+
+
 \section{Hardware Design}\label{hardware-design}
 
 Figure \ref{fig:system-block-diagram} shows a block diagram of the finalised hardware setup. The system evolved through iterative prototyping, beginning with simple threshold-based testing and ending in a fully functional multi-sensor interface capable of triggering MIDI events. 

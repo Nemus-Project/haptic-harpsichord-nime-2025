@@ -7,8 +7,8 @@ Musical instruments represent a peculiar fusion of form, function, and history. 
 The Tagliavini Collection in Bologna \cite{Tagliavini2007}, renowned for its historical keyboard instruments, exemplifies this dilemma. With more than seventy early keyboard instruments, including many unique Renaissance Italian harpsichords, spinets and virginals, the collection stands out as a valuable resource for musicologists, organologists and musicians alike. Preserving the instruments' authenticity was the cornerstone of Ferdinando Tagliavini’s vision. This guiding principle led him to collect only playable instruments, or instruments which could be restored to playing condition after minimal intervention. 
 
 However, the delicate mechanisms of these instruments and their historical significance mean they are only played under strict conditions—typically during concerts or by experienced performers with special permission from the curator. 
-To enhance accessibility and engagement, the museum commissioned the replica (Figure \ref{fig:teaser}) of a historical keyboard built in the tradition of the Italian Renaissance and is the subject of this paper.
-The keyboard, which museum visitors can use without special permission, presents two choirs of muted strings and can generate MIDI messages. The interface is currently connected to a software sampler loaded with the Spitfire sample library, though the ultimate goal is to use samples of instruments from the collection. Visitors to the museum are invited to play the interface and listen through a pair of headphones. This work outlines the technological aspects of interface's construction and offers reflections on its role within the Tagliavini Collection and potential application within the wider musical instrument museum context. 
+To enhance accessibility and engagement, the museum commissioned the replica (Figure \ref{fig:teaser}) of a historical keyboard built in the tradition of the Italian Renaissance, which is the subject of this paper.
+The keyboard, which museum visitors can use without special permission, presents two choirs of muted strings and can generate MIDI messages. The interface is currently connected to a commercial software sampler, though the ultimate goal is to use sample instruments from the collection. Visitors to the museum are invited to play the interface and listen through a pair of headphones. This work outlines the technological aspects of the interface's construction and offers reflections on its role within the Tagliavini Collection and potential application within the wider musical instrument museum context. 
 % The paper outlines the design and motivations behind this replica keyboard interface.
 
 
@@ -43,14 +43,15 @@ The design of the augmented replica keyboard for the Tagliavini Collection was g
 \item \emph{Faithfulness}. The keyboard mechanism ensured fidelity to its authentic operation, keeping artefacts to a minimum. 
 \end{itemize}
 
-These constraints demanded a non-invasive, robust design that was respectful of the historical authenticity of the instruments. The requirement for faithfulness to the original mechanism immediately ruled out a mechanical design reliant on electromechanical actuators, as in previous works on piano haptics \cite{Timmermans2020,Gillespie1996}. 
-While actuators can generate considerable force, it is difficult to achieve the free-motion and resistance of a jack without extensive mechanical intervention such as that carried out by Gillespie \cite{Gillespie1996}. A tactile realism of the harpsichord can already be achieved by the instrument itself. It should first be confirmed if mechanical recreation is sufficient as part of a digital musical instrument before elaborate electromechanical emulation.
+These constraints demanded a non-invasive design that was respectful of the historical authenticity of the instruments. The requirement for faithfulness to the original mechanism immediately ruled out a mechanical design reliant on electromechanical actuators, as in previous works on piano haptics \cite{Timmermans2020,Gillespie1996}. 
+While actuators can generate considerable force, it is difficult to achieve a jack's free motion and resistance without extensive mechanical intervention such as that carried out by Gillespie \cite{Gillespie1996}. The instrument itself can already achieve the tactile realism of the harpsichord. 
+It should first be determined if mechanical recreation is sufficient as part of a digital musical instrument before pursuing elaborate electromechanical emulation. 
 % (A REFERENCE WOULD BE GOOD HERE, ANY IDEAS?)
-% , which differ significantly from a piano.
+% The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is a 49-key two-register harpsichord keyboard replica.
+% The keyboard was consciously chosen to mimic the typical layout of 16th-century Italian harpsichords. This design decision was made to use humans' propensity to being influenced by visual components when musical making judgements \cite{Tsay2013} to our advantage. It is especially true concerning musical instruments, as the studies by Fritz \emph{et al}\cite{Fritz2012, Fritz2014, Fritz2017} have shown. Rather than avoiding this effect, we have chosen to utilise it instead. This `musical instrument McGurk effect' is partly the reason behind hiding the electronics out of sight. 
+% The aesthetics of the interface make it more likely that the interface be accepted on the same terms as an `authentic' musical instrument. With all the work into modelling and recreating piano action \cite{Cadoz1990, Gillespie1996, Timmermans2020} it is possible the visual component may provide the necessary `push' of acceptance similar to that which influences our judgment on performance \cite{Tsay2013}. 
 
-The final design, visible in Figures \ref{fig:teaser} and \ref{fig:details}, is a 49-key two-register harpsichord keyboard replica.
-The keyboard was consciously chosen to mimic that of the original XVI century Italian harpsichords. This design decision was made in order to use the propensity humans have to being influenced by visual components when musical making judgements \cite{Tsay2013} to our advantage. It is especially true with respect to musical instruments as the studies by Fritz \emph{et al}\cite{Fritz2012, Fritz2014, Fritz2017} have clearly shown. Rather than avoiding this effect we have chosen instead to utilise it. This `musical instrument McGurk effect' is in part the reason behind hiding the electronics out of sight. 
-The aesthetics of the interface make it more likely that the interface be accepted on the same terms as an `authentic' musical instrument. With all the work into modelling and recreating piano action \cite{Cadoz1990, Gillespie1996, Timmermans2020} it is possible the visual component may provide the necessary `push' of acceptance similar to that which influences our judgment on performance \cite{Tsay2013}. 
+The final design, shown in Figures \ref{fig:teaser} and \ref{fig:details}, is a 49-key, two-register harpsichord keyboard replica. The keyboard layout was deliberately modelled after typical 16th-century Italian harpsichords, leveraging the human tendency to be influenced by visual elements when making musical judgments \cite{Tsay2013}. This effect is particularly relevant in musical instruments, as demonstrated by studies conducted by Fritz \emph{et al.} \cite{Fritz2012, Fritz2014, Fritz2017}. Instead of attempting to mitigate this influence, the design embraces it. This phenomenon, akin to a `musical instrument McGurk effect’, is one of the reasons why the electronics have been concealed from view. \textcolor{red}{Any good references on the McGurk effect?} The aesthetics of the interface enhance its likelihood of being perceived as an `authentic' musical instrument. Given the extensive research into modelling and recreating piano action \cite{Cadoz1990, Gillespie1996, Timmermans2020}, the visual component may provide the final persuasive element necessary for acceptance, similar to the way visual perception affects judgments of musical performance \cite{Tsay2013}.
 
 \begin{figure}[!b]  
   \centering
@@ -60,8 +61,8 @@ The aesthetics of the interface make it more likely that the interface be accept
   \label{fig:jack-tags}
 \end{figure}
 
-Optical sensors are positioned in front of each jack and their output voltage depends on the amount of light reflected from a sensor surface. In this case, the sensor surface is a grey-scale gradient printed on a vinyl sticker (Figure \ref{fig:jack-tags}) and applied to the side of each jack. Though the current configuration simply sends MIDI note on and off messages when passing a threshold, the displacement of all jacks is available continuously.
-The staggering of the pluck point of the jacks between registers means that there are two very distinct tactile `anchors' along the key dip. A combination of string tension, quill voicing and jack staggering contribute to the overall `weight' of the action, with each key differing from the low to the high octaves \cite{Veroli2012}. Such tactile expectations provide fertile opportunities for extending the expressive capabilities of the interface. The current sensor system enables the data recording of traditional use from which it can be identified where those opportunities for new expression lie \cite{McPherson2013-2}.
+Optical sensors are positioned in front of each jack and their output voltage depends on the amount of light reflected from a sensor surface. In this case, the sensor surface is a grey-scale gradient printed on a vinyl sticker (Figure \ref{fig:jack-tags}) and applied to the side of each jack. Though the current configuration simply sends MIDI note-on and -off messages when passing a threshold, the displacement of all jacks is available continuously.
+The staggering of the pluck point of the jacks between registers means that there are two distinct tactile anchors along the key dip. A combination of string tension, quill voicing, and jack staggering contribute to the overall `weight' of the action, with each key differing from the low to the high octaves \cite{Veroli2012}. Such tactile expectations provide fertile opportunities for extending the expressive capabilities of the interface. The current sensor system enables the data recording of traditional use from which it can be identified where those opportunities for new expression lie \cite{McPherson2013-2}.
 
 % "When working with an established interface like the keyboard, it is particularly important that new mappings do not interfere with familiar technique (McPherson, Gierakowski, and Stark 2013). The Space Between the Notes: Adding Expressive Pitch Control to the Piano Keyboard"
 
@@ -100,14 +101,10 @@ Reference repositories for this project can be found here:
         \emph{Interface Models}: \anon{\url{https://github.com/Nemus-Project/harpsichord-interface-models}}
     \end{itemize}
 \end{anonsuppress}
-% FILL OUT AS APPROPRIATE (and anonymise).
-
-
-
 
 \subsection{Materials and Construction}
 
-The keyboard was designed to replicate the tactile and aesthetic sensations of playing an antique Italian harpsichord. Traditional materials were used, including walnut for the wrest plank, chestnut for the key levers, boxwood and ebony for key covers, and cypress for the case and soundboard. The 98 jacks were made from beech, fitted with brass springs and natural seagull feather plectra. The design was inspired by Venetian harpsichords, particularly the 1547 Alessandro Trasuntino harpsichord at the San Colombano Museum. An exception was made for the short octave --- the assigning of common keys in the first octave instead of a chromatic scale --- typically found in Italian harpsichords, which was replaced by a standard octave layout to more easily accommodate the interaction with commercial sample libraries. 
+The keyboard was designed to replicate the tactile and aesthetic sensations of playing an antique Italian harpsichord. Traditional materials were used, including walnut for the wrest plank, chestnut for the key levers, boxwood and ebony for key covers, and cypress for the case and soundboard. The 98 jacks were made from beech, fitted with brass springs and natural seagull feather plectra. The design was inspired by Venetian harpsichords, particularly the \anon{1547 Alessandro Trasuntino} harpsichord at the \anon{San Colombano Museum}. An exception was made for the short octave --- the assigning of common keys in the first octave instead of a chromatic scale --- typically found in Italian harpsichords, which was replaced by a standard octave layout to more easily accommodate the interaction with commercial sample libraries. 
 
 % % Option 2
 \begin{figure}[!b]
@@ -140,7 +137,7 @@ Figure \ref{fig:system-block-diagram} shows a block diagram of the finalised har
 \begin{figure}
     \centering    
     \includegraphics[width=\linewidth]{src/images/3-key-side.png}
-    \caption{3-Key Model Harpsichord Mechanism acquired from San Colombano, Bologna, 2023}
+    \caption{3-Key Model Harpsichord Mechanism acquired from \anon{San Colombano, Bologna}, 2023}
     \label{fig:3key}
 \end{figure}
 
@@ -188,7 +185,7 @@ The gradient stickers affixed to each jack provided a surface with varying refle
 The controller board, designed around the Arduino Nano format, was the central hub for processing sensor data and triggering MIDI messages. In addition to solder terminals for the sensor board channels, the controller board contained:
 
 \begin{itemize}
-    \item 1 Arduino Nano 33 IoT
+    \item 1 Arduino Nano 33 BLE
     \item 1 Fujitsu MB85RS64 SPI FRAM chip
     \item 1 EC11 combined rotary encoder and tactile switch
     % \item 1 DFROBOT DFR0785 Tactile Switch
@@ -231,9 +228,9 @@ Power requirements for the system were estimated at 1.1 A at 5 V, with some fluc
 
 % The final 49-key harpsichord replica incorporated the sensor and controller boards into the rectangular frame. Ribbon cables connected the PCBs, while felt strips were interwoven between the strings to suppress vibrations and maintain the tactile response of the keys. The assembly process at the \anon{NEMUS} lab in \anon{Bologna} involved meticulous adjustments to key clearances and wiring layouts. Modifications included milling sections of the keys to ensure adequate clearance for the PCBs and varnishing the jacks to improve sticker adhesion. 
 
-For the initial version of the exhibition, a harpsichord sample library was used and controlled via Native Instrument's Kontakt. The software was installed on a Mac Mini hosted inside the instrument's case. Holes were drilled at the back of the instrument's frame, away from sight, allow the passage of cables, such as from power supplies, USB connectors and headphone jack (Figure \ref{fig:mac-mini}). 
+For the initial version of the exhibition, a harpsichord sample library was used and controlled via Native Instrument's Kontakt\footnote{\href{https://www.native-instruments.com/en/products/komplete/samplers/kontakt-8/?srsltid=AfmBOorKUf43SoIxGBS2-GnXmKHHkgcfcfWRskpweDhLSG3FiF0qrf2w}{Kontakt webpage} (accessed 31 Jan 2025)}. The software was installed on a Mac Mini hosted inside the instrument's case. Holes were drilled at the back of the instrument's frame, away from sight, to allow the passage of cables, such as from power supplies, USB connectors and headphone jack (Figure \ref{fig:mac-mini}). 
 % These components are accessible via locked drawer which is visible in \ref{fig:oratory}. 
-An iPad is used as a monitor through which visitors can adjust parameters of playback such as tuning, voicing and which stops are engaged. The next iteration will use a library of samples from instruments in the collection, which is currently being carried out by the museum.
+An iPad is used as a monitor through which visitors can adjust playback parameters such as tuning, voicing and which stops are engaged. The next iteration will use a library of samples from instruments in the collection, which the museum is currently carrying out.
 %A main 12-inch display sits inside a custom-made drawer locked during usage.
 
 \begin{figure}[!b]
@@ -253,21 +250,20 @@ An iPad is used as a monitor through which visitors can adjust parameters of pla
 
 % In an effort to make the exhibition more accessible and authentic, the \anon{San Colombano Museum} commissioned the construction of a mechanical keyboard to trigger a MIDI-controlled sample library, designed for use by museum visitors. 
 The exhibition is set to open approximately a month after this work's submission, and only preliminary feedback has been collected from a pool of 20 visitors -- who were given training on the system -- and expert feedback from \anon{Catalina Vicens} and \anon{Roberto Livi}.
-Collection of visitor feedback was carried out as short informal interviews and primarily as a means of identifying any technical problems.
-The keyboard shows promise in enhancing the museum experience as comments about a ``sense of disconnect'' as found in the McAlpine exhibition \cite{McAlpine2014} were absent in this initial feedback.
+The collection of visitor feedback was carried out as short informal interviews and primarily as a means of identifying any technical problems.
+The keyboard shows promise in enhancing the museum experience as comments about a ``sense of disconnect'' found in the Benton Fletcher Collection \cite{McAlpine2014} were absent in this initial feedback. \textcolor{red}{This goes in the direction pointed by Andrew, but I wonder if it could be worded differently}
 
-A more formal surveying of museum visitors is to be carried out to determine to what degree the exhibition achieved it's core aims.
-% Testers unfamiliar with harpsichords were particularly impressed by its responsiveness.
-The keyboard is hosted in the \emph{Oratory} above the museum's main hall, an exceptional testimony to the Bolognese art, decorated by the finest students of the Carracci and presenting a series of frescoes covering most of the walls and ceiling. The room hosts unique examples of the Italian Renaissance building tradition, including the 1547 harpsichord and the 1540 spinet by Alessandro Trasuntino. Visitors often visit the room with the same caution and respect that is typical of worship spaces. Among the visitors interviewed, there were no comments made that the exposed headphones and touchscreen affected such an experience negatively, though a more definitive answer will come as more feedback is collected after launch. Pictures of the keyboard hosted in the \emph{Oratory} are shown in Figure \ref{fig:oratory}.
 
-Expert feedback has highlighted certain limitations, including imprecise key calibration, which creates a temporal disconnect between the tactile plucking sensation and sound onset. Additionally, the commercial sample library, while allowing the selection of registers such as 8', 4', and their combinations, restricts functionality to a single MIDI message per key, regardless of the number of string choirs controlled. Inspired by early Italian instruments, the keyboard's layout is designed to manage two 8' registers with a sensor system fitted to each. Internally the instrument is therefore 2 individual MIDI devices however, one register needed to be disengaged as the software could only communicate with a single device. 
-Multiple instances of the software could be used, but an arrangement of 2 sets GUI controls was deemed too confusing to visitors who would interact with the exhibition without orientation.
-Sensors are therefore active only on a single set of jacks to accommodate these limitations. Technical improvements, such as refined calibration with hysteresis and developing a custom sample library and interface, could address these constraints in future iterations.
+A more formal surveying of museum visitors is to be carried out to determine to what degree the exhibition achieved its core aims.
+The keyboard is hosted in the \emph{Oratory} above the museum's main hall, an exceptional testimony to the Bolognese art, decorated by the finest students of the Carracci and presenting a series of frescoes covering most of the walls and ceiling. The room hosts unique examples of the Italian Renaissance building tradition, including the 1547 harpsichord and the 1540 spinet by \anon{Alessandro Trasuntino}. Visitors often visit the room with the same caution and respect typical of worship spaces. Among the visitors interviewed, no comments were made that the exposed headphones and touchscreen affected such an experience negatively, though a more definitive answer will come as more feedback is collected after launch. Pictures of the keyboard hosted in the \emph{Oratory} are shown in Figure \ref{fig:oratory}.
+
+Expert feedback has highlighted limitations, including imprecise key calibration, which creates a temporal disconnect between the tactile plucking sensation and sound onset. Additionally, the commercial sample library, while allowing the selection of registers such as 8', 4', and their combinations, restricts functionality to a single MIDI message per key, regardless of the number of string choirs controlled. Inspired by early Italian instruments, the keyboard's layout is designed to manage two 8' registers with a sensor system fitted to each. Internally, the instrument functions as two separate MIDI devices. However, one register must be disengaged due to the software's limited communication with only a single device. While running multiple instances of the software is possible, having two sets of GUI controls was considered too confusing for visitors engaging with the exhibition without prior orientation. Consequently, sensors are only active on single jacks to accommodate these constraints. Future iterations could address these limitations through technical improvements, such as refined calibration with hysteresis and developing a custom sample library and interface.
+
 
 \begin{figure}
 \centering
 \includegraphics[width = \linewidth]{src/images/keyboardMuseum.JPEG}
-\caption{The keyboard installed in the \emph{Oratory} at San Colombano, and a user wearing headphones playing it.}
+\caption{The keyboard installed in the \emph{Oratory} at \anon{San Colombano}, and a user wearing headphones playing it.}
 \label{fig:oratory}
 \end{figure}
 

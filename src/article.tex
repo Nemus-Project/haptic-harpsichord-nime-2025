@@ -4,11 +4,11 @@ Technological advances have transformed how museums document, present and interp
 
 Musical instruments represent a peculiar fusion of form, function, and history. Their cultural value extends beyond their visual appeal to include the tactile and auditory dimensions of use \cite{Fritz2017}. Yet, preservation concerns often limit direct interaction, reducing these artefacts to static displays. This ``red velvet cord'' approach, as theorised by McAlpine \cite{McAlpine2014}, protects fragile mechanisms but diminishes the instruments’ functional identity, disconnecting visitors from the full richness of their historical and cultural context.
 
-The Tagliavini Collection in Bologna \cite{Tagliavini2007}, renowned for its historical keyboard instruments, exemplifies this dilemma. With more than seventy early keyboard instruments, including many unique Renaissance Italian harpsichords, spinets and virginals, the collection stands out as a valuable resource for musicologists, organologists and musicians alike. Preserving the instruments' authenticity was the cornerstone of Ferdinando Tagliavini’s vision. This guiding principle led him to collect only playable instruments, or instruments which could be restored to playing condition after minimal intervention. 
+The \anon{Tagliavini} Collection in \anon{Bologna \cite{Tagliavini2007}}, renowned for its historical keyboard instruments, exemplifies this dilemma. With more than seventy early keyboard instruments, including many unique Renaissance Italian harpsichords, spinets and virginals, the collection stands out as a valuable resource for musicologists, organologists and musicians alike. Preserving the instruments' authenticity was the cornerstone of \anon{Ferdinando Tagliavini}’s vision. This guiding principle led him to collect only playable instruments, or instruments which could be restored to playing condition after minimal intervention. 
 
 However, the delicate mechanisms of these instruments and their historical significance mean they are only played under strict conditions—typically during concerts or by experienced performers with special permission from the curator. 
 To enhance accessibility and engagement, the museum commissioned the replica (Figure \ref{fig:teaser}) of a historical keyboard built in the tradition of the Italian Renaissance, which is the subject of this paper.
-The keyboard, which museum visitors can use without special permission, presents two choirs of muted strings and can generate MIDI messages. The interface is currently connected to a commercial software sampler, though the ultimate goal is to use sample instruments from the collection. Visitors to the museum are invited to play the interface and listen through a pair of headphones. This work outlines the technological aspects of the interface's construction and offers reflections on its role within the Tagliavini Collection and potential application within the wider musical instrument museum context. 
+The keyboard, which museum visitors can use without special permission, presents two choirs of muted strings and can generate MIDI messages. The interface is currently connected to a commercial software sampler, though the ultimate goal is to use sample instruments from the collection. Visitors to the museum are invited to play the interface and listen through a pair of headphones. This work outlines the technological aspects of the interface's construction and offers reflections on its role within the \anon{Tagliavini} Collection and potential application within the wider musical instrument museum context. 
 % The paper outlines the design and motivations behind this replica keyboard interface.
 
 
@@ -17,12 +17,12 @@ The keyboard, which museum visitors can use without special permission, presents
 
 Museums face a constant tension between accessibility and preservation, restricting how visitors can interact with collections \cite{Templeton2018, McAlpine2014}. For musical instrument museums, these challenges are compounded by the difficulty of preserving historical instruments in a playable condition \cite{McAlpine2014}. The instruments' inherent fragility and gradual decay inevitably result in a point where they can no longer be played, even when collections adhere to the strictest conservation protocols \cite{NYT_strad}. A marked cultural change has taken place in recent decades, shifting the focus from the playability of the originals to their conservation. Karp \cite{Karp1979,Karp1985} advocates for a deeper understanding of musical instruments so that enough knowledge is generated to make them as ``copyable'' as possible.
 
-McAlpine discusses a case similar to the Tagliavini collection in his examination of the Benton Fletcher Collection at National Trust Fenton House \cite{McAlpine2014}. When these instruments were donated, Benton Fletcher stipulated that they remain playable and should continue to be maintained for tuition and public performance. A large sampling campaign was conducted, and a custom MIDI interface was designed to fulfil this requirement while preserving the original instruments' integrity. The MIDI controller, comprising two commercially available keyboards mimicking the two-manual harpsichord layout, was used by visitors to trigger the instrument samples recorded with tailored strategies for each. However, user tests identified a limitation: the commercially available weighted keys failed to provide an authentic sense of interacting with a historical keyboard \cite{McAlpine2014}. 
+McAlpine discusses a case similar to the \anon{Tagliavini} collection in his examination of the Benton Fletcher Collection at National Trust Fenton House \cite{McAlpine2014}. When these instruments were donated, Benton Fletcher stipulated that they remain playable and should continue to be maintained for tuition and public performance. A large sampling campaign was conducted, and a custom MIDI interface was designed to fulfil this requirement while preserving the original instruments' integrity. The MIDI controller, comprising two commercially available keyboards mimicking the two-manual harpsichord layout, was used by visitors to trigger the instrument samples recorded with tailored strategies for each. However, user tests identified a limitation: the commercially available weighted keys failed to provide an authentic sense of interacting with a historical keyboard \cite{McAlpine2014}. 
 
 On the other hand, the ``Tromba Moderna'' project \cite{Baldwin2016}, a previous NIME initiative, approached the issue of musical heritage playability by recreating and augmenting a replica of a historical tromba marina. A piezo transducer was connected to a sound synthesis engine and a driver within the instrument to simulate the expected vibrations of a historical tromba marina. 
 
 
-The keyboard presented here inherits some aspects from the Tromba Moderna project. The project aims to offer a tool to enhance the fruition of the Tagliavini collection while retaining a form of continuity with historical instrument-building traditions. However, the electronics hidden inside the interface are not intended to augment or disrupt the tactile feedback; rather, they serve as the silent and invisible link between the mechanical and the digital realms. 
+The keyboard presented here inherits some aspects from the Tromba Moderna project. The project aims to offer a tool to enhance the fruition of the \anon{Tagliavini} collection while retaining a form of continuity with historical instrument-building traditions. However, the electronics hidden inside the interface are not intended to augment or disrupt the tactile feedback; rather, they serve as the silent and invisible link between the mechanical and the digital realms. 
 The optical sensing technique for the keyboard is adapted from a similar project on the piano by McPherson \cite{McPherson2013}. 
 Thus, whether the interface proposed here is a \emph{new} musical interface is subject to discussion, particularly regarding the keyboard's tactile response designed to adhere to longstanding harpsichord building traditions. This work complements and follows up on previous reflections within the NIME community, emphasising the \emph{O} in NIME \cite{Masu_NIME_2023}. The intended use of the keyboard through meaningful interaction with a museum exhibit is where the novelty of this work lies, rather than solely in its technological development. Relying on previous NIMEs, this project extends the longevity of the results beyond the scope envisaged in the original works, enhancing their sustainability, as discussed by Masu \emph{et al.} \cite{Masu_NIME_2023}.
 
@@ -36,7 +36,7 @@ Besides enhancing the visitor experience, future design iterations will serve as
 
 \section{Design Principles}\label{design}
 
-The design of the augmented replica keyboard for the Tagliavini Collection was guided by three principal constraints stipulated by the museum:
+The design of the augmented replica keyboard for the \anon{Tagliavini} Collection was guided by three principal constraints stipulated by the museum:
 \begin{itemize}
 \item \emph{No visible electronics}. To preserve the visual integrity of the exhibit, all electronic components had to remain concealed except for a pair of headphones and a small display for audio parameter adjustments.
 \item \emph{Robustness and reliability}. The system needed to accommodate frequent use by museum visitors and allow for straightforward maintenance by staff without requiring specialised technical expertise.
@@ -87,7 +87,7 @@ Specifically, the system was designed to be easily assembled using resources typ
 
 Components, such as QRE1113 optical sensors and CD4051BE multiplexers, are widely available from commercial resellers, while the modular PCB design ensures easy replication and maintenance.
 
-The Arduino Nano 33 BLE was chosen as the core microcontroller for its compatibility with open source tools and ability to support both USB and BLE MIDI. Ferroelectric RAM (FRAM) was employed for data storage since it offers an economical yet robust solution for preserving calibration settings across power cycles. Calibration workflows were optimised using the Arduino IDE’s serial plotter and open source MIDI Monitor software, reducing reliance on proprietary tools and simplifying the process for users. 
+The Arduino Nano 33 BLE was chosen as the core microcontroller for its compatibility with open source tools and ability to support both USB and BLE MIDI. Ferroelectric RAM (FRAM) was employed for data storage since it offers an economical yet robust solution for preserving calibration settings across power cycles. Calibration workflows were optimised using the Arduino IDE’s serial plotter and open source MIDI Monitor software \footnote{\url{https://github.com/krevis/MIDIApps}}, reducing reliance on proprietary tools and simplifying the process for users. 
 
 \begin{anonsuppress}
 Reference repositories for this project can be found here:
@@ -123,7 +123,7 @@ The keyboard was designed to replicate the tactile and aesthetic sensations of p
         \caption{rectangular shape}
         \label{fig:rect-harp}
     \end{subfigure}
-    \caption{Logarithmic shape of an original Trasuntino harpsichord contrast with rectangular shape of the replica}    
+    \caption{Logarithmic shape of an original \anon{Trasuntino} harpsichord contrast with the rectangular shape of the replica}    
     \Description{}
     \label{fig:log-harp-comp}
 \end{figure}
@@ -149,7 +149,7 @@ The following criteria were established to guide sensor selection and integratio
 
 \begin{itemize}
     \item \emph{Non-invasiveness.} No remarkable modifications were allowed on the harpsichord mechanics, particularly on all the visible parts.
-    \item \emph{Low Latency.} The time required to process a single iteration of all sensor data should remain under 10 ms, with an upper limit of 25 ms deemed acceptable. Empirical criteria found in previous studies \cite{Jack2016} was used as a guide.
+    \item \emph{Low Latency.} The sampling period for reading and processing data from all sensors should remain under 10 ms to allow for latency introduced in other parts of the synthesis process. Empirical criteria found in previous studies \cite{Jack2016} was used as a guide.
     \item \emph{Reliability:} Sensor data should be dependable and consistent, with interference from anything external to the jack movement being absent or negligible.
     \item \emph{Scalability.} The design needed to scale in both cost and time in order to be adaptable from a 3-key prototype (Figure \ref{fig:3key}) up to the 49 keys of the final design.
     % \item \emph{Expandability.} The system should accommodate future functionality, such as additional MIDI parameters or data visualisation.
@@ -173,12 +173,13 @@ The final sensor system utilised QRE1113 optical sensors, known for their small 
     \item 7 QRE1113 optical sensors.
     \item 7 100 $\Omega$ resistors and 7 10 k$\Omega$ resistors (later reduced to one resistor per board).
     \item 1 Texas Instruments CD4051BE multiplexer for signal aggregation.
+    \item 7 WS2812 RGB LEDs with integrated driver.
 \end{itemize}
 
 The optical sensors are wired in a voltage divider configuration \ref{fig:simple-schematic} and the circuit outputs a voltage based on the infrared light reflected from nearby surfaces. 
 The gradient stickers affixed to each jack provided a surface with varying reflectivity for the sensors, which were used to track jack displacement throughout the key dip. 
 
-3D-printed baffles were installed on the PCBs to eliminate cross-talk between adjacent sensors, as per Figure \ref{fig:baffles}. These baffles, fabricated from dark-pigmented PLA, ensured that infrared reflections from neighbouring jacks did not interfere with sensor readings. A manual visual check of plotted all sensors readings confirmed that interference from neighbouring jacks had been eliminated.
+3D-printed baffles were installed on the PCBs to eliminate cross-talk between adjacent sensors, as per Figure \ref{fig:baffles}. These baffles, fabricated from dark-pigmented PLA, ensured that infrared reflections from neighbouring jacks did not interfere with sensor readings. A manual visual check of plotted all sensors readings confirmed that interference from neighbouring jacks had been eliminated. RGB LEDs are placed on the reverse side of the PCB, vertically in-line with the sensors.
 
 \subsection{Controller Board}\label{controller-board}
 
@@ -208,7 +209,7 @@ Non-volatile memory, implemented using a Fujitsu MB85RS64 Ferroelectric RAM (FRA
 A rotary encoder was used as the interface to select a key, edit a threshold and save current thresholds to the FRAM.
 Thresholds were first set the midrange of possible values a a default. A rough calibration process was carried out where each sensor were selected individually and its readings were plotted against their current threshold value using the Arduino IDE serial plotter. Thresholds were adjusted with the rotary encoder until the key no longer passed the threshold line until the jack had plucked the string. During calibration RGB LEDs were used as a visual aid to quickly identify which key was currently being adjusted. These LEDs also provided visual feedback during calibration, and would change colour based on if readings were above below the threshold or if the were outside previously recorded maximum or minimum values. Such use of the LEDs meant for easy identification of malfunctioning sensors and simplified the alignment process. A finer calibration process was carried out with the guidance of expert harpsichord performer \anon{Catalina Vicens}.
 
-Power requirements for the system were estimated at 1.1 A at 5 V, with some fluctuation when the system was first powered on. While the sensors were powered continuously in this iteration, future designs may incorporate power-saving measures, such as dynamic activation of sensors found in the McPherson piano \cite{McPherson2013}.
+Power requirements for the system were estimated at 1.1 A at 5 V, with some fluctuation when the system was first powered on. While the sensors were powered continuously in this iteration, future designs may incorporate power-saving measures, such as dynamic modulation of the optical emitters found in the McPherson piano \cite{McPherson2013}.
 
 % \begin{figure}
 %     \centering

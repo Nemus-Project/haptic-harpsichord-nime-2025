@@ -55,7 +55,7 @@ The final design, shown in Figures \ref{fig:teaser} and \ref{fig:details}, is a 
 
 \begin{figure}[!b]  
   \centering
-  \includegraphics[width=0.9\linewidth]{src/images/tagging-jacks-3.jpg} 
+  \includegraphics[width=0.9\linewidth,trim={0 0 0 0.5cm},clip]{src/images/tagging-jacks-3.jpg} 
   \caption{Gradient stickers applied to the side of the jack body. The coarse gradient scale was selected to maximise signal excursion while preserving signal readout stability.}
   \Description{} 
   \label{fig:jack-tags}
@@ -159,9 +159,9 @@ The hardware was designed to make assembly possible in standard maker spaces.
 
 \subsection{Sensor Board}\label{sensor-board}
 
-\begin{figure}[!b] 
+\begin{figure}[!h] 
   \centering
-  \includegraphics[width=0.7\linewidth]{src/images/simple-schematic-bw-.jpg} 
+  \includegraphics[width=0.7\linewidth,trim={0 1.5cm 0 1.5cm},clip]{src/images/simple-schematic-bw-.jpg} 
   \caption{Optical sensor in a simple voltage divider circuit. \texttt{V\_OUT} is routed to one of 8 channels on the CD4051BE multiplexer}
   \Description{} 
   \label{fig:simple-schematic}
@@ -179,7 +179,15 @@ The final sensor system utilised QRE1113 optical sensors, known for their small 
 The optical sensors are wired in a voltage divider configuration \ref{fig:simple-schematic} and the circuit outputs a voltage based on the infrared light reflected from nearby surfaces. 
 The gradient stickers affixed to each jack provided a surface with varying reflectivity for the sensors, which were used to track jack displacement throughout the key dip. 
 
-3D-printed baffles were installed on the PCBs to eliminate cross-talk between adjacent sensors, as per Figure \ref{fig:baffles}. These baffles, fabricated from dark-pigmented PLA, ensured that infrared reflections from neighbouring jacks did not interfere with sensor readings. A manual visual check of plotted all sensors readings confirmed that interference from neighbouring jacks had been eliminated. RGB LEDs are placed on the reverse side of the PCB, vertically in-line with the sensors.
+3D-printed baffles were installed on the PCBs to eliminate cross-talk between adjacent sensors, as per Figure \ref{fig:baffles}. These baffles, fabricated from dark-pigmented PLA, ensured that infrared reflections from neighbouring jacks did not interfere with sensor readings. A manual visual check of plotted all sensors readings confirmed that interference from neighbouring jacks had been eliminated. RGB LEDs are placed on the reverse side of the PCB, vertically in-line with the sensors, and were added to provide a programmable means of providing visual feedback. The LEDs are controlled via a pulse width modulation (PWM) signal and are addressable individually.
+
+\begin{figure}[!b] 
+  \centering
+  \includegraphics[width=\linewidth,trim={0 10cm 0 7cm},clip]{src/images/sensor-board-reverse-side-anon.png} 
+  \caption{Reverse side of sensor board showing the RGB LEDs and terminal connection.}
+  \Description{} 
+  \label{fig:sensor-reverse}
+\end{figure}
 
 \subsection{Controller Board}\label{controller-board}
 
@@ -194,7 +202,7 @@ The controller board, designed around the Arduino Nano format, was the central h
 
 \begin{figure*}
     \centering
-    \includegraphics[width=\linewidth]{src/images/block-diagram.pdf}
+    \includegraphics[width=\linewidth]{src/images/block-diagram-2.pdf}
     \caption{Block diagram of PCB connections. Sensor and LED are routed through each sensor PCB}
     \label{fig:system-block-diagram}
 \end{figure*}
@@ -236,9 +244,9 @@ An iPad is used as a monitor through which visitors can adjust playback paramete
 
 \begin{figure}[!b]
     \centering
-    \includegraphics[width=\linewidth]{src/images/sensor-board-w-baffles.jpeg}
+    \includegraphics[width=\linewidth,trim={0 1.5cm 0 1.5cm},clip]{src/images/sensor-board-w-baffles.jpeg}
     \\
-    \includegraphics[width=0.8\linewidth]{src/images/baffles.png}
+    \includegraphics[width=0.8\linewidth,trim={0 2cm 0 2.5cm},clip]{src/images/baffles.png}
     \caption{Baffles designed to prevent cross-talk between adjacent sensors.}
     \Description{}
     \label{fig:baffles}

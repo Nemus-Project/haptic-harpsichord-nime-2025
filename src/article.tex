@@ -132,7 +132,10 @@ The rectangular poplar frame also deviates from the traditional logarithmic \ref
 
 \section{Hardware Design}\label{hardware-design}
 
-Figure \ref{fig:system-block-diagram} shows a block diagram of the finalised hardware setup. The system evolved through iterative prototyping, beginning with simple threshold-based testing and ending in a fully functional multi-sensor interface capable of triggering MIDI events. 
+Figure \ref{fig:system-block-diagram} shows a block diagram of the finalised hardware setup. 
+The system evolved through iterative prototyping, beginning with simple threshold-based testing and ending in a fully functional multi-sensor interface capable of triggering MIDI events. 
+
+
 
 \begin{figure}
     \centering    
@@ -180,11 +183,12 @@ The optical sensors are wired in a voltage divider configuration \ref{fig:simple
 The gradient stickers affixed to each jack provided a surface with varying reflectivity for the sensors, which were used to track jack displacement throughout the key dip. 
 
 3D-printed baffles were installed on the PCBs to eliminate cross-talk between adjacent sensors, as per Figure \ref{fig:baffles}. These baffles, fabricated from dark-pigmented PLA, ensured that infrared reflections from neighbouring jacks did not interfere with sensor readings. A manual visual check of plotted all sensors readings confirmed that interference from neighbouring jacks had been eliminated. RGB LEDs are placed on the reverse side of the PCB, vertically in-line with the sensors, and were added to provide a programmable means of providing visual feedback. The LEDs are controlled via a pulse width modulation (PWM) signal and are addressable individually.
+The output signal of the multiplexer is taken from each PCB and routed to a separate ADC channel of the Arduino. Multiplexer channel select and LED PWM signals are daisy-chained through each PCB (Figure \ref{fig:sensor-reverse}).
 
 \begin{figure}[!b] 
   \centering
-  \includegraphics[width=\linewidth,trim={0 10cm 0 7cm},clip]{src/images/sensor-board-reverse-side-anon.png} 
-  \caption{Reverse side of sensor board showing the RGB LEDs and terminal connection.}
+  \includegraphics[width=\linewidth]{src/images/sensor-board-reverse-side-anon.png} 
+  \caption{Reverse side of the sensor board showing the RGB LEDs and terminal connections. The \texttt{SIG} terminal (Top Left) is routed to an ADC channel. Power \texttt{5V, 3V, GND}, multiplexer channels \texttt{A, B, C} and LED PWM input \texttt{DI} and output \texttt{DO}  connect from the previous sensor board (Left) and are routed to the next (Right).}
   \Description{} 
   \label{fig:sensor-reverse}
 \end{figure}

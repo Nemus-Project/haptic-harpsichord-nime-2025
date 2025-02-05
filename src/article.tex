@@ -40,6 +40,7 @@ Besides enhancing the visitor experience, future design iterations will serve as
 \centering
 \includegraphics[width=0.8\linewidth]{src/images/details.jpg}
 \caption{Details of the replica, including the key slots and sides, keys, and jacks with seagull plectra.}
+\Description{4 images contain details of the jack rows. A large image shows the end of the jack rows where an extrusion is put to allow jack rows to be disengaged. The smaller images show the keys and jack removed from the harpsichord exposing the materials from which they are constructed. Shown also is the shims for the jack which stop it from easily sliding.}
 \label{fig:details}
 \end{figure*}
 
@@ -65,7 +66,7 @@ The final design, shown in Figures \ref{fig:teaser} and \ref{fig:details}, is a 
   \centering
   \includegraphics[width=\linewidth,trim={0 0 0 0.5cm},clip]{src/images/tagging-jacks-3.jpg} 
   \caption{Gradient stickers applied to the side of the jack body. The coarse gradient scale was selected to maximise signal excursion while preserving signal readout stability.}
-  \Description{} 
+  \Description{Close of two jacks with gradient stickers applied to each. Both jack lie on top of the vinyl sheet that was used for printing. The gradient is a long black bar that terminates in 7 rectangles of grey over an 8mm span. The remainder of the sticker is white. The jacks have the numbers 46 and 49 written on them at different offset illustrating the numbering system to identify their position along the keyboard.} 
   \label{fig:jack-tags}
 \end{figure}
 
@@ -79,7 +80,7 @@ A combination of string tension, quill voicing, and jack staggering contribute t
   \centering
   \includegraphics[width=\linewidth]{src/images/49-key-bottom-sensors-no-keys.jpg} 
   \caption{Underside of the full model keyboard, showing two chambers: the front chamber (top) and the rear chamber (bottom).} 
-  \Description{} 
+  \Description{Underside view of the models with keys removed. A cross brace split the case into four quadrants the top two are the front chambe and the bottom are the rea chamber. Visible inside are the PCB which are connected to each other with multicoloured ribbon cable. From the right 2 long cables, one for sensor signals the other for LED and multiplexer signals. Both sets of cables terinate at the controller board. The PCBs are attached with white plastic supports to the underside of the wrest plank, a thick block of wood in which the tuning pegs are screwed.} 
   \label{fig:49-key-bottom}
 \end{figure}
 
@@ -108,7 +109,7 @@ The keyboard was designed to replicate the tactile and aesthetic sensations of p
         \label{fig:rect-harp}
     \end{subfigure}
     \caption{Logarithmic shape of an original \anon{Trasuntino} harpsichord contrast with the rectangular shape of the replica}    
-    \Description{}
+    \Description{Line drawing of two harpsichord shapes. The top line drawing shows the longer tapering form of a full scale instrument if it had the same key layout as the replica. The second line drawing is of the replica harpsichord. The line drawing share the same scale and it can be seen that the replica is roughly one quarter the depth of a full scale instrument.}
     \label{fig:log-harp-comp}
 \end{figure}
 
@@ -121,6 +122,7 @@ The rectangular poplar frame also deviates from the traditional logarithmic (Fig
     3-Key Model Harpsichord Mechanism    
     %acquired from \anon{San Colombano, Bologna}, 2023.
     }
+    \Description{Side view of a small model mechanism of a harpsichord. The model is cut as though it were a cross section of a harpsichord mechanism. The Instrument is not to scale and only has a small sound board. Visible are the pivots through which the keys are mounted and how the two sets of jack rest on the end of the key.}
     \label{fig:3key}
 \end{figure}
 
@@ -180,7 +182,7 @@ The hardware was designed to make assembly possible in standard university maker
   \centering
   \includegraphics[width=0.7\linewidth,trim={0 0.5cm 0 0.5cm},clip]{src/images/simple-schematic-bw-.jpg} 
   \caption{Optical sensor in a simple voltage divider circuit. \texttt{V\_OUT} is routed to one of 8 channels on the CD4051BE multiplexer.}
-  \Description{} 
+  \Description{A circuit diagram of a voltage divider circuit. The Image shows a 100 ohm resistor in line with the LED and a 10 thousand ohm resistor connected to the emitter of the phototransistor and the collector connected to ground. The line to the bisects before the 10 thousand ohm resistor to a label titled V OUT. Arrows from the LED illustrate how light controls the base of the phototransistor.} 
   \label{fig:simple-schematic}
 \end{figure}
 
@@ -197,6 +199,7 @@ The final sensor system utilised QRE1113 optical sensors, known for their small 
     \centering
     \includegraphics[width=\linewidth]{src/images/block-diagram-2.pdf}
     \caption{Block diagram of PCB connections. A separate sensor signal is routed to the Arduino. LED and multiplexer (MUX) controls signal are daisy-chained through each sensor PCB.}
+    \Description{The block diagram shows seven blocks each with sensor board written on them. Each sensor block has a solid arrow which connects to a block labelled Arduino Nano 33 BLE. A dashed arrow is drawn from the Ardnuino Nano 33 BLE box and travels through each sensors board. A legend shows th soldi line represnts the flow of the sensor signal and the dashed arrow the flow of LED an multiplexer control signals. Angled arrows from the sensor board point towards and away from a hatched lined representing the surface of the jacks, which illustartes the reflection of light. Lines from boxes labelled FRAM and Rotary Encoder point to and from the box labelled Arduino Nano 33 BLE.}
     \label{fig:system-block-diagram}
 \end{figure*}
 
@@ -207,7 +210,7 @@ The gradient stickers affixed to each jack provided a surface with varying refle
     \centering
     \includegraphics[width=0.8\linewidth,trim={0 2cm 0 2.5cm},clip]{src/images/baffles.png}
     \caption{Baffles designed to prevent cross-talk between adjacent sensors.}
-    \Description{}
+    \Description{A 3D model of the baffles used to reduce light leakage. Two slots are on the left and right sides. Two holes are visible beside each slot, through which the baffles can be attached to the PCB. A rectangular cutaway is visible for the multiplexer chip. The baffles contained14 angled extrusions 2 for each sensor.}
     \label{fig:baffles}
 \end{figure}
 
@@ -217,7 +220,6 @@ The output signal of the multiplexer is taken from each PCB and routed to a sepa
 \subsection{Controller Board}\label{controller-board}
 
 The controller board, designed around the Arduino Nano format, was the central hub for processing sensor data and triggering MIDI messages. In addition to solder terminals for the sensor board channels, the controller board contained:
-
 
 
 \begin{itemize}
@@ -246,7 +248,7 @@ Power requirements for the system were estimated at 1.1 A at 5 V, with some fluc
     \\
   \includegraphics[width=\linewidth]{src/images/sensor-board-reverse-side-anon.png} 
   \caption{Sensor board showing the sensor side (top) and rear side with RGB LEDs and terminal connections (bottom). The \texttt{SIG} terminal (Top Left) is routed to an ADC channel. Power \texttt{5V, 3V, GND}, multiplexer channels \texttt{A, B, C} and LED PWM input \texttt{DI} and output \texttt{DO}  connect from the previous sensor board (Left) and are routed to the next (Right).}
-  \Description{} 
+  \Description{Two images one of the front and one of the rear of a single sensor board. The top image shows the baffles in place and how they enclose the field of view of each sensor. The bottom image shows the wires from neighbouring circuit boards terminating and the line of 7 RGB LEDs in the same spacing as the LEDs.} 
   \label{fig:sensor-reverse}
 \end{figure}
 
@@ -257,6 +259,7 @@ An iPad is used as a monitor through which visitors can adjust playback paramete
     \centering
     \includegraphics[width=0.8\linewidth,trim={0 5cm 0 0},clip]{src/images/mac-mini.jpg}
     \caption{Components and cabling hidden in the bottom section of the instrument case.}
+    \Description{The mac mini and its display fitted in a shallow draw with a channel drilled in the end through which cables can be connected. The draw has dividers in place to separate the mac mini from the display.}
     \label{fig:mac-mini}
 \end{figure}
 
@@ -278,6 +281,7 @@ Expert feedback has highlighted limitations, including imprecise key calibration
 \centering
 \includegraphics[width = \linewidth]{src/images/keyboardMuseum.JPEG}
 \caption{The keyboard installed in the \emph{Oratory} at \anon{San Colombano}, and a user wearing headphones playing it.}
+\Description{2 images on showing the keyboard in situ in the museum and the second a user playing the keyboard. The harpsichord placed on top the drawer in which the mac mini and display reside. The whole harpsichord unit is positioned on a table. The right image shows a user standing playing the keyboard with a display for the exhibition visible in the background.}
 \label{fig:oratory}
 \end{figure}
 

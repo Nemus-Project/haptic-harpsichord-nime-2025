@@ -1,4 +1,4 @@
-<img src="src/images/49-key-front-top.png" style="width:58.0%"
+<img src="img/49-key-front-top.png" style="width:58.0%"
 alt="image" />
 
 <span id="fig:teaser" label="fig:teaser"></span>
@@ -131,7 +131,7 @@ upcoming projects such as Rem@ke (Council 2024) investigating embodied
 relationships between instrument and performer.
 
 <figure id="fig:details">
-<img src="src/images/details.jpg" style="width:80.0%"
+<img src="img/details.jpg" style="width:80.0%"
 alt="Figure 1: Details of the replica, including the key slots and sides, keys, and jacks with seagull plectra." />
 <figcaption aria-hidden="true">Figure 1: Details of the replica,
 including the key slots and sides, keys, and jacks with seagull
@@ -194,7 +194,7 @@ element necessary for acceptance, similar to the way visual perception
 affects judgments of musical performance (Tsay 2013).
 
 <figure id="fig:jack-tags">
-<img src="src/images/tagging-jacks-3.jpg"
+<img src="img/tagging-jacks-3.jpg"
 alt="Figure 2: Gradient stickers applied to the side of the jack body. The coarse gradient scale was selected to maximise signal excursion while preserving signal readout stability." />
 <figcaption aria-hidden="true">Figure 2: Gradient stickers applied to
 the side of the jack body. The coarse gradient scale was selected to
@@ -221,7 +221,7 @@ be identified where those opportunities for new expression lie (A. P.
 McPherson, Gierakowski, and Stark 2013).
 
 <figure id="fig:49-key-bottom">
-<img src="src/images/49-key-bottom-sensors-no-keys.jpg"
+<img src="img/49-key-bottom-sensors-no-keys.jpg"
 alt="Figure 3: Underside of the full model keyboard, showing two chambers: the front chamber (top) and the rear chamber (bottom)." />
 <figcaption aria-hidden="true">Figure 3: Underside of the full model
 keyboard, showing two chambers: the front chamber (top) and the rear
@@ -291,7 +291,7 @@ mechanical action of keys with synthetic sound generation, preserving a
 real harpsichord’s tactile qualities.
 
 <figure id="fig:3key">
-<img src="src/images/3-key-side.png"
+<img src="img/3-key-side.png"
 alt="Figure 5: 3-Key Model Harpsichord Mechanism " />
 <figcaption aria-hidden="true">Figure 5: 3-Key Model Harpsichord
 Mechanism </figcaption>
@@ -374,7 +374,7 @@ university maker spaces.
 ## Sensor Board
 
 <figure id="fig:simple-schematic">
-<img src="src/images/simple-schematic-bw-.jpg" style="width:70.0%"
+<img src="img/simple-schematic-bw-.jpg" style="width:70.0%"
 alt="Figure 6: Optical sensor in a simple voltage divider circuit. V_OUT is routed to one of 8 channels on the CD4051BE multiplexer." />
 <figcaption aria-hidden="true">Figure 6: Optical sensor in a simple
 voltage divider circuit. <code>V_OUT</code> is routed to one of 8
@@ -397,7 +397,7 @@ responsible for seven keys. Each PCB contained the following components:
 - 7 WS2812 RGB LEDs with integrated driver.
 
 <figure id="fig:system-block-diagram">
-<embed src="src/images/block-diagram-2.pdf" />
+<embed src="img/block-diagram-2.pdf" />
 <figcaption aria-hidden="true">Figure 7: Block diagram of PCB
 connections. A separate sensor signal is routed to the Arduino. LED and
 multiplexer (MUX) controls signal are daisy-chained through each sensor
@@ -413,7 +413,7 @@ reflectivity for the sensors, which were used to track jack displacement
 throughout the key dip.
 
 <figure id="fig:baffles">
-<img src="src/images/baffles.png" style="width:80.0%"
+<img src="img/baffles.png" style="width:80.0%"
 alt="Figure 8: Baffles designed to prevent cross-talk between adjacent sensors." />
 <figcaption aria-hidden="true">Figure 8: Baffles designed to prevent
 cross-talk between adjacent sensors.</figcaption>
@@ -487,9 +487,9 @@ incorporate power-saving measures, such as dynamic modulation of the
 optical emitters found in the McPherson piano (A. McPherson 2013).
 
 <figure id="fig:sensor-reverse">
-<p><img src="src/images/sensor-board-w-baffles.jpeg"
+<p><img src="img/sensor-board-w-baffles.jpeg"
 alt="image" /><br />
-<img src="src/images/sensor-board-reverse-side.png" alt="image" /></p>
+<img src="img/sensor-board-reverse-side.png" alt="image" /></p>
 <figcaption>Figure 9: Sensor board showing the sensor side (top) and
 rear side with RGB LEDs and terminal connections (bottom). The
 <code>SIG</code> terminal (Top Left) is routed to an ADC channel. Power
@@ -511,7 +511,7 @@ through which visitors can adjust playback parameters such as tuning,
 voicing and which stops are engaged.
 
 <figure id="fig:mac-mini">
-<img src="src/images/mac-mini.jpg" style="width:80.0%"
+<img src="img/mac-mini.jpg" style="width:80.0%"
 alt="Figure 10: Components and cabling hidden in the bottom section of the instrument case." />
 <figcaption aria-hidden="true">Figure 10: Components and cabling hidden
 in the bottom section of the instrument case.</figcaption>
@@ -564,7 +564,7 @@ through technical improvements, such as refined calibration with
 hysteresis and developing a custom sample library and interface.
 
 <figure id="fig:oratory">
-<img src="src/images/keyboardMuseum.JPEG"
+<img src="img/keyboardMuseum.JPEG"
 alt="Figure 11: The keyboard installed in the Oratory at , and a user wearing headphones playing it." />
 <figcaption aria-hidden="true">Figure 11: The keyboard installed in the
 <em>Oratory</em> at , and a user wearing headphones playing

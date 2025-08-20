@@ -265,11 +265,11 @@ libraries.
 
 <figure id="fig:log-harp-comp">
 <figure id="fig:log-harp">
-<img src="img/log_harp_outline" />
+<img src="img/log_harp_outline.svg" />
 <figcaption>logarithmic shape</figcaption>
 </figure>
 <figure id="fig:rect-harp">
-<img src="img/49-key_outline" />
+<img src="img/49-key_outline.svg" />
 <figcaption>rectangular shape</figcaption>
 </figure>
 <figcaption>Figure 4: Logarithmic shape of an original harpsichord
